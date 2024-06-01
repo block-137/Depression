@@ -1,0 +1,160 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 2024-05-24 01:38:41
+Description: Ticking player
+
+java.lang.NullPointerException: Cannot invoke "net.depression.mental.MentalStatus.tick()" because "mentalStatus" is null
+	at net.minecraft.world.entity.player.Player.handler$zip001$depression$tick(Player.java:3891)
+	at net.minecraft.world.entity.player.Player.tick(Player.java:332)
+	at net.minecraft.server.level.ServerPlayer.doTick(ServerPlayer.java:510)
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.tick(ServerGamePacketListenerImpl.java:269)
+	at net.minecraft.network.Connection.tick(Connection.java:259)
+	at net.minecraft.server.network.ServerConnectionListener.tick(ServerConnectionListener.java:172)
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:908)
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:824)
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:105)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:671)
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:265)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.world.entity.player.Player.handler$zip001$depression$tick(Player.java:3891)
+	at net.minecraft.world.entity.player.Player.tick(Player.java:332)
+
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.server.level.ServerPlayer)
+	Entity ID: 606
+	Entity Name: Player100
+	Entity's Exact location: -7.50, 64.00, -4.50
+	Entity's Block location: World: (-8,64,-5), Section: (at 8,0,11 in -1,4,-1; chunk contains blocks -16,-64,-16 to -1,319,-1), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.server.level.ServerPlayer.doTick(ServerPlayer.java:510)
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.tick(ServerGamePacketListenerImpl.java:269)
+	at net.minecraft.network.Connection.tick(Connection.java:259)
+	at net.minecraft.server.network.ServerConnectionListener.tick(ServerConnectionListener.java:172)
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:908)
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:824)
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:105)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:671)
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:265)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.8, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 2504449304 bytes (2388 MiB) / 3816816640 bytes (3640 MiB) up to 8376025088 bytes (7988 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 7600X 6-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 97 Stepping 2
+	Microarchitecture: Zen 3
+	Frequency (GHz): 4.70
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon RX 6750 XT
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x73df
+	Graphics card #0 versionInfo: DriverVersion=31.0.21001.45002
+	Graphics card #1 name: AMD Radeon(TM) Graphics
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #1 VRAM (MB): 512.00
+	Graphics card #1 deviceId: 0x164e
+	Graphics card #1 versionInfo: DriverVersion=31.0.21001.45002
+	Memory slot #0 capacity (MB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 4.80
+	Memory slot #0 type: Unknown
+	Memory slot #1 capacity (MB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 4.80
+	Memory slot #1 type: Unknown
+	Virtual memory max (MB): 41985.56
+	Virtual memory used (MB): 36537.25
+	Swap memory total (MB): 10048.65
+	Swap memory used (MB): 1357.54
+	JVM Flags: 0 total; 
+	Fabric Mods: 
+		architectury: Architectury 9.2.14
+		depression: Depression 1.0.0
+		fabric-api: Fabric API 0.92.1+1.20.1
+		fabric-api-base: Fabric API Base 0.4.31+1802ada577
+		fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.36+1802ada577
+		fabric-biome-api-v1: Fabric Biome API (v1) 13.0.13+1802ada577
+		fabric-block-api-v1: Fabric Block API (v1) 1.0.11+1802ada577
+		fabric-block-view-api-v2: Fabric BlockView API (v2) 1.0.1+1802ada577
+		fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.41+1802ada577
+		fabric-client-tags-api-v1: Fabric Client Tags 1.1.2+1802ada577
+		fabric-command-api-v1: Fabric Command API (v1) 1.2.34+f71b366f77
+		fabric-command-api-v2: Fabric Command API (v2) 2.2.13+1802ada577
+		fabric-commands-v0: Fabric Commands (v0) 0.2.51+df3654b377
+		fabric-containers-v0: Fabric Containers (v0) 0.1.64+df3654b377
+		fabric-content-registries-v0: Fabric Content Registries (v0) 4.0.11+1802ada577
+		fabric-convention-tags-v1: Fabric Convention Tags 1.5.5+1802ada577
+		fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.2.19+1802ada577
+		fabric-data-attachment-api-v1: Fabric Data Attachment API (v1) 1.0.0+de0fd6d177
+		fabric-data-generation-api-v1: Fabric Data Generation API (v1) 12.3.4+1802ada577
+		fabric-dimensions-v1: Fabric Dimensions API (v1) 2.1.54+1802ada577
+		fabric-entity-events-v1: Fabric Entity Events (v1) 1.6.0+1c78457f77
+		fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.6.2+1802ada577
+		fabric-events-lifecycle-v0: Fabric Events Lifecycle (v0) 0.2.63+df3654b377
+		fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.40+1802ada577
+		fabric-gametest-api-v1: Fabric Game Test API (v1) 1.2.13+1802ada577
+		fabric-item-api-v1: Fabric Item API (v1) 2.1.28+1802ada577
+		fabric-item-group-api-v1: Fabric Item Group API (v1) 4.0.12+1802ada577
+		fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.37+1802ada577
+		fabric-keybindings-v0: Fabric Key Bindings (v0) 0.2.35+df3654b377
+		fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.2.22+1802ada577
+		fabric-loot-api-v2: Fabric Loot API (v2) 1.2.1+1802ada577
+		fabric-loot-tables-v1: Fabric Loot Tables (v1) 1.1.45+9e7660c677
+		fabric-message-api-v1: Fabric Message API (v1) 5.1.9+1802ada577
+		fabric-mining-level-api-v1: Fabric Mining Level API (v1) 2.1.50+1802ada577
+		fabric-model-loading-api-v1: Fabric Model Loading API (v1) 1.0.3+1802ada577
+		fabric-models-v0: Fabric Models (v0) 0.4.2+9386d8a777
+		fabric-networking-api-v1: Fabric Networking API (v1) 1.3.11+1802ada577
+		fabric-networking-v0: Fabric Networking (v0) 0.3.51+df3654b377
+		fabric-object-builder-api-v1: Fabric Object Builder API (v1) 11.1.3+1802ada577
+		fabric-particles-v1: Fabric Particles (v1) 1.1.2+1802ada577
+		fabric-recipe-api-v1: Fabric Recipe API (v1) 1.0.21+1802ada577
+		fabric-registry-sync-v0: Fabric Registry Sync (v0) 2.3.3+1802ada577
+		fabric-renderer-api-v1: Fabric Renderer API (v1) 3.2.1+1802ada577
+		fabric-renderer-indigo: Fabric Renderer - Indigo 1.5.1+1802ada577
+		fabric-renderer-registries-v1: Fabric Renderer Registries (v1) 3.2.46+df3654b377
+		fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.37+92a0d36777
+		fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.0.28+1802ada577
+		fabric-rendering-v0: Fabric Rendering (v0) 1.1.49+df3654b377
+		fabric-rendering-v1: Fabric Rendering (v1) 3.0.8+1802ada577
+		fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 2.3.8+1802ada577
+		fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.11.10+1802ada577
+		fabric-screen-api-v1: Fabric Screen API (v1) 2.0.8+1802ada577
+		fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.3.30+1802ada577
+		fabric-sound-api-v1: Fabric Sound API (v1) 1.0.13+1802ada577
+		fabric-transfer-api-v1: Fabric Transfer API (v1) 3.3.5+8dd72ea377
+		fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 4.3.1+1802ada577
+		fabricloader: Fabric Loader 0.15.11
+		generated_fdaf838: Generated Mod (Please Ignore) 1.0.0
+		java: Java HotSpot(TM) 64-Bit Server VM 17
+		minecraft: Minecraft 1.20.1
+		mixinextras: MixinExtras 0.3.5
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Player100'/606, l='ServerLevel[New World]', x=-7.50, y=64.00, z=-4.50]]
+	Data Packs: vanilla, fabric
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fabric'; Server brand changed to 'fabric'
+	Launched Version: Fabric

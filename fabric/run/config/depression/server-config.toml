@@ -1,0 +1,7 @@
+mental_health_change_rate = 0.01
+food_heal_rate = 0.25
+ptsd_damage_rate = 0.5
+emotion_stabilize_rate = 0.2
+ptsd_disperse_rate = 0.1
+boredom_decrease_tick = 100
+

@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-05-30 21:02:35 +0800"
+    },
+    "done": true
+  },
+  "minecraft:adventure/sleep_in_bed": {
+    "criteria": {
+      "slept_in_bed": "2024-05-30 21:03:39 +0800"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2024-05-30 21:02:35 +0800",
+      "minecraft:jungle": "2024-05-30 21:02:41 +0800"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}

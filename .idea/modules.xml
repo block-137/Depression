@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/Depression.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/Depression.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/Depression.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/Depression.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/Depression.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/Depression.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/Depression.fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/Depression.fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/fabric/Depression.fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fabric/Depression.fabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/Depression.forge.main.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/Depression.forge.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/forge/Depression.forge.test.iml" filepath="$PROJECT_DIR$/.idea/modules/forge/Depression.forge.test.iml" />
+    </modules>
+  </component>
+</project>

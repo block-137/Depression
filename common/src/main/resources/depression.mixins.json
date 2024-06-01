@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "net.depression.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "BowItemMixin",
+    "CakeBlockMixin",
+    "CrossbowItemMixin",
+    "JukeboxBlockEntityMixin",
+    "PlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

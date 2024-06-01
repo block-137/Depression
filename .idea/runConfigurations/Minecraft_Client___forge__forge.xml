@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" factoryName="Application" name="Minecraft Client (:forge)" type="Application">
+    <option name="MAIN_CLASS_NAME" value="dev.architectury.transformer.TransformerRuntime"/>
+    <module name="Depression.forge.main"/>
+    <option name="PROGRAM_PARAMETERS" value=""/>
+    <option name="VM_PARAMETERS" value="-Dfabric.dli.config=D:\MinecraftModProject\Depression\forge\.gradle\loom-cache\launch.cfg -Dfabric.dli.env=client -Djava.net.preferIPv6Addresses=system -p C:\Users\13475\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.10\51e6a22c6c716beb11e244bf5b8be480f51dd6b5\securejarhandler-2.1.10.jar;C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.7\e86dda4696d3c185fcc95d8d311904e7ce38a53f\asm-commons-9.7.jar;C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.7\c0655519f24d92af2202cb681cd7c1569df6ead6\asm-util-9.7.jar;C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-analysis\9.7\e4a258b7eb96107106c0599f0061cfc1832fe07a\asm-analysis-9.7.jar;C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-tree\9.7\e446a17b175bfb733b87c5c2560ccb4e57d69f1a\asm-tree-9.7.jar;C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm\9.7\73d7b3086e14beb604ced229c302feff6449723\asm-9.7.jar;C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarFileSystems\0.3.19\2464eb7d6b9ddb9db36a82cf8a95193e5c6fe020\JarJarFileSystems-0.3.19.jar --add-modules ALL-MODULE-PATH --add-opens java.base/java.util.jar=cpw.mods.securejarhandler --add-opens java.base/java.lang.invoke=cpw.mods.securejarhandler --add-exports java.base/sun.security.util=cpw.mods.securejarhandler --add-exports jdk.naming.dns/com.sun.jndi.dns=java.naming -Dfabric.dli.main=cpw.mods.bootstraplauncher.BootstrapLauncher -Darchitectury.main.class=D:\MinecraftModProject\Depression\forge\.gradle\architectury\.main_class -Darchitectury.runtime.transformer=D:\MinecraftModProject\Depression\forge\.gradle\architectury\.transforms -Darchitectury.properties=D:\MinecraftModProject\Depression\forge\.gradle\architectury\.properties -Djdk.attach.allowAttachSelf=true -javaagent:D:\MinecraftModProject\Depression\.gradle\architectury\architectury-transformer-agent.jar"/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/forge/run/"/>
+    <method v="2">
+      <option enabled="true" name="Make"/>
+    </method>
+    <envs>
+      <env name="MOD_CLASSES" value="main%%D:\MinecraftModProject\Depression\forge\build\resources\main;main%%D:\MinecraftModProject\Depression\forge\build\classes\java\main"/><env name="MCP_MAPPINGS" value="loom.stub"/>
+    </envs>
+    <shortenClasspath name="ARGS_FILE"/>
+  <classpathModifications/></configuration>
+</component>

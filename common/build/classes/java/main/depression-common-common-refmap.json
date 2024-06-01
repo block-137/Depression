@@ -1,0 +1,54 @@
+{
+  "mappings": {
+    "net/depression/mixin/BowItemMixin": {
+      "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
+    },
+    "net/depression/mixin/CakeBlockMixin": {
+      "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
+      "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
+    },
+    "net/depression/mixin/CrossbowItemMixin": {
+      "onCrossbowShot": "Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V"
+    },
+    "net/depression/mixin/JukeboxBlockEntityMixin": {
+      "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
+    },
+    "net/depression/mixin/PlayerMixin": {
+      "Lnet/minecraft/advancements/critereon/ConsumeItemTrigger;trigger(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/class_2010;method_8821(Lnet/minecraft/class_3222;Lnet/minecraft/class_1799;)V",
+      "Lnet/minecraft/world/entity/player/Player;causeFoodExhaustion(F)V": "Lnet/minecraft/class_1657;method_7322(F)V",
+      "actuallyHurt": "Lnet/minecraft/class_1657;method_6074(Lnet/minecraft/class_1282;F)V",
+      "addAdditionalSaveData": "Lnet/minecraft/class_1657;method_5652(Lnet/minecraft/class_2487;)V",
+      "eat": "Lnet/minecraft/class_1657;method_18866(Lnet/minecraft/class_1937;Lnet/minecraft/class_1799;)Lnet/minecraft/class_1799;",
+      "readAdditionalSaveData": "Lnet/minecraft/class_1657;method_5749(Lnet/minecraft/class_2487;)V",
+      "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
+      "tick": "Lnet/minecraft/class_1657;method_5773()V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "net/depression/mixin/BowItemMixin": {
+        "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
+      },
+      "net/depression/mixin/CakeBlockMixin": {
+        "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
+        "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
+      },
+      "net/depression/mixin/CrossbowItemMixin": {
+        "onCrossbowShot": "Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V"
+      },
+      "net/depression/mixin/JukeboxBlockEntityMixin": {
+        "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
+      },
+      "net/depression/mixin/PlayerMixin": {
+        "Lnet/minecraft/advancements/critereon/ConsumeItemTrigger;trigger(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/item/ItemStack;)V": "Lnet/minecraft/class_2010;method_8821(Lnet/minecraft/class_3222;Lnet/minecraft/class_1799;)V",
+        "Lnet/minecraft/world/entity/player/Player;causeFoodExhaustion(F)V": "Lnet/minecraft/class_1657;method_7322(F)V",
+        "actuallyHurt": "Lnet/minecraft/class_1657;method_6074(Lnet/minecraft/class_1282;F)V",
+        "addAdditionalSaveData": "Lnet/minecraft/class_1657;method_5652(Lnet/minecraft/class_2487;)V",
+        "eat": "Lnet/minecraft/class_1657;method_18866(Lnet/minecraft/class_1937;Lnet/minecraft/class_1799;)Lnet/minecraft/class_1799;",
+        "readAdditionalSaveData": "Lnet/minecraft/class_1657;method_5749(Lnet/minecraft/class_2487;)V",
+        "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
+        "tick": "Lnet/minecraft/class_1657;method_5773()V"
+      }
+    }
+  }
+}

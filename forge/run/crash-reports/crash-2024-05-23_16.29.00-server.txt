@@ -1,0 +1,113 @@
+---- Minecraft Crash Report ----
+// On the bright side, I bought you a teddy bear!
+
+Time: 2024-05-23 16:29:00
+Description: Exception in server tick loop
+
+java.lang.NoClassDefFoundError: org/quiltmc/parsers/json/gson/GsonWriter
+	at dev.isxander.yacl3.config.v2.impl.serializer.GsonConfigSerializer$Builder.build(GsonConfigSerializer.java:250) ~[yacl-667299-5103178.jar%23206!/:?] {re:classloading}
+	at dev.isxander.yacl3.config.v2.impl.serializer.GsonConfigSerializer$Builder.build(GsonConfigSerializer.java:200) ~[yacl-667299-5103178.jar%23206!/:?] {re:classloading}
+	at net.depression.fabric.config.ServerConfig.lambda$static$0(ServerConfig.java:14) ~[2592661580918889183.jar%23208!/:?] {re:classloading}
+	at dev.isxander.yacl3.config.v2.impl.ConfigClassHandlerImpl.<init>(ConfigClassHandlerImpl.java:54) ~[yacl-667299-5103178.jar%23206!/:?] {re:classloading}
+	at dev.isxander.yacl3.config.v2.impl.ConfigClassHandlerImpl$BuilderImpl.build(ConfigClassHandlerImpl.java:241) ~[yacl-667299-5103178.jar%23206!/:?] {re:classloading}
+	at net.depression.fabric.config.ServerConfig.<clinit>(ServerConfig.java:15) ~[2592661580918889183.jar%23208!/:?] {re:classloading}
+	at net.depression.listener.ServerEventListener.onServerStart(ServerEventListener.java:8) ~[2592661580918889183.jar%23208!/:?] {re:classloading}
+	at dev.architectury.event.forge.EventHandlerImplCommon.event(EventHandlerImplCommon.java:398) ~[architectury-forge-9.2.14.jar%23207!/:?] {re:classloading,re:mixin}
+	at dev.architectury.event.forge.__EventHandlerImplCommon_event_ServerAboutToStartEvent.invoke(.dynamic) ~[architectury-forge-9.2.14.jar%23207!/:?] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.server.ServerLifecycleHooks.handleServerAboutToStart(ServerLifecycleHooks.java:98) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23198%23205!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.client.server.IntegratedServer.initServer(IntegratedServer.java:62) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:634) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:251) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+Caused by: java.lang.ClassNotFoundException: org.quiltmc.parsers.json.gson.GsonWriter
+	at jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[?:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:137) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?] {}
+	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:137) ~[securejarhandler-2.1.10.jar:?] {}
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?] {}
+	... 17 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.8, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 933731384 bytes (890 MiB) / 2868903936 bytes (2736 MiB) up to 8376025088 bytes (7988 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 7600X 6-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 97 Stepping 2
+	Microarchitecture: Zen 3
+	Frequency (GHz): 4.70
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon RX 6750 XT
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x73df
+	Graphics card #0 versionInfo: DriverVersion=31.0.21001.45002
+	Graphics card #1 name: AMD Radeon(TM) Graphics
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #1 VRAM (MB): 512.00
+	Graphics card #1 deviceId: 0x164e
+	Graphics card #1 versionInfo: DriverVersion=31.0.21001.45002
+	Memory slot #0 capacity (MB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 4.80
+	Memory slot #0 type: Unknown
+	Memory slot #1 capacity (MB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 4.80
+	Memory slot #1 type: Unknown
+	Virtual memory max (MB): 37588.21
+	Virtual memory used (MB): 31714.41
+	Swap memory total (MB): 5651.30
+	Swap memory used (MB): 96.24
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, mod:forge, mod:architectury (incompatible), mod:depression, mod:yet_another_config_lib_v3 (incompatible), mod:generated_8c70335 (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Launched Version: MOD_DEV
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-patched-0.8.5.10.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar runtime_enum_extender PLUGINSERVICE 
+		unprotect-1.2.0.jar unprotect PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar ArchitecturyMixinRemapperInjector TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.|Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		2592661580918889183.jar                           |generated_8c70335             |generated_8c70335             |1                   |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |47.2.30             |DONE      |Manifest: NOSIGNATURE
+		architectury-forge-9.2.14.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		main                                              |Depression                    |depression                    |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		yacl-667299-5103178.jar                           |YetAnotherConfigLib           |yet_another_config_lib_v3     |3.2.2+1.20          |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 497a2601-3d6b-4bd8-a63e-f9092e4fba71
+	FML: 47.2
+	Forge: net.minecraftforge:47.2.30

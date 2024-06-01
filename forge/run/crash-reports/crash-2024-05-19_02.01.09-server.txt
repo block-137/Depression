@@ -1,0 +1,158 @@
+---- Minecraft Crash Report ----
+// Why did you do that?
+
+Time: 2024-05-19 02:01:09
+Description: Ticking player
+
+java.lang.NullPointerException: Cannot invoke "net.minecraft.world.entity.Entity.getScoreboardName()" because the return value of "net.minecraft.world.damagesource.DamageSource.getEntity()" is null
+	at net.depression.listener.LivingHurtListener.hurt(LivingHurtListener.java:18) ~[5217283665765595396.jar%23207!/:?] {re:classloading}
+	at dev.architectury.event.forge.EventHandlerImplCommon.event(EventHandlerImplCommon.java:229) ~[architectury-forge-9.2.14.jar%23206!/:?] {re:classloading,re:mixin}
+	at dev.architectury.event.forge.__EventHandlerImplCommon_event_LivingAttackEvent.invoke(.dynamic) ~[architectury-forge-9.2.14.jar%23206!/:?] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.common.ForgeHooks.onPlayerAttack(ForgeHooks.java:274) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23198%23205!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.world.entity.player.Player.hurt(Player.java:812) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:PlayerMixin,pl:mixin:A,pl:unprotect:A}
+	at net.minecraft.server.level.ServerPlayer.hurt(ServerPlayer.java:695) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.world.entity.Entity.baseTick(Entity.java:459) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.world.entity.LivingEntity.baseTick(LivingEntity.java:338) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:unprotect:A,re:classloading,pl:unprotect:A,re:mixin,pl:unprotect:A}
+	at net.minecraft.world.entity.Entity.tick(Entity.java:422) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.world.entity.LivingEntity.tick(LivingEntity.java:2259) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:unprotect:A,re:classloading,pl:unprotect:A,re:mixin,pl:unprotect:A}
+	at net.minecraft.world.entity.player.Player.tick(Player.java:241) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:PlayerMixin,pl:mixin:A,pl:unprotect:A}
+	at net.minecraft.server.level.ServerPlayer.doTick(ServerPlayer.java:467) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.tick(ServerGamePacketListenerImpl.java:262) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.network.Connection.tick(Connection.java:263) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.server.network.ServerConnectionListener.tick(ServerConnectionListener.java:142) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:907) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:814) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:89) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:661) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:251) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Suspected Mods: 
+	Architectury (architectury), Version: 9.2.14
+		Issue tracker URL: https://github.com/shedaniel/architectury/issues
+		at TRANSFORMER/architectury@9.2.14/dev.architectury.event.forge.EventHandlerImplCommon.event(EventHandlerImplCommon.java:229)
+
+	generated_9a038c4 (generated_9a038c4), Version: 1
+		at TRANSFORMER/generated_9a038c4@1/net.depression.listener.LivingHurtListener.hurt(LivingHurtListener.java:18)
+Stacktrace:
+	at net.depression.listener.LivingHurtListener.hurt(LivingHurtListener.java:18) ~[5217283665765595396.jar%23207!/:?] {re:classloading}
+	at dev.architectury.event.forge.EventHandlerImplCommon.event(EventHandlerImplCommon.java:229) ~[architectury-forge-9.2.14.jar%23206!/:?] {re:classloading,re:mixin}
+	at dev.architectury.event.forge.__EventHandlerImplCommon_event_LivingAttackEvent.invoke(.dynamic) ~[architectury-forge-9.2.14.jar%23206!/:?] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23110!/:?] {}
+	at net.minecraftforge.common.ForgeHooks.onPlayerAttack(ForgeHooks.java:274) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23198%23205!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.world.entity.player.Player.hurt(Player.java:812) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:PlayerMixin,pl:mixin:A,pl:unprotect:A}
+	at net.minecraft.server.level.ServerPlayer.hurt(ServerPlayer.java:695) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.world.entity.Entity.baseTick(Entity.java:459) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.world.entity.LivingEntity.baseTick(LivingEntity.java:338) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:unprotect:A,re:classloading,pl:unprotect:A,re:mixin,pl:unprotect:A}
+	at net.minecraft.world.entity.Entity.tick(Entity.java:422) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.world.entity.LivingEntity.tick(LivingEntity.java:2259) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:unprotect:A,re:classloading,pl:unprotect:A,re:mixin,pl:unprotect:A}
+	at net.minecraft.world.entity.player.Player.tick(Player.java:241) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:PlayerMixin,pl:mixin:A,pl:unprotect:A}
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.server.level.ServerPlayer)
+	Entity ID: 245
+	Entity Name: Dev
+	Entity's Exact location: -1.69, 67.00, -13.63
+	Entity's Block location: World: (-2,67,-14), Section: (at 14,3,2 in -1,4,-1; chunk contains blocks -16,-64,-16 to -1,319,-1), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Entity's Momentum: 0.26, 0.36, 0.30
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.server.level.ServerPlayer.doTick(ServerPlayer.java:467) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:computing_frames,pl:accesstransformer:B,pl:unprotect:A,re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.tick(ServerGamePacketListenerImpl.java:262) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.network.Connection.tick(Connection.java:263) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.server.network.ServerConnectionListener.tick(ServerConnectionListener.java:142) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:unprotect:A}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:907) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:814) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:89) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:661) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:251) ~[forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A}
+	at java.lang.Thread.run(Thread.java:833) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.8, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 3015621408 bytes (2875 MiB) / 4525654016 bytes (4316 MiB) up to 8376025088 bytes (7988 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 7600X 6-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 97 Stepping 2
+	Microarchitecture: Zen 3
+	Frequency (GHz): 4.70
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: AMD Radeon RX 6750 XT
+	Graphics card #0 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x73df
+	Graphics card #0 versionInfo: DriverVersion=31.0.21001.45002
+	Graphics card #1 name: AMD Radeon(TM) Graphics
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #1 VRAM (MB): 512.00
+	Graphics card #1 deviceId: 0x164e
+	Graphics card #1 versionInfo: DriverVersion=31.0.21001.45002
+	Memory slot #0 capacity (MB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 4.80
+	Memory slot #0 type: Unknown
+	Memory slot #1 capacity (MB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 4.80
+	Memory slot #1 type: Unknown
+	Virtual memory max (MB): 36544.91
+	Virtual memory used (MB): 26617.30
+	Swap memory total (MB): 4608.00
+	Swap memory used (MB): 41.25
+	JVM Flags: 0 total; 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/245, l='ServerLevel[New World]', x=-1.69, y=67.00, z=-13.63]]
+	Data Packs: vanilla, mod:forge, mod:architectury (incompatible), mod:depression, mod:generated_9a038c4 (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Launched Version: MOD_DEV
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-patched-0.8.5.10.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar runtime_enum_extender PLUGINSERVICE 
+		unprotect-1.2.0.jar unprotect PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.30.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar ArchitecturyMixinRemapperInjector TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.|Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |47.2.30             |DONE      |Manifest: NOSIGNATURE
+		architectury-forge-9.2.14.jar                     |Architectury                  |architectury                  |9.2.14              |DONE      |Manifest: NOSIGNATURE
+		main                                              |Depression                    |depression                    |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		5217283665765595396.jar                           |generated_9a038c4             |generated_9a038c4             |1                   |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 9a0492f4-025b-4754-9a2a-b571cee4512c
+	FML: 47.2
+	Forge: net.minecraftforge:47.2.30
