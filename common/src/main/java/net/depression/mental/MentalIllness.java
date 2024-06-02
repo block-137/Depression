@@ -47,7 +47,7 @@ public class MentalIllness {
                 ActionbarHintPacket.sendInsomniaPacket(player);
             }
         }
-        if (mentalHealthLevel > 0) {
+        if (mentalHealthLevel >= 3) {
             if (nextCloseEyeTime == null) {
                 setNextCloseEyeTime();
             }
@@ -77,23 +77,28 @@ public class MentalIllness {
             }
             if (ifTrig) {
                 int duration;
+                int amplifier;
                 switch (mentalHealthLevel) {
                     case 1 -> {
-                        duration = 80;
+                        duration = 60;
+                        amplifier = 0;
                     }
                     case 2 -> {
-                        duration = 120;
+                        duration = 100;
+                        amplifier = 0;
                     }
                     case 3 -> {
-                        duration = 160;
+                        duration = 200;
+                        amplifier = 1;
                     }
                     default -> {
-                        duration = 200;
+                        duration = 0;
+                        amplifier = 0;
                     }
                 }
-                MobEffectInstance mining_fatigue = new MobEffectInstance(MobEffects.DIG_SLOWDOWN, duration, 0, false, true, true);
-                MobEffectInstance slowness = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, 0, false, true, true);
-                MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, duration, 0, false, true, true);
+                MobEffectInstance mining_fatigue = new MobEffectInstance(MobEffects.DIG_SLOWDOWN, duration, amplifier, false, true, true);
+                MobEffectInstance slowness = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, amplifier, false, true, true);
+                MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, duration, amplifier, false, true, true);
                 player.addEffect(mining_fatigue);
                 player.addEffect(slowness);
                 player.addEffect(weakness);
@@ -112,13 +117,7 @@ public class MentalIllness {
     }
 
     public void setNextCloseEyeTime() {
-        switch (mentalHealthLevel) {
-            case 1 -> nextCloseEyeTime =  30L;
-            case 2 -> nextCloseEyeTime = 15L;
-            case 3 -> nextCloseEyeTime = 0L;
-            default -> nextCloseEyeTime = 60L;
-        }
-        nextCloseEyeTime = (nextCloseEyeTime + dice(6, 10)) * 20L + mentalStatus.tickCount;
+        nextCloseEyeTime = (30 + dice(6, 10)) * 20L + mentalStatus.tickCount;
     }
 
     public double getInsomniaChance() {

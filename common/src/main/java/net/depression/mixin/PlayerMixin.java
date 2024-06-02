@@ -46,7 +46,8 @@ public abstract class PlayerMixin {
             mentalStatus = new MentalStatus((ServerPlayer) player);
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
-        if (mentalStatus.mentalIllness.isInsomnia) { //如果失眠，则直接返回，不进行睡眠治疗
+        Boolean isInsomnia = mentalStatus.mentalIllness.isInsomnia;
+        if (isInsomnia != null && isInsomnia) { //如果失眠，则直接返回，不进行睡眠治疗
             return;
         }
         if (mentalStatus.emotionValue < -5 * Math.max(mentalStatus.mentalHealthValue, 10d) / 100d) {

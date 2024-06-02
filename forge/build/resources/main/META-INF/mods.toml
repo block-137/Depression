@@ -11,7 +11,7 @@ authors = "block_137, SimoTCD"
 description = '''
 This is a mod that adds depression to Minecraft.
 '''
-#logoFile = ""
+logoFile = "assets/depression/icon.png"
 
 [[dependencies.depression]]
 modId = "forge"

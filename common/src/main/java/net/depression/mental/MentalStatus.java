@@ -124,7 +124,15 @@ public class MentalStatus {
 
             //情绪值自然归零（速度 0.1/s)
             if (emotionValue < 0) {
-                emotionValue += EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d;
+                double amplifier = 1d;
+                BlockPos respawnPos = player.getRespawnPosition();
+                if (respawnPos != null && Math.sqrt(respawnPos.distToCenterSqr(player.position())) <= 20) {
+                    amplifier *= 1.5d;
+                }
+                if (player.level().getBrightness(LightLayer.SKY, player.blockPosition()) >= 13) {
+                    amplifier *= 1.5d;
+                }
+                emotionValue += EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d * amplifier;
                 emotionValue = Math.min(0d, emotionValue); //保证情绪值归0
             }
             else {
@@ -204,6 +212,8 @@ public class MentalStatus {
         BlockPos pos = player.blockPosition();
         Level level = player.level();
         int r = radiusMaxValue;
+        String maxHealId = null;
+        double maxHealValue = 0;
         for (int x = -r; x <= r; ++x) { // -r <= x <= r
             int yLimit = (int) Math.sqrt(r*r - x*x);
             for (int y = -yLimit; y <= yLimit; ++y) { // -sqrt(r*r - x*x) <= y <= sqrt(r*r - x*x)
@@ -219,18 +229,34 @@ public class MentalStatus {
                         if (detected.contains(id)) {
                             continue;
                         }
-                        Double value = nearbyHealBlockValue.get(id);
+                        Double value = getBlockActualHealValue(id);
                         Integer radius = nearbyHealBlockRadius.get(id);
                         if (radius != null && value != null) {
                             int distance = (int) Math.sqrt(x*x + y*y + z*z);
                             if (distance <= radius) {
-                                mentalHeal(id, value);
+                                if (value > maxHealValue) {
+                                    maxHealValue = value;
+                                    maxHealId = id;
+                                }
                                 detected.add(id);
                             }
                         }
                     }
                 }
             }
+        }
+        if (maxHealId != null) {
+            mentalHeal(maxHealId, maxHealValue);
+        }
+    }
+
+    private Double getBlockActualHealValue(String id) {
+        Double value = nearbyHealBlockValue.get(id);
+        if (boredom.containsKey(id)) {
+            return value / (boredom.get(id) / 2d);
+        }
+        else {
+            return value;
         }
     }
 

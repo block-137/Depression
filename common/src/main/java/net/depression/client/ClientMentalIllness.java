@@ -3,6 +3,8 @@ package net.depression.client;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
+import dev.architectury.event.EventResult;
+import dev.architectury.event.events.client.ClientRawInputEvent;
 import dev.architectury.networking.NetworkManager;
 import net.depression.Depression;
 import net.minecraft.client.Minecraft;
@@ -15,6 +17,7 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.phys.Vec3;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -23,8 +26,10 @@ import java.util.Date;
 
 public class ClientMentalIllness {
     public long startCloseEyeTime = 0;
-    boolean isCloseEye = false;
+    public boolean isCloseEye = false;
+    public double elapsedTime; //经过的时间(-60 tick ~ 60 tick) 0~10:闭合; 10~50:全闭眼; 50~60:睁眼
     public static final int priority = 300;
+    public static Vec3 curPosition;
     private static final ResourceLocation DROWSY_UP = new ResourceLocation(Depression.MOD_ID, "textures/symptom/drowsy_up.png");
     private static final ResourceLocation DROWSY_DOWN = new ResourceLocation(Depression.MOD_ID, "textures/symptom/drowsy_down.png");
     private static final ResourceLocation DROWSY_FULL = new ResourceLocation(Depression.MOD_ID, "textures/symptom/drowsy_full.png");
@@ -32,6 +37,7 @@ public class ClientMentalIllness {
     public void receiveCloseEyePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
         startCloseEyeTime = Minecraft.getInstance().level.getGameTime() + 60;
         isCloseEye = true;
+        curPosition = Minecraft.getInstance().player.position();
         Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.close_eye"), false);
     }
 
@@ -39,7 +45,7 @@ public class ClientMentalIllness {
         if (!isCloseEye) {
             return;
         }
-        double elapsedTime = (double) (Minecraft.getInstance().level.getGameTime() - startCloseEyeTime);
+        elapsedTime = (double) (Minecraft.getInstance().level.getGameTime() - startCloseEyeTime);
         if (elapsedTime < 0) {
             return;
         }
@@ -48,15 +54,15 @@ public class ClientMentalIllness {
             return;
         }
         int yLoc;
-        if (elapsedTime > 10 && elapsedTime < 50) {
+        if (elapsedTime > 10 && elapsedTime < 50) { //全闭眼
             RenderSystem.setShaderTexture(0, DROWSY_FULL);
             guiGraphics.blit(DROWSY_FULL, 0, 0, priority, 0, 0, x, y, 480, 360);
             return;
         }
-        else if (elapsedTime <= 10) {
+        else if (elapsedTime <= 10) { //闭眼
             yLoc = (int) (elapsedTime / 10d * (double) y / 2d);
         }
-        else {
+        else { //睁眼
             yLoc = (int) ((60 - elapsedTime) / 10d * (double) y / 2);
         }
         RenderSystem.setShaderTexture(0, DROWSY_UP);

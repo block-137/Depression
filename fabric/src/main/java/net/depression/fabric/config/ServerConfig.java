@@ -41,7 +41,7 @@ public class ServerConfig {
         config.load();
 
         if (!config.contains("emotion_stabilize_rate")) {
-            config.set("emotion_stabilize_rate", 0.2);
+            config.set("emotion_stabilize_rate", 0.05);
         }
         if (!config.contains("mental_health_change_rate")) {
             config.set("mental_health_change_rate", 0.01);
@@ -50,10 +50,10 @@ public class ServerConfig {
             config.set("ptsd_damage_rate", 0.5);
         }
         if (!config.contains("ptsd_disperse_rate")) {
-            config.set("ptsd_disperse_rate", 0.1);
+            config.set("ptsd_disperse_rate", 0.02);
         }
         if (!config.contains("boredom_decrease_tick")) {
-            config.set("boredom_decrease_tick", 100);
+            config.set("boredom_decrease_tick", 200);
         }
         if (!config.contains("food_heal_rate")) {
             config.set("food_heal_rate", 0.25);
