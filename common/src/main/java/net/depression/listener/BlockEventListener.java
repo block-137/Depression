@@ -6,6 +6,7 @@ import net.depression.mental.MentalStatus;
 import net.depression.network.CloseEyePacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
+import net.minecraft.client.gui.components.SubtitleOverlay;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;

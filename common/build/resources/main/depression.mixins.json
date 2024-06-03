@@ -4,12 +4,15 @@
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
+    "LocalPlayerMixin"
   ],
   "mixins": [
     "BowItemMixin",
     "CakeBlockMixin",
     "CrossbowItemMixin",
+    "ItemStackMixin",
     "JukeboxBlockEntityMixin",
+    "LivingEntityMixin",
     "PlayerMixin"
   ],
   "injectors": {

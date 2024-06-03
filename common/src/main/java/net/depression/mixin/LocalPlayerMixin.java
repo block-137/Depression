@@ -22,7 +22,13 @@ public abstract class LocalPlayerMixin {
             ClientMentalIllness illness = DepressionClient.clientMentalStatus.mentalIllness;
             if (illness.isCloseEye && illness.elapsedTime >= -60 && illness.elapsedTime <= 60) {
                 LocalPlayer player = (LocalPlayer) (Object) this;
-                player.moveTo(ClientMentalIllness.curPosition);
+                Vec3 pos = ClientMentalIllness.curPosition;
+                if (player.getY() < pos.y) {
+                    player.moveTo(pos.x, player.getY(), pos.z);
+                }
+                else {
+                    player.moveTo(pos);
+                }
             }
         }
     }

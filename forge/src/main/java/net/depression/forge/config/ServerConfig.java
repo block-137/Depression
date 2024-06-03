@@ -76,31 +76,34 @@ public class ServerConfig {
                 blockFile.createNewFile();
                 FileWriter writer = new FileWriter(blockFile);
                 writer.write("""
-                        "minecraft:wheat" = 0.1
-                        "minecraft:carrot" = 0.1
-                        "minecraft:potato" = 0.1
-                        "minecraft:beetroots" = 0.1
-                        "minecraft:melon" = 0.1
-                        "minecraft:pumpkin" = 0.1
-                        "minecraft:bamboo" = 0.1
-                        "minecraft:sweet_berry_bush" = 0.1
-                        "minecraft:cocoa" = 0.1
-                        "minecraft:coal_ore" = 0.1
-                        "minecraft:iron_ore" = 0.2
-                        "minecraft:gold_ore" = 0.3
-                        "minecraft:redstone_ore" = 0.2
-                        "minecraft:lapis_ore" = 0.2
-                        "minecraft:diamond_ore" = 0.5
-                        "minecraft:emerald_ore" = 0.4
-                        "minecraft:nether_quartz_ore" = 0.1
-                        "minecraft:nether_gold_ore" = 0.2
-                        "minecraft:deepslate_coal_ore" = 0.1
-                        "minecraft:deepslate_iron_ore" = 0.2
-                        "minecraft:deepslate_gold_ore" = 0.3
-                        "minecraft:deepslate_redstone_ore" = 0.2
-                        "minecraft:deepslate_lapis_ore" = 0.2
-                        "minecraft:deepslate_diamond_ore" = 0.5
-                        "minecraft:deepslate_emerald_ore" = 0.4
+                        "minecraft:wheat" = 0.5
+                        "minecraft:carrot" = 0.5
+                        "minecraft:potato" = 0.5
+                        "minecraft:beetroots" = 0.4
+                        "minecraft:melon" = 0.3
+                        "minecraft:pumpkin" = 0.2
+                        "minecraft:bamboo" = 0.25
+                        "minecraft:cocoa" = 0.25
+                        "minecraft:sweet_berry_bush" = 0.25
+                                                
+                        "minecraft:coal_ore" = 0.3334
+                        "minecraft:copper_ore" = 0.3334
+                        "minecraft:iron_ore" = 0.625
+                        "minecraft:gold_ore" = 1.25
+                        "minecraft:redstone_ore" = 0.5
+                        "minecraft:lapis_ore" = 0.75
+                        "minecraft:diamond_ore" = 3.0
+                        "minecraft:emerald_ore" = 1.75
+                        "minecraft:nether_quartz_ore" = 0.5
+                        "minecraft:nether_gold_ore" = 1.0
+                        "minecraft:deepslate_coal_ore" = 0.3334
+                        "minecraft:deepslate_copper_ore" = 0.3334
+                        "minecraft:deepslate_iron_ore" = 0.625
+                        "minecraft:deepslate_gold_ore" = 1.25
+                        "minecraft:deepslate_redstone_ore" = 0.5
+                        "minecraft:deepslate_lapis_ore" = 0.75
+                        "minecraft:deepslate_diamond_ore" = 3.0
+                        "minecraft:deepslate_emerald_ore" = 1.75
                         """);
                 writer.close();
             }
@@ -489,7 +492,7 @@ public class ServerConfig {
                 writer.write("""
                         "minecraft:iron_ingot" = 0.25
                         "minecraft:gold_ingot" = 0.5
-                        "minecraft:netherite_scrap" = 1.0
+                        "minecraft:netherite_scrap" = 2.0
                         "minecraft:cooked_porkchop" = 0.25
                         "minecraft:cooked_beef" = 0.25
                         "minecraft:cooked_chicken" = 0.25

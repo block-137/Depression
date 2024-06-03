@@ -18,6 +18,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.phys.Vec3;
+import org.spongepowered.asm.mixin.Unique;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;

@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 import java.util.Random;
@@ -21,6 +22,9 @@ public class MentalIllness {
     public final Random random = new Random();
     private final ServerPlayer player;
     private final MentalStatus mentalStatus;
+
+    //以下是临时变量
+    public ItemStack lastEatItem;
 
     public MentalIllness(ServerPlayer player, MentalStatus mentalStatus) {
         this.player = player;

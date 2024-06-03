@@ -7,9 +7,13 @@ import net.depression.server.Registry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.HoneyBottleItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
@@ -58,13 +62,19 @@ public abstract class PlayerMixin {
         }
     }
 
-    @Inject(method = "eat", at = @At(value = "INVOKE", target = "Lnet/minecraft/advancements/critereon/ConsumeItemTrigger;trigger(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/world/item/ItemStack;)V"))
+    @Inject(method = "eat", at = @At("HEAD"))
     private void eat(Level level, ItemStack itemStack, CallbackInfoReturnable<ItemStack> cir) {
+        if (level.isClientSide()) {
+            return;
+        }
         ServerPlayer player = (ServerPlayer) (Object) this;
         MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
         if (mentalStatus == null) {
             mentalStatus = new MentalStatus(player);
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
+        }
+        if (mentalStatus.mentalIllness.mentalHealthLevel == 3) {
+            player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
         }
         FoodProperties foodProperties = itemStack.getItem().getFoodProperties();
         mentalStatus.mentalHeal(foodProperties.getNutrition() / 2f

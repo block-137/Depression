@@ -10,7 +10,9 @@
     "BowItemMixin",
     "CakeBlockMixin",
     "CrossbowItemMixin",
+    "ItemStackMixin",
     "JukeboxBlockEntityMixin",
+    "LivingEntityMixin",
     "PlayerMixin"
   ],
   "injectors": {

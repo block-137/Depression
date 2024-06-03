@@ -76,15 +76,15 @@ public class ServerConfig {
                 blockFile.createNewFile();
                 FileWriter writer = new FileWriter(blockFile);
                 writer.write("""
-                        "minecraft:wheat" = 0.25
-                        "minecraft:carrot" = 0.25
-                        "minecraft:potato" = 0.25
-                        "minecraft:beetroots" = 0.25
-                        "minecraft:melon" = 0.1875
-                        "minecraft:pumpkin" = 0.15
-                        "minecraft:bamboo" = 0.15
-                        "minecraft:cocoa" = 0.15
-                        "minecraft:sweet_berry_bush" = 0.1875
+                        "minecraft:wheat" = 0.5
+                        "minecraft:carrot" = 0.5
+                        "minecraft:potato" = 0.5
+                        "minecraft:beetroots" = 0.4
+                        "minecraft:melon" = 0.3
+                        "minecraft:pumpkin" = 0.2
+                        "minecraft:bamboo" = 0.25
+                        "minecraft:cocoa" = 0.25
+                        "minecraft:sweet_berry_bush" = 0.25
                                                 
                         "minecraft:coal_ore" = 0.3334
                         "minecraft:copper_ore" = 0.3334
@@ -492,7 +492,7 @@ public class ServerConfig {
                 writer.write("""
                         "minecraft:iron_ingot" = 0.25
                         "minecraft:gold_ingot" = 0.5
-                        "minecraft:netherite_scrap" = 1.0
+                        "minecraft:netherite_scrap" = 2.0
                         "minecraft:cooked_porkchop" = 0.25
                         "minecraft:cooked_beef" = 0.25
                         "minecraft:cooked_chicken" = 0.25
