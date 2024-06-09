@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "depression:diary",
+  "ingredients": [
+    {
+      "item": "minecraft:writable_book"
+    },
+    {
+      "tag": "minecraft:flowers"
+    }
+  ],
+  "result": {
+    "item": "depression:diary"
+  }
+}

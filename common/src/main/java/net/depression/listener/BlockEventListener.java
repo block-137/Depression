@@ -2,11 +2,10 @@ package net.depression.listener;
 
 import dev.architectury.event.EventResult;
 import dev.architectury.utils.value.IntValue;
+import net.depression.Depression;
 import net.depression.mental.MentalStatus;
-import net.depression.network.CloseEyePacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
-import net.minecraft.client.gui.components.SubtitleOverlay;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
@@ -20,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEventListener {
     public static EventResult onBlockBreak(Level level, BlockPos pos, BlockState state, ServerPlayer player, IntValue intValue) {
+        Depression.LOGGER.info(level.getDayTime() + "");
         if (player.isCreative()) {
             return EventResult.pass();
         }

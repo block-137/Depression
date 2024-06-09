@@ -6,8 +6,6 @@ import net.depression.Depression;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 
 public class CloseEyePacket {
     public static final ResourceLocation CLOSE_EYE_PACKET = new ResourceLocation(Depression.MOD_ID, "close_eye_packet");

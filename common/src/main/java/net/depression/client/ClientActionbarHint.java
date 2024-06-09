@@ -20,15 +20,24 @@ public class ClientActionbarHint {
     private final String insomniaHint = "message.depression.insomnia";
     private final String mentalFatigueHint = "message.depression.mental_fatigue";
 
+    public static final String diaryUnwrittenHint = "message.depression.diary_unwritten";
+
     private String formLastId;
     private String disperseLastId;
     private long formLastTime;
     private long disperseLastTime;
+
+    public static void displayTranslatable(String string) {
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable(string), false);
+    }
     public void receivePTSDFormPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+
         String id = buf.readCharSequence(buf.readableBytes(), charset).toString();
         id = prefix + id;
         Gui gui = Minecraft.getInstance().gui;
         long time = new Date().getTime();
+        //TODO: 如果翻译不了就不翻译
         if (time - formLastTime < 1000 && !id.equals(formLastId)) { //1s内如过有多个不同的提示包，则合并显示
             gui.setOverlayMessage(Component.translatable(formHint1)
                     .append(Component.translatable(formLastId))

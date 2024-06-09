@@ -4,53 +4,42 @@ import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.chunk.ChunkStatus;
-import org.apache.logging.log4j.core.jmx.Server;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static net.depression.mental.MentalIllness.getMentalHealthLevel;
 
 public class MentalStatus {
     public static double EMOTION_STABILIZE_RATE;
     public static double MENTAL_HEALTH_CHANGE_RATE;
     public static double PTSD_DAMAGE_RATE;
     public static double PTSD_DISPERSE_RATE;
-
     public static double FOOD_HEAL_RATE;
-
     public static int BOREDOM_DECREASE_TICK;
 
     public static HashMap<String, Double> nearbyHealBlockValue = new HashMap<>(); //精神治疗光环方块-治疗值
     public static HashMap<String, Integer> nearbyHealBlockRadius = new HashMap<>(); //精神治疗光环方块-作用半径
-
     public static int radiusMaxValue; //精神治疗光环方块-最大的半径
-
     public static HashMap<String, Double> breakHealBlock = new HashMap<>(); //挖了会开心的方块
     public static HashMap<String, Double> killHealEntity = new HashMap<>(); //杀了会开心的实体
-
     public static HashMap<String, Double> smeltHealItem = new HashMap<>(); //熔炼了会开心的物品
-
-    private ConcurrentHashMap<String, Integer> boredom = new ConcurrentHashMap<>(); //无聊值
-    private ConcurrentHashMap<String, Double> PTSD = new ConcurrentHashMap<>(); //PTSD值
-    private ConcurrentHashMap<String, Long> PTSDTimeBuffer = new ConcurrentHashMap<>(); //PTSD时刻缓冲区（存储造成PTSD的那一个tick）
-    private ConcurrentHashMap<String, Double> PTSDValueBuffer = new ConcurrentHashMap<>(); //PTSD值缓冲区（存储造成PTSD的值）
+    public static HashMap<String, Double> healAdvancement = new HashMap<>(); //获得成就会开心
+    private final ConcurrentHashMap<String, Integer> boredom = new ConcurrentHashMap<>(); //无聊值
+    private final ConcurrentHashMap<String, Double> PTSD = new ConcurrentHashMap<>(); //PTSD值
+    private final ConcurrentHashMap<String, Long> PTSDTimeBuffer = new ConcurrentHashMap<>(); //PTSD时刻缓冲区（存储造成PTSD的那一个tick）
+    private final ConcurrentHashMap<String, Double> PTSDValueBuffer = new ConcurrentHashMap<>(); //PTSD值缓冲区（存储造成PTSD的值）
     public double emotionValue; //情绪值（-20~20），实际上是精神健康值的导数。
     public double mentalHealthValue = 100; //精神健康值（0~100）
     public MentalIllness mentalIllness;
@@ -66,7 +55,8 @@ public class MentalStatus {
         this.mentalIllness = new MentalIllness(player, this);
     }
 
-    public synchronized void tick() {
+    public synchronized void tick(ServerPlayer player) {
+        this.player = player;
         ++tickCount;
         //处理无聊值
         if (tickCount % BOREDOM_DECREASE_TICK == 0) {
@@ -155,11 +145,11 @@ public class MentalStatus {
             attackSpeed.addTransientModifier(emotionModifier);
             MentalStatusPacket.sendToPlayer(player, this);
         }
-        mentalIllness.tick();
+        mentalIllness.tick(player);
     }
 
     public synchronized void mentalHeal(double value) {
-        emotionValue += value * Math.max(mentalHealthValue, 10d) / 100d; //情绪值 += 治疗值 * 精神健康值 / 100
+        emotionValue += value * mentalHealthValue / 100d; //情绪值 += 治疗值 * 精神健康值 / 100
         emotionValue = Math.min(20d, emotionValue); //保证情绪值不超过上限
     }
 

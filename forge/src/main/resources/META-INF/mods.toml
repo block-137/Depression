@@ -7,7 +7,7 @@ license = "LGPL-3.0"
 modId = "depression"
 version = "${version}"
 displayName = "Depression"
-authors = "block_137, SimoTCD"
+authors = "block_137, SimoTCD, TheMoonAries, Tianxin_Limao"
 description = '''
 This is a mod that adds depression to Minecraft.
 '''

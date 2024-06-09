@@ -1,12 +1,14 @@
 package net.depression.client;
 
 import dev.architectury.event.events.client.ClientGuiEvent;
+import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.event.events.client.ClientRawInputEvent;
-import dev.architectury.event.events.client.ClientScreenInputEvent;
 import dev.architectury.networking.NetworkManager;
-import net.depression.listener.ClientRawInputEventListener;
+import net.depression.listener.client.ClientLifecycleEventListener;
+import net.depression.listener.client.ClientRawInputEventListener;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.CloseEyePacket;
+import net.depression.network.DiaryUpdatePacket;
 import net.depression.network.MentalStatusPacket;
 
 public class DepressionClient {
@@ -27,7 +29,10 @@ public class DepressionClient {
                 ActionbarHintPacket.MENTAL_FATIGUE_PACKET, clientActionbarHint::receiveMentalFatiguePacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 CloseEyePacket.CLOSE_EYE_PACKET, clientMentalStatus.mentalIllness::receiveCloseEyePacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                DiaryUpdatePacket.DIARY_UPDATE_PACKET, ClientDiaryUpdater::receiveDiaryUpdatePacket);
         ClientGuiEvent.RENDER_HUD.register(clientMentalStatus::renderHud);
+        ClientLifecycleEvent.CLIENT_LEVEL_LOAD.register(ClientLifecycleEventListener::onClientLevelLoad);
         ClientRawInputEvent.MOUSE_SCROLLED.register(ClientRawInputEventListener::onMouseScrolled);
         ClientRawInputEvent.MOUSE_CLICKED_PRE.register(ClientRawInputEventListener::onMouseClicked);
     }

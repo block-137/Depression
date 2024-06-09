@@ -1,27 +1,11 @@
 {
   "mappings": {
-    "net/depression/mixin/BowItemMixin": {
-      "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
-    },
     "net/depression/mixin/CakeBlockMixin": {
       "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
       "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
     },
-    "net/depression/mixin/CrossbowItemMixin": {
-      "onCrossbowShot": "Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V"
-    },
-    "net/depression/mixin/ItemStackMixin": {
-      "getUseDuration": "Lnet/minecraft/class_1799;method_7935()I"
-    },
     "net/depression/mixin/JukeboxBlockEntityMixin": {
       "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
-    },
-    "net/depression/mixin/LivingEntityMixin": {
-      "Lnet/minecraft/world/item/ItemStack;getUseDuration()I": "Lnet/minecraft/class_1799;method_7935()I",
-      "startUsingItem": "Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V"
-    },
-    "net/depression/mixin/LocalPlayerMixin": {
-      "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V"
     },
     "net/depression/mixin/PlayerMixin": {
       "Lnet/minecraft/world/entity/player/Player;causeFoodExhaustion(F)V": "Lnet/minecraft/class_1657;method_7322(F)V",
@@ -31,32 +15,46 @@
       "readAdditionalSaveData": "Lnet/minecraft/class_1657;method_5749(Lnet/minecraft/class_2487;)V",
       "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
       "tick": "Lnet/minecraft/class_1657;method_5773()V"
+    },
+    "net/depression/mixin/StructureTemplatePoolAccess": {
+      "rawTemplates": "field_16864:Ljava/util/List;",
+      "templates": "field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"
+    },
+    "net/depression/mixin/TagManagerMixin": {
+      "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
+    },
+    "net/depression/mixin/client/BookViewScreenMixin": {
+      "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_332;IIF)V"
+    },
+    "net/depression/mixin/client/FontAccess": {
+      "splitter": "field_24238:Lnet/minecraft/class_5225;"
+    },
+    "net/depression/mixin/client/LocalPlayerMixin": {
+      "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
+      "openItemGui": "Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V"
+    },
+    "net/depression/mixin/symptom/BowItemMixin": {
+      "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
+    },
+    "net/depression/mixin/symptom/CrossbowItemMixin": {
+      "onCrossbowShot": "Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V"
+    },
+    "net/depression/mixin/symptom/ItemStackMixin": {
+      "getUseDuration": "Lnet/minecraft/class_1799;method_7935()I"
+    },
+    "net/depression/mixin/symptom/LivingEntityMixin": {
+      "Lnet/minecraft/world/item/ItemStack;getUseDuration()I": "Lnet/minecraft/class_1799;method_7935()I",
+      "startUsingItem": "Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V"
     }
   },
   "data": {
     "named:intermediary": {
-      "net/depression/mixin/BowItemMixin": {
-        "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
-      },
       "net/depression/mixin/CakeBlockMixin": {
         "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
         "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
       },
-      "net/depression/mixin/CrossbowItemMixin": {
-        "onCrossbowShot": "Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V"
-      },
-      "net/depression/mixin/ItemStackMixin": {
-        "getUseDuration": "Lnet/minecraft/class_1799;method_7935()I"
-      },
       "net/depression/mixin/JukeboxBlockEntityMixin": {
         "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
-      },
-      "net/depression/mixin/LivingEntityMixin": {
-        "Lnet/minecraft/world/item/ItemStack;getUseDuration()I": "Lnet/minecraft/class_1799;method_7935()I",
-        "startUsingItem": "Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V"
-      },
-      "net/depression/mixin/LocalPlayerMixin": {
-        "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V"
       },
       "net/depression/mixin/PlayerMixin": {
         "Lnet/minecraft/world/entity/player/Player;causeFoodExhaustion(F)V": "Lnet/minecraft/class_1657;method_7322(F)V",
@@ -66,6 +64,36 @@
         "readAdditionalSaveData": "Lnet/minecraft/class_1657;method_5749(Lnet/minecraft/class_2487;)V",
         "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
         "tick": "Lnet/minecraft/class_1657;method_5773()V"
+      },
+      "net/depression/mixin/StructureTemplatePoolAccess": {
+        "rawTemplates": "field_16864:Ljava/util/List;",
+        "templates": "field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"
+      },
+      "net/depression/mixin/TagManagerMixin": {
+        "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
+      },
+      "net/depression/mixin/client/BookViewScreenMixin": {
+        "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_332;IIF)V"
+      },
+      "net/depression/mixin/client/FontAccess": {
+        "splitter": "field_24238:Lnet/minecraft/class_5225;"
+      },
+      "net/depression/mixin/client/LocalPlayerMixin": {
+        "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
+        "openItemGui": "Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V"
+      },
+      "net/depression/mixin/symptom/BowItemMixin": {
+        "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
+      },
+      "net/depression/mixin/symptom/CrossbowItemMixin": {
+        "onCrossbowShot": "Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V"
+      },
+      "net/depression/mixin/symptom/ItemStackMixin": {
+        "getUseDuration": "Lnet/minecraft/class_1799;method_7935()I"
+      },
+      "net/depression/mixin/symptom/LivingEntityMixin": {
+        "Lnet/minecraft/world/item/ItemStack;getUseDuration()I": "Lnet/minecraft/class_1799;method_7935()I",
+        "startUsingItem": "Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V"
       }
     }
   }

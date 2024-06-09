@@ -2,16 +2,14 @@ package net.depression.mental;
 
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.CloseEyePacket;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
+import java.util.Collection;
 import java.util.Random;
 
 public class MentalIllness {
@@ -20,8 +18,8 @@ public class MentalIllness {
     private int sleepAttemptCount = 0;
     private Long nextCloseEyeTime;
     public final Random random = new Random();
-    private final ServerPlayer player;
     private final MentalStatus mentalStatus;
+    private ServerPlayer player;
 
     //以下是临时变量
     public ItemStack lastEatItem;
@@ -31,7 +29,8 @@ public class MentalIllness {
         this.mentalStatus = mentalStatus;
     }
 
-    public void tick() {
+    public void tick(ServerPlayer player) {
+        this.player = player;
         mentalHealthLevel = getMentalHealthLevel(mentalStatus.mentalHealthValue);
         if (isInsomnia != null && isInsomnia && mentalHealthLevel == 0) {
             isInsomnia = false;
@@ -100,6 +99,7 @@ public class MentalIllness {
                         amplifier = 0;
                     }
                 }
+                Collection<MobEffectInstance> effects = player.getActiveEffects();
                 MobEffectInstance mining_fatigue = new MobEffectInstance(MobEffects.DIG_SLOWDOWN, duration, amplifier, false, true, true);
                 MobEffectInstance slowness = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, amplifier, false, true, true);
                 MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, duration, amplifier, false, true, true);

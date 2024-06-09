@@ -4,16 +4,20 @@
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
-    "LocalPlayerMixin"
+    "client.BookViewScreenMixin",
+    "client.FontAccess",
+    "client.LocalPlayerMixin"
   ],
   "mixins": [
-    "BowItemMixin",
     "CakeBlockMixin",
-    "CrossbowItemMixin",
-    "ItemStackMixin",
     "JukeboxBlockEntityMixin",
-    "LivingEntityMixin",
-    "PlayerMixin"
+    "PlayerMixin",
+    "StructureTemplatePoolAccess",
+    "TagManagerMixin",
+    "symptom.BowItemMixin",
+    "symptom.CrossbowItemMixin",
+    "symptom.ItemStackMixin",
+    "symptom.LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

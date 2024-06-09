@@ -1,9 +1,9 @@
 package net.depression.mixin;
 
 import net.depression.mental.MentalStatus;
-import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
+import net.depression.server.StatManager;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -12,8 +12,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.HoneyBottleItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
@@ -26,17 +24,29 @@ import java.util.UUID;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin {
+
     @Inject(method = "tick", at = @At("TAIL"))
     private void tick(CallbackInfo ci) {
         Player player = (Player) (Object) this;
-        if (player.level().isClientSide() || player.isCreative() || player.isSpectator() || player.isDeadOrDying())
+        if (player.level().isClientSide())
+            return;
+        StatManager stat = Registry.statManager.get(player.getUUID());
+        if (stat == null) {
+            stat = new StatManager();
+            Registry.statManager.put(player.getUUID(), stat);
+        }
+        if (player.level().getDayTime() % 24000 == 0) {  //每天0时更新一次旧统计数据
+            stat.updateStat((ServerPlayer) player);
+        }
+
+        if (player.isCreative() || player.isSpectator() || player.isDeadOrDying())
             return;
         MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
         if (mentalStatus == null) {
             mentalStatus = new MentalStatus((ServerPlayer) player);
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
-        mentalStatus.tick();
+        mentalStatus.tick((ServerPlayer) player);
     }
 
     @Inject(method = "stopSleepInBed", at = @At("TAIL"))
@@ -68,6 +78,8 @@ public abstract class PlayerMixin {
             return;
         }
         ServerPlayer player = (ServerPlayer) (Object) this;
+        StatManager stat = Registry.statManager.get(player.getUUID());
+        stat.hasAte = true;
         MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
         if (mentalStatus == null) {
             mentalStatus = new MentalStatus(player);
@@ -134,6 +146,16 @@ public abstract class PlayerMixin {
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
         mentalStatus.readNbt(tag);
+
+        StatManager statManager = Registry.statManager.get(player.getUUID()); //读取玩家的旧统计数据
+        if (statManager == null) {
+            statManager = new StatManager();
+            Registry.statManager.put(player.getUUID(), statManager);
+        }
+        if (tag.contains("old_stats")) {
+            CompoundTag oldStats = tag.getCompound("old_stats");
+            statManager.readNbt(oldStats);
+        }
     }
 
     @Inject(method = "addAdditionalSaveData", at = @At(value = "TAIL"))
@@ -146,10 +168,27 @@ public abstract class PlayerMixin {
         if (mentalStatus == null) {
             return;
         }
+
         mentalStatus.writeNbt(tag);
+
+        StatManager stat = Registry.statManager.get(uuid);
+        if (stat == null) {
+            return;
+        }
+        CompoundTag oldStats; //保存玩家的旧统计数据
+        if (tag.contains("old_stats")) {
+            oldStats = tag.getCompound("old_stats");
+        }
+        else {
+            oldStats = new CompoundTag();
+        }
+        stat.writeNbt(oldStats);
+        tag.put("old_stats", oldStats);
+
         if (Registry.quitPlayers.contains(uuid)) { //若玩家已经退出游戏，删除玩家的心理状态
             Registry.quitPlayers.remove(uuid);
             Registry.mentalStatus.remove(uuid);
+            Registry.statManager.remove(uuid); //也删除玩家的旧统计数据
         }
     }
 }

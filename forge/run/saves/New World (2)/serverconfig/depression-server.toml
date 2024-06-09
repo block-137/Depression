@@ -1,7 +1,0 @@
-#The speed of emotion stabilization. The higher the value, the faster the emotion will stabilize.
-#Range: 0.0 ~ 20.0
-emotion_stabilize_speed = 0.1
-#The speed of depression change. The higher the value, the faster the depression will change.
-#Range: 0.0 ~ 1.7976931348623157E308
-depression_change_speed = 0.05
-

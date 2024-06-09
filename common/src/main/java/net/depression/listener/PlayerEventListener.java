@@ -3,6 +3,7 @@ package net.depression.listener;
 import dev.architectury.event.EventResult;
 import net.depression.mental.MentalStatus;
 import net.depression.server.Registry;
+import net.minecraft.advancements.Advancement;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
@@ -45,5 +46,20 @@ public class PlayerEventListener {
         }
         mentalStatus.mentalIllness.trigMentalFatigue();
         return EventResult.pass();
+    }
+
+    public static void onPlayerAdvancement(ServerPlayer player, Advancement advancement) {
+        if (player.isCreative() || player.isSpectator()) {
+            return;
+        }
+        String id = advancement.getId().toString();
+        if (MentalStatus.healAdvancement.containsKey(id)) {
+            MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
+            if (mentalStatus == null) {
+                mentalStatus = new MentalStatus(player);
+                Registry.mentalStatus.put(player.getUUID(), mentalStatus);
+            }
+            mentalStatus.mentalHeal(MentalStatus.healAdvancement.get(id));
+        }
     }
 }

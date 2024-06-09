@@ -1,1 +1,8 @@
 v1	named	intermediary
+FIELD	net/depression/mixin/client/BookViewScreenMixin	Lnet/minecraft/client/gui/screens/inventory/BookViewScreen$BookAccess;	bookAccess	field_17418
+FIELD	net/depression/mixin/client/BookViewScreenMixin	I	cachedPage	field_17121
+FIELD	net/depression/mixin/client/BookViewScreenMixin	I	currentPage	field_17119
+FIELD	net/depression/mixin/client/BookViewScreenMixin	Ljava/util/List;	cachedPageComponents	field_17120
+FIELD	net/depression/mixin/client/BookViewScreenMixin	Lnet/minecraft/network/chat/Component;	pageMsg	field_25897
+METHOD	net/depression/mixin/client/BookViewScreenMixin	()I	getNumPages	method_17055
+METHOD	net/depression/mixin/client/BookViewScreenMixin	(DD)Lnet/minecraft/network/chat/Style;	getClickedComponentStyleAt	method_17048

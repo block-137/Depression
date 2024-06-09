@@ -15,4 +15,5 @@ public final class DepressionForge {
         Depression.init();
         ServerConfig.load();
     }
+
 }
