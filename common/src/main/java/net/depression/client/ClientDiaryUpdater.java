@@ -40,6 +40,7 @@ public class ClientDiaryUpdater {
     public static Player player;
     public static InteractionHand interactionHand;
     public static ItemStack curDiaryItem;
+    public static Random random = new Random();
     public static final ResourceLocation writeSound = new ResourceLocation( "assets/diary_sound/write_diary");
 
     public static void setInfo(DiaryItem diaryItem, Level level, Player player, InteractionHand interactionHand) {
@@ -50,6 +51,7 @@ public class ClientDiaryUpdater {
     }
 
     public static void receiveDiaryUpdatePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        level.playSeededSound(player, player.getX(), player.getY(), player.getZ(), ModSounds.WRITE_DIARY.get(), SoundSource.PLAYERS, 1.0F, 1.0F, random.nextLong());
         //解析文本
         CharSequence rawContent = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset);
         StringBuilder content;

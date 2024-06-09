@@ -36,7 +36,6 @@ public class DiaryItem extends WrittenBookItem {
                     Registry.diaryUpdate((ServerPlayer) player, itemStack);
                 }
                 else {
-                    player.playSound(ModSounds.WRITE_DIARY.get()); //播放音效
                     ClientDiaryUpdater.setInfo(this, level, player, interactionHand);
                 }
             }
@@ -55,7 +54,6 @@ public class DiaryItem extends WrittenBookItem {
                     Registry.diaryUpdate((ServerPlayer) player, itemStack);
                 }
                 else {
-                    player.playSound(ModSounds.WRITE_DIARY.get()); //播放音效
                     ClientDiaryUpdater.setInfo(this, level, player, interactionHand);
                 }
             }
