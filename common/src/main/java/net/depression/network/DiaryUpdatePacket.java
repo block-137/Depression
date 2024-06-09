@@ -4,6 +4,7 @@ import dev.architectury.networking.NetworkManager;
 import io.netty.buffer.Unpooled;
 import net.depression.Depression;
 import net.depression.item.diary.ConditionComponents;
+import net.depression.mental.MentalStatus;
 import net.depression.server.Registry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +25,14 @@ public class DiaryUpdatePacket {
 
     public static void sendToPlayer(ServerPlayer player) {
         FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
-        double mentalHealthValue = Registry.mentalStatus.get(player.getUUID()).mentalHealthValue;
+        MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
+        double mentalHealthValue;
+        if (mentalStatus == null) {
+            mentalHealthValue = 100;
+        }
+        else {
+            mentalHealthValue = mentalStatus.mentalHealthValue;
+        }
         String content = "";
         if (85 <= mentalHealthValue && mentalHealthValue <= 100) { //健康1
             content = "　　'diary.depression.healthy_1.1'  　　"

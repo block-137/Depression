@@ -3,6 +3,7 @@ package net.depression.item;
 import net.depression.client.ClientActionbarHint;
 import net.depression.client.ClientDiaryUpdater;
 import net.depression.server.Registry;
+import net.depression.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -35,6 +36,7 @@ public class DiaryItem extends WrittenBookItem {
                     Registry.diaryUpdate((ServerPlayer) player, itemStack);
                 }
                 else {
+                    player.playSound(ModSounds.WRITE_DIARY.get()); //播放音效
                     ClientDiaryUpdater.setInfo(this, level, player, interactionHand);
                 }
             }
@@ -53,6 +55,7 @@ public class DiaryItem extends WrittenBookItem {
                     Registry.diaryUpdate((ServerPlayer) player, itemStack);
                 }
                 else {
+                    player.playSound(ModSounds.WRITE_DIARY.get()); //播放音效
                     ClientDiaryUpdater.setInfo(this, level, player, interactionHand);
                 }
             }

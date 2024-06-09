@@ -19,7 +19,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEventListener {
     public static EventResult onBlockBreak(Level level, BlockPos pos, BlockState state, ServerPlayer player, IntValue intValue) {
-        Depression.LOGGER.info(level.getDayTime() + "");
         if (player.isCreative()) {
             return EventResult.pass();
         }

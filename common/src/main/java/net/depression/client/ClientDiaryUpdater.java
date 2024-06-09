@@ -50,8 +50,6 @@ public class ClientDiaryUpdater {
     }
 
     public static void receiveDiaryUpdatePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
-        //播放音效
-        player.playSound(ModSounds.WRITE_DIARY.get());
         //解析文本
         CharSequence rawContent = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset);
         StringBuilder content;
