@@ -11,6 +11,7 @@
   "mixins": [
     "CakeBlockMixin",
     "JukeboxBlockEntityMixin",
+    "MilkBucketItemMixin",
     "PlayerMixin",
     "StructureTemplatePoolAccess",
     "TagManagerMixin",

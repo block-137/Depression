@@ -43,13 +43,13 @@ public class ClientMentalStatus {
             return;
         }
         if (mentalIllnessString != null && !mentalIllnessString.equals(curIllness)) {
-            if (mentalIllnessString.isEmpty()) {
+            if (mentalIllnessString.equals("healthy")) {
                 Minecraft.getInstance().gui.setOverlayMessage(
                         Component.translatable("message.depression.develop_illness_1")
                                 .append(Component.translatable("message.depression." + curIllness))
                                 .append(Component.translatable("message.depression.develop_illness_2")), false);
             }
-            else if (curIllness.isEmpty()) {
+            else if (curIllness.equals("healthy")) {
                 Minecraft.getInstance().gui.setOverlayMessage(
                         Component.translatable("message.depression.illness_cure_1")
                                 .append(Component.translatable("message.depression." + mentalIllnessString))
@@ -125,6 +125,7 @@ public class ClientMentalStatus {
 
     public static String getMentalIllness(int mentalHealthLevel) {
         return switch (mentalHealthLevel) {
+            case 0 -> "healthy";
             case 1 -> "mild_depression";
             case 2 -> "moderate_depression";
             case 3 -> "major_depressive_disorder";

@@ -2,17 +2,11 @@ package net.depression.client;
 
 
 import dev.architectury.networking.NetworkManager;
-import net.depression.Depression;
 import net.depression.item.DiaryItem;
 import net.depression.mixin.client.FontAccess;
 import net.depression.network.DiaryUpdatePacket;
-import net.depression.sound.ModSounds;
 import net.depression.util.Tools;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.sounds.BeeSoundInstance;
-import net.minecraft.client.resources.sounds.SimpleSoundInstance;
-import net.minecraft.client.resources.sounds.Sound;
-import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -22,8 +16,6 @@ import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -51,7 +43,7 @@ public class ClientDiaryUpdater {
     }
 
     public static void receiveDiaryUpdatePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
-        level.playSeededSound(player, player.getX(), player.getY(), player.getZ(), ModSounds.WRITE_DIARY.get(), SoundSource.PLAYERS, 1.0F, 1.0F, random.nextLong());
+        player.playSound(SoundEvents.VILLAGER_WORK_CARTOGRAPHER);
         //解析文本
         CharSequence rawContent = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset);
         StringBuilder content;

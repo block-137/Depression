@@ -89,8 +89,8 @@ public abstract class PlayerMixin {
             player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
         }
         FoodProperties foodProperties = itemStack.getItem().getFoodProperties();
-        mentalStatus.mentalHeal(foodProperties.getNutrition() / 2f
-                * (1+foodProperties.getSaturationModifier()*2f) //获得饱食度+饱和度
+        mentalStatus.mentalHeal(itemStack.getItem().arch$registryName().toString(), foodProperties.getNutrition() / 2f
+                * (1+foodProperties.getSaturationModifier() * 2f) //获得饱食度+饱和度
                 * foodProperties.getSaturationModifier() //乘以营养等级
                 * MentalStatus.FOOD_HEAL_RATE); //乘以食物治疗倍率
     }

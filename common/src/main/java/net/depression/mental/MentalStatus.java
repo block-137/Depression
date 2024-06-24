@@ -4,7 +4,9 @@ import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -79,7 +81,9 @@ public class MentalStatus {
                 Double originValue = PTSD.get(string);
                 if (originValue == null) {
                     originValue = 0d;
-                    ActionbarHintPacket.sendPTSDFormPacket(player, string);
+                    EntityType.byString(string).ifPresentOrElse(
+                            entityType -> ActionbarHintPacket.sendPTSDFormPacket(player, entityType.getDescription()),
+                            () -> ActionbarHintPacket.sendPTSDFormPacket(player, Component.translatable("message.depression.damagesource." + string)));
                 }
                 PTSD.put(string, Math.min(originValue + damage, 10d)); //保证PTSD不超过上限
                 PTSDTimeBuffer.remove(string);
@@ -104,7 +108,9 @@ public class MentalStatus {
                 if (entry.getValue() <= 0) { //如果PTSD值归零，则移除PTSD
                     String id = entry.getKey();
                     PTSD.remove(id);
-                    ActionbarHintPacket.sendPTSDDispersePacket(player, id);
+                    EntityType.byString(id).ifPresentOrElse(
+                            entityType -> ActionbarHintPacket.sendPTSDDispersePacket(player, entityType.getDescription()),
+                            () -> ActionbarHintPacket.sendPTSDDispersePacket(player, Component.translatable("message.depression.damagesource." + id)));
                 }
             }
             //处理精神健康值
@@ -139,7 +145,7 @@ public class MentalStatus {
                 attackDamage.removeModifier(emotionModifier);
                 attackSpeed.removeModifier(emotionModifier);
             }
-            emotionModifier = new AttributeModifier("depression:emotion_modifier", emotionValue / 100d, AttributeModifier.Operation.MULTIPLY_TOTAL);
+            emotionModifier = new AttributeModifier("depression:emotion_modifier", emotionValue * 1.5f / 100f - mentalIllness.mentalHealthLevel / 10f, AttributeModifier.Operation.MULTIPLY_TOTAL);
             movementSpeed.addTransientModifier(emotionModifier);
             attackDamage.addTransientModifier(emotionModifier);
             attackSpeed.addTransientModifier(emotionModifier);
@@ -272,11 +278,17 @@ public class MentalStatus {
             PTSDValueBuffer.put(key, ptsdValueBuffer.getDouble(key));
         }
         //读取情绪值
-        emotionValue = tag.getDouble("emotion_value");
+        if (tag.contains("emotion_value")) {
+            emotionValue = tag.getDouble("emotion_value");
+        }
         //读取精神健康值
-        mentalHealthValue = tag.getDouble("mental_health_value");
+        if (tag.contains("mental_health_value")) {
+            mentalHealthValue = tag.getDouble("mental_health_value");
+        }
         //读取精神疾病
-        mentalIllness.readNbt(tag);
+        if (tag.contains("mental_illness")) {
+            mentalIllness.readNbt(tag);
+        }
     }
 
     public void writeNbt(CompoundTag tag) {

@@ -7,6 +7,9 @@
     "net/depression/mixin/JukeboxBlockEntityMixin": {
       "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
     },
+    "net/depression/mixin/MilkBucketItemMixin": {
+      "finishUsingItem": "Lnet/minecraft/class_1805;method_7861(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;)Lnet/minecraft/class_1799;"
+    },
     "net/depression/mixin/PlayerMixin": {
       "Lnet/minecraft/world/entity/player/Player;causeFoodExhaustion(F)V": "Lnet/minecraft/class_1657;method_7322(F)V",
       "actuallyHurt": "Lnet/minecraft/class_1657;method_6074(Lnet/minecraft/class_1282;F)V",
@@ -55,6 +58,9 @@
       },
       "net/depression/mixin/JukeboxBlockEntityMixin": {
         "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
+      },
+      "net/depression/mixin/MilkBucketItemMixin": {
+        "finishUsingItem": "Lnet/minecraft/class_1805;method_7861(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;)Lnet/minecraft/class_1799;"
       },
       "net/depression/mixin/PlayerMixin": {
         "Lnet/minecraft/world/entity/player/Player;causeFoodExhaustion(F)V": "Lnet/minecraft/class_1657;method_7322(F)V",

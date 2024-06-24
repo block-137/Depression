@@ -3,7 +3,6 @@ package net.depression.item;
 import net.depression.client.ClientActionbarHint;
 import net.depression.client.ClientDiaryUpdater;
 import net.depression.server.Registry;
-import net.depression.sound.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;

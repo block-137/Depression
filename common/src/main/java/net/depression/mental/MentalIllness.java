@@ -1,15 +1,14 @@
 package net.depression.mental;
 
+import net.depression.effect.ModEffects;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.CloseEyePacket;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import java.util.Collection;
 import java.util.Random;
 
 public class MentalIllness {
@@ -21,9 +20,6 @@ public class MentalIllness {
     private final MentalStatus mentalStatus;
     private ServerPlayer player;
 
-    //以下是临时变量
-    public ItemStack lastEatItem;
-
     public MentalIllness(ServerPlayer player, MentalStatus mentalStatus) {
         this.player = player;
         this.mentalStatus = mentalStatus;
@@ -31,6 +27,8 @@ public class MentalIllness {
 
     public void tick(ServerPlayer player) {
         this.player = player;
+
+
         mentalHealthLevel = getMentalHealthLevel(mentalStatus.mentalHealthValue);
         if (isInsomnia != null && isInsomnia && mentalHealthLevel == 0) {
             isInsomnia = false;
@@ -63,22 +61,12 @@ public class MentalIllness {
 
     public void trigMentalFatigue() {
         if (mentalHealthLevel > 0) {
-            boolean ifTrig;
-            switch (mentalHealthLevel) {
-                case 1 -> {
-                    ifTrig = random.nextDouble() < 0.01d;
-                }
-                case 2 -> {
-                    ifTrig = random.nextDouble() < 0.02d;
-                }
-                case 3 -> {
-                    ifTrig = random.nextDouble() < 0.03d;
-                }
-                default -> {
-                    ifTrig = false;
-                }
+            double chance = mentalHealthLevel * 0.02;
+            MobEffectInstance antiDepression = player.getEffect(ModEffects.ANTI_DEPRESSION.get());
+            if (antiDepression != null) {
+                chance += (antiDepression.getAmplifier() + 1) * 0.02;
             }
-            if (ifTrig) {
+            if (random.nextDouble() < chance) {
                 int duration;
                 int amplifier;
                 switch (mentalHealthLevel) {
@@ -95,11 +83,10 @@ public class MentalIllness {
                         amplifier = 1;
                     }
                     default -> {
-                        duration = 0;
+                        duration = 60;
                         amplifier = 0;
                     }
                 }
-                Collection<MobEffectInstance> effects = player.getActiveEffects();
                 MobEffectInstance mining_fatigue = new MobEffectInstance(MobEffects.DIG_SLOWDOWN, duration, amplifier, false, true, true);
                 MobEffectInstance slowness = new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, duration, amplifier, false, true, true);
                 MobEffectInstance weakness = new MobEffectInstance(MobEffects.WEAKNESS, duration, amplifier, false, true, true);

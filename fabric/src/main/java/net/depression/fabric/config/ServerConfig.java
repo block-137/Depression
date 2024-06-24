@@ -51,7 +51,7 @@ public class ServerConfig {
             config.set("ptsd_damage_rate", 0.5);
         }
         if (!config.contains("ptsd_disperse_rate")) {
-            config.set("ptsd_disperse_rate", 0.02);
+            config.set("ptsd_disperse_rate", 0.01);
         }
         if (!config.contains("boredom_decrease_tick")) {
             config.set("boredom_decrease_tick", 200);

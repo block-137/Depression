@@ -1,10 +1,12 @@
 package net.depression.mixin.symptom;
 
+import net.depression.item.MedicineItem;
 import net.depression.util.TempValues;
 import net.depression.util.Tools;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,7 +27,8 @@ public abstract class LivingEntityMixin {
         if (livingEntity instanceof Player) {
             ItemStack itemStack = livingEntity.getItemInHand(interactionHand);
             TempValues.playerMentalHealthLevel = Tools.getPlayerMentalHealthLevel((Player) livingEntity);
-            if (itemStack.getItem().getFoodProperties() != null && TempValues.playerMentalHealthLevel >= 2) { //如果吃的是食物且玩家食欲不振
+            Item item = itemStack.getItem();
+            if (item.getFoodProperties() != null && !(item instanceof MedicineItem) && TempValues.playerMentalHealthLevel >= 2) { //如果吃的是食物且玩家食欲不振
                 TempValues.isCalledByDepressedPlayer = true;
                 return;
             }

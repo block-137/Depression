@@ -1,14 +1,15 @@
 {
   "schemaVersion": 1,
   "id": "depression",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "name": "Depression",
   "description": "This is a mod that adds depression to Minecraft.",
   "authors": [
     "block_137",
     "SimoTCD",
     "TheMoonAries",
-    "Tianxin_Limao"
+    "Tianxin_Limao",
+    "hhxkzhy"
   ],
   "license": "LGPL-3.0",
   "icon": "assets/depression/icon.png",
@@ -25,11 +26,10 @@
     "depression.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.22",
-    "minecraft": "~1.20.1",
+    "fabricloader": ">=0.14.1",
+    "minecraft": ">=1.17.1",
     "java": ">=17",
-    "architectury": ">=9.2.14",
-    "fabric-api": "*"
+    "architectury": ">=2.10.10"
   },
   "suggests": {
     "another-mod": "*"

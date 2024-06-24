@@ -7,7 +7,7 @@ license = "LGPL-3.0"
 modId = "depression"
 version = "${version}"
 displayName = "Depression"
-authors = "block_137, SimoTCD, TheMoonAries, Tianxin_Limao"
+authors = "block_137, SimoTCD, TheMoonAries, Tianxin_Limao, hhxkzhy"
 description = '''
 This is a mod that adds depression to Minecraft.
 '''
@@ -23,13 +23,13 @@ side = "BOTH"
 [[dependencies.depression]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.1,)"
+versionRange = "[1.17.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.depression]]
 modId = "architectury"
 mandatory = true
-versionRange = "[9.2.14,)"
+versionRange = "[2.10.10,)"
 ordering = "AFTER"
 side = "BOTH"
