@@ -1,6 +1,7 @@
 package net.depression.client;
 
 import dev.architectury.networking.NetworkManager;
+import net.depression.network.ActionbarHintPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.network.FriendlyByteBuf;
@@ -27,6 +28,29 @@ public class ClientActionbarHint {
         Gui gui = Minecraft.getInstance().gui;
         gui.setOverlayMessage(Component.translatable(string), false);
     }
+
+    public void receiveNearbyBlockHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        Component id = buf.readComponent();
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable("message.depression.nearby_block_heal_hint_1")
+                .append(id)
+                .append(Component.translatable("message.depression.nearby_block_heal_hint_2")), false);
+    }
+    public void receiveBreakBlockHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        Component id = buf.readComponent();
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable("message.depression.break_block_heal_hint_1")
+                .append(id)
+                .append(Component.translatable("message.depression.break_block_heal_hint_2")), false);
+    }
+    public void receiveKillEntityHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        Component id = buf.readComponent();
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable("message.depression.kill_entity_heal_hint_1")
+                .append(id)
+                .append(Component.translatable("message.depression.kill_entity_heal_hint_2")), false);
+    }
+
     public void receivePTSDFormPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
         Component id = buf.readComponent();
         Gui gui = Minecraft.getInstance().gui;

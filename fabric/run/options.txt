@@ -34,7 +34,7 @@ gamma:0.5
 renderDistance:12
 simulationDistance:12
 entityDistanceScaling:1.0
-guiScale:2
+guiScale:4
 particles:0
 maxFps:260
 graphicsMode:1
@@ -45,7 +45,7 @@ renderClouds:"true"
 resourcePacks:["vanilla","fabric"]
 incompatibleResourcePacks:[]
 lastServer:
-lang:en_us
+lang:zh_tw
 soundDevice:""
 chatVisibility:0
 chatOpacity:1.0
@@ -72,7 +72,7 @@ tutorialStep:none
 mouseWheelSensitivity:1.0
 rawMouseInput:true
 glDebugVerbosity:1
-skipMultiplayerWarning:false
+skipMultiplayerWarning:true
 skipRealms32bitWarning:false
 hideMatchedNames:true
 joinedFirstServer:true

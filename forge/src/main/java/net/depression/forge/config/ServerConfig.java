@@ -199,58 +199,55 @@ public class ServerConfig {
                 # FLOWERS
                                         
                 ["minecraft:dandelion"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                 ["minecraft:poppy"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                 ["minecraft:blue_orchid"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:allium"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:azure_bluet"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                 ["minecraft:red_tulip"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:orange_tulip"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:white_tulip"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:pink_tulip"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:oxeye_daisy"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                 ["minecraft:cornflower"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                 ["minecraft:lily_of_the_valley"]
-                value = 0.5
-                radius = 8
-                ["minecraft:wither_rose"]
-                value = 0
+                value = 0.3
                 radius = 8
                 ["minecraft:torchflower"]
                 value = 1
                 radius = 8
                 ["minecraft:sunflower"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:lilac"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:rose_bush"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:peony"]
-                value = 0.625
+                value = 0.4
                 radius = 8
                 ["minecraft:pitcher_plant"]
                 value = 1
@@ -259,64 +256,61 @@ public class ServerConfig {
                 # LEAVES
                                         
                 ["minecraft:oak_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:spruce_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:birch_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:jungle_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:acacia_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:dark_oak_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:azalea_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:flowering_azalea_leaves"]
-                value = 0.5
+                value = 0.2
                 radius = 8
                 ["minecraft:mangrove_leaves"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                 ["minecraft:cherry_leaves"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                                         
                 # OTHER_PLANTS
                                         
                 ["minecraft:spore_blossom"]
-                value = 0.75
+                value = 0.3
                 radius = 12
                 ["minecraft:azalea"]
-                value = 0.5
+                value = 0.3
                 radius = 12
                 ["minecraft:flowering_azalea"]
-                value = 0.75
+                value = 0.4
                 radius = 12
                 ["minecraft:pink_petals"]
-                value = 0.75
+                value = 0.4
                 radius = 6
                 ["minecraft:sea_pickle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:lily_pad"]
-                value = 0.125
+                value = 0.1
                 radius = 6
                 ["minecraft:waterlily"]
-                value = 0.125
-                radius = 6
-                ["minecraft:carved_pumpkin"]
-                value = 0.125
+                value = 0.1
                 radius = 6
                 ["minecraft:shroomlight"]
-                value = 0.375
+                value = 0.1
                 radius = 8
                                         
                 # UTILITIES
@@ -327,65 +321,59 @@ public class ServerConfig {
                 ["minecraft:conduit"]
                 value = 1.25
                 radius = 12
-                ["minecraft:respawn_anchor"]
-                value = 0.375
-                radius = 12
-                ["minecraft:enchanting_table"]
-                value = 0.375
-                radius = 8
                                         
                 # CANDLES
                                         
                 ["minecraft:candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:white_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:orange_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:magenta_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:light_blue_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:yellow_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:lime_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:pink_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:gray_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:light_gray_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:cyan_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:purple_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:blue_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:brown_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:green_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:red_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                 ["minecraft:black_candle"]
-                value = 0.375
+                value = 0.2
                 radius = 6
                                         
                 # FIRELIGHTS
@@ -394,89 +382,86 @@ public class ServerConfig {
                 value = 0.5
                 radius = 12
                 ["minecraft:soul_campfire"]
-                value = 0.5
+                value = 0.25
                 radius = 12
                 ["minecraft:torch"]
-                value = 0.125
+                value = 0.05
                 radius = 6
                 ["minecraft:soul_torch"]
-                value = 0.125
+                value = 0.025
                 radius = 6
                 ["minecraft:jack_o_lantern"]
-                value = 0.25
+                value = 0.2
                 radius = 8
                 ["minecraft:lit_pumpkin"]
-                value = 0.25
+                value = 0.2
                 radius = 8
                 ["minecraft:lantern"]
-                value = 0.25
+                value = 0.2
                 radius = 8
                 ["minecraft:soul_lantern"]
-                value = 0.25
+                value = 0.1
                 radius = 8
                                         
                 # COPPER_BULBS
                                         
                 ["minecraft:copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:exposed_copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:weathered_copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:oxidized_copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:waxed_copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:waxed_exposed_copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:waxed_weathered_copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:waxed_oxidized_copper_bulb"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                                         
                 # OTHER_GLOWING_BLOCKS
                                         
                 ["minecraft:end_rod"]
-                value = 0.125
+                value = 0.1
                 radius = 6
                 ["minecraft:glowstone"]
-                value = 0.25
+                value = 0.2
                 radius = 8
                 ["minecraft:redstone_lamp"]
-                value = 0.25
+                value = 0.2
                 radius = 8
                 ["minecraft:sea_lantern"]
-                value = 0.375
+                value = 0.2
                 radius = 8
                 ["minecraft:pearlescent_froglight"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                 ["minecraft:verdant_froglight"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                 ["minecraft:ochre_froglight"]
-                value = 0.5
+                value = 0.3
                 radius = 8
                                         
                 # DECORATIONS
                                         
                 ["minecraft:decorated_pot"]
-                value = 0.125
+                value = 0.1
                 radius = 4
                 ["minecraft:painting"]
-                value = 0.25
+                value = 0.1
                 radius = 6
-                ["minecraft:item_frame"]
-                value = 0.125
-                radius = 4
                 """);
         return writer;
     }

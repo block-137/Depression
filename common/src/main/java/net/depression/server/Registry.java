@@ -34,7 +34,7 @@ public class Registry {
         StringBuilder pageContent = new StringBuilder();
         for (int i = 0; i < rawContent.length(); ++i) {
             char c = rawContent.charAt(i);
-            if (c == '\'') {
+            if (c == '/') {
                 pages.add(StringTag.valueOf(pageContent.toString()));
                 pageContent = new StringBuilder();
             }

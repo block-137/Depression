@@ -3,7 +3,9 @@ package net.depression.listener;
 import dev.architectury.event.EventResult;
 import dev.architectury.utils.value.IntValue;
 import net.depression.Depression;
+import net.depression.client.ClientActionbarHint;
 import net.depression.mental.MentalStatus;
+import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
 import net.minecraft.core.BlockPos;
@@ -21,7 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEventListener {
     public static EventResult onBlockBreak(Level level, BlockPos pos, BlockState state, ServerPlayer player, IntValue intValue) {
-        if (player.isCreative()) {
+        if (player.isCreative() || !player.hasCorrectToolForDrops(state)) { //如果是创造模式或者没有用合适的工具挖，就不计入
             return EventResult.pass();
         }
         Block block = state.getBlock();
@@ -45,7 +47,10 @@ public class BlockEventListener {
                     }
                 }
             }
-            mentalStatus.mentalHeal(blockID, MentalStatus.breakHealBlock.get(blockID));
+            double healValue = mentalStatus.mentalHeal(blockID, MentalStatus.breakHealBlock.get(blockID));
+            if (healValue > 0.25) {
+                ActionbarHintPacket.sendBreakBlockHealPacket(player, block.getName());
+            }
             MentalStatusPacket.sendToPlayer(player, mentalStatus);
         }
         return EventResult.pass();

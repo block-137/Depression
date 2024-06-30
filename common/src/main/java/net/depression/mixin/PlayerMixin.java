@@ -1,5 +1,6 @@
 package net.depression.mixin;
 
+import net.depression.item.MedicineItem;
 import net.depression.mental.MentalStatus;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
@@ -39,13 +40,13 @@ public abstract class PlayerMixin {
             stat.updateStat((ServerPlayer) player);
         }
 
-        if (player.isCreative() || player.isSpectator() || player.isDeadOrDying())
-            return;
         MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
         if (mentalStatus == null) {
             mentalStatus = new MentalStatus((ServerPlayer) player);
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
+        if (player.isCreative() || player.isSpectator() || player.isDeadOrDying())
+            return;
         mentalStatus.tick((ServerPlayer) player);
     }
 
@@ -85,7 +86,7 @@ public abstract class PlayerMixin {
             mentalStatus = new MentalStatus(player);
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
-        if (mentalStatus.mentalIllness.mentalHealthLevel == 3) {
+        if (mentalStatus.mentalIllness.mentalHealthLevel == 3 && !(itemStack.getItem() instanceof MedicineItem)) { //如果是重度抑郁症患者吃了非药物食物
             player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
         }
         FoodProperties foodProperties = itemStack.getItem().getFoodProperties();

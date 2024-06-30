@@ -2,6 +2,7 @@ package net.depression.listener;
 
 import dev.architectury.event.EventResult;
 import net.depression.mental.MentalStatus;
+import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
 import net.minecraft.server.level.ServerPlayer;
@@ -43,7 +44,10 @@ public class EntityEventListener {
             if (entity != null && entity instanceof Player && MentalStatus.killHealEntity.containsKey(encodeId)) {
                 ServerPlayer player = (ServerPlayer) entity;
                 MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-                mentalStatus.mentalHeal(encodeId, MentalStatus.killHealEntity.get(encodeId));
+                double healValue = mentalStatus.mentalHeal(encodeId, MentalStatus.killHealEntity.get(encodeId));
+                if (healValue > 0.25) {
+                    ActionbarHintPacket.sendKillEntityHealPacket(player, livingEntity.getName());
+                }
                 MentalStatusPacket.sendToPlayer(player, mentalStatus);
             }
         }

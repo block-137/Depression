@@ -100,14 +100,14 @@ public class ClientDiaryUpdater {
             if (i % 14 == 0) { //每14行一页
                 listTag.add(StringTag.valueOf(pageContent.toString()));
                 sentToServerContent.append(pageContent);
-                sentToServerContent.append('\'');
+                sentToServerContent.append('/');
                 pageContent = new StringBuilder();
             }
         }
         if (list.size() % 14 != 0) { //如果最后一页不满14行
             listTag.add(StringTag.valueOf(pageContent.toString()));
             sentToServerContent.append(pageContent);
-            sentToServerContent.append('\'');
+            sentToServerContent.append('/');
         }
         //加入新的内容
         ListTag oldListTag = compoundTag.getList("pages", 8);

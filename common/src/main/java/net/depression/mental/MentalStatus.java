@@ -159,7 +159,7 @@ public class MentalStatus {
         emotionValue = Math.min(20d, emotionValue); //保证情绪值不超过上限
     }
 
-    public synchronized void mentalHeal(String string, double value) {
+    public synchronized double mentalHeal(String string, double value) {
         if (boredom.containsKey(string)) {
             boredom.put(string, boredom.get(string) + 1);
         }
@@ -168,6 +168,7 @@ public class MentalStatus {
         }
         value /= boredom.get(string) / 2d; //治疗值 /= 无聊值
         mentalHeal(value);
+        return value;
     }
 
     public synchronized void mentalHurt(double value) {
@@ -209,6 +210,7 @@ public class MentalStatus {
         Level level = player.level();
         int r = radiusMaxValue;
         String maxHealId = null;
+        Component maxHealName = null;
         double maxHealValue = 0;
         for (int x = -r; x <= r; ++x) { // -r <= x <= r
             int yLimit = (int) Math.sqrt(r*r - x*x);
@@ -233,6 +235,7 @@ public class MentalStatus {
                                 if (value > maxHealValue) {
                                     maxHealValue = value;
                                     maxHealId = id;
+                                    maxHealName = block.getName();
                                 }
                                 detected.add(id);
                             }
@@ -243,6 +246,9 @@ public class MentalStatus {
         }
         if (maxHealId != null) {
             mentalHeal(maxHealId, maxHealValue);
+            if (maxHealValue > 0.25) {
+                ActionbarHintPacket.sendNearbyBlockHealPacket(player, maxHealName);
+            }
         }
     }
 

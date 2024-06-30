@@ -20,6 +20,12 @@ public class DepressionClient {
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 MentalStatusPacket.MENTAL_HEALTH_PACKET, clientMentalStatus::receiveMentalHealthPacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                ActionbarHintPacket.NEARBY_BLOCK_HEAL_PACKET, clientActionbarHint::receiveNearbyBlockHealPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                ActionbarHintPacket.BREAK_BLOCK_HEAL_PACKET, clientActionbarHint::receiveBreakBlockHealPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                ActionbarHintPacket.KILL_ENTITY_HEAL_PACKET, clientActionbarHint::receiveKillEntityHealPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 ActionbarHintPacket.PTSD_FROM_PACKET, clientActionbarHint::receivePTSDFormPacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 ActionbarHintPacket.PTSD_DISPERSE_PACKET, clientActionbarHint::receivePTSDDispersePacket);
@@ -31,6 +37,7 @@ public class DepressionClient {
                 CloseEyePacket.CLOSE_EYE_PACKET, clientMentalStatus.mentalIllness::receiveCloseEyePacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 DiaryUpdatePacket.DIARY_UPDATE_PACKET, ClientDiaryUpdater::receiveDiaryUpdatePacket);
+
         ClientGuiEvent.RENDER_HUD.register(clientMentalStatus::renderHud);
         ClientLifecycleEvent.CLIENT_LEVEL_LOAD.register(ClientLifecycleEventListener::onClientLevelLoad);
         ClientRawInputEvent.MOUSE_SCROLLED.register(ClientRawInputEventListener::onMouseScrolled);

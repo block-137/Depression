@@ -1,6 +1,8 @@
 package net.depression.item;
 
 import net.depression.client.ClientActionbarHint;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -8,21 +10,33 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BannerItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class MedicineItem extends Item {
     public MobEffect effect;
     public int duration;
+    public String loreTranslationKey;
 
-    public MedicineItem(MobEffect effect, int duration, int amplifier) {
+    public MedicineItem(MobEffect effect, int duration, int amplifier, String loreTranslationKey) {
         super(new Properties().food(new FoodProperties.Builder().nutrition(0).saturationMod(0f).alwaysEat()
                 .effect(new MobEffectInstance(effect, duration, amplifier, false, false, true), 1.0F).build()).arch$tab(ModCreativeTabs.ITEMS_TAB));
         this.effect = effect;
         this.duration = duration;
+        this.loreTranslationKey = loreTranslationKey;
+    }
+
+    @Override
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
+        list.add(Component.translatable(loreTranslationKey).withStyle(ChatFormatting.GRAY));
     }
 
     @Override
