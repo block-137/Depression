@@ -1,7 +1,6 @@
 package net.depression.client;
 
 import dev.architectury.networking.NetworkManager;
-import net.depression.network.ActionbarHintPacket;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.network.FriendlyByteBuf;

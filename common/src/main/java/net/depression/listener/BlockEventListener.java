@@ -2,8 +2,6 @@ package net.depression.listener;
 
 import dev.architectury.event.EventResult;
 import dev.architectury.utils.value.IntValue;
-import net.depression.Depression;
-import net.depression.client.ClientActionbarHint;
 import net.depression.mental.MentalStatus;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
@@ -12,8 +10,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.ai.village.poi.PoiManager;
-import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;

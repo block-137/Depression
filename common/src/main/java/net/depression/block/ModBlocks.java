@@ -5,13 +5,10 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.depression.Depression;
 import net.depression.item.ModCreativeTabs;
 import net.depression.item.ModItems;
-import net.minecraft.client.model.VillagerModel;
-import net.minecraft.client.model.ZombieModel;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 

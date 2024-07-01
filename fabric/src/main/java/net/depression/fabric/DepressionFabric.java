@@ -4,7 +4,6 @@ import net.depression.Depression;
 import net.depression.fabric.config.ServerConfig;
 import net.depression.fabric.world.FabricVillageAdditions;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.world.entity.npc.VillagerTrades;
 
 public final class DepressionFabric implements ModInitializer {
     @Override
