@@ -30,7 +30,7 @@ public class ClientConfig {
             config.set("emotion_display_offset.x", -8);
         }
         if (!config.contains("emotion_display_offset.y")) {
-            config.set("emotion_display_offset.x", -51);
+            config.set("emotion_display_offset.y", -51);
         }
 
         ClientMentalStatus.EMOTION_DISPLAY_OFFSET_X = config.get("emotion_display_offset.x");
