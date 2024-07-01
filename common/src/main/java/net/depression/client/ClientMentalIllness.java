@@ -21,6 +21,9 @@ public class ClientMentalIllness {
     private static final ResourceLocation DROWSY_FULL = new ResourceLocation(Depression.MOD_ID, "textures/symptom/drowsy_full.png");
 
     public void receiveCloseEyePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null || Minecraft.getInstance().player == null) {
+            return;
+        }
         startCloseEyeTime = Minecraft.getInstance().level.getGameTime() + 60;
         isCloseEye = true;
         curPosition = Minecraft.getInstance().player.position();
@@ -29,6 +32,9 @@ public class ClientMentalIllness {
 
     public void render(GuiGraphics guiGraphics, int x, int y) {
         if (!isCloseEye) {
+            return;
+        }
+        if (Minecraft.getInstance().level == null) {
             return;
         }
         elapsedTime = (double) (Minecraft.getInstance().level.getGameTime() - startCloseEyeTime);

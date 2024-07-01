@@ -2,10 +2,12 @@ package net.depression.mixin.client;
 
 import net.depression.Depression;
 import net.depression.client.screen.DiaryAccess;
+import net.minecraft.client.StringSplitter;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
+import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.Style;
@@ -19,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -53,8 +56,30 @@ public abstract class BookViewScreenMixin extends Screen {
         int k = (this.width - 192) / 2;
         guiGraphics.blit(DIARY_LOCATION, k, 2, 0, 0, 192, 192);
         if (this.cachedPage != this.currentPage) {
-            FormattedText formattedText = this.bookAccess.getPage(this.currentPage);
-            this.cachedPageComponents = this.font.split(formattedText, 114);
+            String text = this.bookAccess.getPage(this.currentPage).getString();
+            StringSplitter splitter = font.getSplitter();
+            List<FormattedCharSequence> list = new ArrayList<>();
+            int index;
+            int displayIndex;
+            while (!text.isEmpty()) {
+                index = splitter.formattedIndexByWidth(text, 114, Style.EMPTY);
+                displayIndex = index;
+                for (int l = 0; l < index; ++l) { //寻找是否有换行符
+                    if (text.charAt(l) == '\n') {
+                        index = l+1;
+                        displayIndex = l;
+                        break;
+                    }
+                }
+                if (index < text.length() && text.charAt(index) == '\n') { //如果断的位置正好是换行符
+                    ++index;
+                }
+                list.add(Language.getInstance().getVisualOrder(FormattedText.of(text.substring(0, displayIndex))));
+                text = text.substring(index);
+            }
+            this.cachedPageComponents = list;
+
+
             this.pageMsg = Component.translatable("book.pageIndicator", this.currentPage + 1, Math.max(this.getNumPages(), 1));
         }
 

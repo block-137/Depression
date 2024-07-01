@@ -7,6 +7,8 @@ import net.depression.mixin.client.FontAccess;
 import net.depression.network.DiaryUpdatePacket;
 import net.depression.util.Tools;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.StringSplitter;
+import net.minecraft.client.gui.Font;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -16,6 +18,7 @@ import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -43,6 +46,9 @@ public class ClientDiaryUpdater {
     }
 
     public static void receiveDiaryUpdatePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
         player.playSound(SoundEvents.VILLAGER_WORK_CARTOGRAPHER);
         //解析文本
         CharSequence rawContent = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset);
@@ -50,7 +56,7 @@ public class ClientDiaryUpdater {
         boolean isMDD = false;
         if (DepressionClient.clientMentalStatus.mentalHealthLevel < 3) {
             SimpleDateFormat dateFormat = new SimpleDateFormat(Component.translatable("diary.depression.date_format").getString());
-            content = new StringBuilder(dateFormat.format(Tools.getGameDate(Minecraft.getInstance().level.getDayTime())) + "  ");
+            content = new StringBuilder(dateFormat.format(Tools.getGameDate(Minecraft.getInstance().level.getDayTime())) + "\n");
         }
         else {
             isMDD = true;
@@ -80,35 +86,51 @@ public class ClientDiaryUpdater {
             }
         }
         //将content分页
-        FormattedText text;
+        String text;
         if (isMDD) { //如果是重度，需要加入日期
             SimpleDateFormat dateFormat = new SimpleDateFormat(content.toString());
-            text = FormattedText.of(dateFormat.format(Tools.getGameDate(Minecraft.getInstance().level.getDayTime())));
+            text = dateFormat.format(Tools.getGameDate(Minecraft.getInstance().level.getDayTime()));
         }
         else {
-            text = FormattedText.of(content.toString());
+            text = content.toString();
         }
-        FontAccess font = (FontAccess) Minecraft.getInstance().font;
-        List<FormattedText> list = font.getSplitter().splitLines(text, 114, Style.EMPTY);
+
         ItemStack itemStack = player.getItemInHand(interactionHand);
         CompoundTag compoundTag = itemStack.getOrCreateTag();
         ListTag listTag = new ListTag();
+        StringBuilder pageBuilder = new StringBuilder();
         StringBuilder sentToServerContent = new StringBuilder();
-        StringBuilder pageContent = new StringBuilder(); //一页的内容
-        for (int i = 1; i <= list.size(); ++i) {
-            pageContent.append(list.get(i - 1).getString());
-            if (i % 14 == 0) { //每14行一页
-                listTag.add(StringTag.valueOf(pageContent.toString()));
-                sentToServerContent.append(pageContent);
+        StringSplitter splitter = ((FontAccess) Minecraft.getInstance().font).getSplitter();
+        int index;
+        int line = 0;
+        while (!text.isEmpty()) {
+            index = splitter.formattedIndexByWidth(text, 114, Style.EMPTY);
+            for (int i = 0; i < index; ++i) { //寻找是否有换行符
+                if (text.charAt(i) == '\n') {
+                    index = i+1;
+                    break;
+                }
+            }
+            if (index < text.length() && text.charAt(index) == '\n') { //如果断的位置正好是换行符
+                ++index;
+            }
+            pageBuilder.append(text, 0, index);
+            text = text.substring(index);
+            if (++line % 14 == 0) {
+                String pageText = pageBuilder.toString();
+                listTag.add(StringTag.valueOf(pageText));
+                sentToServerContent.append(pageText);
                 sentToServerContent.append('/');
-                pageContent = new StringBuilder();
+                pageBuilder = new StringBuilder();
             }
         }
-        if (list.size() % 14 != 0) { //如果最后一页不满14行
-            listTag.add(StringTag.valueOf(pageContent.toString()));
-            sentToServerContent.append(pageContent);
+        if (line % 14 != 0) { //如果最后一页不满14行
+            String pageText = pageBuilder.toString();
+            listTag.add(StringTag.valueOf(pageText));
+            sentToServerContent.append(pageText);
             sentToServerContent.append('/');
         }
+
         //加入新的内容
         ListTag oldListTag = compoundTag.getList("pages", 8);
         listTag.addAll(oldListTag);

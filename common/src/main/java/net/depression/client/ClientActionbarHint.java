@@ -22,6 +22,9 @@ public class ClientActionbarHint {
     private Component disperseLastId;
     private long formLastTime;
     private long disperseLastTime;
+    private long nearbyBlockHealLastTime;
+    private long breakBlockHealLastTime;
+    private long killEntityHealLastTime;
 
     public static void displayTranslatable(String string) {
         Gui gui = Minecraft.getInstance().gui;
@@ -29,6 +32,14 @@ public class ClientActionbarHint {
     }
 
     public void receiveNearbyBlockHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
+        long curTime = Minecraft.getInstance().level.getGameTime();
+        if (curTime - nearbyBlockHealLastTime < 200) {
+            return;
+        }
+        nearbyBlockHealLastTime = curTime;
         Component id = buf.readComponent();
         Gui gui = Minecraft.getInstance().gui;
         gui.setOverlayMessage(Component.translatable("message.depression.nearby_block_heal_hint_1")
@@ -36,6 +47,14 @@ public class ClientActionbarHint {
                 .append(Component.translatable("message.depression.nearby_block_heal_hint_2")), false);
     }
     public void receiveBreakBlockHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
+        long curTime = Minecraft.getInstance().level.getGameTime();
+        if (curTime - breakBlockHealLastTime < 200) {
+            return;
+        }
+        breakBlockHealLastTime = curTime;
         Component id = buf.readComponent();
         Gui gui = Minecraft.getInstance().gui;
         gui.setOverlayMessage(Component.translatable("message.depression.break_block_heal_hint_1")
@@ -43,6 +62,14 @@ public class ClientActionbarHint {
                 .append(Component.translatable("message.depression.break_block_heal_hint_2")), false);
     }
     public void receiveKillEntityHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
+        long curTime = Minecraft.getInstance().level.getGameTime();
+        if (curTime - killEntityHealLastTime < 200) {
+            return;
+        }
+        killEntityHealLastTime = curTime;
         Component id = buf.readComponent();
         Gui gui = Minecraft.getInstance().gui;
         gui.setOverlayMessage(Component.translatable("message.depression.kill_entity_heal_hint_1")
