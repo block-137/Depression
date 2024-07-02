@@ -31,7 +31,7 @@ public class VillageAdditions {
 
     public static void init(RegistryAccess registryAccess) {
         Registry<StructureTemplatePool> registry = registryAccess.registryOrThrow(Registries.TEMPLATE_POOL);
-        for (int i = 0; i < 4; ++i) { //加4次提高刷新率；这里for循环必须写在这里才会生效，不能写在addClinic方法里，我也不知道为什么
+        for (int i = 0; i < 8; ++i) { //加8次提高刷新率；这里for循环必须写在这里才会生效，不能写在addClinic方法里，我也不知道为什么
             addClinic(registry, "plains", 16);
             addClinic(registry, "desert", 16);
             addClinic(registry, "savanna", 16);

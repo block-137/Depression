@@ -57,18 +57,34 @@ public abstract class BookViewScreenMixin extends Screen {
         guiGraphics.blit(DIARY_LOCATION, k, 2, 0, 0, 192, 192);
         if (this.cachedPage != this.currentPage) {
             String text = this.bookAccess.getPage(this.currentPage).getString();
+
+            //读取空格数量，判断是否为拉丁语系
+            int spaceCount = 0;
+            for (char c : text.toCharArray()) {
+                if (c == ' ') {
+                    ++spaceCount;
+                }
+            }
+            boolean isLatin = spaceCount > 24;
+
             StringSplitter splitter = font.getSplitter();
             List<FormattedCharSequence> list = new ArrayList<>();
             int index;
             int displayIndex;
             while (!text.isEmpty()) {
-                index = splitter.formattedIndexByWidth(text, 114, Style.EMPTY);
-                displayIndex = index;
-                for (int l = 0; l < index; ++l) { //寻找是否有换行符
-                    if (text.charAt(l) == '\n') {
-                        index = l+1;
-                        displayIndex = l;
-                        break;
+                if (isLatin) {
+                    index = splitter.findLineBreak(text, 114, Style.EMPTY);
+                    displayIndex = index;
+                }
+                else {
+                    index = splitter.formattedIndexByWidth(text, 114, Style.EMPTY);
+                    displayIndex = index;
+                    for (int l = 0; l < index; ++l) { //寻找是否有换行符
+                        if (text.charAt(l) == '\n') {
+                            index = l + 1;
+                            displayIndex = l;
+                            break;
+                        }
                     }
                 }
                 if (index < text.length() && text.charAt(index) == '\n') { //如果断的位置正好是换行符

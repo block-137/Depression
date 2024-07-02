@@ -18,6 +18,7 @@ import net.minecraft.network.chat.FormattedText;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -49,7 +50,7 @@ public class ClientDiaryUpdater {
         if (Minecraft.getInstance().level == null) {
             return;
         }
-        player.playSound(SoundEvents.VILLAGER_WORK_CARTOGRAPHER);
+        level.playSeededSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.VILLAGER_WORK_CARTOGRAPHER, SoundSource.PLAYERS, 1.0F, 1.0F, random.nextLong());
         //解析文本
         CharSequence rawContent = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset);
         StringBuilder content;
@@ -88,12 +89,19 @@ public class ClientDiaryUpdater {
         //将content分页
         String text;
         if (isMDD) { //如果是重度，需要加入日期
-            SimpleDateFormat dateFormat = new SimpleDateFormat(content.toString());
-            text = dateFormat.format(Tools.getGameDate(Minecraft.getInstance().level.getDayTime()));
+            text = Tools.textDateFormat(content.toString(), Minecraft.getInstance().level.getDayTime());
         }
         else {
             text = content.toString();
         }
+        //读取空格数量
+        int spaceCount = 0;
+        for (char c : text.toCharArray()) {
+            if (c == ' ') {
+                ++spaceCount;
+            }
+        }
+        boolean isLatin = spaceCount > 24;
 
         ItemStack itemStack = player.getItemInHand(interactionHand);
         CompoundTag compoundTag = itemStack.getOrCreateTag();
@@ -104,11 +112,16 @@ public class ClientDiaryUpdater {
         int index;
         int line = 0;
         while (!text.isEmpty()) {
-            index = splitter.formattedIndexByWidth(text, 114, Style.EMPTY);
-            for (int i = 0; i < index; ++i) { //寻找是否有换行符
-                if (text.charAt(i) == '\n') {
-                    index = i+1;
-                    break;
+            if (isLatin) {
+                index = splitter.findLineBreak(text, 114, Style.EMPTY);
+            }
+            else {
+                index = splitter.formattedIndexByWidth(text, 114, Style.EMPTY);
+                for (int i = 0; i < index; ++i) { //寻找是否有换行符
+                    if (text.charAt(i) == '\n') {
+                        index = i + 1;
+                        break;
+                    }
                 }
             }
             if (index < text.length() && text.charAt(index) == '\n') { //如果断的位置正好是换行符
