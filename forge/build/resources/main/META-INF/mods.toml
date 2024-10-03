@@ -9,7 +9,7 @@ version = "0.1.0"
 displayName = "Depression"
 authors = "block_137, SimoTCD, TheMoonAries, Tianxin_Limao, hhxkzhy"
 description = '''
-This is a mod that adds depression to Minecraft.
+This is a mod that adds brand-new emotion and mental health mechanism to Minecraft!
 '''
 logoFile = "assets/depression/icon.png"
 

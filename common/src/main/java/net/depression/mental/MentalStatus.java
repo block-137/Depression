@@ -154,9 +154,11 @@ public class MentalStatus {
         mentalIllness.tick(player);
     }
 
-    public synchronized void mentalHeal(double value) {
-        emotionValue += value * mentalHealthValue / 100d; //情绪值 += 治疗值 * 精神健康值 / 100
+    public synchronized double mentalHeal(double value) {
+        double toReturn = value * mentalHealthValue / 100d;
+        emotionValue += toReturn; //情绪值 += 治疗值 * 精神健康值 / 100
         emotionValue = Math.min(20d, emotionValue); //保证情绪值不超过上限
+        return toReturn;
     }
 
     public synchronized double mentalHeal(String string, double value) {
@@ -166,9 +168,8 @@ public class MentalStatus {
         else {
             boredom.put(string, 2);
         }
-        value /= boredom.get(string) / 2d; //治疗值 /= 无聊值
-        mentalHeal(value);
-        return value;
+        value /= boredom.get(string) / 2d; //治疗值 /= 无聊值;
+        return mentalHeal(value);
     }
 
     public synchronized void mentalHurt(double value) {
@@ -176,6 +177,9 @@ public class MentalStatus {
         emotionValue = Math.max(-20d, emotionValue); //保证情绪值不超过下限
     }
     public synchronized void mentalHurt(String string, double damage) {
+        if (string == null) {
+            return;
+        }
         Level level = player.level();
         BlockPos pos = player.blockPosition();
         int brightness = Math.max(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));

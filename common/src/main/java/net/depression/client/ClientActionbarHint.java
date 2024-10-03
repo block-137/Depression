@@ -36,7 +36,7 @@ public class ClientActionbarHint {
             return;
         }
         long curTime = Minecraft.getInstance().level.getGameTime();
-        if (curTime - nearbyBlockHealLastTime < 200) {
+        if (curTime - nearbyBlockHealLastTime < 1200) {
             return;
         }
         nearbyBlockHealLastTime = curTime;
@@ -51,7 +51,7 @@ public class ClientActionbarHint {
             return;
         }
         long curTime = Minecraft.getInstance().level.getGameTime();
-        if (curTime - breakBlockHealLastTime < 200) {
+        if (curTime - breakBlockHealLastTime < 1200) {
             return;
         }
         breakBlockHealLastTime = curTime;
@@ -66,7 +66,7 @@ public class ClientActionbarHint {
             return;
         }
         long curTime = Minecraft.getInstance().level.getGameTime();
-        if (curTime - killEntityHealLastTime < 200) {
+        if (curTime - killEntityHealLastTime < 1200) {
             return;
         }
         killEntityHealLastTime = curTime;

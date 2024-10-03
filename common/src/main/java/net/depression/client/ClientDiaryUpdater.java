@@ -50,6 +50,7 @@ public class ClientDiaryUpdater {
         if (Minecraft.getInstance().level == null) {
             return;
         }
+        player = Minecraft.getInstance().player;
         level.playSeededSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.VILLAGER_WORK_CARTOGRAPHER, SoundSource.PLAYERS, 1.0F, 1.0F, random.nextLong());
         //解析文本
         CharSequence rawContent = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset);

@@ -122,6 +122,9 @@ public abstract class PlayerMixin {
         if (entity != null) {
             String encodeId = entity.getEncodeId();
             String directEncodeId = directEntity.getEncodeId();
+            if (encodeId == null) {
+                return;
+            }
             if (!encodeId.equals(directEncodeId)) { //如果直接造成伤害的实体与间接造成伤害的实体不是同一个实体的话，就分开造成心理伤害
                 mentalStatus.mentalHurt(encodeId, damageRate*0.8d);
                 mentalStatus.mentalHurt(directEncodeId, damageRate*0.2d);
