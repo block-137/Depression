@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[45,)"
+#issueTrackerURL = ""
+license = "LGPL-3.0"
+
+[[mods]]
+modId = "depression"
+version = "${version}"
+displayName = "Depression"
+authors = "block_137, SimoTCD, TheMoonAries, Tianxin_Limao, hhxkzhy"
+description = '''
+This is a mod that adds brand-new emotion and mental health mechanism to Minecraft!
+'''
+logoFile = "assets/depression/icon.png"
+
+[[dependencies.depression]]
+modId = "forge"
+mandatory = true
+versionRange = "[45,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.depression]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.depression]]
+modId = "architectury"
+mandatory = true
+versionRange = "[8.1.73,)"
+ordering = "AFTER"
+side = "BOTH"
