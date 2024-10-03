@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "package": "net.depression.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "client.BookViewScreenMixin",
+    "client.FontAccess",
+    "client.LocalPlayerMixin"
+  ],
+  "mixins": [
+    "CakeBlockMixin",
+    "JukeboxBlockEntityMixin",
+    "MilkBucketItemMixin",
+    "PlayerMixin",
+    "SingleJigsawAccess",
+    "symptom.BowItemMixin",
+    "symptom.CrossbowItemMixin",
+    "symptom.ItemStackMixin",
+    "symptom.LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
