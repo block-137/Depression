@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.Registries;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.depression.Depression;
+import net.depression.effect.ModEffects;
 import net.depression.tag.ModBannerPatternTags;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -25,6 +26,9 @@ public class ModItems {
 
     public static final RegistrySupplier<Item> MDD_CAPSULE = ITEMS.register("mdd_capsule",
             () -> new AntiDepressantItem(2));
+
+    public static final RegistrySupplier<Item> INSOMNIA_TABLET = ITEMS.register("insomnia_tablet",
+            () -> new MedicineItem("depression:insomnia_tablet", ModEffects.SLEEPINESS.get(), 6000, 0, 300, 600, "item.depression.insomnia_tablet.desc"));
 
     public static final RegistrySupplier<Item> RIBBON_BANNER_PATTERN = ITEMS.register("ribbon_banner_pattern",
             () -> new BannerPatternItem(ModBannerPatternTags.PATTERN_RIBBON, new Item.Properties().stacksTo(1).tab(ModCreativeTabs.ITEMS_TAB)));

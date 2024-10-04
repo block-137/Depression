@@ -30,7 +30,7 @@ public class MentalStatus {
     public static double PTSD_DISPERSE_RATE;
     public static double FOOD_HEAL_RATE;
     public static int BOREDOM_DECREASE_TICK;
-
+    public static HashMap<String, String> nearbyHealBlockType = new HashMap<>(); //精神治疗光环方块-类型
     public static HashMap<String, Double> nearbyHealBlockValue = new HashMap<>(); //精神治疗光环方块-治疗值
     public static HashMap<String, Integer> nearbyHealBlockRadius = new HashMap<>(); //精神治疗光环方块-作用半径
     public static int radiusMaxValue; //精神治疗光环方块-最大的半径
@@ -209,13 +209,14 @@ public class MentalStatus {
 
 
     public void detectNearbyHealBlock() { //检测周围球形半径的治疗光环方块
-        HashSet<String> detected = new HashSet<>();
         BlockPos pos = player.blockPosition();
         Level level = player.getLevel();
         int r = radiusMaxValue;
-        String maxHealId = null;
-        Component maxHealName = null;
-        double maxHealValue = 0;
+
+        HashMap<Component, Integer> detectedBlocksCount = new HashMap<>();
+        HashMap<String, Double> detectedTypesHealValue = new HashMap<>();
+        double totalHealValue = 0d;
+
         for (int x = -r; x <= r; ++x) { // -r <= x <= r
             int yLimit = (int) Math.sqrt(r*r - x*x);
             for (int y = -yLimit; y <= yLimit; ++y) { // -sqrt(r*r - x*x) <= y <= sqrt(r*r - x*x)
@@ -228,36 +229,54 @@ public class MentalStatus {
                             block = ((FlowerPotBlock) block).getContent();
                         }
                         String id = block.arch$registryName().toString();
-                        if (detected.contains(id)) {
-                            continue;
-                        }
-                        Double value = getBlockActualHealValue(id);
+                        Component name = block.getName();
+                        Double value = getTypeHealValue(id);
                         Integer radius = nearbyHealBlockRadius.get(id);
                         if (radius != null && value != null) {
                             int distance = (int) Math.sqrt(x*x + y*y + z*z);
                             if (distance <= radius) {
-                                if (value > maxHealValue) {
-                                    maxHealValue = value;
-                                    maxHealId = id;
-                                    maxHealName = block.getName();
+                                detectedBlocksCount.put(name, detectedBlocksCount.getOrDefault(name, 0) + 1);
+                                String type = nearbyHealBlockType.get(id);
+                                if (type == null) {
+                                    type = id;
                                 }
-                                detected.add(id);
+                                detectedTypesHealValue.put(type, detectedTypesHealValue.getOrDefault(type, 0d) + value / detectedBlocksCount.get(name));
                             }
                         }
                     }
                 }
             }
         }
-        if (maxHealId != null) {
-            mentalHeal(maxHealId, maxHealValue);
-            if (maxHealValue > 0.25) {
+        for (Map.Entry<String, Double> entry : detectedTypesHealValue.entrySet()) {;
+            totalHealValue += mentalHeal(entry.getKey(), entry.getValue());
+        }
+
+        if (totalHealValue > 0.25d) {
+            Component maxHealName = null;
+            int mostHealCount = 0;
+            for (Map.Entry<Component, Integer> entry : detectedBlocksCount.entrySet()) {
+                if (entry.getValue() > mostHealCount) {
+                    mostHealCount = entry.getValue();
+                    maxHealName = entry.getKey();
+                }
+            }
+            if (maxHealName != null) {
                 ActionbarHintPacket.sendNearbyBlockHealPacket(player, maxHealName);
             }
         }
     }
 
-    private Double getBlockActualHealValue(String id) {
+    private Double getTypeHealValue(String id) {
         Double value = nearbyHealBlockValue.get(id);
+        if (nearbyHealBlockType.containsKey(id)) {
+            String type = nearbyHealBlockType.get(id);
+            if (boredom.containsKey(type)) {
+                return value / (boredom.get(type) / 2d);
+            }
+            else {
+                return value;
+            }
+        }
         if (boredom.containsKey(id)) {
             return value / (boredom.get(id) / 2d);
         }
@@ -295,10 +314,8 @@ public class MentalStatus {
         if (tag.contains("mental_health_value")) {
             mentalHealthValue = tag.getDouble("mental_health_value");
         }
-        //读取精神疾病
-        if (tag.contains("mental_illness")) {
-            mentalIllness.readNbt(tag);
-        }
+        //读取精神疾病相关内容
+        mentalIllness.readNbt(tag);
     }
 
     public void writeNbt(CompoundTag tag) {
@@ -329,7 +346,7 @@ public class MentalStatus {
         tag.putDouble("emotion_value", emotionValue);
         //写入精神健康值
         tag.putDouble("mental_health_value", mentalHealthValue);
-        //写入精神疾病
+        //写入精神疾病相关内容
         mentalIllness.writeNbt(tag);
     }
 
