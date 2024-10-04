@@ -35,6 +35,10 @@ public class FabricVillageAdditions {
                 (factories) -> {
                     factories.add((entity, randomSource) -> new MerchantOffer(
                             new ItemStack(Items.EMERALD, 30),
+                            new ItemStack(ModItems.INSOMNIA_TABLET.get(), 6),
+                            10, 20, 0f));
+                    factories.add((entity, randomSource) -> new MerchantOffer(
+                            new ItemStack(Items.EMERALD, 30),
                             new ItemStack(ModItems.MODERATE_DEPRESSION_TABLET.get(), 6),
                             10, 20, 0f));
                 });

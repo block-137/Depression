@@ -39,6 +39,10 @@ public class ForgeVillageAddition {
             List<VillagerTrades.ItemListing> level2Trades = event.getTrades().get(2);
             level2Trades.add((entity, randomSource) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD ,30),
+                    new ItemStack(ModItems.INSOMNIA_TABLET.get(), 6),
+                    64,20,0f));
+            level2Trades.add((entity, randomSource) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD ,30),
                     new ItemStack(ModItems.MODERATE_DEPRESSION_TABLET.get(), 6),
                     64,20,0f));
             List<VillagerTrades.ItemListing> level3Trades = event.getTrades().get(3);

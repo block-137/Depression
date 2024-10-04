@@ -1,13 +1,16 @@
 package net.depression.fabric.config;
 
+import com.electronwill.nightconfig.core.CommentedConfig;
 import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.architectury.platform.Platform;
+import net.depression.Depression;
 import net.depression.mental.MentalStatus;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map;
 
 public class ServerConfig {
     private static Double readDouble(FileConfig config, String key) {
@@ -28,11 +31,15 @@ public class ServerConfig {
             folder.mkdirs();
         }
 
+        boolean overwrite = false;
         //读取server-config.toml
         File file = new File(Platform.getConfigFolder() + "/depression/server-config.toml");
         if (!file.exists()) {
             try {
+                overwrite = true;
                 file.createNewFile();
+                FileWriter writer = writeServerFile(file);
+                writer.close();
             }
             catch (IOException e) {
                 e.printStackTrace();
@@ -40,24 +47,26 @@ public class ServerConfig {
         }
         FileConfig config = FileConfig.of(file);
         config.load();
+        if (config.contains("version") || config.get("version") instanceof String) {
+            String fileVersion = config.get("version");
+            if (!Depression.MOD_VERSION.equals(fileVersion)) {
+                overwrite = true;
+            }
+        }
+        else {
+            overwrite = true;
+        }
 
-        if (!config.contains("emotion_stabilize_rate")) {
-            config.set("emotion_stabilize_rate", 0.1);
-        }
-        if (!config.contains("mental_health_change_rate")) {
-            config.set("mental_health_change_rate", 0.01);
-        }
-        if (!config.contains("ptsd_damage_rate")) {
-            config.set("ptsd_damage_rate", 0.5);
-        }
-        if (!config.contains("ptsd_disperse_rate")) {
-            config.set("ptsd_disperse_rate", 0.01);
-        }
-        if (!config.contains("boredom_decrease_tick")) {
-            config.set("boredom_decrease_tick", 200);
-        }
-        if (!config.contains("food_heal_rate")) {
-            config.set("food_heal_rate", 0.25);
+        if (overwrite) {
+            try {
+                FileWriter writer = writeServerFile(file);
+                writer.close();
+                config = FileConfig.of(file);
+                config.load();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         MentalStatus.EMOTION_STABILIZE_RATE = readDouble(config, "emotion_stabilize_rate");
@@ -75,6 +84,15 @@ public class ServerConfig {
         if (!blockFile.exists()) {
             try {
                 blockFile.createNewFile();
+                FileWriter writer = writeBlockFile(blockFile);
+                writer.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (overwrite) {
+            try {
                 FileWriter writer = writeBlockFile(blockFile);
                 writer.close();
             }
@@ -101,6 +119,14 @@ public class ServerConfig {
                 e.printStackTrace();
             }
         }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeAdvancementFile(advancementFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         FileConfig advancementConfig = FileConfig.of(advancementFile);
         advancementConfig.load();
 
@@ -114,6 +140,15 @@ public class ServerConfig {
         if (!entityFile.exists()) {
             try {
                 entityFile.createNewFile();
+                FileWriter writer = writeEntityFile(entityFile);
+                writer.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (overwrite) {
+            try {
                 FileWriter writer = writeEntityFile(entityFile);
                 writer.close();
             }
@@ -140,15 +175,40 @@ public class ServerConfig {
                 e.printStackTrace();
             }
         }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeNearbyFile(nearbyFile);
+                writer.close();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         FileConfig nearbyConfig = FileConfig.of(nearbyFile);
         nearbyConfig.load();
 
-        for (String block : nearbyConfig.valueMap().keySet()) {
-            int radius = nearbyConfig.get(block + ".radius");
-            MentalStatus.radiusMaxValue = Math.max(MentalStatus.radiusMaxValue, radius);
-            MentalStatus.nearbyHealBlockValue.put(block, readDouble(nearbyConfig, block + ".value"));
-            MentalStatus.nearbyHealBlockRadius.put(block, radius);
+        for (String key1 : nearbyConfig.valueMap().keySet()) {
+            if (nearbyConfig.contains(key1 + ".value") && nearbyConfig.contains(key1 + ".radius")) {
+                int radius = nearbyConfig.get(key1 + ".radius");
+                MentalStatus.radiusMaxValue = Math.max(MentalStatus.radiusMaxValue, radius);
+                MentalStatus.nearbyHealBlockValue.put(key1, readDouble(nearbyConfig, key1 + ".value"));
+                MentalStatus.nearbyHealBlockRadius.put(key1, radius);
+            }
+            else {
+                Object map = nearbyConfig.get(key1);
+                if (map instanceof CommentedConfig) {
+                    for (String key2 : ((CommentedConfig) map).valueMap().keySet()) {
+                        if (key2 instanceof String) {
+                            int radius = nearbyConfig.get(key1 + "." + key2 + ".radius");
+                            MentalStatus.radiusMaxValue = Math.max(MentalStatus.radiusMaxValue, radius);
+                            MentalStatus.nearbyHealBlockValue.put(key2, readDouble(nearbyConfig, key1 + "." + key2 + ".value"));
+                            MentalStatus.nearbyHealBlockRadius.put(key2, radius);
+                            MentalStatus.nearbyHealBlockType.put(key2, key1);
+                        }
+                    }
+                }
+            }
         }
 
         //读取smelt-item-heal-value.toml
@@ -162,6 +222,14 @@ public class ServerConfig {
                 e.printStackTrace();
             }
         }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeSmeltFile(smeltFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         FileConfig smeltConfig = FileConfig.of(smeltFile);
         smeltConfig.load();
@@ -169,6 +237,23 @@ public class ServerConfig {
         for (String item : smeltConfig.valueMap().keySet()) {
             MentalStatus.smeltHealItem.put(item, readDouble(smeltConfig, item));
         }
+    }
+
+    @NotNull
+    private static FileWriter writeServerFile(File file) throws IOException {
+        FileWriter writer = new FileWriter(file);
+        writer.write("""
+                # Mod will overwrite all the configurations if the version isn't match with the current mod version.
+                # If you want to keep your changes while updating, please change the version to the updated mod version.
+                version = "0.1.1"
+                emotion_stabilize_rate = 0.1
+                mental_health_change_rate = 0.01
+                ptsd_damage_rate = 0.5
+                ptsd_disperse_rate = 0.01
+                boredom_decrease_tick = 200
+                food_heal_rate = 0.25
+                """);
+        return writer;
     }
 
     @NotNull
@@ -198,118 +283,118 @@ public class ServerConfig {
         writer.write("""
                 # FLOWERS
                                         
-                ["minecraft:dandelion"]
+                [flowers."minecraft:dandelion"]
                 value = 0.3
                 radius = 8
-                ["minecraft:poppy"]
+                [flowers."minecraft:poppy"]
                 value = 0.3
                 radius = 8
-                ["minecraft:blue_orchid"]
+                [flowers."minecraft:blue_orchid"]
                 value = 0.4
                 radius = 8
-                ["minecraft:allium"]
+                [flowers."minecraft:allium"]
                 value = 0.4
                 radius = 8
-                ["minecraft:azure_bluet"]
+                [flowers."minecraft:azure_bluet"]
                 value = 0.3
                 radius = 8
-                ["minecraft:red_tulip"]
+                [flowers."minecraft:red_tulip"]
                 value = 0.4
                 radius = 8
-                ["minecraft:orange_tulip"]
+                [flowers."minecraft:orange_tulip"]
                 value = 0.4
                 radius = 8
-                ["minecraft:white_tulip"]
+                [flowers."minecraft:white_tulip"]
                 value = 0.4
                 radius = 8
-                ["minecraft:pink_tulip"]
+                [flowers."minecraft:pink_tulip"]
                 value = 0.4
                 radius = 8
-                ["minecraft:oxeye_daisy"]
+                [flowers."minecraft:oxeye_daisy"]
                 value = 0.3
                 radius = 8
-                ["minecraft:cornflower"]
+                [flowers."minecraft:cornflower"]
                 value = 0.3
                 radius = 8
-                ["minecraft:lily_of_the_valley"]
+                [flowers."minecraft:lily_of_the_valley"]
                 value = 0.3
                 radius = 8
-                ["minecraft:torchflower"]
+                [flowers."minecraft:torchflower"]
                 value = 1
                 radius = 8
-                ["minecraft:sunflower"]
+                [flowers."minecraft:sunflower"]
                 value = 0.4
                 radius = 8
-                ["minecraft:lilac"]
+                [flowers."minecraft:lilac"]
                 value = 0.4
                 radius = 8
-                ["minecraft:rose_bush"]
+                [flowers."minecraft:rose_bush"]
                 value = 0.4
                 radius = 8
-                ["minecraft:peony"]
+                [flowers."minecraft:peony"]
                 value = 0.4
                 radius = 8
-                ["minecraft:pitcher_plant"]
+                [flowers."minecraft:pitcher_plant"]
                 value = 1
                 radius = 8
                                         
                 # LEAVES
                                         
-                ["minecraft:oak_leaves"]
+                [leaves."minecraft:oak_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:spruce_leaves"]
+                [leaves."minecraft:spruce_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:birch_leaves"]
+                [leaves."minecraft:birch_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:jungle_leaves"]
+                [leaves."minecraft:jungle_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:acacia_leaves"]
+                [leaves."minecraft:acacia_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:dark_oak_leaves"]
+                [leaves."minecraft:dark_oak_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:azalea_leaves"]
+                [leaves."minecraft:azalea_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:flowering_azalea_leaves"]
+                [leaves."minecraft:flowering_azalea_leaves"]
                 value = 0.2
                 radius = 8
-                ["minecraft:mangrove_leaves"]
+                [leaves."minecraft:mangrove_leaves"]
                 value = 0.1
                 radius = 8
-                ["minecraft:cherry_leaves"]
+                [leaves."minecraft:cherry_leaves"]
                 value = 0.2
                 radius = 8
                                         
                 # OTHER_PLANTS
                                         
-                ["minecraft:spore_blossom"]
+                [other_plants."minecraft:spore_blossom"]
                 value = 0.3
                 radius = 12
-                ["minecraft:azalea"]
+                [other_plants."minecraft:azalea"]
                 value = 0.3
                 radius = 12
-                ["minecraft:flowering_azalea"]
+                [other_plants."minecraft:flowering_azalea"]
                 value = 0.4
                 radius = 12
-                ["minecraft:pink_petals"]
+                [other_plants."minecraft:pink_petals"]
                 value = 0.4
                 radius = 6
-                ["minecraft:sea_pickle"]
+                [other_plants."minecraft:sea_pickle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:lily_pad"]
+                [other_plants."minecraft:lily_pad"]
                 value = 0.1
                 radius = 6
-                ["minecraft:waterlily"]
+                [other_plants."minecraft:waterlily"]
                 value = 0.1
                 radius = 6
-                ["minecraft:shroomlight"]
+                [other_plants."minecraft:shroomlight"]
                 value = 0.1
                 radius = 8
                                         
@@ -324,142 +409,142 @@ public class ServerConfig {
                                         
                 # CANDLES
                                         
-                ["minecraft:candle"]
+                [candles."minecraft:candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:white_candle"]
+                [candles."minecraft:white_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:orange_candle"]
+                [candles."minecraft:orange_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:magenta_candle"]
+                [candles."minecraft:magenta_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:light_blue_candle"]
+                [candles."minecraft:light_blue_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:yellow_candle"]
+                [candles."minecraft:yellow_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:lime_candle"]
+                [candles."minecraft:lime_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:pink_candle"]
+                [candles."minecraft:pink_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:gray_candle"]
+                [candles."minecraft:gray_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:light_gray_candle"]
+                [candles."minecraft:light_gray_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:cyan_candle"]
+                [candles."minecraft:cyan_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:purple_candle"]
+                [candles."minecraft:purple_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:blue_candle"]
+                [candles."minecraft:blue_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:brown_candle"]
+                [candles."minecraft:brown_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:green_candle"]
+                [candles."minecraft:green_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:red_candle"]
+                [candles."minecraft:red_candle"]
                 value = 0.2
                 radius = 6
-                ["minecraft:black_candle"]
+                [candles."minecraft:black_candle"]
                 value = 0.2
                 radius = 6
                                         
                 # FIRELIGHTS
                                         
-                ["minecraft:campfire"]
+                [fire_lights."minecraft:campfire"]
                 value = 0.5
                 radius = 12
-                ["minecraft:soul_campfire"]
+                [fire_lights."minecraft:soul_campfire"]
                 value = 0.25
                 radius = 12
-                ["minecraft:torch"]
+                [fire_lights."minecraft:torch"]
                 value = 0.05
                 radius = 6
-                ["minecraft:soul_torch"]
+                [fire_lights."minecraft:soul_torch"]
                 value = 0.025
                 radius = 6
-                ["minecraft:jack_o_lantern"]
+                [fire_lights."minecraft:jack_o_lantern"]
                 value = 0.2
                 radius = 8
-                ["minecraft:lit_pumpkin"]
+                [fire_lights."minecraft:lit_pumpkin"]
                 value = 0.2
                 radius = 8
-                ["minecraft:lantern"]
+                [fire_lights."minecraft:lantern"]
                 value = 0.2
                 radius = 8
-                ["minecraft:soul_lantern"]
+                [fire_lights."minecraft:soul_lantern"]
                 value = 0.1
                 radius = 8
                                         
                 # COPPER_BULBS
                                         
-                ["minecraft:copper_bulb"]
+                [glowing_blocks."minecraft:copper_bulb"]
                 value = 0.2
                 radius = 8
-                ["minecraft:exposed_copper_bulb"]
+                [glowing_blocks."minecraft:exposed_copper_bulb"]
                 value = 0.2
                 radius = 8
-                ["minecraft:weathered_copper_bulb"]
+                [glowing_blocks."minecraft:weathered_copper_bulb"]
                 value = 0.2
                 radius = 8
-                ["minecraft:oxidized_copper_bulb"]
+                [glowing_blocks."minecraft:oxidized_copper_bulb"]
                 value = 0.2
                 radius = 8
-                ["minecraft:waxed_copper_bulb"]
+                [glowing_blocks."minecraft:waxed_copper_bulb"]
                 value = 0.2
                 radius = 8
-                ["minecraft:waxed_exposed_copper_bulb"]
+                [glowing_blocks."minecraft:waxed_exposed_copper_bulb"]
                 value = 0.2
                 radius = 8
-                ["minecraft:waxed_weathered_copper_bulb"]
+                [glowing_blocks."minecraft:waxed_weathered_copper_bulb"]
                 value = 0.2
                 radius = 8
-                ["minecraft:waxed_oxidized_copper_bulb"]
+                [glowing_blocks."minecraft:waxed_oxidized_copper_bulb"]
                 value = 0.2
                 radius = 8
                                         
                 # OTHER_GLOWING_BLOCKS
                                         
-                ["minecraft:end_rod"]
+                [glowing_blocks."minecraft:end_rod"]
                 value = 0.1
                 radius = 6
-                ["minecraft:glowstone"]
+                [glowing_blocks."minecraft:glowstone"]
                 value = 0.2
                 radius = 8
-                ["minecraft:redstone_lamp"]
+                [glowing_blocks."minecraft:redstone_lamp"]
                 value = 0.2
                 radius = 8
-                ["minecraft:sea_lantern"]
+                [glowing_blocks."minecraft:sea_lantern"]
                 value = 0.2
                 radius = 8
-                ["minecraft:pearlescent_froglight"]
+                [glowing_blocks."minecraft:pearlescent_froglight"]
                 value = 0.3
                 radius = 8
-                ["minecraft:verdant_froglight"]
+                [glowing_blocks."minecraft:verdant_froglight"]
                 value = 0.3
                 radius = 8
-                ["minecraft:ochre_froglight"]
+                [glowing_blocks."minecraft:ochre_froglight"]
                 value = 0.3
                 radius = 8
                                         
                 # DECORATIONS
                                         
-                ["minecraft:decorated_pot"]
+                [decorations."minecraft:decorated_pot"]
                 value = 0.1
                 radius = 4
-                ["minecraft:painting"]
+                [decorations."minecraft:painting"]
                 value = 0.1
                 radius = 6
                 """);
@@ -627,7 +712,7 @@ public class ServerConfig {
     @NotNull
     private static FileWriter writeBlockFile(File blockFile) throws IOException {
         FileWriter writer = new FileWriter(blockFile);
-        writer.write("""
+        writer.write("""         
                 "minecraft:wheat" = 0.5
                 "minecraft:carrot" = 0.5
                 "minecraft:potato" = 0.5

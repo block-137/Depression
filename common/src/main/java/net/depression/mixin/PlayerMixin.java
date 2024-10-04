@@ -1,5 +1,6 @@
 package net.depression.mixin;
 
+import net.depression.effect.ModEffects;
 import net.depression.item.MedicineItem;
 import net.depression.mental.MentalStatus;
 import net.depression.network.MentalStatusPacket;
@@ -62,8 +63,12 @@ public abstract class PlayerMixin {
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
         Boolean isInsomnia = mentalStatus.mentalIllness.isInsomnia;
-        if (isInsomnia != null && isInsomnia) { //如果失眠，则直接返回，不进行睡眠治疗
+        boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
+        if (!isSleepy && isInsomnia != null && isInsomnia) { //如果失眠且没有困倦buff，则直接返回，不进行睡眠治疗
             return;
+        }
+        if (isSleepy) {
+            player.removeEffect(ModEffects.SLEEPINESS.get());
         }
         if (mentalStatus.emotionValue < -5 * Math.max(mentalStatus.mentalHealthValue, 10d) / 100d) {
             mentalStatus.emotionValue = 0;
