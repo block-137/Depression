@@ -57,15 +57,16 @@ public class ServerConfig {
             overwrite = true;
         }
 
-
-        if (config.contains("version") || config.get("version") instanceof String) {
-            String fileVersion = config.get("version");
-            if (!Depression.MOD_VERSION.equals(fileVersion)) {
-                overwrite = true;
+        if (overwrite) {
+            try {
+                FileWriter writer = writeServerFile(file);
+                writer.close();
+                config = FileConfig.of(file);
+                config.load();
             }
-        }
-        else {
-            overwrite = true;
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         MentalStatus.EMOTION_STABILIZE_RATE = readDouble(config, "emotion_stabilize_rate");
