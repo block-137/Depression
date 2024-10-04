@@ -27,6 +27,7 @@ public class ModCreativeTabs {
                 ModItems.MILD_DEPRESSION_TABLET,
                 ModItems.MODERATE_DEPRESSION_TABLET,
                 ModItems.MDD_CAPSULE,
+                ModItems.INSOMNIA_TABLET,
                 ModItems.RIBBON_BANNER_PATTERN);
     }
 }

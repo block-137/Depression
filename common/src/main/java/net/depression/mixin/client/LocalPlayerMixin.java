@@ -22,7 +22,7 @@ public abstract class LocalPlayerMixin {
     private void move(MoverType moverType, Vec3 vec3, CallbackInfo ci) {
         if (moverType == MoverType.SELF) {
             ClientMentalIllness illness = DepressionClient.clientMentalStatus.mentalIllness;
-            if (illness.isCloseEye && illness.elapsedTime >= -60 && illness.elapsedTime <= 60) {
+            if (illness.isCloseEye && DepressionClient.clientMentalStatus.mentalHealthLevel == 3 && illness.elapsedTime >= -60 && illness.elapsedTime <= 60) {
                 LocalPlayer player = (LocalPlayer) (Object) this;
                 Vec3 pos = ClientMentalIllness.curPosition;
                 if (player.getY() < pos.y) {
