@@ -1,7 +1,10 @@
 mental_health_change_rate = 0.01
 food_heal_rate = 0.25
 ptsd_damage_rate = 0.5
-emotion_stabilize_rate = 0.2
-ptsd_disperse_rate = 0.5
-boredom_decrease_tick = 100
+emotion_stabilize_rate = 0.1
+# Mod will overwrite all the configurations if the version isn't match with the current mod version.
+# If you want to keep your changes while updating, please change the version to the updated mod version.
+version = "0.1.1"
+ptsd_disperse_rate = 0.01
+boredom_decrease_tick = 200
 

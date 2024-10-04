@@ -1,6 +1,7 @@
 package net.depression.mental;
 
 import net.depression.effect.ModEffects;
+import net.depression.item.MedicineItem;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.CloseEyePacket;
 import net.minecraft.nbt.CompoundTag;
@@ -9,6 +10,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.Level;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class MentalIllness {
@@ -16,6 +18,7 @@ public class MentalIllness {
     public Boolean isInsomnia;
     private int sleepAttemptCount = 0;
     private Long nextCloseEyeTime;
+    public final HashMap<String, Integer> medicineDelay = new HashMap<>();
     public final Random random = new Random();
     private final MentalStatus mentalStatus;
     private ServerPlayer player;
@@ -27,7 +30,16 @@ public class MentalIllness {
 
     public void tick(ServerPlayer player) {
         this.player = player;
-
+        for (String key : medicineDelay.keySet()) {
+            int delay = medicineDelay.get(key);
+            if (delay > 0) {
+                medicineDelay.put(key, delay - 1);
+            }
+            else {
+                player.addEffect(MedicineItem.effectMap.get(key));
+                medicineDelay.remove(key);
+            }
+        }
 
         mentalHealthLevel = getMentalHealthLevel(mentalStatus.mentalHealthValue);
         if (isInsomnia != null && isInsomnia && mentalHealthLevel == 0) {
@@ -39,8 +51,9 @@ public class MentalIllness {
             sleepAttemptCount = 0;
             setIsInsomnia();
         }
+        boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
         //处理是否失眠
-        if (player.isSleepingLongEnough()) {
+        if (player.isSleepingLongEnough() && !isSleepy) {
             if (isInsomnia && random.nextDouble() < getInsomniaChance()) { //失眠概率随睡眠次数递减
                 player.stopSleeping();
                 ++sleepAttemptCount;
@@ -48,7 +61,7 @@ public class MentalIllness {
                 ActionbarHintPacket.sendInsomniaPacket(player);
             }
         }
-        if (mentalHealthLevel >= 3) {
+        if (mentalHealthLevel >= 3 || isSleepy) {
             if (nextCloseEyeTime == null) {
                 setNextCloseEyeTime();
             }
@@ -158,6 +171,13 @@ public class MentalIllness {
         if (tag.contains("next_close_eye_time")) {
             nextCloseEyeTime = mentalStatus.tickCount + tag.getLong("next_close_eye_time"); //读取闭眼的时刻而不是剩余时间
         }
+        //读取药物延迟
+        if (tag.contains("medicine_delay")) {
+            CompoundTag medicineDelayTag = tag.getCompound("medicine_delay");
+            for (String key : medicineDelayTag.getAllKeys()) {
+                medicineDelay.put(key, medicineDelayTag.getInt(key));
+            }
+        }
     }
 
     public void writeNbt(CompoundTag tag) {
@@ -170,6 +190,14 @@ public class MentalIllness {
         //写入下次闭眼时间
         if (nextCloseEyeTime != null) {
             tag.putLong("next_close_eye_time", nextCloseEyeTime - mentalStatus.tickCount); //存储闭眼的剩余时间而不是时刻
+        }
+        //写入药物延迟
+        if (!medicineDelay.isEmpty()) {
+            CompoundTag medicineDelayTag = new CompoundTag();
+            for (String key : medicineDelay.keySet()) {
+                medicineDelayTag.putInt(key, medicineDelay.get(key));
+            }
+            tag.put("medicine_delay", medicineDelayTag);
         }
     }
 }
