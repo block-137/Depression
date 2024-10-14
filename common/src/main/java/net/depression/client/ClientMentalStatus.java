@@ -88,11 +88,8 @@ public class ClientMentalStatus {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         //绘制情绪值
         RenderSystem.setShaderTexture(0, EMOTION);
-<<<<<<< HEAD
-        GuiComponent.blit(poseStack, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*getEmotionLevel(), 0, 16, 16, 128, 16); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
+        GuiComponent.blit(poseStack, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*getEmotionLevel(), isInCombat ? 16 : 0, 16, 16, 128, 32); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
         mentalIllness.render(poseStack, window.getGuiScaledWidth(), y);
-=======
-        guiGraphics.blit(EMOTION, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*emotionLevel, isInCombat ? 16 : 0, 16, 16, 128, 32); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
         //绘制精神健康值
         /*
         int mentalHealthLevel = getMentalHealthLevel(mentalHealthValue);
@@ -104,10 +101,7 @@ public class ClientMentalStatus {
         RenderSystem.setShaderTexture(0, MENTAL_HEALTH_HEART);
         guiGraphics.blit(MENTAL_HEALTH_HEART, x + 97, y - 22, 90, (mentalHealthLevel < 3 ? 0 : 22), 0, 22, 22, 66, 22);
          */
-
-        mentalIllness.render(guiGraphics, window.getGuiScaledWidth(), y);
-        ptsdManager.render(guiGraphics, window.getGuiScaledWidth(), y);
->>>>>>> dc11530 (0.1.2 Update)
+        ptsdManager.render(poseStack, window.getGuiScaledWidth(), y);
     }
 
     public int getEmotionLevel() {

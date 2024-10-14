@@ -1,12 +1,13 @@
 package net.depression.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
 import dev.architectury.networking.NetworkManager;
 import net.depression.Depression;
 import net.depression.sound.ModSounds;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.resources.sounds.AbstractSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
@@ -81,7 +82,7 @@ public class ClientPTSDManager {
         falseEntities.clear();
     }
 
-    public void render(GuiGraphics guiGraphics, int x, int y) {
+    public void render(PoseStack poseStack, int x, int y) {
         int a = Math.min((int) (x * 0.2), 170);
         int b = Math.min((int) (y * 0.2), 170);
         if (startTime != null) {
@@ -90,11 +91,11 @@ public class ClientPTSDManager {
                 int xOffset = curTime - startTime > 2000 ? 0 : -a + (int) (a * (curTime - startTime) / 2000);
                 int yOffset = curTime - startTime > 2000 ? 0 : -b + (int) (b * (curTime - startTime) / 2000);
                 RenderSystem.setShaderTexture(0, PTSD_ONSET_LEFT);
-                guiGraphics.blit(PTSD_ONSET_LEFT, xOffset, 0, 90, 170 - a, 0, a, y, 480, 360);
+                GuiComponent.blit(poseStack, xOffset, 0, 90, 170 - a, 0, a, y, 480, 360);
                 RenderSystem.setShaderTexture(0, PTSD_ONSET_RIGHT);
-                guiGraphics.blit(PTSD_ONSET_RIGHT, x - a - xOffset, 0, 90, 310, 0, a, y, 480, 360);
+                GuiComponent.blit(poseStack, x - a - xOffset, 0, 90, 310, 0, a, y, 480, 360);
                 RenderSystem.setShaderTexture(0, PTSD_ONSET_UP);
-                guiGraphics.blit(PTSD_ONSET_UP, 0, yOffset, 90, 0, 170 - b, x, b, 480, 360);
+                GuiComponent.blit(poseStack, 0, yOffset, 90, 0, 170 - b, x, b, 480, 360);
             }
             Minecraft minecraft = Minecraft.getInstance();
             Player player = minecraft.player;

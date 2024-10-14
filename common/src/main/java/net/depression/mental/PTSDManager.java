@@ -50,7 +50,7 @@ public class PTSDManager {
     public static void addEntry(String damageSource, String soundEvent) {
         soundEventMap.computeIfAbsent(soundEvent, k -> new ArrayList<>()).add(damageSource);
         damageSourceMap.computeIfAbsent(damageSource, k -> new ArrayList<>())
-                .add(SoundEvent.createVariableRangeEvent(new ResourceLocation(soundEvent)));
+                .add(new SoundEvent(new ResourceLocation(soundEvent)));
     }
 
     public synchronized void tick(ServerPlayer player) { //每秒调用一次
@@ -181,7 +181,7 @@ public class PTSDManager {
                 else {
                     EntityType.byString(key).ifPresent(entityType -> {
                         if (Mob.class.isAssignableFrom(entityType.getBaseClass())) {
-                            SoundEvent soundEvent = ((MobAccess) entityType.create(player.level())).invokeGetAmbientSound();
+                            SoundEvent soundEvent = ((MobAccess) entityType.create(player.getLevel())).invokeGetAmbientSound();
                             if (soundEvent != null) {
                                 player.playNotifySound(soundEvent, player.getSoundSource(), 1f, 1f);
                             }

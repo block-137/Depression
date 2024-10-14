@@ -135,7 +135,7 @@ public class MentalStatus {
                 else { //PTSD > 12 判定玩家是否触发症状
                     value = entry.getValue() - PTSD_DISPERSE_RATE; //PTSD值 -= 自然消散速度
                     entry.setValue(value);
-                    ServerLevel level = (ServerLevel) player.level();
+                    ServerLevel level = player.getLevel();
                     EntityType.byString(key).ifPresentOrElse(
                             entityType -> {
                                 List<? extends Entity> list = level.getEntities(entityType, this::viewDetect);
