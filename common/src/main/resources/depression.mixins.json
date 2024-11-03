@@ -5,19 +5,25 @@
   "minVersion": "0.8",
   "client": [
     "client.BookViewScreenMixin",
+    "client.ClientLevelMixin",
     "client.FontAccess",
+    "client.LevelRendererMixin",
     "client.LocalPlayerMixin"
   ],
   "mixins": [
     "CakeBlockMixin",
+    "EntityMixin",
     "JukeboxBlockEntityMixin",
     "MilkBucketItemMixin",
+    "MobAccess",
+    "PlayerListMixin",
     "PlayerMixin",
     "SingleJigsawAccess",
     "symptom.BowItemMixin",
     "symptom.CrossbowItemMixin",
     "symptom.ItemStackMixin",
-    "symptom.LivingEntityMixin"
+    "symptom.LivingEntityMixin",
+    "symptom.ServerLevelMixin"
   ],
   "injectors": {
     "defaultRequire": 1

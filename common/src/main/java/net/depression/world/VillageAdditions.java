@@ -11,7 +11,12 @@ import it.unimi.dsi.fastutil.objects.Object2IntLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.depression.Depression;
 import net.depression.block.ModBlocks;
+<<<<<<< HEAD
 import net.depression.mixin.SingleJigsawAccess;
+=======
+import net.depression.mixin.StructureTemplatePoolAccess;
+import net.depression.sound.ModSounds;
+>>>>>>> dc11530 (0.1.2 Update)
 import net.minecraft.core.Registry;
 import net.minecraft.core.WritableRegistry;
 import net.minecraft.data.BuiltinRegistries;
@@ -34,10 +39,14 @@ public class VillageAdditions {
     public static final ResourceKey<PoiType> COMPUTER_POI_KEY = createKey("computer_poi");
     public static final RegistrySupplier<VillagerProfession> PSYCHOLOGIST = VILLAGER_PROFESSIONS.register("psychologist",
             () -> new VillagerProfession("psychologist", x -> x.value().is(ModBlocks.COMPUTER.get().defaultBlockState()),
+<<<<<<< HEAD
                     x -> x.value().is(ModBlocks.COMPUTER.get().defaultBlockState()), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_CARTOGRAPHER));
     public static void addClinic(String biome, int weight) {
         ResourceLocation pool = new ResourceLocation("village/" + biome + "/houses");
         StructureTemplatePool old = BuiltinRegistries.TEMPLATE_POOL.get(pool);
+=======
+                    x -> x.value().is(ModBlocks.COMPUTER.get().defaultBlockState()), ImmutableSet.of(), ImmutableSet.of(), ModSounds.TYPING.get()));
+>>>>>>> dc11530 (0.1.2 Update)
 
         int id = BuiltinRegistries.TEMPLATE_POOL.getId(old);
 

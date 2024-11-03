@@ -17,12 +17,13 @@ public class EntityEventListener {
             return EventResult.pass();
         }
         Entity entity = damageSource.getEntity();
-        if (livingEntity instanceof Player) {
-            Player player = (Player) livingEntity;
+        if (livingEntity instanceof ServerPlayer) {
+            ServerPlayer player = (ServerPlayer) livingEntity;
             if (player.isCreative()) {
                 return EventResult.pass();
             }
             MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
+            mentalStatus.ptsdManager.clear(player);
             Entity directEntity = damageSource.getDirectEntity();
             if (entity != null) {
                 String encodeId = entity.getEncodeId();
