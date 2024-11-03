@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "depression",
+  "version": "0.1.2",
+  "name": "Depression",
+  "description": "This is a mod that adds brand-new emotion and mental health mechanism to Minecraft!",
+  "authors": [
+    "block_137",
+    "SimoTCD",
+    "TheMoonAries",
+    "Tianxin_Limao",
+    "hhxkzhy"
+  ],
+  "license": "LGPL-3.0-or-later",
+  "icon": "assets/depression/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.depression.fabric.DepressionFabric"
+    ],
+    "client": [
+      "net.depression.fabric.client.DepressionFabricClient"
+    ]
+  },
+  "mixins": [
+    "depression.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.0.8"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

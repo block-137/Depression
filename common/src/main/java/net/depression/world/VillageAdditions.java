@@ -7,6 +7,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.depression.Depression;
 import net.depression.block.ModBlocks;
 import net.depression.mixin.StructureTemplatePoolAccess;
+import net.depression.sound.ModSounds;
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
@@ -27,7 +28,7 @@ public class VillageAdditions {
     public static final ResourceKey<PoiType> COMPUTER_POI_KEY = createKey("computer_poi");
     public static final RegistrySupplier<VillagerProfession> PSYCHOLOGIST = VILLAGER_PROFESSIONS.register("psychologist",
             () -> new VillagerProfession("psychologist", x -> x.value().is(ModBlocks.COMPUTER.get().defaultBlockState()),
-                    x -> x.value().is(ModBlocks.COMPUTER.get().defaultBlockState()), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.VILLAGER_WORK_CARTOGRAPHER));
+                    x -> x.value().is(ModBlocks.COMPUTER.get().defaultBlockState()), ImmutableSet.of(), ImmutableSet.of(), ModSounds.TYPING.get()));
 
     public static void init(RegistryAccess registryAccess) {
         Registry<StructureTemplatePool> registry = registryAccess.registryOrThrow(Registries.TEMPLATE_POOL);

@@ -26,8 +26,13 @@
     "depression.mixins.json"
   ],
   "depends": {
+<<<<<<< HEAD
     "fabricloader": ">=0.14.1",
     "minecraft": "~1.19.4",
+=======
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.20.1",
+>>>>>>> dc11530 (0.1.2 Update)
     "java": ">=17",
     "architectury": ">=8.1.73",
     "fabric-api": "*"

@@ -1,10 +1,19 @@
 package net.depression.listener.client;
 
 import net.depression.client.ClientMentalStatus;
+import net.depression.client.ClientPTSDManager;
+import net.depression.client.DepressionClient;
+import net.depression.mental.PTSDManager;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 
 public class ClientLifecycleEventListener {
     public static void onClientLevelLoad(ClientLevel clientLevel) {
-        ClientMentalStatus.isJoinGame = true;
+        if (Minecraft.getInstance().level == null) {
+            ClientMentalStatus clientMentalStatus = DepressionClient.clientMentalStatus;
+            clientMentalStatus.reset();
+            ClientPTSDManager ptsdManager = clientMentalStatus.ptsdManager;
+            ptsdManager.clear();
+        }
     }
 }

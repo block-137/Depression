@@ -16,7 +16,7 @@ import java.util.Random;
 public class MentalIllness {
     public int mentalHealthLevel; //精神健康等级
     public Boolean isInsomnia;
-    private int sleepAttemptCount = 0;
+    public int sleepAttemptCount = 0;
     private Long nextCloseEyeTime;
     public final HashMap<String, Integer> medicineDelay = new HashMap<>();
     public final Random random = new Random();
@@ -45,12 +45,15 @@ public class MentalIllness {
         if (isInsomnia != null && isInsomnia && mentalHealthLevel == 0) {
             isInsomnia = false;
         }
+<<<<<<< HEAD
         //重置失眠状态
         Level level = player.getLevel();
         if (level.getDayTime() == 12000) {
             sleepAttemptCount = 0;
             setIsInsomnia();
         }
+=======
+>>>>>>> dc11530 (0.1.2 Update)
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
         //处理是否失眠
         if (player.isSleepingLongEnough() && !isSleepy) {
@@ -112,6 +115,7 @@ public class MentalIllness {
     }
 
     public void setIsInsomnia() { //计算是否失眠
+        sleepAttemptCount = 0;
         switch (mentalHealthLevel) {
             case 1 -> isInsomnia = random.nextDouble() < 0.5d; //若轻度抑郁，则50%概率失眠
             case 2 -> isInsomnia = random.nextDouble() < 0.75d; //若中度抑郁，则75%概率失眠

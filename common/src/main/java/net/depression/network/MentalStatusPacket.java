@@ -14,6 +14,7 @@ public class MentalStatusPacket {
     public static void sendToPlayer(ServerPlayer player, MentalStatus mentalStatus) {
         FriendlyByteBuf emotionBuf = new FriendlyByteBuf(Unpooled.buffer());
         emotionBuf.writeDouble(mentalStatus.emotionValue);
+        emotionBuf.writeBoolean(mentalStatus.combatCountdown > 0); //是否处于战斗状态
         FriendlyByteBuf depressionBuf = new FriendlyByteBuf(Unpooled.buffer());
         depressionBuf.writeDouble(mentalStatus.mentalHealthValue);
         NetworkManager.sendToPlayer(player, EMOTION_PACKET, emotionBuf);
