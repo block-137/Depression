@@ -6,6 +6,7 @@ FIELD	net/depression/mixin/client/BookViewScreenMixin	Ljava/util/List;	cachedPag
 FIELD	net/depression/mixin/client/BookViewScreenMixin	Lnet/minecraft/network/chat/Component;	pageMsg	field_25897
 FIELD	net/depression/mixin/client/LevelRendererMixin	Lnet/minecraft/client/multiplayer/ClientLevel;	level	field_4085
 FIELD	net/depression/mixin/client/LevelRendererMixin	Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher;	entityRenderDispatcher	field_4109
+FIELD	net/depression/mixin/client/LevelRendererMixin	Lnet/minecraft/client/renderer/RenderBuffers;	renderBuffers	field_20951
 METHOD	net/depression/mixin/client/BookViewScreenMixin	()I	getNumPages	method_17055
 METHOD	net/depression/mixin/client/BookViewScreenMixin	(DD)Lnet/minecraft/network/chat/Style;	getClickedComponentStyleAt	method_17048
 METHOD	net/depression/mixin/EntityMixin	()Lnet/minecraft/world/level/Level;	level	method_37908

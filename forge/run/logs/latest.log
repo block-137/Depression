@@ -1,122 +1,122 @@
-[22:43:08] [main/INFO] (Launcher) ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.20.1-5, --assetsDir, C:\Users\13475\.gradle\caches\fabric-loom\assets, --gameDir, ., --fml.forgeVersion, 47.2.30, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, -mixin.config, depression.mixins.json, --mixin.config, depression.mixins.json]
-[22:43:08] [main/INFO] (Launcher) ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.8 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
-[22:43:08] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
-[22:43:08] [main/INFO] (EARLYDISPLAY) Trying GL version 4.6
-[22:43:08] [main/INFO] (EARLYDISPLAY) Requested GL version 4.6 got version 4.6
-[22:43:08] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.11/dd886ad7af30604cbd9aa0f1eb9fb95b079013ca/mixin-patched-0.8.5.11.jar%23129!/ Service=ModLauncher Env=CLIENT
-[22:43:08] [pool-5-thread-1/INFO] (EARLYDISPLAY) GL info: AMD Radeon RX 6750 XT GL version 4.6.0 Core Profile Context 24.10.37.01.240802, ATI Technologies Inc.
-[22:43:08] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.30\306080746b55301f533d17a1f75c0416bfa6425d\javafmllanguage-1.20.1-47.2.30.jar is missing mods.toml file
-[22:43:08] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.30\ed4251688f57da24ffceb91f85693e28171bc4de\lowcodelanguage-1.20.1-47.2.30.jar is missing mods.toml file
-[22:43:08] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.30\66fae321e7c1e488bb0a63661153f415efa06665\mclanguage-1.20.1-47.2.30.jar is missing mods.toml file
-[22:43:08] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.30\34b7d69dcc2b769d597be488ba457877f9d57cd9\fmlcore-1.20.1-47.2.30.jar is missing mods.toml file
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file javafmllanguage-1.20.1-47.2.30.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@46605225
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file lowcodelanguage-1.20.1-47.2.30.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@46605225
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file mclanguage-1.20.1-47.2.30.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@46605225
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file fmlcore-1.20.1-47.2.30.jar of type LIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@46605225
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@46605225
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file main of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@46605225
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file  of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@46605225
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.2.0.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@3927a686
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file architectury-forge-9.2.14.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@3927a686
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file 16950208368082977556.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@3927a686
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.2.0.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@3927a686
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file architectury-forge-9.2.14.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@3927a686
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file 16950208368082977556.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@3927a686
-[22:43:08] [main/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
-[22:43:08] [main/INFO] (ModDiscoverer) Found mod file MixinExtras-0.2.0.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator@1a049d97
-[22:43:09] [main/INFO] (mixin) Compatibility level set to JAVA_17
-[22:43:09] [main/INFO] (LaunchServiceHandler) Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\13475\.gradle\caches\fabric-loom\assets, --assetIndex, 1.20.1-5]
-[22:43:09] [main/INFO] (unprotect) Found 7423 Minecraft classes
-[22:43:09] [main/INFO] (mixin) Remapping refMap architectury-forge-refmap.json using RemapperChain (Architectury Patched)
-[22:43:09] [main/INFO] (mixin) Remapping refMap architectury-common-refmap.json using RemapperChain (Architectury Patched)
-[22:43:09] [main/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.2.0).
-[31Oct2024 22:43:10.627] [main/WARN] [oshi.driver.windows.perfmon.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[31Oct2024 22:43:12.621] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 109 milliseconds
-[31Oct2024 22:43:13.608] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/13475/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.2.30-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30/forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/assets/.mcassetsroot' uses unexpected schema
-[31Oct2024 22:43:13.609] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/13475/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.2.30-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30/forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/data/.mcassetsroot' uses unexpected schema
-[31Oct2024 22:43:13.618] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[31Oct2024 22:43:13.621] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[31Oct2024 22:43:13.677] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[31Oct2024 22:43:13.815] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.30, for MC 1.20.1 with MCP 20230612.114412
-[31Oct2024 22:43:13.815] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.30 Initialized
-[31Oct2024 22:43:13.924] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id architectury:sync_ids
-[31Oct2024 22:43:13.925] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
-[31Oct2024 22:43:13.947] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering C2S receiver with id depression:diary_update_packet
-[31Oct2024 22:43:13.953] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering C2S receiver with id depression:play_sound_packet
-[31Oct2024 22:43:14.463] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
-[31Oct2024 22:43:14.533] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[31Oct2024 22:43:14.589] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[31Oct2024 22:43:14.593] [Worker-Main-2/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[31Oct2024 22:43:14.784] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:emotion_packet
-[31Oct2024 22:43:14.784] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:mental_health_packet
-[31Oct2024 22:43:14.790] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:nearby_block_heal_packet
-[31Oct2024 22:43:14.790] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:break_block_heal_packet
-[31Oct2024 22:43:14.791] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:kill_entity_heal_packet
-[31Oct2024 22:43:14.791] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_form_packet
-[31Oct2024 22:43:14.791] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_disperse_packet
-[31Oct2024 22:43:14.791] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_remission_packet
-[31Oct2024 22:43:14.791] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:insomnia_packet
-[31Oct2024 22:43:14.791] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:mental_fatigue_packet
-[31Oct2024 22:43:14.798] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:close_eye_packet
-[31Oct2024 22:43:14.803] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_onset_packet
-[31Oct2024 22:43:14.807] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:diary_update_packet
-[31Oct2024 22:43:14.807] [Worker-Main-6/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:phonism_packet
-[31Oct2024 22:43:15.513] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.2.30 Target: 47.3.0
-[31Oct2024 22:43:16.032] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[31Oct2024 22:43:16.032] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[31Oct2024 22:43:16.063] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
-[31Oct2024 22:43:16.063] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[31Oct2024 22:43:16.154] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[31Oct2024 22:43:16.161] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[31Oct2024 22:43:16.161] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[31Oct2024 22:43:16.161] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[31Oct2024 22:43:16.163] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[31Oct2024 22:43:16.168] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[31Oct2024 22:43:16.169] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[31Oct2024 22:43:16.169] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[31Oct2024 22:43:16.169] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[31Oct2024 22:43:16.341] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[31Oct2024 22:43:16.380] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[31Oct2024 22:43:16.381] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[31Oct2024 22:43:16.381] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[31Oct2024 22:43:17.061] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
-[31Oct2024 22:43:26.304] [Render thread/WARN] [net.minecraftforge.common.ForgeHooks/WP]: The following mods have version differences that were not resolved:
-depression (version 0.1.1 -> 0.1.2)
-generated_f14ac69 (version 1 -> MISSING)
+[21:46:57] [main/INFO] (Launcher) ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.20.1-5, --assetsDir, C:\Users\13475\.gradle\caches\fabric-loom\assets, --gameDir, ., --fml.forgeVersion, 47.2.30, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, -mixin.config, depression.mixins.json, --mixin.config, depression.mixins.json]
+[21:46:57] [main/INFO] (Launcher) ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.8 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[21:46:57] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
+[21:46:57] [main/INFO] (EARLYDISPLAY) Trying GL version 4.6
+[21:46:57] [main/INFO] (EARLYDISPLAY) Requested GL version 4.6 got version 4.6
+[21:46:57] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.11/dd886ad7af30604cbd9aa0f1eb9fb95b079013ca/mixin-patched-0.8.5.11.jar%23129!/ Service=ModLauncher Env=CLIENT
+[21:46:57] [pool-5-thread-1/INFO] (EARLYDISPLAY) GL info: AMD Radeon RX 6750 XT GL version 4.6.0 Core Profile Context 24.10.27.01.240827, ATI Technologies Inc.
+[21:46:57] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.30\306080746b55301f533d17a1f75c0416bfa6425d\javafmllanguage-1.20.1-47.2.30.jar is missing mods.toml file
+[21:46:57] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.30\ed4251688f57da24ffceb91f85693e28171bc4de\lowcodelanguage-1.20.1-47.2.30.jar is missing mods.toml file
+[21:46:57] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.30\66fae321e7c1e488bb0a63661153f415efa06665\mclanguage-1.20.1-47.2.30.jar is missing mods.toml file
+[21:46:57] [main/WARN] (ModFileParser) Mod file C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.30\34b7d69dcc2b769d597be488ba457877f9d57cd9\fmlcore-1.20.1-47.2.30.jar is missing mods.toml file
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file javafmllanguage-1.20.1-47.2.30.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@6f8da95a
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file lowcodelanguage-1.20.1-47.2.30.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@6f8da95a
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file mclanguage-1.20.1-47.2.30.jar of type LANGPROVIDER with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@6f8da95a
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file fmlcore-1.20.1-47.2.30.jar of type LIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@6f8da95a
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@6f8da95a
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file main of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@6f8da95a
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file  of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@6f8da95a
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.2.0.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@52d2f5a7
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file architectury-forge-9.2.14.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@52d2f5a7
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file 6849347294962510194.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@52d2f5a7
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file mixinextras-forge-0.2.0.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@52d2f5a7
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file architectury-forge-9.2.14.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@52d2f5a7
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file 6849347294962510194.jar of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.ClasspathLocator@52d2f5a7
+[21:46:57] [main/INFO] (JarInJarDependencyLocator) Found 1 dependencies adding them to mods collection
+[21:46:57] [main/INFO] (ModDiscoverer) Found mod file MixinExtras-0.2.0.jar of type GAMELIBRARY with provider net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator@78a1c437
+[21:46:58] [main/INFO] (mixin) Compatibility level set to JAVA_17
+[21:46:58] [main/INFO] (LaunchServiceHandler) Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\13475\.gradle\caches\fabric-loom\assets, --assetIndex, 1.20.1-5]
+[21:46:58] [main/INFO] (unprotect) Found 7423 Minecraft classes
+[21:46:58] [main/INFO] (mixin) Remapping refMap architectury-forge-refmap.json using RemapperChain (Architectury Patched)
+[21:46:58] [main/INFO] (mixin) Remapping refMap architectury-common-refmap.json using RemapperChain (Architectury Patched)
+[21:46:59] [main/INFO] (MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.2.0).
+[03Nov2024 21:47:00.191] [main/WARN] [oshi.driver.windows.perfmon.PerfmonDisabled/]: Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[03Nov2024 21:47:02.325] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 89 milliseconds
+[03Nov2024 21:47:03.392] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/13475/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.2.30-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30/forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/assets/.mcassetsroot' uses unexpected schema
+[03Nov2024 21:47:03.392] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/13475/.gradle/caches/fabric-loom/minecraftMaven/net/minecraft/forge-1.20.1-47.2.30-minecraft-merged/1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30/forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar%23199!/data/.mcassetsroot' uses unexpected schema
+[03Nov2024 21:47:03.402] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[03Nov2024 21:47:03.406] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[03Nov2024 21:47:03.466] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[03Nov2024 21:47:03.622] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.2.30, for MC 1.20.1 with MCP 20230612.114412
+[03Nov2024 21:47:03.622] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.30 Initialized
+[03Nov2024 21:47:03.734] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id architectury:sync_ids
+[03Nov2024 21:47:03.734] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering C2S receiver with id architectury:sync_ids
+[03Nov2024 21:47:03.751] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering C2S receiver with id depression:diary_update_packet
+[03Nov2024 21:47:03.762] [modloading-worker-0/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering C2S receiver with id depression:play_sound_packet
+[03Nov2024 21:47:04.234] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: []
+[03Nov2024 21:47:04.304] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[03Nov2024 21:47:04.380] [Worker-Main-11/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[03Nov2024 21:47:04.388] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[03Nov2024 21:47:04.621] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:emotion_packet
+[03Nov2024 21:47:04.621] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:mental_health_packet
+[03Nov2024 21:47:04.626] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:nearby_block_heal_packet
+[03Nov2024 21:47:04.626] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:break_block_heal_packet
+[03Nov2024 21:47:04.626] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:kill_entity_heal_packet
+[03Nov2024 21:47:04.626] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_form_packet
+[03Nov2024 21:47:04.626] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_disperse_packet
+[03Nov2024 21:47:04.626] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_remission_packet
+[03Nov2024 21:47:04.626] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:insomnia_packet
+[03Nov2024 21:47:04.627] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:mental_fatigue_packet
+[03Nov2024 21:47:04.632] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:close_eye_packet
+[03Nov2024 21:47:04.637] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:ptsd_onset_packet
+[03Nov2024 21:47:04.645] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:diary_update_packet
+[03Nov2024 21:47:04.645] [Worker-Main-3/INFO] [dev.architectury.networking.forge.NetworkManagerImpl/]: Registering S2C receiver with id depression:phonism_packet
+[03Nov2024 21:47:05.287] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.2.30 Target: 47.3.0
+[03Nov2024 21:47:05.937] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[03Nov2024 21:47:05.940] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[03Nov2024 21:47:05.983] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[03Nov2024 21:47:05.984] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[03Nov2024 21:47:06.094] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[03Nov2024 21:47:06.112] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[03Nov2024 21:47:06.113] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[03Nov2024 21:47:06.113] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[03Nov2024 21:47:06.116] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[03Nov2024 21:47:06.127] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[03Nov2024 21:47:06.127] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[03Nov2024 21:47:06.127] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[03Nov2024 21:47:06.127] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[03Nov2024 21:47:06.312] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[03Nov2024 21:47:06.355] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[03Nov2024 21:47:06.356] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[03Nov2024 21:47:06.356] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[03Nov2024 21:47:06.732] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[03Nov2024 21:47:17.787] [Render thread/WARN] [net.minecraftforge.common.ForgeHooks/WP]: The following mods have version differences that were not resolved:
+generated_d9a5fac (version 1 -> MISSING)
 Things may not work well.
-[31Oct2024 22:43:26.621] [Render thread/WARN] [net.minecraft.server.MinecraftServer/]: Missing data pack mod:generated_f14ac69
-[31Oct2024 22:43:27.312] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[31Oct2024 22:43:27.368] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
-[31Oct2024 22:43:27.635] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[31Oct2024 22:43:27.635] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[31Oct2024 22:43:27.805] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[31Oct2024 22:43:28.686] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Oct2024 22:43:28.686] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Oct2024 22:43:28.829] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
-[31Oct2024 22:43:29.257] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[31Oct2024 22:43:29.272] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 1456 ms
-[31Oct2024 22:43:29.335] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[31Oct2024 22:43:29.336] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[31Oct2024 22:43:29.396] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[31Oct2024 22:43:29.766] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[31Oct2024 22:43:29.799] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:7362e1cb] logged in with entity id 40 at (-29.78571386645324, -57.13140143858811, 4.856111630509966)
-[31Oct2024 22:43:29.838] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
-[31Oct2024 22:43:30.103] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 23 advancements
-[31Oct2024 22:43:32.607] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[31Oct2024 22:43:32.615] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[31Oct2024 22:43:32.621] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[31Oct2024 22:43:32.621] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[31Oct2024 22:43:33.563] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
-[31Oct2024 22:43:33.563] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
-[31Oct2024 22:43:33.570] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[31Oct2024 22:43:33.610] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[31Oct2024 22:43:33.611] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[31Oct2024 22:43:33.611] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[31Oct2024 22:43:33.764] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[31Oct2024 22:43:33.828] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[31Oct2024 22:43:33.828] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[31Oct2024 22:43:33.840] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (新的世界): All chunks are saved
-[31Oct2024 22:43:33.840] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[31Oct2024 22:43:33.840] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[31Oct2024 22:43:33.840] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
-[31Oct2024 22:43:34.664] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[03Nov2024 21:47:18.119] [Render thread/WARN] [net.minecraft.server.MinecraftServer/]: Missing data pack mod:generated_d9a5fac
+[03Nov2024 21:47:18.864] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[03Nov2024 21:47:18.923] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
+[03Nov2024 21:47:19.213] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
+[03Nov2024 21:47:19.213] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[03Nov2024 21:47:19.416] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[03Nov2024 21:47:20.453] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[03Nov2024 21:47:20.453] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[03Nov2024 21:47:20.453] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[03Nov2024 21:47:20.934] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 82%
+[03Nov2024 21:47:21.004] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[03Nov2024 21:47:21.005] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 1588 ms
+[03Nov2024 21:47:21.086] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[03Nov2024 21:47:21.087] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[03Nov2024 21:47:21.150] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
+[03Nov2024 21:47:21.516] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[03Nov2024 21:47:21.549] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:575e20f2] logged in with entity id 40 at (-29.78571386645324, -57.13140143858811, 4.856111630509966)
+[03Nov2024 21:47:21.592] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[03Nov2024 21:47:21.938] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 23 advancements
+[03Nov2024 21:47:25.205] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[03Nov2024 21:47:25.212] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[03Nov2024 21:47:25.218] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[03Nov2024 21:47:25.219] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[03Nov2024 21:47:25.910] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[03Nov2024 21:47:25.910] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[03Nov2024 21:47:25.916] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
+[03Nov2024 21:47:25.955] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[03Nov2024 21:47:25.955] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[03Nov2024 21:47:25.955] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[03Nov2024 21:47:26.108] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[03Nov2024 21:47:26.180] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[03Nov2024 21:47:26.180] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[03Nov2024 21:47:26.191] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (新的世界): All chunks are saved
+[03Nov2024 21:47:26.191] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[03Nov2024 21:47:26.192] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[03Nov2024 21:47:26.192] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[03Nov2024 21:47:26.905] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
