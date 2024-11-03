@@ -181,7 +181,7 @@ public class PTSDManager {
                 else {
                     EntityType.byString(key).ifPresent(entityType -> {
                         if (Mob.class.isAssignableFrom(entityType.getBaseClass())) {
-                            SoundEvent soundEvent = ((MobAccess) entityType.create(player.level())).invokeGetAmbientSound();
+                            SoundEvent soundEvent = ((MobAccess) entityType.create(player.getLevel())).invokeGetAmbientSound();
                             if (soundEvent != null) {
                                 player.playNotifySound(soundEvent, player.getSoundSource(), 1f, 1f);
                             }

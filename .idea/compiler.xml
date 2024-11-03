@@ -14,6 +14,18 @@
         </processorPath>
         <module name="Depression.forge.main" />
       </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="defaultObfuscationEnv" value="named:intermediary" />
+        <option name="inMapFileNamedIntermediary" value="C:\Users\13475\.gradle\caches\fabric-loom\1.19.4\loom.mappings.1_19_4.layered+hash.40359-v2-forge-1.19.4-45.3.0\mappings-mixin-srg.tiny" />
+        <option name="outMapFileNamedIntermediary" value="D:\MinecraftModProject\Depression1.19.4\forge\build\loom-cache\mixin-map-loom.mappings.1_19_4.layered+hash.40359-v2-forge-1.19.4-45.3.0.main.tiny" />
+        <option name="outRefMapFile" value="D:\MinecraftModProject\Depression1.19.4\forge\build\classes\java\main\depression-forge-forge-refmap.json" />
+        <option name="quiet" value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.llamalad7/mixinextras-common/0.2.0/3f26dd587b7c6d803647a4ad3b66ce5cea1835e6/mixinextras-common-0.2.0.jar" />
+        </processorPath>
+        <module name="Depression1.19.4.forge.main" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
   </component>

@@ -1,28 +1,26 @@
 [Architectury Transformer] Architectury Runtime 5.2.87
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
 [Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Provided 104 classpath jar(s):
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\fabric-loom\1.20.1\forge\1.20.1-47.2.30\client-extra.jar
+[Architectury Transformer DEBUG] Provided 101 classpath jar(s):
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\fabric-loom\1.19.4\forge\1.19.4-45.3.0\client-extra.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.7\18ce52a3228434ba2aa8c1936728ef4eacad64b8\fabric-loader-0.16.7.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\24.1.0\7af6a669488450c4a07c2c3254e2151df42d7d04\annotations-24.1.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlearlydisplay\1.20.1-47.2.30\c4a2ff3abdf78062f6b01ab0160b386e8d15109b\fmlearlydisplay-1.20.1-47.2.30.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.2.30\306080746b55301f533d17a1f75c0416bfa6425d\javafmllanguage-1.20.1-47.2.30.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.2.30\ed4251688f57da24ffceb91f85693e28171bc4de\lowcodelanguage-1.20.1-47.2.30.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.2.30\66fae321e7c1e488bb0a63661153f415efa06665\mclanguage-1.20.1-47.2.30.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.2.30\34b7d69dcc2b769d597be488ba457877f9d57cd9\fmlcore-1.20.1-47.2.30.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\fabric-loom\forge\transformed-dependencies-v1\net\minecraftforge\dd77339ce141d1c3673678d365e06c3a25400a55808497d7be3701983ce86129\fmlloader\1.20.1-47.2.30\fmlloader-1.20.1-47.2.30.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\forgespi\7.0.1\3b4972a0cdb135853dba219be61a79b22cff1309\forgespi-7.0.1.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\accesstransformers\8.0.4\272d240aa73f42195b2a68e2ebd8b701ecf41f63\accesstransformers-8.0.4.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\eventbus\6.0.5\699143dd438431d06b57416944f7cedbe52e1475\eventbus-6.0.5.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\cpw.mods\modlauncher\10.0.9\6d9443f56f50bb85cea383686ff9c867391458b\modlauncher-10.0.9.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.19.4-45.3.0\764616c79ed3e3def47acb8261877a186744247c\javafmllanguage-1.19.4-45.3.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.19.4-45.3.0\dcba60f8ba0b45885b77bc379d111d768df0bd66\lowcodelanguage-1.19.4-45.3.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.19.4-45.3.0\36d85cf4dae773f11faae7b34aaab4c5636510b0\mclanguage-1.19.4-45.3.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.19.4-45.3.0\13aeea5b95ae0928109f9b64e181651441820d2e\fmlcore-1.19.4-45.3.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\fabric-loom\forge\transformed-dependencies-v1\net\minecraftforge\30fb991d4e7f981865418f5a266d985476596fd5998212f564a2f0404fe9cd0d\fmlloader\1.19.4-45.3.0\fmlloader-1.19.4-45.3.0.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\coremods\5.0.1\386b00279628b105b2d507539c46e134e96f6237\coremods-5.0.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\forgespi\6.0.0\4a2004591666531f8b30d3402317b1ff6411bd3e\forgespi-6.0.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\cpw.mods\bootstraplauncher\1.1.2\c546e00443d8432cda6baa1c860346980742628\bootstraplauncher-1.1.2.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.10\51e6a22c6c716beb11e244bf5b8be480f51dd6b5\securejarhandler-2.1.10.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\coremods\5.1.6\62fab3c3d59d37f8e15af311cb638c6f6123423\coremods-5.1.6.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\accesstransformers\8.0.4\272d240aa73f42195b2a68e2ebd8b701ecf41f63\accesstransformers-8.0.4.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\eventbus\6.0.3\42fe522ace1bbcbcbba9c880c42411857baf36a9\eventbus-6.0.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\cpw.mods\modlauncher\10.0.9\6d9443f56f50bb85cea383686ff9c867391458b\modlauncher-10.0.9.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\cpw.mods\securejarhandler\2.1.6\66c15fc1f522b586476e9e4cccd0cbe192554e8a\securejarhandler-2.1.6.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.openjdk.nashorn\nashorn-core\15.3\43977e804697048fc8d81d333a36c17d07a5b3dd\nashorn-core-15.3.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-commons\9.7\e86dda4696d3c185fcc95d8d311904e7ce38a53f\asm-commons-9.7.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.1.5\f3da18e12c696d35a47c82cbb2cc8b5aa15e1154\mergetool-1.1.5-api.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-util\9.7\c0655519f24d92af2202cb681cd7c1569df6ead6\asm-util-9.7.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-analysis\9.7\e4a258b7eb96107106c0599f0061cfc1832fe07a\asm-analysis-9.7.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.ow2.asm\asm-tree\9.7\e446a17b175bfb733b87c5c2560ccb4e57d69f1a\asm-tree-9.7.jar
@@ -35,7 +33,7 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarSelector\0.3.19\376cc9c8ea60720cf027c01fc033de915699801c\JarJarSelector-0.3.19.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\JarJarMetadata\0.3.19\83feaa9b770e6ac0e96ee4fc23fa89325c5fe2\JarJarMetadata-0.3.19.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.apache.maven\maven-artifact\3.8.5\4433f50c07debefaed0553bd0068f4f48d449313\maven-artifact-3.8.5.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.jodah\typetools\0.6.3\a01aaa6ddaea9ec07ec4f209487b7a46a526283a\typetools-0.6.3.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.jodah\typetools\0.8.3\98f84f353457629e81cc6827224871b1a8faa7af\typetools-0.8.3.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecrell\terminalconsoleappender\1.2.0\96d02cd3b384ff015a8fef4223bcb4ccf1717c95\terminalconsoleappender-1.2.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.jline\jline-reader\3.12.1\4382ab1382c7b6f379377ed5f665dc2f6e1218bc\jline-reader-3.12.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.jline\jline-terminal\3.12.1\c777448314e050d980a6b697c140f3bfe9eb7416\jline-terminal-3.12.1.jar
@@ -47,7 +45,6 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-slf4j2-impl\2.19.0\5c04bfdd63ce9dceb2e284b81e96b6a70010ee10\log4j-slf4j2-impl-2.19.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.github.juuxel\unprotect\1.2.0\49cc229a0469f28fae41593a9537743ac6a951dc\unprotect-1.2.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.apache.logging.log4j\log4j-api\2.19.0\ea1b37f38c327596b216542bc636cfdc0b8036fa\log4j-api-2.19.0.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.minecraftforge\srgutils\0.4.11\fbad1341ffdb47d276bbdc40ecb06da49e053e74\srgutils-0.4.11.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.codehaus.plexus\plexus-utils\3.3.0\cf43b5391de623b36fe066a21127baef82c64022\plexus-utils-3.3.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.12.0\c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e\commons-lang3-3.12.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.10\dd9b193aef96e973d5a11ab13cd17430c2e4306b\gson-2.10.jar
@@ -56,11 +53,6 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-simple\1.7.30\e606eac955f55ecf1d8edcccba04eb8ac98088dd\slf4j-simple-1.7.30.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.1\f48d81adce2abf5ad3cfe463df517952749e03bc\slf4j-api-2.0.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.11.0\a2503f302b11ebde7ebc3df41daebe0e4eea3689\commons-io-2.11.0.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\cbac1b8d30cb4795149c1ef540f912671a8616d0\lwjgl-glfw-3.3.1.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\831a5533a21a5f4f81bbc51bb13e9899319b5411\lwjgl-opengl-3.3.1.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\b119297cf8ed01f247abe8685857f8e7fcf5980f\lwjgl-stb-3.3.1.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.antlr\ST4\4.3\92f2c1ad8d84abcbeead6cf7f2c53a04166293c2\ST4-4.3.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.antlr\antlr-runtime\3.5.2\cd9cd41361c155f3af0f653009dcecb08d8b4afd\antlr-runtime-3.5.2.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.abego.treelayout\org.abego.treelayout.core\1.0.3\457216e8e6578099ae63667bb1e4439235892028\org.abego.treelayout.core-1.0.3.jar
@@ -77,12 +69,12 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-common\0.2.0\3f26dd587b7c6d803647a4ad3b66ce5cea1835e6\mixinextras-common-0.2.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.github.llamalad7\mixinextras-forge\0.2.0\2710309a309a9d66cbdda36887751201662ceebe\mixinextras-forge-0.2.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.github.oshi\oshi-core\6.2.2\54f5efc19bca95d709d9a37d19ffcbba3d21c1a6\oshi-core-6.2.2.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\4.0.43\2ff9d747a77570a07a60d32ac77eb6162ad2a2d9\authlib-4.0.43.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\3.18.38\16106b26bce62bda55bab42785b999e44d77ecb\authlib-3.18.38.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\blocklist\1.0.10\5c685c5ffa94c4cd39496c7184c1d122e515ecef\blocklist-1.0.10.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.1.8\5244ce82c3337bba4a196a3ce858bfaecc74404a\brigadier-1.1.8.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.8\3ba4a30557a9b057760af4011f909ba619fc5125\datafixerupper-6.0.8.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.0.18\c1ef1234282716483c92183f49bef47b1a89bfa9\brigadier-1.0.18.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.6\e38e20946530646e866db03b2b192883d0ea6e84\datafixerupper-6.0.6.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\patchy\2.2.10\da05971b07cbb379d002cf7eaec6a2048211fefc\patchy-2.2.10.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.17.9\3cad216e3a7f0c19b4b394388bc9ffc446f13b14\text2speech-1.17.9.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.16.7\ee4095669061d1fe4bce5fea23d69d1520bc2d58\text2speech-1.16.7.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.15\49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d\commons-codec-1.15.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.82.Final\a544270cf1ae8b8077082f5036436a9a9971ea71\netty-buffer-4.1.82.Final.jar
@@ -100,26 +92,31 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.13\e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada\httpclient-4.5.13.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.15\7f2e0c573eaa7a74bac2e89b359e1f73d92a0a1d\httpcore-4.4.15.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.joml\joml\1.10.5\22566d58af70ad3d72308bab63b8339906deb649\joml-1.10.5.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\cbac1b8d30cb4795149c1ef540f912671a8616d0\lwjgl-glfw-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\a817bcf213db49f710603677457567c37d53e103\lwjgl-jemalloc-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\2623a6b8ae1dfcd880738656a9f0243d2e6840bd\lwjgl-openal-3.3.1.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\forge-1.20.1-47.2.30-minecraft-merged\1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30\forge-1.20.1-47.2.30-minecraft-merged-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2-forge-1.20.1-47.2.30.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\831a5533a21a5f4f81bbc51bb13e9899319b5411\lwjgl-opengl-3.3.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\b119297cf8ed01f247abe8685857f8e7fcf5980f\lwjgl-stb-3.3.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\fabric-loom\minecraftMaven\net\minecraft\forge-1.19.4-45.3.0-minecraft-merged\1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2-forge-1.19.4-45.3.0\forge-1.19.4-45.3.0-minecraft-merged-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2-forge-1.19.4-45.3.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2_forge_1_20_1_47_2_30_forge\dev\architectury\architectury-forge\9.2.14\architectury-forge-9.2.14.jar
-[Architectury Transformer] Read classpath in 1.090 s
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
-[Architectury Transformer DEBUG] Transforming 8 transformer(s) from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\16950208368082977556.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@50b9fe7b
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@657bc95
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@376aeed
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@b48be28
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@141dd31c
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@2f95761e
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeForgeMod@19a2b4c7
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@5755f025
-[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\16950208368082977556.jar with 8 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2_forge_1_19_4_45_3_0_forge\dev\architectury\architectury-forge\8.2.91\architectury-forge-8.2.91.jar
+[Architectury Transformer] Read classpath in 939.8 ms
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Transforming 8 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\9250428708216478991.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@2ea227af
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@4386f16
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@363ee3a2
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@4690b489
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@79b06cab
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@3eb7fc54
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeForgeMod@7f552bd3
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@3c22fc4c
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\9250428708216478991.jar with 8 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
@@ -129,16 +126,16 @@
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/entity/ModBannerPatterns with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/screen/DiaryAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
@@ -148,33 +145,33 @@
 [Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponent with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientRawInputEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/TagManagerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/TagManagerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/JukeboxBlockEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/CakeBlockMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/CakeBlockMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LevelRendererMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LocalPlayerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/BookViewScreenMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/ClientLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ServerLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ItemStackMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ServerLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/LivingEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
@@ -196,15 +193,14 @@
 [Architectury Transformer DEBUG] Found mixin config(s): depression.mixins.json
 [Architectury Transformer DEBUG] Appended Launch Argument: [--mixin.config, depression.mixins.json]
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\13475\AppData\Local\Temp\16950208368082977556.jar
-[Architectury Transformer] Listening at D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\13475\AppData\Local\Temp\16950208368082977556.jar] contains packages: net.depression.network, net.depression.item, net.depression.client, net.depression.item.diary, net.depression, net.depression.util, net.depression.mixin.symptom, net.depression.server, net.depression.client.screen, net.depression.block, net.depression.listener, net.depression.sound, net.depression.mental, net.depression.mixin.client, net.depression.listener.client, net.depression.mixin, net.depression.world, net.depression.tag, net.depression.block.entity, net.depression.effect
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
-[Architectury Transformer DEBUG] Classpath entry [D:\MinecraftModProject\Depression\forge\build\resources\main] contains packages: 
-[Architectury Transformer DEBUG] Classpath entry [D:\MinecraftModProject\Depression\common\build\resources\main] contains packages: 
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\13475\AppData\Local\Temp\9250428708216478991.jar
+[Architectury Transformer] Listening at D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\13475\AppData\Local\Temp\9250428708216478991.jar] contains packages: net.depression.network, net.depression.item, net.depression.client, net.depression.item.diary, net.depression, net.depression.util, net.depression.mixin.symptom, net.depression.server, net.depression.client.screen, net.depression.block, net.depression.listener, net.depression.sound, net.depression.mental, net.depression.mixin.client, net.depression.listener.client, net.depression.mixin, net.depression.world, net.depression.tag, net.depression.block.entity, net.depression.effect
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Classpath entry [D:\MinecraftModProject\Depression1.19.4\forge\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/MobAccess.class to net/depression/mixin/MobAccess.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping with Dirty Mappings...
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
@@ -212,434 +208,434 @@
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/MobAccess in 50.38 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/MobAccess in 51.92 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/StructureTemplatePoolAccess.class to net/depression/mixin/StructureTemplatePoolAccess.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/StructureTemplatePoolAccess in 13.02 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/StructureTemplatePoolAccess in 7.891 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/Depression.class to net/depression/Depression.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/Depression with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/Depression in 18.96 ms
+[Architectury Transformer DEBUG] Transformed net/depression/Depression in 9.446 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/block/entity/ModBannerPatterns.class to net/depression/block/entity/ModBannerPatterns.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/entity/ModBannerPatterns with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/block/entity/ModBannerPatterns in 15.50 ms
+[Architectury Transformer DEBUG] Transformed net/depression/block/entity/ModBannerPatterns in 7.222 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/ModEffects.class to net/depression/effect/ModEffects.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transforming from net/depression/mixin/client/FontAccess.class to net/depression/mixin/client/FontAccess.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
-[Architectury Transformer DEBUG] Transformed net/depression/effect/ModEffects in 9.870 ms
-[Architectury Transformer DEBUG] Remapping Classes:
-[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
-[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
+[Architectury Transformer DEBUG] Transformed net/depression/effect/ModEffects in 8.299 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/SleepinessEffect.class to net/depression/effect/SleepinessEffect.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/FontAccess in 15.42 ms
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/effect/SleepinessEffect in 16.09 ms
+[Architectury Transformer DEBUG] Transformed net/depression/effect/SleepinessEffect in 5.200 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/AntiDepressionEffect.class to net/depression/effect/AntiDepressionEffect.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiDepressionEffect in 8.628 ms
+[Architectury Transformer DEBUG] Transforming from net/depression/mixin/client/FontAccess.class to net/depression/mixin/client/FontAccess.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
+[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiDepressionEffect in 4.517 ms
+[Architectury Transformer DEBUG] Remapping Classes:
+[Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
+[Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
+[Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ModBlocks.class to net/depression/block/ModBlocks.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/FontAccess in 7.826 ms
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/block/ModBlocks in 5.744 ms
+[Architectury Transformer DEBUG] Transformed net/depression/block/ModBlocks in 6.056 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ComputerBlock.class to net/depression/block/ComputerBlock.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock in 3.873 ms
+[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock in 5.709 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/item/ModItems.class to net/depression/item/ModItems.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/item/ModItems in 4.441 ms
+[Architectury Transformer DEBUG] Transformed net/depression/item/ModItems in 6.326 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/item/MentalHealthScaleItem.class to net/depression/item/MentalHealthScaleItem.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/item/MentalHealthScaleItem in 3.890 ms
+[Architectury Transformer DEBUG] Transformed net/depression/item/MentalHealthScaleItem in 7.087 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/item/DiaryItem.class to net/depression/item/DiaryItem.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/item/DiaryItem in 4.059 ms
+[Architectury Transformer DEBUG] Transformed net/depression/item/DiaryItem in 7.198 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/item/MedicineItem.class to net/depression/item/MedicineItem.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/item/MedicineItem in 4.996 ms
+[Architectury Transformer DEBUG] Transformed net/depression/item/MedicineItem in 6.268 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/item/AntiDepressantItem.class to net/depression/item/AntiDepressantItem.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/item/AntiDepressantItem in 3.430 ms
+[Architectury Transformer DEBUG] Transformed net/depression/item/AntiDepressantItem in 4.005 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/item/ModCreativeTabs.class to net/depression/item/ModCreativeTabs.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/item/ModCreativeTabs in 3.476 ms
+[Architectury Transformer DEBUG] Transformed net/depression/item/ModCreativeTabs in 6.322 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/sound/ModSounds.class to net/depression/sound/ModSounds.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/sound/ModSounds with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/sound/ModSounds in 4.681 ms
+[Architectury Transformer DEBUG] Transformed net/depression/sound/ModSounds in 8.714 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/world/VillageAdditions.class to net/depression/world/VillageAdditions.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/world/VillageAdditions with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/world/VillageAdditions in 3.808 ms
+[Architectury Transformer DEBUG] Transformed net/depression/world/VillageAdditions in 6.048 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/network/DiaryUpdatePacket.class to net/depression/network/DiaryUpdatePacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/network/DiaryUpdatePacket in 3.152 ms
+[Architectury Transformer DEBUG] Transformed net/depression/network/DiaryUpdatePacket in 5.474 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/server/Registry.class to net/depression/server/Registry.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/server/Registry with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/server/Registry in 2.299 ms
+[Architectury Transformer DEBUG] Transformed net/depression/server/Registry in 4.868 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/network/PlaySoundPacket.class to net/depression/network/PlaySoundPacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/network/PlaySoundPacket in 1.851 ms
+[Architectury Transformer DEBUG] Transformed net/depression/network/PlaySoundPacket in 5.435 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/PTSDManager.class to net/depression/mental/PTSDManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/mental/PTSDManager in 3.379 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mental/PTSDManager in 6.917 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/CommandRegistrationListener.class to net/depression/listener/CommandRegistrationListener.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/listener/CommandRegistrationListener in 2.621 ms
+[Architectury Transformer DEBUG] Transformed net/depression/listener/CommandRegistrationListener in 5.559 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/PlayerEventListener.class to net/depression/listener/PlayerEventListener.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/listener/PlayerEventListener in 3.044 ms
+[Architectury Transformer DEBUG] Transformed net/depression/listener/PlayerEventListener in 5.612 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/BlockEventListener.class to net/depression/listener/BlockEventListener.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/listener/BlockEventListener in 2.583 ms
+[Architectury Transformer DEBUG] Transformed net/depression/listener/BlockEventListener in 5.469 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/EntityEventListener.class to net/depression/listener/EntityEventListener.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/listener/EntityEventListener in 2.109 ms
+[Architectury Transformer DEBUG] Transformed net/depression/listener/EntityEventListener in 6.616 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalStatus.class to net/depression/mental/MentalStatus.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalStatus in 5.476 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalStatus in 11.42 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/tag/ModBannerPatternTags.class to net/depression/tag/ModBannerPatternTags.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/tag/ModBannerPatternTags with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/tag/ModBannerPatternTags in 3.187 ms
+[Architectury Transformer DEBUG] Transformed net/depression/tag/ModBannerPatternTags in 6.032 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/client/DepressionClient.class to net/depression/client/DepressionClient.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/client/DepressionClient in 12.71 ms
+[Architectury Transformer DEBUG] Transformed net/depression/client/DepressionClient in 18.88 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientMentalStatus.class to net/depression/client/ClientMentalStatus.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalStatus in 9.292 ms
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalStatus in 16.57 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientMentalIllness.class to net/depression/client/ClientMentalIllness.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalIllness in 15.92 ms
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalIllness in 17.37 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientPTSDManager.class to net/depression/client/ClientPTSDManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientPTSDManager in 13.28 ms
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientPTSDManager in 18.54 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientActionbarHint.class to net/depression/client/ClientActionbarHint.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientActionbarHint in 12.06 ms
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientActionbarHint in 9.463 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/network/MentalStatusPacket.class to net/depression/network/MentalStatusPacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/network/MentalStatusPacket in 10.17 ms
+[Architectury Transformer DEBUG] Transformed net/depression/network/MentalStatusPacket in 8.842 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/network/ActionbarHintPacket.class to net/depression/network/ActionbarHintPacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/network/ActionbarHintPacket in 5.355 ms
+[Architectury Transformer DEBUG] Transformed net/depression/network/ActionbarHintPacket in 7.208 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/network/CloseEyePacket.class to net/depression/network/CloseEyePacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/network/CloseEyePacket in 5.887 ms
+[Architectury Transformer DEBUG] Transformed net/depression/network/CloseEyePacket in 7.859 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/network/PTSDOnsetPacket.class to net/depression/network/PTSDOnsetPacket.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/network/PTSDOnsetPacket in 3.475 ms
+[Architectury Transformer DEBUG] Transformed net/depression/network/PTSDOnsetPacket in 8.637 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientDiaryUpdater.class to net/depression/client/ClientDiaryUpdater.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientDiaryUpdater in 3.921 ms
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientDiaryUpdater in 8.969 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/client/ClientLifecycleEventListener.class to net/depression/listener/client/ClientLifecycleEventListener.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientLifecycleEventListener in 4.779 ms
+[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientLifecycleEventListener in 7.761 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/client/ClientRawInputEventListener.class to net/depression/listener/client/ClientRawInputEventListener.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientRawInputEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientRawInputEventListener in 3.072 ms
+[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientRawInputEventListener in 6.512 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ComputerBlock$1.class to net/depression/block/ComputerBlock$1.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock$1 in 3.662 ms
+[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock$1 in 11.00 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/util/TempValues.class to net/depression/util/TempValues.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/util/TempValues with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/util/TempValues in 5.061 ms
+[Architectury Transformer DEBUG] Transformed net/depression/util/TempValues in 5.765 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalIllness.class to net/depression/mental/MentalIllness.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness in 3.153 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness in 5.701 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/server/StatManager.class to net/depression/server/StatManager.class with 8 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x00000264170ce590@6be58e78
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$142/0x000001ea0108e590@47af7f3d
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/server/StatManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Remapping refmap from intermediary to srg: depression-forge-forge-refmap.json
-[Architectury Transformer DEBUG] Transformed net/depression/server/StatManager in 3.239 ms
+[Architectury Transformer DEBUG] Transformed net/depression/server/StatManager in 4.997 ms

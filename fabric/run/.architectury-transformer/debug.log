@@ -1,9 +1,9 @@
 [Architectury Transformer] Architectury Runtime 5.2.87
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
 [Architectury Transformer DEBUG] Preparing tiny remapper prepared transformer: dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Provided 113 classpath jar(s):
+[Architectury Transformer DEBUG] Provided 111 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.7\18ce52a3228434ba2aa8c1936728ef4eacad64b8\fabric-loader-0.16.7.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\24.1.0\7af6a669488450c4a07c2c3254e2151df42d7d04\annotations-24.1.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\toml\3.6.0\f0c2c48748bdfc8d1f3798ec478f003bccc7e0b1\toml-3.6.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.electronwill.night-config\core\3.6.0\412f2edf0ef6cc9178ab38751af4e507f413bef\core-3.6.0.jar
@@ -19,13 +19,13 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\31.1-jre\60458f877d055d0c9114d9e1a2efb737b4bc282c\guava-31.1-jre.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.ibm.icu\icu4j\71.1\9e7d3304c23f9ba5cb71915f7cce23231a57a445\icu4j-71.1.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\4.0.43\2ff9d747a77570a07a60d32ac77eb6162ad2a2d9\authlib-4.0.43.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\authlib\3.18.38\16106b26bce62bda55bab42785b999e44d77ecb\authlib-3.18.38.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\blocklist\1.0.10\5c685c5ffa94c4cd39496c7184c1d122e515ecef\blocklist-1.0.10.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.1.8\5244ce82c3337bba4a196a3ce858bfaecc74404a\brigadier-1.1.8.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.8\3ba4a30557a9b057760af4011f909ba619fc5125\datafixerupper-6.0.8.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.0.18\c1ef1234282716483c92183f49bef47b1a89bfa9\brigadier-1.0.18.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\6.0.6\e38e20946530646e866db03b2b192883d0ea6e84\datafixerupper-6.0.6.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\logging\1.1.1\832b8e6674a9b325a5175a3a6267dfaf34c85139\logging-1.1.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\patchy\2.2.10\da05971b07cbb379d002cf7eaec6a2048211fefc\patchy-2.2.10.jar
-[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.17.9\3cad216e3a7f0c19b4b394388bc9ffc446f13b14\text2speech-1.17.9.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.16.7\ee4095669061d1fe4bce5fea23d69d1520bc2d58\text2speech-1.16.7.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.15\49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d\commons-codec-1.15.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.11.0\a2503f302b11ebde7ebc3df41daebe0e4eea3689\commons-io-2.11.0.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar
@@ -57,73 +57,71 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.1\f48d81adce2abf5ad3cfe463df517952749e03bc\slf4j-api-2.0.1.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-9b38c06a74\1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2\minecraft-merged-9b38c06a74-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-774d94d0f0\1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2\minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-api\0.92.1+1.20.1\fabric-api-0.92.1+1.20.1.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\dev\architectury\architectury-fabric\9.2.14\architectury-fabric-9.2.14.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-transfer-api-v1\3.3.5+8dd72ea377\fabric-transfer-api-v1-3.3.5+8dd72ea377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-api-lookup-api-v1\1.6.36+1802ada577\fabric-api-lookup-api-v1-1.6.36+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-blockrenderlayer-v1\1.1.41+1802ada577\fabric-blockrenderlayer-v1-1.1.41+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-client-tags-api-v1\1.1.2+1802ada577\fabric-client-tags-api-v1-1.1.2+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-command-api-v1\1.2.34+f71b366f77\fabric-command-api-v1-1.2.34+f71b366f77.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-commands-v0\0.2.51+df3654b377\fabric-commands-v0-0.2.51+df3654b377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-command-api-v2\2.2.13+1802ada577\fabric-command-api-v2-2.2.13+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-content-registries-v0\4.0.11+1802ada577\fabric-content-registries-v0-4.0.11+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-convention-tags-v1\1.5.5+1802ada577\fabric-convention-tags-v1-1.5.5+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-data-attachment-api-v1\1.0.0+de0fd6d177\fabric-data-attachment-api-v1-1.0.0+de0fd6d177.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-data-generation-api-v1\12.3.4+1802ada577\fabric-data-generation-api-v1-12.3.4+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-dimensions-v1\2.1.54+1802ada577\fabric-dimensions-v1-2.1.54+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-entity-events-v1\1.6.0+1c78457f77\fabric-entity-events-v1-1.6.0+1c78457f77.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-events-interaction-v0\0.6.2+1802ada577\fabric-events-interaction-v0-0.6.2+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-gametest-api-v1\1.2.13+1802ada577\fabric-gametest-api-v1-1.2.13+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-events-lifecycle-v0\0.2.63+df3654b377\fabric-events-lifecycle-v0-0.2.63+df3654b377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-item-api-v1\2.1.28+1802ada577\fabric-item-api-v1-2.1.28+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-item-group-api-v1\4.0.12+1802ada577\fabric-item-group-api-v1-4.0.12+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-mining-level-api-v1\2.1.50+1802ada577\fabric-mining-level-api-v1-2.1.50+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-lifecycle-events-v1\2.2.22+1802ada577\fabric-lifecycle-events-v1-2.2.22+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-loot-tables-v1\1.1.45+9e7660c677\fabric-loot-tables-v1-1.1.45+9e7660c677.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-loot-api-v2\1.2.1+1802ada577\fabric-loot-api-v2-1.2.1+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-message-api-v1\5.1.9+1802ada577\fabric-message-api-v1-5.1.9+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-models-v0\0.4.2+9386d8a777\fabric-models-v0-0.4.2+9386d8a777.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-model-loading-api-v1\1.0.3+1802ada577\fabric-model-loading-api-v1-1.0.3+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-recipe-api-v1\1.0.21+1802ada577\fabric-recipe-api-v1-1.0.21+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-registry-sync-v0\2.3.3+1802ada577\fabric-registry-sync-v0-2.3.3+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-screen-handler-api-v1\1.3.30+1802ada577\fabric-screen-handler-api-v1-1.3.30+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-containers-v0\0.1.64+df3654b377\fabric-containers-v0-0.1.64+df3654b377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-networking-v0\0.3.51+df3654b377\fabric-networking-v0-0.3.51+df3654b377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-networking-api-v1\1.3.11+1802ada577\fabric-networking-api-v1-1.3.11+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-object-builder-api-v1\11.1.3+1802ada577\fabric-object-builder-api-v1-11.1.3+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-particles-v1\1.1.2+1802ada577\fabric-particles-v1-1.1.2+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-renderer-indigo\1.5.1+1802ada577\fabric-renderer-indigo-1.5.1+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-renderer-api-v1\3.2.1+1802ada577\fabric-renderer-api-v1-3.2.1+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-rendering-fluids-v1\3.0.28+1802ada577\fabric-rendering-fluids-v1-3.0.28+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-renderer-registries-v1\3.2.46+df3654b377\fabric-renderer-registries-v1-3.2.46+df3654b377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-rendering-v0\1.1.49+df3654b377\fabric-rendering-v0-1.1.49+df3654b377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-rendering-v1\3.0.8+1802ada577\fabric-rendering-v1-3.0.8+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-screen-api-v1\2.0.8+1802ada577\fabric-screen-api-v1-2.0.8+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-api-base\0.4.31+1802ada577\fabric-api-base-0.4.31+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-biome-api-v1\13.0.13+1802ada577\fabric-biome-api-v1-13.0.13+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-block-api-v1\1.0.11+1802ada577\fabric-block-api-v1-1.0.11+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-rendering-data-attachment-v1\0.3.37+92a0d36777\fabric-rendering-data-attachment-v1-0.3.37+92a0d36777.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-block-view-api-v2\1.0.1+1802ada577\fabric-block-view-api-v2-1.0.1+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-crash-report-info-v1\0.2.19+1802ada577\fabric-crash-report-info-v1-0.2.19+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-game-rule-api-v1\1.0.40+1802ada577\fabric-game-rule-api-v1-1.0.40+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-keybindings-v0\0.2.35+df3654b377\fabric-keybindings-v0-0.2.35+df3654b377.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-key-binding-api-v1\1.0.37+1802ada577\fabric-key-binding-api-v1-1.0.37+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-resource-conditions-api-v1\2.3.8+1802ada577\fabric-resource-conditions-api-v1-2.3.8+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-resource-loader-v0\0.11.10+1802ada577\fabric-resource-loader-v0-0.11.10+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-sound-api-v1\1.0.13+1802ada577\fabric-sound-api-v1-1.0.13+1802ada577.jar
-[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1\4.3.1+1802ada577\fabric-transitive-access-wideners-v1-4.3.1+1802ada577.jar
-[Architectury Transformer] Read classpath in 1.081 s
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
-[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\3494636858322707374.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@67b856d6
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@50fededc
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@40c253bd
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@33ebc1d5
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@16c03f98
-[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\3494636858322707374.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-api\0.87.2+1.19.4\fabric-api-0.87.2+1.19.4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\dev\architectury\architectury-fabric\8.2.91\architectury-fabric-8.2.91.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-transfer-api-v1\3.3.1+602c17c7f4\fabric-transfer-api-v1-3.3.1+602c17c7f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-api-lookup-api-v1\1.6.29+504944c8f4\fabric-api-lookup-api-v1-1.6.29+504944c8f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-blockrenderlayer-v1\1.1.38+10ce000ff4\fabric-blockrenderlayer-v1-1.1.38+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-client-tags-api-v1\1.1.1+0eee1254f4\fabric-client-tags-api-v1-1.1.1+0eee1254f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-command-api-v1\1.2.31+f71b366ff4\fabric-command-api-v1-1.2.31+f71b366ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-commands-v0\0.2.48+df3654b3f4\fabric-commands-v0-0.2.48+df3654b3f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-command-api-v2\2.2.10+10ce000ff4\fabric-command-api-v2-2.2.10+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-content-registries-v0\3.5.14+10ce000ff4\fabric-content-registries-v0-3.5.14+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-convention-tags-v1\1.5.3+6d727b51f4\fabric-convention-tags-v1-1.5.3+6d727b51f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-data-generation-api-v1\11.5.2+26f09d40f4\fabric-data-generation-api-v1-11.5.2+26f09d40f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-dimensions-v1\2.1.50+44c9c860f4\fabric-dimensions-v1-2.1.50+44c9c860f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-entity-events-v1\1.5.17+10ce000ff4\fabric-entity-events-v1-1.5.17+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-events-interaction-v0\0.6.1+4b6b93f0f4\fabric-events-interaction-v0-0.6.1+4b6b93f0f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-gametest-api-v1\1.2.9+10ce000ff4\fabric-gametest-api-v1-1.2.9+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-events-lifecycle-v0\0.2.56+df3654b3f4\fabric-events-lifecycle-v0-0.2.56+df3654b3f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-item-api-v1\2.1.21+10ce000ff4\fabric-item-api-v1-2.1.21+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-item-group-api-v1\3.0.10+8400c67ef4\fabric-item-group-api-v1-3.0.10+8400c67ef4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-mining-level-api-v1\2.1.44+10ce000ff4\fabric-mining-level-api-v1-2.1.44+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-lifecycle-events-v1\2.2.19+10ce000ff4\fabric-lifecycle-events-v1-2.2.19+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-loot-tables-v1\1.1.36+9e7660c6f4\fabric-loot-tables-v1-1.1.36+9e7660c6f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-loot-api-v2\1.1.32+10ce000ff4\fabric-loot-api-v2-1.1.32+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-message-api-v1\5.1.5+53c11dadf4\fabric-message-api-v1-5.1.5+53c11dadf4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-models-v0\0.4.1+a0255436f4\fabric-models-v0-0.4.1+a0255436f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-model-loading-api-v1\1.0.2+3a1ea2f1f4\fabric-model-loading-api-v1-1.0.2+3a1ea2f1f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-recipe-api-v1\1.0.13+10ce000ff4\fabric-recipe-api-v1-1.0.13+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-registry-sync-v0\2.3.2+95ae8716f4\fabric-registry-sync-v0-2.3.2+95ae8716f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-screen-handler-api-v1\1.3.25+10ce000ff4\fabric-screen-handler-api-v1-1.3.25+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-containers-v0\0.1.59+df3654b3f4\fabric-containers-v0-0.1.59+df3654b3f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-networking-v0\0.3.46+df3654b3f4\fabric-networking-v0-0.3.46+df3654b3f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-networking-api-v1\1.3.6+ae9c4c6af4\fabric-networking-api-v1-1.3.6+ae9c4c6af4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-object-builder-api-v1\7.1.1+d63b52eaf4\fabric-object-builder-api-v1-7.1.1+d63b52eaf4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-particles-v1\1.1.1+86d48884f4\fabric-particles-v1-1.1.1+86d48884f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-renderer-indigo\1.4.2+90110d8df4\fabric-renderer-indigo-1.4.2+90110d8df4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-renderer-api-v1\2.4.2+90110d8df4\fabric-renderer-api-v1-2.4.2+90110d8df4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-rendering-data-attachment-v1\0.3.32+10ce000ff4\fabric-rendering-data-attachment-v1-0.3.32+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-rendering-fluids-v1\3.0.25+10ce000ff4\fabric-rendering-fluids-v1-3.0.25+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-renderer-registries-v1\3.2.42+df3654b3f4\fabric-renderer-registries-v1-3.2.42+df3654b3f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-rendering-v0\1.1.45+df3654b3f4\fabric-rendering-v0-1.1.45+df3654b3f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-rendering-v1\2.1.5+10ce000ff4\fabric-rendering-v1-2.1.5+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-screen-api-v1\1.0.49+10ce000ff4\fabric-screen-api-v1-1.0.49+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-api-base\0.4.28+737a6ee8f4\fabric-api-base-0.4.28+737a6ee8f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-biome-api-v1\13.0.10+6b242079f4\fabric-biome-api-v1-13.0.10+6b242079f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-block-api-v1\1.0.8+e022e5d1f4\fabric-block-api-v1-1.0.8+e022e5d1f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-crash-report-info-v1\0.2.17+aeb40ebef4\fabric-crash-report-info-v1-0.2.17+aeb40ebef4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-game-rule-api-v1\1.0.36+3f657af2f4\fabric-game-rule-api-v1-1.0.36+3f657af2f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-keybindings-v0\0.2.33+df3654b3f4\fabric-keybindings-v0-0.2.33+df3654b3f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-key-binding-api-v1\1.0.35+504944c8f4\fabric-key-binding-api-v1-1.0.35+504944c8f4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-resource-conditions-api-v1\2.3.3+10ce000ff4\fabric-resource-conditions-api-v1-2.3.3+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-resource-loader-v0\0.11.7+8400c67ef4\fabric-resource-loader-v0-0.11.7+8400c67ef4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-sound-api-v1\1.0.11+10ce000ff4\fabric-sound-api-v1-1.0.11+10ce000ff4.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1\3.3.0+1b5f819af4\fabric-transitive-access-wideners-v1-3.3.0+1b5f819af4.jar
+[Architectury Transformer] Read classpath in 898.4 ms
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\16025868509477393921.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@7ff95560
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@add0edd
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@2aa3cd93
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@7ea37dbf
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@4b44655e
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar to C:\Users\13475\AppData\Local\Temp\16025868509477393921.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock with maxs=true frames=true
@@ -192,189 +190,184 @@
 [Architectury Transformer DEBUG] Writing net/depression/world/VillageAdditions with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /depression-common-common-refmap.json is a mixin config.
 [Architectury Transformer DEBUG] Checking whether /depression.mixins.json is a mixin config.
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\13475\AppData\Local\Temp\3494636858322707374.jar
-[Architectury Transformer] Listening at D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\13475\AppData\Local\Temp\3494636858322707374.jar] contains packages: net.depression.network, net.depression.item, net.depression.client, net.depression.item.diary, net.depression, net.depression.util, net.depression.mixin.symptom, net.depression.server, net.depression.client.screen, net.depression.block, net.depression.listener, net.depression.sound, net.depression.mental, net.depression.mixin.client, net.depression.listener.client, net.depression.mixin, net.depression.world, net.depression.tag, net.depression.block.entity, net.depression.effect
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar
-[Architectury Transformer DEBUG] Classpath entry [D:\MinecraftModProject\Depression\fabric\build\resources\main] contains packages: 
-[Architectury Transformer DEBUG] Classpath entry [D:\MinecraftModProject\Depression\common\build\resources\main] contains packages: 
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\13475\AppData\Local\Temp\16025868509477393921.jar
+[Architectury Transformer] Listening at D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\13475\AppData\Local\Temp\16025868509477393921.jar] contains packages: net.depression.network, net.depression.item, net.depression.client, net.depression.item.diary, net.depression, net.depression.util, net.depression.mixin.symptom, net.depression.server, net.depression.client.screen, net.depression.block, net.depression.listener, net.depression.sound, net.depression.mental, net.depression.mixin.client, net.depression.listener.client, net.depression.mixin, net.depression.world, net.depression.tag, net.depression.block.entity, net.depression.effect
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.2-dev.jar
+[Architectury Transformer DEBUG] Classpath entry [D:\MinecraftModProject\Depression1.19.4\fabric\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/MobAccess.class to net/depression/mixin/MobAccess.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/MobAccess in 676.9 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/MobAccess in 822.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/StructureTemplatePoolAccess.class to net/depression/mixin/StructureTemplatePoolAccess.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/StructureTemplatePoolAccess in 446.8 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/StructureTemplatePoolAccess in 448.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/Depression.class to net/depression/Depression.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/Depression with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/Depression in 701.5 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/Depression in 735.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/entity/ModBannerPatterns.class to net/depression/block/entity/ModBannerPatterns.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/entity/ModBannerPatterns with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/entity/ModBannerPatterns in 277.4 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/block/entity/ModBannerPatterns in 342.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/ModEffects.class to net/depression/effect/ModEffects.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/effect/ModEffects in 332.1 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/effect/ModEffects in 492.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/SleepinessEffect.class to net/depression/effect/SleepinessEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/effect/SleepinessEffect in 129.7 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/effect/SleepinessEffect in 160.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/AntiDepressionEffect.class to net/depression/effect/AntiDepressionEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiDepressionEffect in 233.9 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiDepressionEffect in 288.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ModBlocks.class to net/depression/block/ModBlocks.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/ModBlocks in 274.5 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/block/ModBlocks in 258.9 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ComputerBlock.class to net/depression/block/ComputerBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock in 514.4 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock in 507.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/item/ModItems.class to net/depression/item/ModItems.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/ModItems in 355.8 Î¼s
-[Architectury Transformer DEBUG] Transforming from net/depression/item/AntiDepressantItem.class to net/depression/item/AntiDepressantItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/AntiDepressantItem in 142.6 Î¼s
-[Architectury Transformer DEBUG] Transforming from net/depression/item/MedicineItem.class to net/depression/item/MedicineItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/MedicineItem in 506.2 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/item/ModItems in 333.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/item/MentalHealthScaleItem.class to net/depression/item/MentalHealthScaleItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/MentalHealthScaleItem in 277.5 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/item/MentalHealthScaleItem in 233.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/item/DiaryItem.class to net/depression/item/DiaryItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/DiaryItem in 282.2 Î¼s
-[Architectury Transformer DEBUG] Transforming from net/depression/item/ModCreativeTabs.class to net/depression/item/ModCreativeTabs.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Transformed net/depression/item/DiaryItem in 304.3 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/item/MedicineItem.class to net/depression/item/MedicineItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/ModCreativeTabs in 342.9 Î¼s
+[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/item/MedicineItem in 436.6 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/item/AntiDepressantItem.class to net/depression/item/AntiDepressantItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/item/AntiDepressantItem in 116.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/tag/ModBannerPatternTags.class to net/depression/tag/ModBannerPatternTags.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/tag/ModBannerPatternTags with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/tag/ModBannerPatternTags in 318.0 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/tag/ModBannerPatternTags in 194.4 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/item/ModCreativeTabs.class to net/depression/item/ModCreativeTabs.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/item/ModCreativeTabs in 213.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/sound/ModSounds.class to net/depression/sound/ModSounds.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/sound/ModSounds with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/sound/ModSounds in 312.2 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/sound/ModSounds in 723.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/world/VillageAdditions.class to net/depression/world/VillageAdditions.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/world/VillageAdditions with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/world/VillageAdditions in 574.1 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/world/VillageAdditions in 545.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/DiaryUpdatePacket.class to net/depression/network/DiaryUpdatePacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/DiaryUpdatePacket in 387.4 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/network/DiaryUpdatePacket in 385.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/server/Registry.class to net/depression/server/Registry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/server/Registry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/server/Registry in 279.3 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/server/Registry in 266.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/PlaySoundPacket.class to net/depression/network/PlaySoundPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/PlaySoundPacket in 217.8 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/network/PlaySoundPacket in 604.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/PTSDManager.class to net/depression/mental/PTSDManager.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/PTSDManager in 1.217 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mental/PTSDManager in 2.767 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/CommandRegistrationListener.class to net/depression/listener/CommandRegistrationListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/CommandRegistrationListener in 785.3 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/listener/CommandRegistrationListener in 2.016 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/PlayerEventListener.class to net/depression/listener/PlayerEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/PlayerEventListener in 484.2 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/listener/PlayerEventListener in 620.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/BlockEventListener.class to net/depression/listener/BlockEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/BlockEventListener in 479.8 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/listener/BlockEventListener in 615.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/EntityEventListener.class to net/depression/listener/EntityEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/EntityEventListener in 388.8 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/listener/EntityEventListener in 433.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalStatus.class to net/depression/mental/MentalStatus.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalStatus in 1.878 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalStatus in 1.676 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/client/DepressionClient.class to net/depression/client/DepressionClient.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/DepressionClient in 617.4 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/client/DepressionClient in 569.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientMentalStatus.class to net/depression/client/ClientMentalStatus.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalStatus in 518.4 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalStatus in 628.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientMentalIllness.class to net/depression/client/ClientMentalIllness.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalIllness in 526.0 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalIllness in 507.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientPTSDManager.class to net/depression/client/ClientPTSDManager.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientPTSDManager in 651.2 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientPTSDManager in 817.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientActionbarHint.class to net/depression/client/ClientActionbarHint.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientActionbarHint in 365.6 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientActionbarHint in 741.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/MentalStatusPacket.class to net/depression/network/MentalStatusPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/MentalStatusPacket in 135.3 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/network/MentalStatusPacket in 248.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/ActionbarHintPacket.class to net/depression/network/ActionbarHintPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/ActionbarHintPacket in 263.4 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/network/ActionbarHintPacket in 344.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/CloseEyePacket.class to net/depression/network/CloseEyePacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/CloseEyePacket in 120.3 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/network/CloseEyePacket in 166.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/PTSDOnsetPacket.class to net/depression/network/PTSDOnsetPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/PTSDOnsetPacket in 134.0 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/network/PTSDOnsetPacket in 186.9 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientDiaryUpdater.class to net/depression/client/ClientDiaryUpdater.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientDiaryUpdater in 540.1 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientDiaryUpdater in 625.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/client/ClientLifecycleEventListener.class to net/depression/listener/client/ClientLifecycleEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientLifecycleEventListener in 137.6 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientLifecycleEventListener in 315.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/client/ClientRawInputEventListener.class to net/depression/listener/client/ClientRawInputEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientRawInputEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientRawInputEventListener in 146.6 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientRawInputEventListener in 224.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/client/FontAccess.class to net/depression/mixin/client/FontAccess.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/FontAccess in 269.6 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/FontAccess in 365.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ComputerBlock$1.class to net/depression/block/ComputerBlock$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock$1 in 472.7 Î¼s
-[Architectury Transformer DEBUG] Transforming from net/depression/util/TempValues.class to net/depression/util/TempValues.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/util/TempValues with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/util/TempValues in 289.3 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock$1 in 564.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalIllness.class to net/depression/mental/MentalIllness.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness in 711.1 Î¼s
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness in 726.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/server/StatManager.class to net/depression/server/StatManager.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/server/StatManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/server/StatManager in 230.3 Î¼s
-[Architectury Transformer DEBUG] Transforming from net/depression/client/ClientPTSDManager$TinnitusSoundInstance.class to net/depression/client/ClientPTSDManager$TinnitusSoundInstance.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Transformed net/depression/server/StatManager in 317.6 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/util/TempValues.class to net/depression/util/TempValues.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientPTSDManager$TinnitusSoundInstance in 331.9 Î¼s
+[Architectury Transformer DEBUG] Writing net/depression/util/TempValues with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/util/TempValues in 300.2 ¦Ìs

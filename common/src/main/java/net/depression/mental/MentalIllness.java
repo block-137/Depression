@@ -45,15 +45,6 @@ public class MentalIllness {
         if (isInsomnia != null && isInsomnia && mentalHealthLevel == 0) {
             isInsomnia = false;
         }
-<<<<<<< HEAD
-        //重置失眠状态
-        Level level = player.getLevel();
-        if (level.getDayTime() == 12000) {
-            sleepAttemptCount = 0;
-            setIsInsomnia();
-        }
-=======
->>>>>>> dc11530 (0.1.2 Update)
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
         //处理是否失眠
         if (player.isSleepingLongEnough() && !isSleepy) {

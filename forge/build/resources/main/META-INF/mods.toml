@@ -1,7 +1,7 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[45,)"
 #issueTrackerURL = ""
-license = "LGPL-3.0-or-later"
+license = "LGPL-3.0"
 
 [[mods]]
 modId = "depression"
@@ -16,20 +16,20 @@ logoFile = "assets/depression/icon.png"
 [[dependencies.depression]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[45,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.depression]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.1,)"
+versionRange = "[1.19.4,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.depression]]
 modId = "architectury"
 mandatory = true
-versionRange = "[9.0.8,)"
+versionRange = "[8.1.73,)"
 ordering = "AFTER"
 side = "BOTH"
