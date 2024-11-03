@@ -5,11 +5,13 @@ import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.architectury.platform.Platform;
 import net.depression.Depression;
 import net.depression.mental.MentalStatus;
+import net.depression.mental.PTSDManager;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 public class ServerConfig {
@@ -237,6 +239,44 @@ public class ServerConfig {
         for (String item : smeltConfig.valueMap().keySet()) {
             MentalStatus.smeltHealItem.put(item, readDouble(smeltConfig, item));
         }
+
+        //读取damagesource-sound-map.toml
+        File damageFile = new File(Platform.getConfigFolder() + "/depression/damagesource-sound-map.toml");
+        if (!damageFile.exists()) {
+            try {
+                damageFile.createNewFile();
+                FileWriter writer = writeDamageFile(damageFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeDamageFile(damageFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileConfig damageConfig = FileConfig.of(damageFile);
+        damageConfig.load();
+
+        for (Map.Entry<String, Object> entry : damageConfig.valueMap().entrySet()) {
+            String damageSource = entry.getKey();
+            Object object = entry.getValue();
+            if (object instanceof List) {
+                List<String> soundEvents = (List<String>) object;
+                for (String soundEvent : soundEvents) {
+                    PTSDManager.addEntry(damageSource, soundEvent);
+                }
+            }
+            else {
+                String soundEvent = (String) object;
+                PTSDManager.addEntry(damageSource, soundEvent);
+            }
+        }
     }
 
     @NotNull
@@ -253,6 +293,299 @@ public class ServerConfig {
                 boredom_decrease_tick = 200
                 food_heal_rate = 0.25
                 """);
+        return writer;
+    }
+
+    @NotNull
+    private static FileWriter writeDamageFile(File soundFile) throws IOException {
+        FileWriter writer = new FileWriter(soundFile);
+        writer.write("""
+                # ================================================================
+                # 死因部分
+                # ================================================================
+                # 以下死因由于某些原因，故不在下表中列举对应声音：
+                #
+                # 没有特定与之对应的声音的：starve, cactus, hotFloor, inWall, cramming
+                # 一般认为正常游戏流程中不会遇到的：dryout, generic, genericKill, outsideBorder, outOfWorld, even_more_magic
+                # 只能由某种特定的实体造成的：player, sting, lightningBolt, thrown, witherSkull, sonic_boom, dragonBreath
+                # 只存在于愚人节版本中的：nightmare, onMoon, turned_into_gold
+                # ================================================================
+                                
+                "anvil" = [
+                    "minecraft:block.anvil.hit",
+                    "minecraft:block.anvil.break",
+                    "minecraft:block.anvil.place",
+                    "minecraft:block.anvil.step",
+                    "minecraft:block.anvil.fall",
+                    "minecraft:block.anvil.destroy",
+                    "minecraft:block.anvil.land",
+                    "minecraft:block.anvil.use"
+                ]
+                                
+                "arrow" = [
+                    "minecraft:item.crossbow.loading_start",
+                    "minecraft:item.crossbow.loading_middle",
+                    "minecraft:item.crossbow.loading_end",
+                    "minecraft:item.crossbow.quick_charge_1",
+                    "minecraft:item.crossbow.quick_charge_2",
+                    "minecraft:item.crossbow.quick_charge_3",
+                    "minecraft:entity.arrow.shoot",
+                    "minecraft:entity.skeleton.shoot"
+                ]
+                                
+                "badRespawnPoint" = [
+                    "minecraft:entity.generic.explode",
+                    "minecraft:block.respawn_anchor.charge",
+                    "minecraft:block.respawn_anchor.deplete",
+                    "minecraft:block.respawn_anchor.set_spawn",
+                    "minecraft:block.respawn_anchor.ambient"
+                ]
+                                
+                "drown" = [
+                    "minecraft:item.bucket.fill",
+                    "minecraft:item.bucket.empty",
+                    "minecraft:item.bucket.fill_fish",
+                    "minecraft:item.bucket.empty_fish",
+                    "minecraft:item.bucket.fill_axolotl",
+                    "minecraft:item.bucket.empty_axolotl",
+                    "minecraft:ambient.underwater.enter",
+                    "minecraft:ambient.underwater.exit",
+                    "minecraft:ambient.underwater.loop",
+                    "minecraft:ambient.underwater.loop.additions",
+                    "minecraft:ambient.underwater.loop.additions.rare",
+                    "minecraft:ambient.underwater.loop.additions.ultra_rare",
+                    "minecraft:block.water.ambient",
+                    "minecraft:entity.player.splash_high_speed",
+                    "minecraft:entity.generic.swim",
+                    "minecraft:music.under_water",
+                    "minecraft:block.pointed_dripstone.drip_water",
+                    "minecraft:block.pointed_dripstone.drip_water_into_cauldron"
+                ]
+                                      
+                "fireball" = ["minecraft:entity.blaze.shoot", "minecraft:block.fire.item.firecharge.use", "minecraft:entity.generic.explode"]
+                                
+                "fireworks" = [
+                    "minecraft:entity.firework_rocket.blast",
+                    "minecraft:entity.firework_rocket.blast_far",
+                    "minecraft:entity.firework_rocket.large_blast",
+                    "minecraft:entity.firework_rocket.large_blast_far",
+                    "minecraft:entity.firework_rocket.launch",
+                    "minecraft:entity.firework_rocket.shoot",
+                    "minecraft:entity.firework_rocket.twinkle",
+                    "minecraft:entity.firework_rocket.twinkle_far"
+                ]
+                                
+                "flyIntoWall" = "minecraft:item.elytra.flying"
+                                
+                "freeze" = [
+                    "minecraft:block.powder_snow.break",
+                    "minecraft:block.powder_snow.fall",
+                    "minecraft:block.powder_snow.hit",
+                    "minecraft:block.powder_snow.place",
+                    "minecraft:block.powder_snow.step",
+                    "minecraft:item.bucket.empty_powder_snow",
+                    "minecraft:item.bucket.fill_powder_snow"
+                ]
+                                
+                "inFire" = [
+                    "minecraft:entity.generic.explode",
+                    "minecraft:entity.blaze.shoot",
+                    "minecraft:block.fire.ambient",
+                    "minecraft:block.fire.extinguish",
+                    "minecraft:block.fire.item.firecharge.use",
+                    "minecraft:block.fire.item.flintandsteel.use",
+                    "minecraft:block.lava.ambient",
+                    "minecraft:block.lava.extinguish",
+                    "minecraft:block.lava.pop",
+                    "minecraft:item.bucket.empty_lava",
+                    "minecraft:item.bucket.fill_lava"
+                ]
+                                
+                "onFire" = [
+                    "minecraft:entity.generic.explode",
+                    "minecraft:entity.blaze.shoot",
+                    "minecraft:block.fire.ambient",
+                    "minecraft:block.fire.extinguish",
+                    "minecraft:block.fire.item.firecharge.use",
+                    "minecraft:block.fire.item.flintandsteel.use",
+                    "minecraft:block.pointed_dripstone.drip_lava",
+                    "minecraft:block.pointed_dripstone.drip_lava_into_cauldron"
+                ]
+                                
+                "lava" = [
+                    "minecraft:block.lava.ambient",
+                    "minecraft:block.lava.extinguish",
+                    "minecraft:block.lava.pop",
+                    "minecraft:item.bucket.empty_lava",
+                    "minecraft:item.bucket.fill_lava",
+                    "minecraft:block.pointed_dripstone.drip_lava",
+                    "minecraft:block.pointed_dripstone.drip_lava_into_cauldron"
+                ]
+                                
+                "magic" = [
+                    "minecraft:block.conduit.activate",
+                    "minecraft:block.conduit.ambient",
+                    "minecraft:block.conduit.ambient.short",
+                    "minecraft:block.conduit.attack.target",
+                    "minecraft:block.conduit.deactivate",
+                    "minecraft:entity.generic.drink",
+                    "minecraft:entity.witch.drink",
+                    "minecraft:entity.wandering_trader.drink_potion",
+                    "minecraft:entity.entity.potion.throw",
+                    "minecraft:entity.entity.potion.splash",
+                    "minecraft:entity.entity.witch.throw"
+                ]
+                                
+                "indirectMagic" = [
+                    "minecraft:entity.generic.drink",
+                    "minecraft:entity.witch.drink",
+                    "minecraft:entity.wandering_trader.drink_potion",
+                    "minecraft:entity.entity.potion.throw",
+                    "minecraft:entity.entity.potion.splash",
+                    "minecraft:entity.entity.witch.throw"
+                ]
+                                
+                "stalagmite" = [
+                    "minecraft:block.pointed_dripstone.break",
+                    "minecraft:block.pointed_dripstone.fall",
+                    "minecraft:block.pointed_dripstone.hit",
+                    "minecraft:block.pointed_dripstone.place",
+                    "minecraft:block.pointed_dripstone.step",
+                    "minecraft:block.pointed_dripstone.drip_water",
+                    "minecraft:block.pointed_dripstone.drip_water_into_cauldron",
+                    "minecraft:block.pointed_dripstone.drip_lava",
+                    "minecraft:block.pointed_dripstone.drip_lava_into_cauldron"
+                ]
+                                
+                "fallingStalactite" = [
+                    "minecraft:block.pointed_dripstone.break",
+                    "minecraft:block.pointed_dripstone.fall",
+                    "minecraft:block.pointed_dripstone.hit",
+                    "minecraft:block.pointed_dripstone.place",
+                    "minecraft:block.pointed_dripstone.step",
+                    "minecraft:block.pointed_dripstone.drip_water",
+                    "minecraft:block.pointed_dripstone.drip_water_into_cauldron",
+                    "minecraft:block.pointed_dripstone.drip_lava",
+                    "minecraft:block.pointed_dripstone.drip_lava_into_cauldron"
+                ]
+                                
+                "sweetBerryBush" = [
+                    "minecraft:block.sweet_berry_bush.break",
+                    "minecraft:block.sweet_berry_bush.place",
+                    "minecraft:block.sweet_berry_bush.pick_berries",
+                    "minecraft:entity.player.hurt_sweet_berry_bush"
+                ]
+                                
+                "thorns" = "minecraft:subtitles.enchant.thorns.hit"
+                                
+                "trident" = [
+                    "minecraft:item.trident.riptide_1",
+                    "minecraft:item.trident.riptide_2",
+                    "minecraft:item.trident.riptide_3",
+                    "minecraft:item.trident.thunder"
+                ]
+                                
+                "wither" = [
+                    "minecraft:entity.wither.ambient",
+                    "minecraft:entity.wither.break_block",
+                    "minecraft:entity.wither.death",
+                    "minecraft:entity.wither.hurt",
+                    "minecraft:entity.wither.shoot",
+                    "minecraft:entity.wither.spawn"
+                ]
+                                
+                # ================================================================
+                # 生物部分
+                # ================================================================
+                # 在非愚人节版本中，截止 1.21.X 版本，原版《Minecraft》可能会对玩家造成伤害的生物包括：
+                #
+                # A: 美西螈
+                # B: 蜜蜂、烈焰人（近战 & 弹射物-小火球）、沼骸（近战 & 弹射物-箭）
+                # C: 洞穴蜘蛛、嘎枝、苦力怕
+                # D: 海豚、溺尸（近战 & 弹射物-三叉戟）
+                # E: 远古守卫者（魔法-激光 & 魔法-尖刺）、末影龙（范围杀伤-扑翼 & 范围杀伤-冲撞 & 区域效果云-龙息 & 区域效果云-末影龙火球）、末影人、末影螨、唤魔者（魔法-唤魔者尖牙）
+                # F: 青蛙
+                # G: 恶魂（弹射物-火球 & 爆炸-火球）、巨人、山羊、守卫者
+                # H: 疣猪兽、尸壳
+                # I: 幻术师（弹射物-箭）、铁傀儡
+                # K: 杀手兔
+                # L: 羊驼（弹射物-羊驼唾沫）
+                # M: 岩浆怪
+                # P: 熊猫、幻翼、猪灵（近战 & 弹射物-箭）、猪灵蛮兵、掠夺者（弹射物-箭）、北极熊、河豚（范围杀伤）
+                # R: 劫掠兽（近战 & 范围杀伤-咆哮）
+                # S: 潜影贝（弹射物-潜影弹）、蠹虫、骷髅（近战 & 弹射物-箭）、史莱姆、雪傀儡、流浪者（近战 & 弹射物-箭）、蜘蛛
+                # V: 村民（范围杀伤-烟花火箭）、恼鬼、卫道士
+                # W: 监守者（近战 & 魔法-音波）、女巫（弹射物-喷溅型药水）、凋灵骷髅、凋灵（爆炸-生成时 & 弹射物-凋灵之首 & 爆炸-凋灵之首）、狼
+                # Z: 僵尸疣猪兽、僵尸、僵尸猪灵
+                #
+                # ================================================================
+                                
+                "axolotl" = ["minecraft:entity.axolotl.idle_water", "minecraft:entity.axolotl.idle_air", "minecraft:entity.axolotl.attack"]
+                "bogged" = ["minecraft:entity.bogged.ambient", "minecraft:entity.bogged.step"]
+                "bee" = ["minecraft:entity.bee.loop", "minecraft:entity.bee.loop_aggressive", "minecraft:entity.bee.sting"]
+                "blaze" = ["minecraft:entity.blaze.ambient", "minecraft:entity.blaze.burn"]
+                "cave_spider" = ["minecraft:entity.spider.ambient", "minecraft:entity.spider.step"]
+                "creaking" = ["minecraft:entity.creaking.activate", "minecraft:entity.creaking.ambient", "minecraft:entity.creaking.attack", "minecraft:entity.creaking.step", "minecraft:entity.creaking.unfreeze"]
+                "creeper" = ["minecraft:entity.creeper.primed", "minecraft:entity.creeper.hurt"]
+                "dolphin" = ["minecraft:entity.dolphin.ambient", "minecraft:entity.dolphin.ambient_water"]
+                "drowned" = ["minecraft:entity.drowned.ambient", "minecraft:entity.drowned.ambient_water", "minecraft:entity.drowned.step"]
+                "elder_guardian" = ["minecraft:entity.elder_guardian.ambient", "minecraft:entity.elder_guardian.curse", "minecraft:entity.elder_guardian.attack", "minecraft:entity.guardian.ambient", "minecraft:entity.guardian.attack"]
+                "ender_dragon" = ["minecraft:entity.ender_dragon.ambient", "minecraft:entity.ender_dragon.growl"]
+                "enderman" = ["minecraft:entity.enderman.ambient", "minecraft:entity.enderman.stare", "minecraft:entity.enderman.scream", "minecraft:entity.enderman.teleport"]
+                # "endermite" = ["minecraft:"]
+                "evoker" = ["minecraft:entity.evoker.ambient", "minecraft:entity.evoker.cast_spell", "minecraft:entity.evoker.celebrate", "minecraft:entity.evoker.prepare_summon", "minecraft:entity.evoker.prepare_attack", "minecraft:entity.evoker_fangs.attack"]
+                "frog" = ["minecraft:entity.frog.ambient", "minecraft:entity.frog.eat", "minecraft:entity.frog.tongue", "minecraft:entity.frog.long_jump", "minecraft:entity.frog.step"]
+                "ghast" = ["minecraft:entity.ghast.ambient", "minecraft:entity.ghast.warn", "minecraft:entity.ghast.hurt", "minecraft:entity.ghast.scream"]
+                # "giant" = ["minecraft:"]
+                "goat" = ["minecraft:entity.goat.ambient", "minecraft:entity.goat.prepare_ram", "minecraft:entity.goat.screaming.ambient", "minecraft:entity.goat.screaming.prepare_ram"]
+                "guardian" = ["minecraft:entity.elder_guardian.ambient", "minecraft:entity.elder_guardian.curse", "minecraft:entity.elder_guardian.attack", "minecraft:entity.guardian.ambient", "minecraft:entity.guardian.attack"]
+                "hoglin" = ["minecraft:entity.hoglin.ambient", "minecraft:entity.hoglin.attack", "minecraft:entity.hoglin.angry"]
+                # "husk" = ["minecraft:"]
+                "illusioner" = ["minecraft:entity.illusioner.ambient", "minecraft:entity.illusioner.cast_spell", "minecraft:entity.illusioner.prepare_blindness", "minecraft:entity.illusioner.prepare_mirror"]
+                "iron_golem" = ["minecraft:entity.iron_golem.step"]
+                "rabbit" = ["minecraft:entity.rabbit.ambient", "minecraft:entity.rabbit.attack"]
+                "llama" = ["minecraft:entity.llama.ambient", "minecraft:entity.llama.angry", "minecraft:entity.llama.spit"]
+                "magma_cube" = ["minecraft:entity.magma_cube.jump", "minecraft:entity.magma_cube.squish", "minecraft:entity.magma_cube.squish_small"]
+                "panda" = ["minecraft:entity.panda.ambient", "minecraft:entity.panda.aggressive_ambient", "minecraft:entity.panda.bite"]
+                "phantom" = ["minecraft:entity.phantom.ambient", "minecraft:entity.phantom.swoop"]
+                "piglin" = ["minecraft:entity.piglin.ambient", "minecraft:entity.piglin.angry"]
+                "piglin_brute" = ["minecraft:entity.piglin_brute.ambient", "minecraft:entity.piglin_brute.angry"]
+                "pillager" = ["minecraft:entity.pillager.ambient", "minecraft:entity.pillager.celebrate"]
+                "polar_bear" = ["minecraft:entity.polar_bear.ambient", "minecraft:entity.polar_bear.warning", ]
+                "putterfish" = ["minecraft:entity.puffer_fish.sting", "minecraft:entity.puffer_fish.blow_out", "minecraft:entity.puffer_fish.blow_up"]
+                "ravager" = ["minecraft:entity.ravager.ambient", "minecraft:entity.ravager.step", "minecraft:entity.ravager.roar", "minecraft:entity.ravager.attack", "minecraft:entity.ravager.celebrate"]
+                "shulker" = ["minecraft:entity.shulker.ambient", "minecraft:entity.shulker.shoot"]
+                # "silverfish" = ["minecraft:"]
+                "skeleton" = ["minecraft:entity.skeleton.ambient", "minecraft:entity.skeleton.step"]
+                "slime" = ["minecraft:entity.slime.jump", "minecraft:entity.slime.squish", "minecraft:entity.slime.attack"]
+                # "snow_golem" = ["minecraft:"]
+                "stray" = ["minecraft:entity.stray.ambient", "minecraft:entity.stray.step"]
+                "spider" = ["minecraft:entity.spider.ambient", "minecraft:entity.spider.step"]
+                "vex" = ["minecraft:entity.vex.ambient", "minecraft:entity.vex.charge"]
+                "vindicator" = ["minecraft:entity.vindicator.ambient", "minecraft:entity.vindicator.celebrate"]
+                "witch" = ["minecraft:entity.witch.ambient", "minecraft:entity.witch.celebrate"]
+                "wither_skeleton" = ["minecraft:entity.wither_skeleton.ambient", "minecraft:entity.wither_skeleton.step"]
+                "wolf" = ["minecraft:entity.wolf.ambient", "minecraft:entity.wolf.growl", "minecraft:entity.wolf.howl"]
+                "zoglin" = ["minecraft:entity.zoglin.ambient", "minecraft:entity.zoglin.attack", "minecraft:entity.zoglin.angry"]
+                # "zombie" = ["minecraft:"]
+                "zombified_piglin" = ["minecraft:entity.zombified_piglin.ambient", "minecraft:entity.zombified_piglin.angry"]
+                                
+                "warden" = [
+                    "minecraft:entity.warden.agitated",
+                    "minecraft:entity.warden.ambient",
+                    "minecraft:entity.warden.angry",
+                    "minecraft:entity.warden.dig",
+                    "minecraft:entity.warden.emerge",
+                    "minecraft:entity.warden.listening",
+                    "minecraft:entity.warden.listening_angry",
+                    "minecraft:entity.warden.roar",
+                    "minecraft:entity.warden.sniff",
+                    "minecraft:entity.warden.sonic_boom",
+                    "minecraft:entity.warden.sonic_charge",
+                    "minecraft:entity.warden.tendril_clicks"
+                ]
+                """
+        );
         return writer;
     }
 
