@@ -1,11 +1,13 @@
 package net.depression.forge;
 
+import com.llamalad7.mixinextras.MixinExtrasBootstrap;
 import dev.architectury.platform.forge.EventBuses;
 import net.depression.Depression;
 import net.depression.forge.config.ServerConfig;
 import net.depression.forge.world.ForgeVillageAddition;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.spongepowered.asm.mixin.Mixin;
 
 @Mod(Depression.MOD_ID)
 public final class DepressionForge {
@@ -16,6 +18,7 @@ public final class DepressionForge {
         Depression.init();
         ForgeVillageAddition.register();
         ServerConfig.load();
+        MixinExtrasBootstrap.init();
     }
 
 }

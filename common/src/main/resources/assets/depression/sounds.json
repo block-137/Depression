@@ -1,0 +1,30 @@
+{
+  "typing": {
+    "category": "entity",
+    "subtitle": "depression.sound.work_psychologist",
+    "sounds": [
+      "depression:typing"
+    ]
+  },
+  "pant": {
+    "category": "player",
+    "subtitle": "depression.sound.pant",
+    "sounds": [
+      "depression:pant"
+    ]
+  },
+  "heartbeats": {
+    "category": "player",
+    "subtitle": "depression.sound.heartbeats",
+    "sounds": [
+      "depression:heartbeats"
+    ]
+  },
+  "tinnitus": {
+    "category": "player",
+    "subtitle": "depression.sound.tinnitus",
+    "sounds": [
+      "depression:tinnitus"
+    ]
+  }
+}

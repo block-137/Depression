@@ -15,14 +15,17 @@ import net.depression.listener.BlockEventListener;
 import net.depression.listener.CommandRegistrationListener;
 import net.depression.listener.EntityEventListener;
 import net.depression.listener.PlayerEventListener;
+import net.depression.mental.PTSDManager;
 import net.depression.network.DiaryUpdatePacket;
+import net.depression.network.PlaySoundPacket;
 import net.depression.server.Registry;
+import net.depression.sound.ModSounds;
 import net.depression.world.VillageAdditions;
 import org.slf4j.Logger;
 
 public final class Depression {
     public static final String MOD_ID = "depression";
-    public static final String MOD_VERSION = "0.1.1";
+    public static final String MOD_VERSION = "0.1.2";
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
@@ -32,10 +35,13 @@ public final class Depression {
         ModBlocks.register();
         ModItems.register();
         ModCreativeTabs.register();
+        ModSounds.register(); //必须先注册音效（因为心理医生使用了音效）
         VillageAdditions.register();
 
         NetworkManager.registerReceiver(NetworkManager.Side.C2S,
                 DiaryUpdatePacket.DIARY_UPDATE_PACKET, Registry::receiveDiaryUpdatePacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.C2S,
+                PlaySoundPacket.PLAY_SOUND_PACKET, PTSDManager::receivePlaySoundPacket);
 
         CommandRegistrationEvent.EVENT.register(CommandRegistrationListener::registerCommands);
         PlayerEvent.SMELT_ITEM.register(PlayerEventListener::onSmeltItem);
