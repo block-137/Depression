@@ -8,12 +8,7 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import net.depression.Depression;
 import net.depression.block.ModBlocks;
 import net.depression.mixin.StructureTemplatePoolAccess;
-<<<<<<< HEAD
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.VillagerModel;
-=======
 import net.depression.sound.ModSounds;
->>>>>>> dc11530 (0.1.2 Update)
 import net.minecraft.core.Registry;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;

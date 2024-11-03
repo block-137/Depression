@@ -198,17 +198,10 @@ public class MentalStatus {
             AttributeInstance movementSpeed = player.getAttribute(Attributes.MOVEMENT_SPEED);
             AttributeInstance attackDamage = player.getAttribute(Attributes.ATTACK_DAMAGE);
             AttributeInstance attackSpeed = player.getAttribute(Attributes.ATTACK_SPEED);
-<<<<<<< HEAD
-            if (emotionModifier != null) {
-                movementSpeed.removeModifier(emotionModifier.getId());
-                attackDamage.removeModifier(emotionModifier.getId());
-                attackSpeed.removeModifier(emotionModifier.getId());
-=======
             if (attributeModifier != null) {
-                movementSpeed.removeModifier(attributeModifier);
-                attackDamage.removeModifier(attributeModifier);
-                attackSpeed.removeModifier(attributeModifier);
->>>>>>> dc11530 (0.1.2 Update)
+                movementSpeed.removeModifier(attributeModifier.getId());
+                attackDamage.removeModifier(attributeModifier.getId());
+                attackSpeed.removeModifier(attributeModifier.getId());
             }
             double emotionModifier = emotionValue * 1.5d / 100d;
             if (combatCountdown > 0 && emotionModifier < 0) { //如果处于战斗状态且情绪比较负面，则清除情绪的负面加成

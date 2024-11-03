@@ -39,10 +39,12 @@
       "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
     },
     "net/depression/mixin/client/BookViewScreenMixin": {
-      "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_332;IIF)V"
+      "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_332;IIF)V",
+      "renderBackground": "Lnet/minecraft/class_3872;method_25420(Lnet/minecraft/class_332;IIF)V"
     },
     "net/depression/mixin/client/ClientLevelMixin": {
-      "playLocalSound": "Lnet/minecraft/class_638;method_8486(DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFZ)V",
+      "playLocalSound(DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFZ)V": "Lnet/minecraft/class_638;method_8486(DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFZ)V",
+      "playLocalSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V": "Lnet/minecraft/class_638;method_55116(Lnet/minecraft/class_1297;Lnet/minecraft/class_3414;Lnet/minecraft/class_3419;FF)V",
       "tick": "Lnet/minecraft/class_638;method_8441(Ljava/util/function/BooleanSupplier;)V"
     },
     "net/depression/mixin/client/FontAccess": {
@@ -115,10 +117,12 @@
         "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
       },
       "net/depression/mixin/client/BookViewScreenMixin": {
-        "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_332;IIF)V"
+        "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_332;IIF)V",
+        "renderBackground": "Lnet/minecraft/class_3872;method_25420(Lnet/minecraft/class_332;IIF)V"
       },
       "net/depression/mixin/client/ClientLevelMixin": {
-        "playLocalSound": "Lnet/minecraft/class_638;method_8486(DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFZ)V",
+        "playLocalSound(DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFZ)V": "Lnet/minecraft/class_638;method_8486(DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFZ)V",
+        "playLocalSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V": "Lnet/minecraft/class_638;method_55116(Lnet/minecraft/class_1297;Lnet/minecraft/class_3414;Lnet/minecraft/class_3419;FF)V",
         "tick": "Lnet/minecraft/class_638;method_8441(Ljava/util/function/BooleanSupplier;)V"
       },
       "net/depression/mixin/client/FontAccess": {

@@ -5,11 +5,7 @@ license = "LGPL-3.0-or-later"
 
 [[mods]]
 modId = "depression"
-<<<<<<< HEAD:neoforge/src/main/resources/META-INF/mods.toml
 version = "${version}"
-=======
-version = "0.1.2"
->>>>>>> dc11530 (0.1.2 Update):forge/build/resources/main/META-INF/mods.toml
 displayName = "Depression"
 authors = "block_137, SimoTCD, TheMoonAries, Tianxin_Limao, hhxkzhy"
 description = '''

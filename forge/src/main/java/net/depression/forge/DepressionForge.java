@@ -1,6 +1,5 @@
 package net.depression.forge;
 
-import com.llamalad7.mixinextras.MixinExtrasBootstrap;
 import dev.architectury.platform.forge.EventBuses;
 import net.depression.Depression;
 import net.depression.forge.config.ServerConfig;
@@ -18,7 +17,6 @@ public final class DepressionForge {
         Depression.init();
         ForgeVillageAddition.register();
         ServerConfig.load();
-        MixinExtrasBootstrap.init();
     }
 
 }
