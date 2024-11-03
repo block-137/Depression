@@ -45,6 +45,9 @@ public class PlayerEventListener {
             mentalStatus = new MentalStatus(serverPlayer);
             Registry.mentalStatus.put(serverPlayer.getUUID(), mentalStatus);
         }
+        if (mentalStatus.emotionValue >= -2) {
+            mentalStatus.combatCountdown = 10;
+        }
         mentalStatus.mentalIllness.trigMentalFatigue();
         return EventResult.pass();
     }

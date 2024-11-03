@@ -8,6 +8,7 @@ import net.depression.mental.MentalStatus;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
+import net.depression.sound.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEventListener {
     public static EventResult onBlockBreak(Level level, BlockPos pos, BlockState state, ServerPlayer player, IntValue intValue) {
+
         if (player.isCreative() || !player.hasCorrectToolForDrops(state)) { //如果是创造模式或者没有用合适的工具挖，就不计入
             return EventResult.pass();
         }

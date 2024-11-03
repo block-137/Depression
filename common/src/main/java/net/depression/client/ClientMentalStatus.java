@@ -10,10 +10,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.Vec3;
+
+import java.util.Date;
 
 import static net.depression.mental.MentalIllness.getMentalHealthLevel;
 
@@ -22,15 +27,28 @@ public class ClientMentalStatus {
     public static int EMOTION_DISPLAY_OFFSET_Y = -51;
     public double emotionValue;
     public double mentalHealthValue;
+    public int emotionLevel;
+    public boolean isInCombat;
     public int mentalHealthLevel;
     public ClientMentalIllness mentalIllness = new ClientMentalIllness();
+    public ClientPTSDManager ptsdManager = new ClientPTSDManager();
     public String mentalIllnessString;
-    public static boolean isJoinGame = false;
     public final double mentalHealthMaxValue = 100d;
     private static final ResourceLocation EMOTION = new ResourceLocation(Depression.MOD_ID, "textures/gui/emotion.png");
 
+    public void reset() {
+        emotionValue = 0d;
+        mentalHealthValue = 100d;
+        emotionLevel = 4;
+        isInCombat = false;
+        mentalHealthLevel = 0;
+        mentalIllnessString = "healthy";
+    }
+
     public void receiveEmotionPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
         emotionValue = buf.readDouble();
+        isInCombat = buf.readBoolean();
+        emotionLevel = getEmotionLevel();
         //Minecraft.getInstance().gui.setOverlayMessage(Component.literal(String.format("情绪值: %.2f 精神健康值: %.2f", emotionValue, mentalHealthValue)), false);
     }
     public void receiveMentalHealthPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
@@ -38,10 +56,6 @@ public class ClientMentalStatus {
         int prevMentalHealthLevel = mentalHealthLevel;
         mentalHealthLevel = getMentalHealthLevel(mentalHealthValue);
         mentalIllnessString = getMentalIllness(mentalHealthLevel);
-        if (isJoinGame) {
-            isJoinGame = false;
-            return;
-        }
         if (prevMentalHealthLevel != mentalHealthLevel) {
             if (prevMentalHealthLevel < mentalHealthLevel) { //病情加重
                 Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.develop_illness_" + mentalHealthLevel), false);
@@ -73,7 +87,7 @@ public class ClientMentalStatus {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         //绘制情绪值
         RenderSystem.setShaderTexture(0, EMOTION);
-        guiGraphics.blit(EMOTION, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*getEmotionLevel(), 0, 16, 16, 128, 16); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
+        guiGraphics.blit(EMOTION, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*emotionLevel, isInCombat ? 16 : 0, 16, 16, 128, 32); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
         //绘制精神健康值
         /*
         int mentalHealthLevel = getMentalHealthLevel(mentalHealthValue);
@@ -85,7 +99,9 @@ public class ClientMentalStatus {
         RenderSystem.setShaderTexture(0, MENTAL_HEALTH_HEART);
         guiGraphics.blit(MENTAL_HEALTH_HEART, x + 97, y - 22, 90, (mentalHealthLevel < 3 ? 0 : 22), 0, 22, 22, 66, 22);
          */
+
         mentalIllness.render(guiGraphics, window.getGuiScaledWidth(), y);
+        ptsdManager.render(guiGraphics, window.getGuiScaledWidth(), y);
     }
 
     public int getEmotionLevel() {

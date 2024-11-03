@@ -4,20 +4,28 @@ import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.chunk.ChunkStatus;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
@@ -40,21 +48,28 @@ public class MentalStatus {
     public static HashMap<String, Double> healAdvancement = new HashMap<>(); //获得成就会开心
     private final ConcurrentHashMap<String, Integer> boredom = new ConcurrentHashMap<>(); //无聊值
     private final ConcurrentHashMap<String, Double> PTSD = new ConcurrentHashMap<>(); //PTSD值
+    public final PTSDManager ptsdManager = new PTSDManager(this, PTSD);
     private final ConcurrentHashMap<String, Long> PTSDTimeBuffer = new ConcurrentHashMap<>(); //PTSD时刻缓冲区（存储造成PTSD的那一个tick）
     private final ConcurrentHashMap<String, Double> PTSDValueBuffer = new ConcurrentHashMap<>(); //PTSD值缓冲区（存储造成PTSD的值）
+    public final HashSet<String> playerPTSDSet = new HashSet<>(); //玩家PTSD集合
     public double emotionValue; //情绪值（-20~20），实际上是精神健康值的导数。
     public double mentalHealthValue = 100; //精神健康值（0~100）
-    public MentalIllness mentalIllness;
+    public int combatCountdown = 0;
 
+    public MentalIllness mentalIllness;
     private ServerPlayer player;
     public long tickCount = -1;
     private final ExecutorService executor = Executors.newCachedThreadPool();
 
-    private AttributeModifier emotionModifier;
+    private AttributeModifier attributeModifier;
 
     public MentalStatus(ServerPlayer player) {
         this.player = player;
         this.mentalIllness = new MentalIllness(player, this);
+    }
+
+    public synchronized void triggerHurt(String id) {
+        ptsdManager.hurt(id);
     }
 
     public synchronized void tick(ServerPlayer player) {
@@ -83,9 +98,16 @@ public class MentalStatus {
                     originValue = 0d;
                     EntityType.byString(string).ifPresentOrElse(
                             entityType -> ActionbarHintPacket.sendPTSDFormPacket(player, entityType.getDescription()),
-                            () -> ActionbarHintPacket.sendPTSDFormPacket(player, Component.translatable("message.depression.damagesource." + string)));
+                            () -> {
+                                if (playerPTSDSet.contains(string)) {
+                                    ActionbarHintPacket.sendPTSDFormPacket(player, Component.literal(string));
+                                }
+                                else {
+                                    ActionbarHintPacket.sendPTSDFormPacket(player, Component.translatable("message.depression.damagesource." + string));
+                                }
+                            });
                 }
-                PTSD.put(string, Math.min(originValue + damage, 10d)); //保证PTSD不超过上限
+                PTSD.put(string, Math.min(originValue + damage, PTSDManager.PTSD_MAX_VALUE)); //保证PTSD不超过上限（32）
                 PTSDTimeBuffer.remove(string);
                 PTSDValueBuffer.remove(string);
             }
@@ -104,13 +126,50 @@ public class MentalStatus {
             }
             //PTSD的自然消散
             for (Map.Entry<String, Double> entry : PTSD.entrySet()) {
-                entry.setValue(entry.getValue() - PTSD_DISPERSE_RATE); //PTSD值 -= 自然消散速度
+                String key = entry.getKey();
+                double value;
+                if (entry.getValue() <= PTSDManager.PTSD_1_VALUE) {
+                    value = entry.getValue();
+                    entry.setValue(value - PTSD_DISPERSE_RATE * (11 - value / 2)); ////PTSD值 -= 自然消散速度 * (7 - PTSD值)
+                }
+                else { //PTSD > 12 判定玩家是否触发症状
+                    value = entry.getValue() - PTSD_DISPERSE_RATE; //PTSD值 -= 自然消散速度
+                    entry.setValue(value);
+                    ServerLevel level = (ServerLevel) player.level();
+                    EntityType.byString(key).ifPresentOrElse(
+                            entityType -> {
+                                List<? extends Entity> list = level.getEntities(entityType, this::viewDetect);
+                                for (Entity entity : list) {
+                                    ptsdManager.trigger(entity);
+                                }
+                                if (value > PTSDManager.PTSD_4_VALUE) {
+                                    ptsdManager.photismId.add(key);
+                                }
+                                else {
+                                    ptsdManager.photismId.remove(key);
+                                }
+                            }, () -> {
+                                for (ServerPlayer serverPlayer : level.players()) {
+                                    String name = serverPlayer.getDisplayName().getString();
+                                    if (name.equals(key)) {
+                                        if (viewDetect(serverPlayer)) {
+                                            ptsdManager.trigger(key);
+                                        }
+                                    }
+                                }
+                            }
+                            );
+
+                    if (value > PTSDManager.PTSD_3_VALUE) {
+                        ptsdManager.phonismId.add(key);
+                    }
+                    else {
+                        ptsdManager.phonismId.remove(key);
+                    }
+                }
                 if (entry.getValue() <= 0) { //如果PTSD值归零，则移除PTSD
                     String id = entry.getKey();
-                    PTSD.remove(id);
-                    EntityType.byString(id).ifPresentOrElse(
-                            entityType -> ActionbarHintPacket.sendPTSDDispersePacket(player, entityType.getDescription()),
-                            () -> ActionbarHintPacket.sendPTSDDispersePacket(player, Component.translatable("message.depression.damagesource." + id)));
+                    removePTSD(id);
                 }
             }
             //处理精神健康值
@@ -135,23 +194,63 @@ public class MentalStatus {
                 emotionValue -= EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d;
                 emotionValue = Math.max(0d, emotionValue); //保证情绪值归0
             }
-
             //更新属性
             AttributeInstance movementSpeed = player.getAttribute(Attributes.MOVEMENT_SPEED);
             AttributeInstance attackDamage = player.getAttribute(Attributes.ATTACK_DAMAGE);
             AttributeInstance attackSpeed = player.getAttribute(Attributes.ATTACK_SPEED);
+<<<<<<< HEAD
             if (emotionModifier != null) {
                 movementSpeed.removeModifier(emotionModifier.getId());
                 attackDamage.removeModifier(emotionModifier.getId());
                 attackSpeed.removeModifier(emotionModifier.getId());
+=======
+            if (attributeModifier != null) {
+                movementSpeed.removeModifier(attributeModifier);
+                attackDamage.removeModifier(attributeModifier);
+                attackSpeed.removeModifier(attributeModifier);
+>>>>>>> dc11530 (0.1.2 Update)
             }
-            emotionModifier = new AttributeModifier("depression:emotion_modifier", emotionValue * 1.5f / 100f - mentalIllness.mentalHealthLevel / 10f, AttributeModifier.Operation.MULTIPLY_TOTAL);
-            movementSpeed.addTransientModifier(emotionModifier);
-            attackDamage.addTransientModifier(emotionModifier);
-            attackSpeed.addTransientModifier(emotionModifier);
+            double emotionModifier = emotionValue * 1.5d / 100d;
+            if (combatCountdown > 0 && emotionModifier < 0) { //如果处于战斗状态且情绪比较负面，则清除情绪的负面加成
+                emotionModifier = 0;
+            }
+            attributeModifier = new AttributeModifier("depression:emotion_modifier", emotionModifier - mentalIllness.mentalHealthLevel / 10d, AttributeModifier.Operation.MULTIPLY_TOTAL);
+            movementSpeed.addTransientModifier(attributeModifier);
+            attackDamage.addTransientModifier(attributeModifier);
+            attackSpeed.addTransientModifier(attributeModifier);
             MentalStatusPacket.sendToPlayer(player, this);
+
+            if (combatCountdown > 0) {
+                --combatCountdown;
+            }
+
+            ptsdManager.tick(player);
         }
         mentalIllness.tick(player);
+    }
+
+    public synchronized boolean viewDetect(Entity entity) {
+        Vec3 vec3 = player.getViewVector(1.0F).normalize();
+        Vec3 vec32 = new Vec3(entity.getX() - player.getX(), entity.getEyeY() - player.getEyeY(), entity.getZ() - player.getZ());
+        double d = vec32.length();
+        vec32 = vec32.normalize();
+        double e = vec3.dot(vec32);
+        return e > 1.0 - 0.5 / d ? player.hasLineOfSight(entity) : false;
+    }
+
+    public synchronized void removePTSD(String id) {
+        PTSD.remove(id);
+        EntityType.byString(id).ifPresentOrElse(
+                entityType -> ActionbarHintPacket.sendPTSDDispersePacket(player, entityType.getDescription()),
+                () -> {
+                    if (playerPTSDSet.contains(id)) {
+                        ActionbarHintPacket.sendPTSDDispersePacket(player, Component.literal(id));
+                        playerPTSDSet.remove(id);
+                    }
+                    else {
+                        ActionbarHintPacket.sendPTSDDispersePacket(player, Component.translatable("message.depression.damagesource." + id));
+                    }
+                });
     }
 
     public synchronized double mentalHeal(double value) {
@@ -175,6 +274,11 @@ public class MentalStatus {
     public synchronized void mentalHurt(double value) {
         emotionValue -= value; //情绪值 -= 伤害值
         emotionValue = Math.max(-20d, emotionValue); //保证情绪值不超过下限
+    }
+
+    public synchronized void mentalHurt(Component component, double damage) {
+        playerPTSDSet.add(component.getString());
+        mentalHurt(component.getString(), damage);
     }
     public synchronized void mentalHurt(String string, double damage) {
         if (string == null) {
@@ -267,7 +371,7 @@ public class MentalStatus {
     }
 
     private Double getTypeHealValue(String id) {
-        Double value = nearbyHealBlockValue.get(id);
+        double value = nearbyHealBlockValue.get(id);
         if (nearbyHealBlockType.containsKey(id)) {
             String type = nearbyHealBlockType.get(id);
             if (boredom.containsKey(type)) {
@@ -306,6 +410,13 @@ public class MentalStatus {
         for (String key : ptsdValueBuffer.getAllKeys()) {
             PTSDValueBuffer.put(key, ptsdValueBuffer.getDouble(key));
         }
+        //读取玩家PTSD缓冲区
+        if (tag.contains("player_ptsd_buffer")) {
+            ListTag playerPTSDBufferTag = tag.getList("player_ptsd_buffer", 8);
+            for (int i = 0; i < playerPTSDBufferTag.size(); ++i) {
+                playerPTSDSet.add(playerPTSDBufferTag.getString(i));
+            }
+        }
         //读取情绪值
         if (tag.contains("emotion_value")) {
             emotionValue = tag.getDouble("emotion_value");
@@ -314,8 +425,16 @@ public class MentalStatus {
         if (tag.contains("mental_health_value")) {
             mentalHealthValue = tag.getDouble("mental_health_value");
         }
+        //读取战斗状态倒计时
+        if (tag.contains("combat_countdown")) {
+            combatCountdown = tag.getInt("combat_countdown");
+        }
         //读取精神疾病相关内容
-        mentalIllness.readNbt(tag);
+        CompoundTag mentalIllnessTag = tag.getCompound("mental_illness");
+        mentalIllness.readNbt(mentalIllnessTag);
+        //读取PTSD管理相关内容
+        CompoundTag ptsdManagerTag = tag.getCompound("ptsd_manager");
+        ptsdManager.readNbt(ptsdManagerTag);
     }
 
     public void writeNbt(CompoundTag tag) {
@@ -342,12 +461,29 @@ public class MentalStatus {
         for (Map.Entry<String, Double> entry : PTSDValueBuffer.entrySet()) {
             ptsdValueBuffer.putDouble(entry.getKey(), entry.getValue());
         }
+        tag.put("PTSD_value_buffer", ptsdValueBuffer);
+        //写入玩家PTSD缓冲区
+        if (!playerPTSDSet.isEmpty()) {
+            ListTag playerPTSDBufferTag = new ListTag();
+            for (String string : playerPTSDSet) {
+                playerPTSDBufferTag.add(StringTag.valueOf(string));
+            }
+            tag.put("player_ptsd_buffer", playerPTSDBufferTag);
+        }
         //写入情绪值
         tag.putDouble("emotion_value", emotionValue);
         //写入精神健康值
         tag.putDouble("mental_health_value", mentalHealthValue);
+        //写入战斗状态倒计时
+        tag.putDouble("combat_countdown", combatCountdown);
         //写入精神疾病相关内容
-        mentalIllness.writeNbt(tag);
+        CompoundTag mentalIllnessTag = new CompoundTag();
+        mentalIllness.writeNbt(mentalIllnessTag);
+        tag.put("mental_illness", mentalIllnessTag);
+        //写入PTSD管理相关内容
+        CompoundTag ptsdManagerTag = new CompoundTag();
+        ptsdManager.writeNbt(ptsdManagerTag);
+        tag.put("ptsd_manager", ptsdManagerTag);
     }
 
 }

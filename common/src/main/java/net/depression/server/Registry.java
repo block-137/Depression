@@ -15,6 +15,7 @@ import java.util.HashSet;
 import java.util.UUID;
 
 public class Registry {
+
     public static final HashMap<UUID, MentalStatus> mentalStatus = new HashMap<>();
     public static final HashSet<UUID> quitPlayers = new HashSet<>();
     public static final HashMap<UUID, StatManager> statManager = new HashMap<>();

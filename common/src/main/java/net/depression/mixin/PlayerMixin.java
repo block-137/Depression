@@ -46,8 +46,12 @@ public abstract class PlayerMixin {
             mentalStatus = new MentalStatus((ServerPlayer) player);
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
-        if (player.isCreative() || player.isSpectator() || player.isDeadOrDying())
+        if (player.isCreative() || player.isSpectator() || player.isDeadOrDying()) {
+            if (mentalStatus.ptsdManager.hasRemaining()) {
+                mentalStatus.ptsdManager.clear((ServerPlayer) player);
+            }
             return;
+        }
         mentalStatus.tick((ServerPlayer) player);
     }
 
@@ -76,6 +80,8 @@ public abstract class PlayerMixin {
         else {
             mentalStatus.mentalHeal(5);
         }
+        mentalStatus.mentalIllness.isInsomnia = null;
+        mentalStatus.mentalIllness.sleepAttemptCount = 0;
     }
 
     @Inject(method = "eat", at = @At("HEAD"))
@@ -108,43 +114,64 @@ public abstract class PlayerMixin {
             return;
         }
         //PTSD的范围是0-10
-        f = Math.min(f, player.getHealth());
-        double damageRate = f / player.getMaxHealth() * 20;
-        double healthRate = player.getHealth() / player.getMaxHealth();
-        double minValue = healthRate * 3;
-        damageRate -= minValue;
-        if (damageRate <= 0) {
-            return;
-        }
-        damageRate *= Math.sqrt(damageRate);
-        Entity entity = damageSource.getEntity();
-        Entity directEntity = damageSource.getDirectEntity();
         MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
         if (mentalStatus == null) {
             mentalStatus = new MentalStatus((ServerPlayer) player);
             Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
+        f = Math.min(f, player.getHealth());
+        double damageRate = f / player.getMaxHealth() * 20;
+        double healthRate = player.getHealth() / player.getMaxHealth();
+        double minValue = healthRate * 3;
+        damageRate -= minValue;
+        boolean ifMentalHurt = damageRate > 0;
+        if (ifMentalHurt) {
+            damageRate *= Math.sqrt(damageRate);
+        }
+        Entity entity = damageSource.getEntity();
+        Entity directEntity = damageSource.getDirectEntity();
         try {
             if (entity != null) {
-                if (entity instanceof Player) {
-                    mentalStatus.mentalHurt(entity.getDisplayName().getString(), damageRate);
-                } else {
+                if (entity instanceof Player) { //如果伤害源是玩家
+                    mentalStatus.triggerHurt(entity.getDisplayName().getString());
+                    if (ifMentalHurt) {
+                        mentalStatus.mentalHurt(entity.getDisplayName(), damageRate);
+                    }
+                }
+                else {
                     String encodeId = entity.getEncodeId();
                     String directEncodeId = directEntity.getEncodeId();
                     if (encodeId == null) {
                         return;
                     }
                     if (!encodeId.equals(directEncodeId)) { //如果直接造成伤害的实体与间接造成伤害的实体不是同一个实体的话，就分开造成心理伤害
-                        mentalStatus.mentalHurt(encodeId, damageRate * 0.8d);
-                        mentalStatus.mentalHurt(directEncodeId, damageRate * 0.2d);
-                    } else {
-                        mentalStatus.mentalHurt(encodeId, damageRate);
+                        mentalStatus.triggerHurt(encodeId);
+                        mentalStatus.triggerHurt(directEncodeId);
+                        if (ifMentalHurt) {
+                            mentalStatus.mentalHurt(encodeId, damageRate * 0.8d);
+                            mentalStatus.mentalHurt(directEncodeId, damageRate * 0.2d);
+                        }
+                    }
+                    else { //如果直接造成伤害的实体与间接造成伤害的实体是同一个实体的话，就只造成一次心理伤害
+                        mentalStatus.triggerHurt(encodeId);
+                        if (ifMentalHurt) {
+                            mentalStatus.mentalHurt(encodeId, damageRate);
+                        }
                     }
                 }
-            } else {
-                mentalStatus.mentalHurt(damageSource.getMsgId(), damageRate);
+                if (mentalStatus.emotionValue <= 2) { //如果被实体击中且情绪不高涨
+                    mentalStatus.combatCountdown = 10;
+                }
             }
-            MentalStatusPacket.sendToPlayer((ServerPlayer) player, mentalStatus);
+            else { //如果伤害源不是实体
+                mentalStatus.triggerHurt(damageSource.getMsgId());
+                if (ifMentalHurt) {
+                    mentalStatus.mentalHurt(damageSource.getMsgId(), damageRate);
+                }
+            }
+            if (ifMentalHurt) { //如果造成了心理伤害，就发送心理状态数据包
+                MentalStatusPacket.sendToPlayer((ServerPlayer) player, mentalStatus);
+            }
         } catch (NullPointerException ignored) {
         }
     }
