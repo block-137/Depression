@@ -1,9 +1,9 @@
-[01:26:38] [main/INFO] (Launcher) ModLauncher running: args [--launchTarget, forge_userdev_client, --version, MOD_DEV, --assetIndex, 1.20.4-12, --assetsDir, C:\Users\13475\.gradle\caches\fabric-loom\assets, --gameDir, ., -mixin.config, depression.mixins.json, --mixin.config, depression.mixins.json]
-[01:26:38] [main/INFO] (Launcher) JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 17.0.8+9-LTS-211
-[01:26:38] [main/INFO] (Launcher) ModLauncher 10.1.2 starting: java version 17.0.8 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
-[01:26:38] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
-[01:26:38] [main/INFO] (EARLYDISPLAY) Trying GL version 4.6
-[01:26:38] [main/INFO] (EARLYDISPLAY) Requested GL version 4.6 got version 4.6
-[01:26:38] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=jar:file:///C:/Users/13475/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.11/dd886ad7af30604cbd9aa0f1eb9fb95b079013ca/mixin-patched-0.8.5.11.jar!/ Service=ModLauncher Env=CLIENT
-[01:26:38] [EarlyDisplay/INFO] (EARLYDISPLAY) GL info: AMD Radeon RX 6750 XT GL version 4.6.0 Core Profile Context 24.10.27.01.240827, ATI Technologies Inc.
-[01:26:38] [main/INFO] (ModDiscoverer) Found mod file  of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@2265a052
+[01:36:31] [main/INFO] (Launcher) ModLauncher running: args [--launchTarget, forge_userdev_client, --version, MOD_DEV, --assetIndex, 1.20.4-12, --assetsDir, C:\Users\13475\.gradle\caches\fabric-loom\assets, --gameDir, ., -mixin.config, depression.mixins.json, --mixin.config, depression.mixins.json]
+[01:36:31] [main/INFO] (Launcher) JVM identified as Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 17.0.8+9-LTS-211
+[01:36:31] [main/INFO] (Launcher) ModLauncher 10.1.2 starting: java version 17.0.8 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[01:36:31] [main/INFO] (ImmediateWindowHandler) Loading ImmediateWindowProvider fmlearlywindow
+[01:36:31] [main/INFO] (EARLYDISPLAY) Trying GL version 4.6
+[01:36:32] [main/INFO] (EARLYDISPLAY) Requested GL version 4.6 got version 4.6
+[01:36:32] [main/INFO] (mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=jar:file:///C:/Users/13475/.gradle/caches/modules-2/files-2.1/dev.architectury/mixin-patched/0.8.5.11/dd886ad7af30604cbd9aa0f1eb9fb95b079013ca/mixin-patched-0.8.5.11.jar!/ Service=ModLauncher Env=CLIENT
+[01:36:32] [EarlyDisplay/INFO] (EARLYDISPLAY) GL info: AMD Radeon RX 6750 XT GL version 4.6.0 Core Profile Context 24.10.27.01.240827, ATI Technologies Inc.
+[01:36:32] [main/INFO] (ModDiscoverer) Found mod file  of type MOD with provider net.minecraftforge.fml.loading.moddiscovery.MinecraftLocator@2265a052
