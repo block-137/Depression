@@ -11,7 +11,7 @@
     "Tianxin_Limao",
     "hhxkzhy"
   ],
-  "license": "LGPL-3.0",
+  "license": "LGPL-3.0-or-later",
   "icon": "assets/depression/icon.png",
   "environment": "*",
   "entrypoints": {
