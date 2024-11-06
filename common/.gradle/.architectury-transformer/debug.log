@@ -3,6 +3,7 @@
 [Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.2-transformProductionFabric.jar
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.2-transformProductionFabric.jar: 
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@17962f18
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@6f16e38b
@@ -13,6 +14,20 @@
 [Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression1.19.2\common\build\loom-cache\mixin-map-loom.mappings.1_19_2.layered+hash.40359-v2.main.tiny
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.shadowed.impl.dev.architectury.tinyremapper.TinyUtils$$Lambda$2502/0x000001fa29bd6038@58b08bb1
+=======
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression\common\build\libs\depression-common-0.1.2-transformProductionFabric.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@74bdb797
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@686b7d96
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@2727d3dd
+[Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@50e93e25
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression\common\build\libs\depression-common-0.1.2-transformProductionFabric.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression\common\build\loom-cache\mixin-map-loom.mappings.1_20_1.layered+hash.40545-v2.main.tiny
+[Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression\fabric\build\loom-cache\mixin-map-loom.mappings.1_20_1.layered+hash.40545-v2.main.tiny
+[Architectury Transformer DEBUG] Remapping with 2 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.shadowed.impl.dev.architectury.tinyremapper.TinyUtils$$Lambda$2648/0x0000020681c337c8@4c1735d3
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.shadowed.impl.dev.architectury.tinyremapper.TinyUtils$$Lambda$2648/0x0000020681c337c8@56722bbb
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Provided 57 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
@@ -66,12 +81,22 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\cbac1b8d30cb4795149c1ef540f912671a8616d0\lwjgl-glfw-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\b119297cf8ed01f247abe8685857f8e7fcf5980f\lwjgl-stb-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar
+<<<<<<< HEAD
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.16.7\ee4095669061d1fe4bce5fea23d69d1520bc2d58\text2speech-1.16.7.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.2\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-8d8c6bc45f\1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2\minecraft-merged-8d8c6bc45f-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\8d10e9e138dac52172dd83229bdc89197100c723\netty-transport-native-epoll-4.1.77.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\5f051599ced83e119ddeda891f471c0613721e5c\netty-transport-native-epoll-4.1.77.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.2\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_2_layered_hash_40359_v2\dev\architectury\architectury\6.6.92\architectury-6.6.92.jar
 [Architectury Transformer] Read classpath in 878.6 ms
+=======
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.1\f48d81adce2abf5ad3cfe463df517952749e03bc\slf4j-api-2.0.1.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-3760f957dc\1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2\minecraft-merged-3760f957dc-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\dev\architectury\architectury\9.2.14\architectury-9.2.14.jar
+[Architectury Transformer] Read classpath in 948.7 ms
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/Depression with maxs=true frames=true
@@ -88,51 +113,75 @@
 [Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Writing net/depression/mixin/JukeboxBlockEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
+=======
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/JukeboxBlockEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/TagManagerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/mixin/CakeBlockMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/SingleJigsawAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
+<<<<<<< HEAD
+=======
+[Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ItemStackMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ServerLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/LivingEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LevelRendererMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/client/LocalPlayerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/BookViewScreenMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/client/LocalPlayerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/ClientLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
+=======
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientRawInputEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
+=======
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/screen/DiaryAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
@@ -142,13 +191,19 @@
 [Architectury Transformer DEBUG] Checking whether /depression-common-common-refmap.json is a mixin config.
 [Architectury Transformer DEBUG] Found mixin config(s): /depression.mixins.json
 [Architectury Transformer DEBUG] Injecting depression-common-common-refmap.json to /depression.mixins.json
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.2-transformProductionFabric.jar
 [Architectury Transformer] Transformed jar with 5 transformer(s) in 1.228 s
+=======
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\libs\depression-common-0.1.2-transformProductionFabric.jar
+[Architectury Transformer] Transformed jar with 5 transformer(s) in 1.419 s
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.2-transformProductionForge.jar
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Transforming 7 transformer(s) from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.2-transformProductionForge.jar: 
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@16544698
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@3586cf3a
@@ -162,6 +217,23 @@
 [Architectury Transformer DEBUG] Remapping with 2 mapping provider(s):
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$2851/0x000001fa29d66708@69365c60
 [Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$2852/0x000001fa29d66928@50b7a939
+=======
+[Architectury Transformer DEBUG] Transforming 7 transformer(s) from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression\common\build\libs\depression-common-0.1.2-transformProductionForge.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@1e31901c
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@650f6cbd
+[Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@15b8f829
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@2b82a3f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@2c708b75
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@7444d81e
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression\common\build\devlibs\depression-common-0.1.2-dev.jar to D:\MinecraftModProject\Depression\common\build\libs\depression-common-0.1.2-transformProductionForge.jar with 7 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression\common\build\loom-cache\mixin-map-loom.mappings.1_20_1.layered+hash.40545-v2.main.tiny
+[Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression\fabric\build\loom-cache\mixin-map-loom.mappings.1_20_1.layered+hash.40545-v2.main.tiny
+[Architectury Transformer DEBUG] Remapping with 3 mapping provider(s):
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$2924/0x0000020681cc8900@49747a80
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$2924/0x0000020681cc8900@266e1628
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$2925/0x0000020681cc8b20@5f591707
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Provided 57 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
@@ -215,12 +287,22 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\cbac1b8d30cb4795149c1ef540f912671a8616d0\lwjgl-glfw-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\b119297cf8ed01f247abe8685857f8e7fcf5980f\lwjgl-stb-3.3.1.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar
+<<<<<<< HEAD
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.16.7\ee4095669061d1fe4bce5fea23d69d1520bc2d58\text2speech-1.16.7.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.2\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-8d8c6bc45f\1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2\minecraft-merged-8d8c6bc45f-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\8d10e9e138dac52172dd83229bdc89197100c723\netty-transport-native-epoll-4.1.77.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\5f051599ced83e119ddeda891f471c0613721e5c\netty-transport-native-epoll-4.1.77.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.2\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_2_layered_hash_40359_v2\dev\architectury\architectury\6.6.92\architectury-6.6.92.jar
 [Architectury Transformer] Read classpath in 819.0 ms
+=======
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\2.0.1\f48d81adce2abf5ad3cfe463df517952749e03bc\slf4j-api-2.0.1.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\minecraftMaven\net\minecraft\minecraft-merged-3760f957dc\1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2\minecraft-merged-3760f957dc-1.20.1-loom.mappings.1_20_1.layered+hash.40545-v2.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
+[Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
+[Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\dev\architectury\architectury\9.2.14\architectury-9.2.14.jar
+[Architectury Transformer] Read classpath in 805.4 ms
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/client/BookViewScreenMixin#getNumPages()I -> m_98300_
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/client/BookViewScreenMixin#getClickedComponentStyleAt(DD)Lnet/minecraft/network/chat/Style; -> m_98268_
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/EntityMixin#getLevel()Lnet/minecraft/world/level/Level; -> m_9236_
@@ -250,7 +332,15 @@
 [Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Writing net/depression/mixin/JukeboxBlockEntityMixin with maxs=true frames=true
+=======
+[Architectury Transformer DEBUG] Writing net/depression/mixin/TagManagerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/JukeboxBlockEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
@@ -273,6 +363,10 @@
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
+<<<<<<< HEAD
+=======
+[Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
@@ -280,11 +374,19 @@
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
+<<<<<<< HEAD
+=======
+[Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponent with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
+<<<<<<< HEAD
+=======
+[Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
+>>>>>>> d339381 (修复日记本显示错误的bug)
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
@@ -295,6 +397,7 @@
 [Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/screen/DiaryAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
@@ -375,7 +478,15 @@
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1799;method_7935()I -> Lnet/minecraft/world/item/ItemStack;m_41779_()I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1799;method_7935()I -> Lnet/minecraft/world/item/ItemStack;m_41779_()I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V -> Lnet/minecraft/world/entity/LivingEntity;m_6672_(Lnet/minecraft/world/InteractionHand;)V
+<<<<<<< HEAD
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_214150_(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFJ)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_213890_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFJ)V
 [Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.2-transformProductionForge.jar
 [Architectury Transformer] Transformed jar with 7 transformer(s) in 1.258 s
+=======
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_262808_(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_213890_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\libs\depression-common-0.1.2-transformProductionForge.jar
+[Architectury Transformer] Transformed jar with 7 transformer(s) in 1.209 s
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression\common\build\libs\depression-common-0.1.2.jar
+>>>>>>> d339381 (修复日记本显示错误的bug)

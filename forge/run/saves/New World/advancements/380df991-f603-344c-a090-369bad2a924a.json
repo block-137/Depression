@@ -1,0 +1,17 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:taiga": "2024-07-02 01:26:17 +0800",
+      "minecraft:wooded_badlands": "2024-07-02 01:53:19 +0800",
+      "minecraft:snowy_plains": "2024-07-02 01:50:00 +0800",
+      "minecraft:snowy_taiga": "2024-07-02 01:50:23 +0800",
+      "minecraft:forest": "2024-07-02 01:48:21 +0800",
+      "minecraft:desert": "2024-07-02 01:48:45 +0800",
+      "minecraft:deep_lukewarm_ocean": "2024-07-02 01:51:35 +0800",
+      "minecraft:savanna": "2024-07-02 01:50:45 +0800",
+      "minecraft:plains": "2024-07-02 01:48:33 +0800"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

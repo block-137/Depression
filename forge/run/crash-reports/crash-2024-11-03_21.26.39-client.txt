@@ -1,0 +1,174 @@
+---- Minecraft Crash Report ----
+// Hey, that tickles! Hehehe!
+
+Time: 2024-11-03 21:26:39
+Description: Unexpected error
+
+org.spongepowered.asm.mixin.injection.throwables.InjectionError: LVT in net/minecraft/client/renderer/LevelRenderer::renderLevel(Lcom/mojang/blaze3d/vertex/PoseStack;FJZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lcom/mojang/math/Matrix4f;)V has incompatible changes at opcode 504 in callback depression.mixins.json:client.LevelRendererMixin->@Inject::renderFalseEntities(Lcom/mojang/blaze3d/vertex/PoseStack;FJZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lcom/mojang/math/Matrix4f;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lnet/minecraft/util/profiling/ProfilerFiller;Lnet/minecraft/world/phys/Vec3;DDDLcom/mojang/math/Matrix4f;ZLnet/minecraft/client/renderer/culling/Frustum;FZZLnet/minecraft/client/renderer/MultiBufferSource$BufferSource;)V.
+ Expected: [Lnet/minecraft/util/profiling/ProfilerFiller;, Lnet/minecraft/world/phys/Vec3;, D, D, D, Lcom/mojang/math/Matrix4f;, Z, Lnet/minecraft/client/renderer/culling/Frustum;, F, Z, Z, Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;]
+    Found: [Lnet/minecraft/util/profiling/ProfilerFiller;, Z, Lnet/minecraft/world/phys/Vec3;, D, D, D, Lcom/mojang/math/Matrix4f;, Z, Lnet/minecraft/client/renderer/culling/Frustum;, F, Z, Z]
+Available: [Lnet/minecraft/util/profiling/ProfilerFiller;, Z, Lnet/minecraft/world/phys/Vec3;, D, D, D, Lcom/mojang/math/Matrix4f;, Z, Lnet/minecraft/client/renderer/culling/Frustum;, F, Z, Z, Lnet/minecraft/client/renderer/MultiBufferSource$BufferSource;]
+	at net.minecraft.client.renderer.LevelRenderer.handler$zzn000$renderFalseEntities$missing(LevelRenderer.java) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:client.LevelRendererMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.LevelRenderer.renderLevel(LevelRenderer.java:1194) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:client.LevelRendererMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:1068) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:840) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1115) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:700) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.run(Main.java:212) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:51) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:25) ~[fmlloader-1.19.2-43.4.0.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) [bootstraplauncher-1.1.2.jar:1.1.2+1.1.2+main.09c1f998] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) [architectury-transformer-5.2.87-runtime.jar:5.2.87] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Suspected Mods: NONE
+Stacktrace:
+	at net.minecraft.client.renderer.LevelRenderer.handler$zzn000$renderFalseEntities$missing(LevelRenderer.java) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:client.LevelRendererMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.LevelRenderer.renderLevel(LevelRenderer.java:1194) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:depression.mixins.json:client.LevelRendererMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:1068) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:classloading,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A}
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['Dev'/79, l='ClientLevel', x=9986.68, y=91.00, z=-4296.58]]
+	Chunk stats: 961, 0
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,100,0), Section: (at 0,4,0 in 0,6,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 6553 game time, 6553 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:450) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:depression.mixins.json:client.ClientLevelMixin,pl:mixin:APP:architectury.mixins.json:MixinClientLevel,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2280) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:722) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.run(Main.java:212) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:51) ~[forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.mappings.1_19_2.layered+hash.40359-v2-forge-1.19.2-43.4.0.jar%23192!/:?] {re:classloading,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:25) ~[fmlloader-1.19.2-43.4.0.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-10.0.9.jar%23108!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) [bootstraplauncher-1.1.2.jar:1.1.2+1.1.2+main.09c1f998] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?] {}
+	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) [architectury-transformer-5.2.87-runtime.jar:5.2.87] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: Default, Mod Resources
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19.2
+	Minecraft Version ID: 1.19.2
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.8, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 2493093216 bytes (2377 MiB) / 4571791360 bytes (4360 MiB) up to 8376025088 bytes (7988 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 7600X 6-Core Processor             
+	Identifier: AuthenticAMD Family 25 Model 97 Stepping 2
+	Microarchitecture: Zen 3
+	Frequency (GHz): 4.70
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: GameViewer Virtual Display Adapter
+	Graphics card #0 vendor: GameViewer
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: DriverVersion=17.13.25.697
+	Graphics card #1 name: AMD Radeon RX 6750 XT
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #1 VRAM (MB): 4095.00
+	Graphics card #1 deviceId: 0x73df
+	Graphics card #1 versionInfo: DriverVersion=32.0.11027.1003
+	Graphics card #2 name: AMD Radeon(TM) Graphics
+	Graphics card #2 vendor: Advanced Micro Devices, Inc. (0x1002)
+	Graphics card #2 VRAM (MB): 512.00
+	Graphics card #2 deviceId: 0x164e
+	Graphics card #2 versionInfo: DriverVersion=32.0.11027.1003
+	Memory slot #0 capacity (MB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 4.80
+	Memory slot #0 type: Unknown
+	Memory slot #1 capacity (MB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 4.80
+	Memory slot #1 type: Unknown
+	Virtual memory max (MB): 39656.38
+	Virtual memory used (MB): 34982.79
+	Swap memory total (MB): 7719.47
+	Swap memory used (MB): 41.88
+	JVM Flags: 0 total; 
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: AMD Radeon RX 6750 XT GL version 3.2.0 Core Profile Context 24.10.27.01.240827, ATI Technologies Inc.
+	Window size: 854x480
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 12x AMD Ryzen 5 7600X 6-Core Processor 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/79, l='ServerLevel[New World]', x=9986.68, y=91.00, z=-4296.58]]
+	Data Packs: vanilla, mod:forge, mod:architectury (incompatible), mod:depression, mod:mixinextras (incompatible), mod:generated_573878c (incompatible)
+	World Generation: Stable
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-patched-0.8.5.11.jar mixin PLUGINSERVICE 
+		eventbus-6.0.3.jar eventbus PLUGINSERVICE 
+		fmlloader-1.19.2-43.4.0.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.19.2-43.4.0.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.19.2-43.4.0.jar runtime_enum_extender PLUGINSERVICE 
+		unprotect-1.2.0.jar unprotect PLUGINSERVICE 
+		fmlloader-1.19.2-43.4.0.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.19.2-43.4.0.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar ArchitecturyMixinRemapperInjector TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.19.2-43.4.0-minecraft-merged-1.19.2-loom.m|Minecraft                     |minecraft                     |1.19.2              |DONE      |Manifest: NOSIGNATURE
+		10840868894480704283.jar                          |generated_573878c             |generated_573878c             |1                   |DONE      |Manifest: NOSIGNATURE
+		mixinextras-forge-0.2.0.jar                       |MixinExtras                   |mixinextras                   |0.2.0               |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |43.4.0              |DONE      |Manifest: NOSIGNATURE
+		architectury-forge-6.6.92.jar                     |Architectury                  |architectury                  |6.6.92              |DONE      |Manifest: NOSIGNATURE
+		main                                              |Depression                    |depression                    |0.1.2               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 4d689428-fa25-4d90-a2a3-1e7a6583a9f4
+	FML: 43.4
+	Forge: net.minecraftforge:43.4.0
