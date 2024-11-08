@@ -57,7 +57,12 @@ public class PTSDManager {
         boolean ifSendRelief = false;
         currentMaxPTSDValue = 0;
         for (String key : remainingValue.keySet()) {
-            double ptsdValue = PTSD.get(key);
+            Double ptsdValue = PTSD.get(key);
+            if (ptsdValue == null) {
+                remainingValue.remove(key);
+                contactValue.remove(key);
+                entities.remove(key);
+            }
             int contactCount = contactValue.get(key);
             double initialDecreaseValue = (ptsdValue > PTSD_1_VALUE ? -0.1d : 0d);
             double decreaseValue = initialDecreaseValue + contactCount * 0.005;
