@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [21:51:56] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.2 with Fabric Loader 0.15.11
 [21:51:56] [main/INFO] (FabricLoader) Loading 50 mods:
 	- architectury 6.6.92
@@ -62,6 +63,11 @@
 [05:17:47] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
 [05:17:47] [main/INFO] (FabricLoader) Loading 61 mods:
 	- architectury 9.2.14
+=======
+[05:17:47] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
+[05:17:47] [main/INFO] (FabricLoader) Loading 61 mods:
+	- architectury 9.2.14
+>>>>>>> 0f70105 (0.1.3 Update)
 	- depression 0.1.3
 	- fabric-api 0.92.1+1.20.1
 	- fabric-api-base 0.4.31+1802ada577
@@ -119,10 +125,14 @@
 	- fabric-transitive-access-wideners-v1 4.3.1+1802ada577
 	- fabricloader 0.15.11
 	- generated_20fc9ef 1.0.0
+<<<<<<< HEAD
+>>>>>>> 0f70105 (0.1.3 Update)
+=======
 >>>>>>> 0f70105 (0.1.3 Update)
 	- java 17
 	- minecraft 1.19.2
 	- mixinextras 0.3.5
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [21:51:56] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
@@ -145,6 +155,8 @@
 [21:09:07] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 >>>>>>> d339381 (修复日记本显示错误的bug)
 =======
+=======
+>>>>>>> 0f70105 (0.1.3 Update)
 [05:17:47] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
 [05:17:47] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
 [05:17:47] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
@@ -153,6 +165,9 @@
 [05:17:51] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 100 milliseconds
 [05:17:53] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
 [05:17:53] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+<<<<<<< HEAD
+>>>>>>> 0f70105 (0.1.3 Update)
+=======
 >>>>>>> 0f70105 (0.1.3 Update)
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-3.11.49.jar:?]
@@ -285,6 +300,7 @@ java.io.IOException: Could not retrieve profile key pair
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 10 more
 <<<<<<< HEAD
+<<<<<<< HEAD
 [21:09:07] [Render thread/INFO] (Minecraft) Setting user: Player914
 [21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:diary_update_packet
 [21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:play_sound_packet
@@ -392,6 +408,8 @@ java.io.IOException: Could not retrieve profile key pair
 [21:14:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为生存模式
 >>>>>>> d339381 (修复日记本显示错误的bug)
 =======
+=======
+>>>>>>> 0f70105 (0.1.3 Update)
 [05:17:53] [Render thread/INFO] (Minecraft) Setting user: Player504
 [05:17:53] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:diary_update_packet
 [05:17:53] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:play_sound_packet
@@ -488,4 +506,7 @@ java.io.IOException: Could not retrieve profile key pair
 [05:20:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
 [05:20:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
 [05:21:07] [Render thread/INFO] (Minecraft) Stopping!
+<<<<<<< HEAD
+>>>>>>> 0f70105 (0.1.3 Update)
+=======
 >>>>>>> 0f70105 (0.1.3 Update)

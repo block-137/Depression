@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [21:51:56] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.2 with Fabric Loader 0.15.11
 [21:51:56] [main/DEBUG] (FabricLoader/GamePatch) Found game constructor: net.minecraft.client.main.Main -> net.minecraft.client.Minecraft
 [21:51:56] [main/DEBUG] (FabricLoader/GamePatch) Patching game constructor <init>(Lnet/minecraft/client/main/GameConfig;)V
@@ -89,6 +90,20 @@
 [05:17:47] [main/DEBUG] (FabricLoader/Resolution) Mod resolution time: 34.0 ms
 [05:17:47] [main/INFO] (FabricLoader) Loading 61 mods:
 	- architectury 9.2.14
+=======
+[05:17:47] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
+[05:17:47] [main/DEBUG] (FabricLoader/GamePatch) Found game constructor: net.minecraft.client.main.Main -> net.minecraft.client.Minecraft
+[05:17:47] [main/DEBUG] (FabricLoader/GamePatch) Patching game constructor <init>(Lnet/minecraft/client/main/GameConfig;)V
+[05:17:47] [main/DEBUG] (FabricLoader/GamePatch) Run directory field is thought to be net/minecraft/client/Minecraft/gameDirectory
+[05:17:47] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/client/ClientBrandRetriever::getClientModName
+[05:17:47] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/server/MinecraftServer::getServerModName
+[05:17:47] [main/DEBUG] (FabricLoader/Mappings) Loading mappings took 42 ms
+[05:17:47] [main/DEBUG] (FabricLoader/GamePatch) Patched 3 classs
+[05:17:47] [main/DEBUG] (FabricLoader/Discovery) Mod discovery time: 27.7 ms
+[05:17:47] [main/DEBUG] (FabricLoader/Resolution) Mod resolution time: 34.0 ms
+[05:17:47] [main/INFO] (FabricLoader) Loading 61 mods:
+	- architectury 9.2.14
+>>>>>>> 0f70105 (0.1.3 Update)
 	- depression 0.1.3
 	- fabric-api 0.92.1+1.20.1
 	- fabric-api-base 0.4.31+1802ada577
@@ -146,10 +161,14 @@
 	- fabric-transitive-access-wideners-v1 4.3.1+1802ada577
 	- fabricloader 0.15.11
 	- generated_20fc9ef 1.0.0
+<<<<<<< HEAD
+>>>>>>> 0f70105 (0.1.3 Update)
+=======
 >>>>>>> 0f70105 (0.1.3 Update)
 	- java 17
 	- minecraft 1.19.2
 	- mixinextras 0.3.5
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [21:51:56] [main/DEBUG] (FabricLoader/Knot) Adding D:\MinecraftModProject\Depression1.19.2\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_2_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-crash-report-info-v1\0.2.8+aeb40ebe90\fabric-crash-report-info-v1-0.2.8+aeb40ebe90.jar to classpath.
@@ -2585,6 +2604,8 @@
 [21:09:07] [Render thread/ERROR] (net.minecraft.client.Minecraft) Failed to verify authentication
 >>>>>>> d339381 (修复日记本显示错误的bug)
 =======
+=======
+>>>>>>> 0f70105 (0.1.3 Update)
 [05:17:47] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\13475\AppData\Local\Temp\2286968524697684254.jar to classpath.
 [05:17:47] [main/DEBUG] (FabricLoader/Knot) Adding D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-item-group-api-v1\4.0.12+1802ada577\fabric-item-group-api-v1-4.0.12+1802ada577.jar to classpath.
 [05:17:47] [main/DEBUG] (FabricLoader/Knot) Adding D:\MinecraftModProject\Depression\.gradle\loom-cache\remapped_mods\loom_mappings_1_20_1_layered_hash_40545_v2\net\fabricmc\fabric-api\fabric-screen-handler-api-v1\1.3.30+1802ada577\fabric-screen-handler-api-v1-1.3.30+1802ada577.jar to classpath.
@@ -3867,6 +3888,9 @@
   } ]
 }
 [05:17:53] [Render thread/ERROR] (net.minecraft.client.Minecraft) Failed to verify authentication
+<<<<<<< HEAD
+>>>>>>> 0f70105 (0.1.3 Update)
+=======
 >>>>>>> 0f70105 (0.1.3 Update)
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-3.11.49.jar:?]
@@ -4933,6 +4957,7 @@ java.io.IOException: Could not retrieve profile key pair
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 10 more
+<<<<<<< HEAD
 <<<<<<< HEAD
 [21:09:07] [Render thread/INFO] (net.minecraft.client.Minecraft) Setting user: Player914
 [21:09:07] [Render thread/DEBUG] (FabricLoader/Mixin) Mixing KeyBindingAccessor from fabric-events-interaction-v0.client.mixins.json into net.minecraft.client.KeyMapping
@@ -6008,6 +6033,8 @@ java.io.IOException: Could not retrieve profile key pair
 [21:11:00] [Render thread/DEBUG] (io.netty.util.internal.PlatformDependent0) direct buffer constructor: unavailable
 >>>>>>> d339381 (修复日记本显示错误的bug)
 =======
+=======
+>>>>>>> 0f70105 (0.1.3 Update)
 [05:17:53] [Render thread/INFO] (net.minecraft.client.Minecraft) Setting user: Player504
 [05:17:53] [Render thread/DEBUG] (FabricLoader/Mixin) Mixing KeyBindingAccessor from fabric-key-binding-api-v1.mixins.json into net.minecraft.client.KeyMapping
 [05:17:53] [Render thread/DEBUG] (FabricLoader/Mixin) fabric-key-binding-api-v1.mixins.json:KeyBindingAccessor from mod fabric-key-binding-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
@@ -7059,6 +7086,9 @@ java.io.IOException: Could not retrieve profile key pair
 [05:18:10] [Render thread/DEBUG] (io.netty.util.internal.PlatformDependent0) sun.misc.Unsafe.storeFence: available
 [05:18:10] [Render thread/DEBUG] (io.netty.util.internal.PlatformDependent0) java.nio.Buffer.address: available
 [05:18:10] [Render thread/DEBUG] (io.netty.util.internal.PlatformDependent0) direct buffer constructor: unavailable
+<<<<<<< HEAD
+>>>>>>> 0f70105 (0.1.3 Update)
+=======
 >>>>>>> 0f70105 (0.1.3 Update)
 java.lang.UnsupportedOperationException: Reflective setAccessible(true) disabled
 	at io.netty.util.internal.ReflectionUtil.trySetAccessible(ReflectionUtil.java:31) ~[netty-common-4.1.77.Final.jar:?]
@@ -8294,6 +8324,7 @@ com.mojang.brigadier.exceptions.CommandSyntaxException: 未知或不完整的命
 [05:20:03] [Render thread/DEBUG] (net.fabricmc.fabric.impl.command.client.ClientCommandInternals) Syntax exception for client-sided command 'summon minecraft:creeper'
 com.mojang.brigadier.exceptions.CommandSyntaxException: 未知或不完整的命令，错误见下 at position 0: <--[HERE]
 <<<<<<< HEAD
+<<<<<<< HEAD
 [21:11:44] [Netty Local Client IO #0/DEBUG] (ClientPlayNetworkAddon for Player914) Handling inbound packet from channel with name "depression:emotion_packet"
 [21:11:44] [Netty Local Client IO #0/DEBUG] (ClientPlayNetworkAddon for Player914) Handling inbound packet from channel with name "depression:mental_health_packet"
 [21:11:45] [Netty Local Client IO #0/DEBUG] (ClientPlayNetworkAddon for Player914) Handling inbound packet from channel with name "depression:emotion_packet"
@@ -9217,6 +9248,8 @@ com.mojang.brigadier.exceptions.CommandSyntaxException: 未知或不完整的命
 [21:18:44] [Render thread/INFO] (net.minecraft.advancements.AdvancementList) Loaded 57 advancements
 >>>>>>> d339381 (修复日记本显示错误的bug)
 =======
+=======
+>>>>>>> 0f70105 (0.1.3 Update)
 [05:20:03] [Server thread/INFO] (net.minecraft.server.MinecraftServer) [Player504: 召唤了新的苦力怕]
 [05:20:03] [Render thread/INFO] (net.minecraft.client.gui.components.ChatComponent) [System] [CHAT] 召唤了新的苦力怕
 [05:20:04] [Netty Local Client IO #0/DEBUG] (ClientPlayNetworkAddon for Player504) Handling inbound packet from channel with name "depression:emotion_packet"
@@ -9489,4 +9522,7 @@ com.mojang.brigadier.exceptions.CommandSyntaxException: 未知或不完整的命
 [05:20:46] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
 [05:20:46] [Server thread/INFO] (net.minecraft.server.MinecraftServer) ThreadedAnvilChunkStorage: All dimensions are saved
 [05:21:07] [Render thread/INFO] (net.minecraft.client.Minecraft) Stopping!
+<<<<<<< HEAD
+>>>>>>> 0f70105 (0.1.3 Update)
+=======
 >>>>>>> 0f70105 (0.1.3 Update)
