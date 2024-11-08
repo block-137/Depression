@@ -14,6 +14,7 @@ import net.minecraft.client.resources.sounds.TickableSoundInstance;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
@@ -38,6 +39,7 @@ public class ClientPTSDManager {
     public int heartBeatTick;
     public double heartBeatVolume;
     public TinnitusSoundInstance tinnitusSound;
+    private final Random random = new Random();
     public static HashMap<String, ArrayDeque<Pair<Entity, Long>>> falseEntities = new HashMap<>();
 
     public static final ResourceLocation PTSD_ONSET_LEFT = new ResourceLocation(Depression.MOD_ID, "textures/symptom/ptsd_onset_left.png");
@@ -56,6 +58,8 @@ public class ClientPTSDManager {
             if (gameLevel != null) {
                 startTick = Minecraft.getInstance().level.getGameTime();
             }
+            String translatable = "message.depression.ptsd_onset_" + level + "_" + random.nextInt(3);
+            Minecraft.getInstance().gui.setOverlayMessage(Component.translatable(translatable), false);
         }
         if (level > 1 && onsetLevel <= 1) { //PTSD加重到2级
             startTinnitus();

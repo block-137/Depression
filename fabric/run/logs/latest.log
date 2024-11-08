@@ -1,7 +1,7 @@
-[21:09:00] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
-[21:09:00] [main/INFO] (FabricLoader) Loading 61 mods:
+[05:17:47] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
+[05:17:47] [main/INFO] (FabricLoader) Loading 61 mods:
 	- architectury 9.2.14
-	- depression 0.1.2
+	- depression 0.1.3
 	- fabric-api 0.92.1+1.20.1
 	- fabric-api-base 0.4.31+1802ada577
 	- fabric-api-lookup-api-v1 1.6.36+1802ada577
@@ -57,19 +57,18 @@
 	- fabric-transfer-api-v1 3.3.5+8dd72ea377
 	- fabric-transitive-access-wideners-v1 4.3.1+1802ada577
 	- fabricloader 0.15.11
-	- generated_8c18f82 1.0.0
+	- generated_20fc9ef 1.0.0
 	- java 17
 	- minecraft 1.20.1
 	- mixinextras 0.3.5
-[21:09:00] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[21:09:00] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[21:09:00] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[21:09:00] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[21:09:01] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
-[21:09:02] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[21:09:05] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 102 milliseconds
-[21:09:06] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[21:09:07] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[05:17:47] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[05:17:47] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[05:17:47] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[05:17:48] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[05:17:48] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[05:17:51] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 100 milliseconds
+[05:17:53] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[05:17:53] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
@@ -88,170 +87,99 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 10 more
-[21:09:07] [Render thread/INFO] (Minecraft) Setting user: Player914
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:diary_update_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:play_sound_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id architectury:spawn_entity_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:emotion_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_health_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:nearby_block_heal_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:break_block_heal_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:kill_entity_heal_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_form_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_disperse_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_remission_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:insomnia_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_fatigue_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:close_eye_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_onset_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:diary_update_packet
-[21:09:07] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:phonism_packet
-[21:09:07] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[21:09:07] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
-[21:09:08] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-biome-api-v1, fabric-screen-handler-api-v1, fabric-commands-v0, generated_8c18f82, fabric-models-v0, fabricloader, fabric-renderer-registries-v1, fabric-item-group-api-v1, fabric-api-base, fabric-loot-api-v2, fabric-mining-level-api-v1, fabric-api, fabric-content-registries-v0, fabric-client-tags-api-v1, fabric-rendering-fluids-v1, fabric-dimensions-v1, fabric-resource-loader-v0, fabric-lifecycle-events-v1, fabric-keybindings-v0, fabric-particles-v1, fabric-events-interaction-v0, fabric-renderer-api-v1, fabric-data-attachment-api-v1, fabric-registry-sync-v0, fabric-game-rule-api-v1, fabric-screen-api-v1, fabric-gametest-api-v1, fabric-model-loading-api-v1, fabric-entity-events-v1, fabric-transitive-access-wideners-v1, fabric-command-api-v2, fabric-block-view-api-v2, fabric-key-binding-api-v1, fabric-api-lookup-api-v1, fabric-blockrenderlayer-v1, fabric-item-api-v1, fabric-networking-v0, fabric-message-api-v1, fabric-command-api-v1, fabric-crash-report-info-v1, fabric-data-generation-api-v1, fabric-events-lifecycle-v0, depression, fabric-containers-v0, fabric-loot-tables-v1, fabric-networking-api-v1, fabric-transfer-api-v1, fabric-rendering-v0, fabric-object-builder-api-v1, fabric-renderer-indigo, fabric-rendering-data-attachment-v1, fabric-recipe-api-v1, fabric-convention-tags-v1, fabric-rendering-v1, fabric-sound-api-v1, fabric-resource-conditions-api-v1, fabric-block-api-v1)
-[21:09:08] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
-[21:09:09] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[21:09:09] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[21:09:09] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[21:09:09] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
-[21:09:09] [Render thread/INFO] (Minecraft) Sound engine started
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[21:09:09] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[21:09:10] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[21:09:10] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[21:09:10] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[21:09:10] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[21:10:56] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
-[21:10:57] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[21:10:57] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
-[21:10:57] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.032 ms
-[21:10:57] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
-[21:10:57] [Server thread/INFO] (Minecraft) Generating keypair
-[21:10:58] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[21:10:59] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:10:59] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:10:59] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:10:59] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:11:00] [Render thread/INFO] (Minecraft) 准备生成区域中：50%
-[21:11:00] [Render thread/INFO] (Minecraft) Time elapsed: 2247 ms
-[21:11:00] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[21:11:00] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[21:11:01] [Server thread/INFO] (Minecraft) Player914[local:E:54930ec5] logged in with entity id 234 at (9.759829872149034, 66.0, 31.726242962976045)
-[21:11:01] [Server thread/INFO] (Minecraft) Player914加入了游戏
-[21:11:01] [Render thread/INFO] (Minecraft) Loaded 2 advancements
-[21:11:10] [Server thread/INFO] (Minecraft) [Player914: 已将时间设为13000]
-[21:11:10] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将时间设为13000
-[21:11:18] [Server thread/INFO] (Minecraft) [Player914: 已将1个[日记本]给予Player914]
-[21:11:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将1个[日记本]给予Player914
-[21:11:20] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[21:11:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[21:11:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[21:11:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[21:11:36] [Server thread/INFO] (Minecraft) [Player914: 已将1个[日记本]给予Player914]
-[21:11:36] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将1个[日记本]给予Player914
-[21:12:16] [Server thread/INFO] (Minecraft) [Player914: 天气已设为雷雨]
-[21:12:16] [Render thread/INFO] (Minecraft) [System] [CHAT] 天气已设为雷雨
-[21:12:26] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[21:12:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[21:12:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[21:12:26] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[21:12:40] [Server thread/INFO] (Minecraft) [Player914: 已将自己的游戏模式设置为创造模式]
-[21:12:40] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为创造模式
-[21:12:55] [Render thread/INFO] (Minecraft) Loaded 11 advancements
-[21:13:06] [Server thread/INFO] (Minecraft) [Player914: 已将1个[日记本]给予Player914]
-[21:13:06] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将1个[日记本]给予Player914
-[21:13:10] [Server thread/INFO] (Minecraft) [Player914: 已将自己的游戏模式设置为生存模式]
-[21:13:10] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为生存模式
-[21:13:11] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[21:13:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[21:13:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[21:13:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[21:13:17] [Server thread/INFO] (Minecraft) [Player914: 已将1个[日记本]给予Player914]
-[21:13:17] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将1个[日记本]给予Player914
-[21:13:26] [Server thread/INFO] (Minecraft) Player914被蜘蛛杀死了
-[21:13:26] [Render thread/INFO] (Minecraft) [System] [CHAT] Player914被蜘蛛杀死了
-[21:13:26] [Render thread/INFO] (Minecraft) Loaded 39 advancements
-[21:13:30] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[21:13:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[21:13:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[21:13:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[21:13:37] [Server thread/INFO] (Minecraft) [Player914: 已将自己的游戏模式设置为创造模式]
-[21:13:37] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为创造模式
-[21:13:56] [Render thread/WARN] (Minecraft) Unable to play empty soundEvent: minecraft:entity.salmon.ambient
-[21:13:58] [Render thread/INFO] (Minecraft) Loaded 56 advancements
-[21:14:04] [Server thread/INFO] (Minecraft) [Player914: 已将自己的游戏模式设置为生存模式]
-[21:14:04] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为生存模式
-[21:14:08] [Server thread/INFO] (Minecraft) [Player914: 已将自己的游戏模式设置为创造模式]
-[21:14:08] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为创造模式
-[21:14:16] [Render thread/INFO] (Minecraft) Loaded 57 advancements
-[21:14:22] [Server thread/INFO] (Minecraft) [Player914: 已将自己的游戏模式设置为生存模式]
-[21:14:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为生存模式
-[21:15:27] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 16541ms or 330 ticks behind
-[21:16:40] [Server thread/INFO] (Minecraft) Player914 lost connection: 连接超时
-[21:16:40] [Server thread/INFO] (Minecraft) Player914退出了游戏
-[21:16:40] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[21:16:40] [Server thread/INFO] (Minecraft) Stopping server
-[21:16:40] [Server thread/INFO] (Minecraft) Saving players
-[21:16:40] [Server thread/INFO] (Minecraft) Saving worlds
-[21:16:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[21:16:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[21:16:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界): All chunks are saved
-[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[21:16:46] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
-[21:16:46] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[21:16:46] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
-[21:16:46] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 127.2 μs
-[21:16:46] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
-[21:16:46] [Server thread/INFO] (Minecraft) Generating keypair
-[21:16:47] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[21:16:47] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:16:47] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:16:48] [Render thread/INFO] (Minecraft) 准备生成区域中：6%
-[21:16:48] [Render thread/INFO] (Minecraft) Time elapsed: 1276 ms
-[21:16:48] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[21:16:48] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[21:16:48] [Server thread/INFO] (Minecraft) Player914[local:E:2f044270] logged in with entity id 3015 at (187.52882232265134, 63.0, 64.515088494183)
-[21:16:48] [Server thread/INFO] (Minecraft) Player914加入了游戏
-[21:16:48] [Render thread/INFO] (Minecraft) Loaded 57 advancements
-[21:16:56] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 6439ms or 128 ticks behind
-[21:18:37] [Server thread/INFO] (Minecraft) Player914 lost connection: 连接超时
-[21:18:37] [Server thread/INFO] (Minecraft) Player914退出了游戏
-[21:18:37] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[21:18:37] [Server thread/INFO] (Minecraft) Stopping server
-[21:18:37] [Server thread/INFO] (Minecraft) Saving players
-[21:18:37] [Server thread/INFO] (Minecraft) Saving worlds
-[21:18:37] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[21:18:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[21:18:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界): All chunks are saved
-[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[21:18:41] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
-[21:18:41] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[21:18:41] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
-[21:18:41] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 108.7 μs
-[21:18:41] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
-[21:18:41] [Server thread/INFO] (Minecraft) Generating keypair
-[21:18:42] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[21:18:42] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:18:43] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
-[21:18:43] [Render thread/INFO] (Minecraft) 准备生成区域中：10%
-[21:18:43] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[21:18:43] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[21:18:43] [Render thread/INFO] (Minecraft) Time elapsed: 1303 ms
-[21:18:43] [Server thread/INFO] (Minecraft) Player914[local:E:0365ced4] logged in with entity id 3452 at (187.52882232265134, 63.0, 64.515088494183)
-[21:18:43] [Server thread/INFO] (Minecraft) Player914加入了游戏
-[21:18:44] [Render thread/INFO] (Minecraft) Loaded 57 advancements
-[21:37:13] [Thread-0/INFO] (Minecraft) [STDOUT]: [Architectury Transformer] Detected File Modification at depression-common-0.1.2-dev.jar
-[21:37:18] [Thread-0/INFO] (Minecraft) [STDOUT]: [Architectury Transformer] Detected File Modification at depression-common-0.1.2-dev.jar
+[05:17:53] [Render thread/INFO] (Minecraft) Setting user: Player504
+[05:17:53] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:diary_update_packet
+[05:17:53] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:play_sound_packet
+[05:17:53] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[05:17:53] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:emotion_packet
+[05:17:53] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_health_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:nearby_block_heal_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:break_block_heal_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:kill_entity_heal_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_form_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_disperse_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_remission_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:insomnia_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_fatigue_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:close_eye_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_onset_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:diary_update_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:phonism_packet
+[05:17:54] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id architectury:spawn_entity_packet
+[05:17:54] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[05:17:54] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (generated_20fc9ef, fabric-item-group-api-v1, fabric-screen-handler-api-v1, fabric-rendering-fluids-v1, fabric-api-base, fabric-screen-api-v1, fabric-networking-v0, fabric-resource-conditions-api-v1, fabric-object-builder-api-v1, fabric-registry-sync-v0, fabric-api, fabric-entity-events-v1, fabric-networking-api-v1, fabric-client-tags-api-v1, fabric-content-registries-v0, fabric-block-view-api-v2, fabric-renderer-api-v1, fabric-command-api-v2, fabric-model-loading-api-v1, fabric-api-lookup-api-v1, fabric-block-api-v1, fabric-key-binding-api-v1, fabric-convention-tags-v1, fabric-containers-v0, fabric-rendering-v0, fabric-biome-api-v1, fabric-renderer-indigo, fabric-transitive-access-wideners-v1, fabric-transfer-api-v1, fabric-resource-loader-v0, fabric-keybindings-v0, fabric-models-v0, fabric-renderer-registries-v1, fabric-data-attachment-api-v1, fabricloader, depression, fabric-particles-v1, fabric-loot-tables-v1, fabric-crash-report-info-v1, fabric-blockrenderlayer-v1, fabric-gametest-api-v1, fabric-rendering-data-attachment-v1, fabric-command-api-v1, fabric-dimensions-v1, fabric-game-rule-api-v1, fabric-events-interaction-v0, fabric-rendering-v1, fabric-events-lifecycle-v0, fabric-lifecycle-events-v1, fabric-loot-api-v2, fabric-commands-v0, fabric-data-generation-api-v1, fabric-item-api-v1, fabric-recipe-api-v1, fabric-sound-api-v1, fabric-mining-level-api-v1, fabric-message-api-v1)
+[05:17:55] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[05:17:55] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[05:17:55] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[05:17:55] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[05:17:55] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[05:17:55] [Render thread/INFO] (Minecraft) Sound engine started
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[05:17:56] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[05:17:56] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[05:18:07] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
+[05:18:07] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[05:18:07] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[05:18:08] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.066 ms
+[05:18:08] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[05:18:08] [Server thread/INFO] (Minecraft) Generating keypair
+[05:18:09] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[05:18:10] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[05:18:10] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[05:18:10] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[05:18:10] [Render thread/INFO] (Minecraft) 准备生成区域中：15%
+[05:18:10] [Render thread/INFO] (Minecraft) Time elapsed: 1768 ms
+[05:18:10] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[05:18:10] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[05:18:11] [Server thread/INFO] (Minecraft) Player504[local:E:7aca5aef] logged in with entity id 194 at (269.1483020608055, 69.0, -450.7519978353845)
+[05:18:11] [Server thread/INFO] (Minecraft) Player504加入了游戏
+[05:18:11] [Render thread/INFO] (Minecraft) Loaded 5 advancements
+[05:18:20] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[05:18:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[05:18:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[05:18:20] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[05:18:27] [Server thread/INFO] (Minecraft) [Player504: 召唤了新的苦力怕]
+[05:18:27] [Render thread/INFO] (Minecraft) [System] [CHAT] 召唤了新的苦力怕
+[05:18:29] [Server thread/INFO] (Minecraft) Player504被苦力怕炸死了
+[05:18:29] [Render thread/INFO] (Minecraft) [System] [CHAT] Player504被苦力怕炸死了
+[05:18:29] [Render thread/INFO] (Minecraft) Loaded 33 advancements
+[05:18:43] [Server thread/INFO] (Minecraft) [Player504: 召唤了新的苦力怕]
+[05:18:43] [Render thread/INFO] (Minecraft) [System] [CHAT] 召唤了新的苦力怕
+[05:18:45] [Render thread/INFO] (Minecraft) Loaded 33 advancements
+[05:18:46] [Render thread/WARN] (Minecraft) Unable to play empty soundEvent: minecraft:entity.salmon.ambient
+[05:19:18] [Server thread/INFO] (Minecraft) [Player504: 召唤了新的苦力怕]
+[05:19:18] [Render thread/INFO] (Minecraft) [System] [CHAT] 召唤了新的苦力怕
+[05:19:24] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[05:19:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[05:19:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[05:19:24] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[05:20:03] [Server thread/INFO] (Minecraft) [Player504: 召唤了新的苦力怕]
+[05:20:03] [Render thread/INFO] (Minecraft) [System] [CHAT] 召唤了新的苦力怕
+[05:20:45] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[05:20:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[05:20:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[05:20:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[05:20:46] [Server thread/INFO] (Minecraft) Player504 lost connection: 连接中断
+[05:20:46] [Server thread/INFO] (Minecraft) Player504退出了游戏
+[05:20:46] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[05:20:46] [Server thread/INFO] (Minecraft) Stopping server
+[05:20:46] [Server thread/INFO] (Minecraft) Saving players
+[05:20:46] [Server thread/INFO] (Minecraft) Saving worlds
+[05:20:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[05:20:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[05:20:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[05:20:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界): All chunks are saved
+[05:20:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[05:20:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[05:20:46] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[05:21:07] [Render thread/INFO] (Minecraft) Stopping!
