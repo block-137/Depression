@@ -1,8 +1,6 @@
 package net.depression.listener.client;
 
-import net.depression.client.ClientMentalStatus;
-import net.depression.client.ClientPTSDManager;
-import net.depression.client.DepressionClient;
+import net.depression.client.*;
 import net.depression.mental.PTSDManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -14,6 +12,9 @@ public class ClientLifecycleEventListener {
             clientMentalStatus.reset();
             ClientPTSDManager ptsdManager = clientMentalStatus.ptsdManager;
             ptsdManager.clear();
+            ClientActionbarHint clientActionbarHint = DepressionClient.clientActionbarHint;
+            clientActionbarHint.clear();
+            ClientDiaryUpdater.clear();
         }
     }
 }

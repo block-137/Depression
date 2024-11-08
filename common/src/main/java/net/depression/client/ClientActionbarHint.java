@@ -29,9 +29,21 @@ public class ClientActionbarHint {
     private long formLastTime;
     private long disperseLastTime;
     private long remissionLastTime;
-    private long nearbyBlockHealLastTime;
-    private long breakBlockHealLastTime;
-    private long killEntityHealLastTime;
+    private long nearbyBlockHealLastTime = -1201;
+    private long breakBlockHealLastTime = -1201;
+    private long killEntityHealLastTime = -1201;
+
+    public void clear() {
+        formLastId = null;
+        disperseLastId = null;
+        remissionLastId = null;
+        formLastTime = 0;
+        disperseLastTime = 0;
+        remissionLastTime = 0;
+        nearbyBlockHealLastTime = -1201;
+        breakBlockHealLastTime = -1201;
+        killEntityHealLastTime = -1201;
+    }
 
     public static void displayTranslatable(String string) {
         Gui gui = Minecraft.getInstance().gui;
