@@ -193,3 +193,65 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 [21:14:16] [Render thread/INFO] (Minecraft) Loaded 57 advancements
 [21:14:22] [Server thread/INFO] (Minecraft) [Player914: 已将自己的游戏模式设置为生存模式]
 [21:14:22] [Render thread/INFO] (Minecraft) [System] [CHAT] 已将自己的游戏模式设置为生存模式
+[21:15:27] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 16541ms or 330 ticks behind
+[21:16:40] [Server thread/INFO] (Minecraft) Player914 lost connection: 连接超时
+[21:16:40] [Server thread/INFO] (Minecraft) Player914退出了游戏
+[21:16:40] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[21:16:40] [Server thread/INFO] (Minecraft) Stopping server
+[21:16:40] [Server thread/INFO] (Minecraft) Saving players
+[21:16:40] [Server thread/INFO] (Minecraft) Saving worlds
+[21:16:40] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[21:16:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[21:16:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界): All chunks are saved
+[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:16:41] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:16:46] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
+[21:16:46] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[21:16:46] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[21:16:46] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 127.2 μs
+[21:16:46] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[21:16:46] [Server thread/INFO] (Minecraft) Generating keypair
+[21:16:47] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[21:16:47] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[21:16:47] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[21:16:48] [Render thread/INFO] (Minecraft) 准备生成区域中：6%
+[21:16:48] [Render thread/INFO] (Minecraft) Time elapsed: 1276 ms
+[21:16:48] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[21:16:48] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[21:16:48] [Server thread/INFO] (Minecraft) Player914[local:E:2f044270] logged in with entity id 3015 at (187.52882232265134, 63.0, 64.515088494183)
+[21:16:48] [Server thread/INFO] (Minecraft) Player914加入了游戏
+[21:16:48] [Render thread/INFO] (Minecraft) Loaded 57 advancements
+[21:16:56] [Server thread/WARN] (Minecraft) Can't keep up! Is the server overloaded? Running 6439ms or 128 ticks behind
+[21:18:37] [Server thread/INFO] (Minecraft) Player914 lost connection: 连接超时
+[21:18:37] [Server thread/INFO] (Minecraft) Player914退出了游戏
+[21:18:37] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[21:18:37] [Server thread/INFO] (Minecraft) Stopping server
+[21:18:37] [Server thread/INFO] (Minecraft) Saving players
+[21:18:37] [Server thread/INFO] (Minecraft) Saving worlds
+[21:18:37] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[21:18:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[21:18:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (新的世界): All chunks are saved
+[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:18:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[21:18:41] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
+[21:18:41] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[21:18:41] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[21:18:41] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 108.7 μs
+[21:18:41] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[21:18:41] [Server thread/INFO] (Minecraft) Generating keypair
+[21:18:42] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[21:18:42] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[21:18:43] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[21:18:43] [Render thread/INFO] (Minecraft) 准备生成区域中：10%
+[21:18:43] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[21:18:43] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[21:18:43] [Render thread/INFO] (Minecraft) Time elapsed: 1303 ms
+[21:18:43] [Server thread/INFO] (Minecraft) Player914[local:E:0365ced4] logged in with entity id 3452 at (187.52882232265134, 63.0, 64.515088494183)
+[21:18:43] [Server thread/INFO] (Minecraft) Player914加入了游戏
+[21:18:44] [Render thread/INFO] (Minecraft) Loaded 57 advancements
+[21:37:13] [Thread-0/INFO] (Minecraft) [STDOUT]: [Architectury Transformer] Detected File Modification at depression-common-0.1.2-dev.jar
+[21:37:18] [Thread-0/INFO] (Minecraft) [STDOUT]: [Architectury Transformer] Detected File Modification at depression-common-0.1.2-dev.jar

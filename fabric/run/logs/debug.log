@@ -3810,3 +3810,5 @@ com.mojang.brigadier.exceptions.CommandSyntaxException: 未知或不完整的命
 [21:18:44] [Render thread/DEBUG] (ClientPlayNetworkAddon for Player914) Handling inbound packet from channel with name "minecraft:brand"
 [21:18:44] [Netty Server IO #5/DEBUG] (ServerPlayNetworkAddon for Player914) Handling inbound packet from channel with name "minecraft:register"
 [21:18:44] [Render thread/INFO] (net.minecraft.advancements.AdvancementList) Loaded 57 advancements
+[21:37:13] [Thread-0/INFO] (net.minecraft.server.LoggedPrintStream) [STDOUT]: [Architectury Transformer] Detected File Modification at depression-common-0.1.2-dev.jar
+[21:37:18] [Thread-0/INFO] (net.minecraft.server.LoggedPrintStream) [STDOUT]: [Architectury Transformer] Detected File Modification at depression-common-0.1.2-dev.jar
