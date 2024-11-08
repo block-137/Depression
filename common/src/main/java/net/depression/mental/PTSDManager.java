@@ -62,8 +62,14 @@ public class PTSDManager {
                 remainingValue.remove(key);
                 contactValue.remove(key);
                 entities.remove(key);
+                continue;
             }
-            int contactCount = contactValue.get(key);
+            Integer contactCount = contactValue.get(key);
+            if (contactCount == null) {
+                remainingValue.remove(key);
+                entities.remove(key);
+                continue;
+            }
             double initialDecreaseValue = (ptsdValue > PTSD_1_VALUE ? -0.1d : 0d);
             double decreaseValue = initialDecreaseValue + contactCount * 0.005;
             ptsdValue -= Math.min(decreaseValue, 0.1d);
