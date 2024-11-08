@@ -285,10 +285,10 @@ public class ServerConfig {
         writer.write("""
                 # Mod will overwrite all the configurations if the version isn't match with the current mod version.
                 # If you want to keep your changes while updating, please change the version to the updated mod version.
-                version = "0.1.2"
+                version = "0.1.3"
                 emotion_stabilize_rate = 0.1
                 mental_health_change_rate = 0.01
-                ptsd_damage_rate = 0.5
+                ptsd_damage_rate = 0.25
                 ptsd_disperse_rate = 0.001
                 boredom_decrease_tick = 200
                 food_heal_rate = 0.25
