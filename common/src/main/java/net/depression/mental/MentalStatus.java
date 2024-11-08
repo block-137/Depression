@@ -364,7 +364,10 @@ public class MentalStatus {
     }
 
     private Double getTypeHealValue(String id) {
-        double value = nearbyHealBlockValue.get(id);
+        Double value = nearbyHealBlockValue.get(id);
+        if (value == null) {
+            return null;
+        }
         if (nearbyHealBlockType.containsKey(id)) {
             String type = nearbyHealBlockType.get(id);
             if (boredom.containsKey(type)) {
