@@ -1,7 +1,7 @@
 package net.depression.fabric;
 
 import net.depression.Depression;
-import net.depression.fabric.config.ServerConfig;
+import net.depression.config.ServerConfig;
 import net.depression.fabric.world.FabricVillageAdditions;
 import net.fabricmc.api.ModInitializer;
 
