@@ -41,11 +41,7 @@ public abstract class PlayerMixin {
             stat.updateStat((ServerPlayer) player);
         }
 
-        MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-        if (mentalStatus == null) {
-            mentalStatus = new MentalStatus((ServerPlayer) player);
-            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-        }
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         if (player.isCreative() || player.isSpectator() || player.isDeadOrDying()) {
             if (mentalStatus.ptsdManager.hasRemaining()) {
                 mentalStatus.ptsdManager.clear((ServerPlayer) player);
@@ -61,11 +57,7 @@ public abstract class PlayerMixin {
         if (player.level().isClientSide() || bl || bl2 || player.isCreative()) {
             return;
         }
-        MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-        if (mentalStatus == null) {
-            mentalStatus = new MentalStatus((ServerPlayer) player);
-            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-        }
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         Boolean isInsomnia = mentalStatus.mentalIllness.isInsomnia;
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
         if (!isSleepy && isInsomnia != null && isInsomnia) { //如果失眠且没有困倦buff，则直接返回，不进行睡眠治疗
@@ -92,11 +84,7 @@ public abstract class PlayerMixin {
         ServerPlayer player = (ServerPlayer) (Object) this;
         StatManager stat = Registry.statManager.get(player.getUUID());
         stat.hasAte = true;
-        MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-        if (mentalStatus == null) {
-            mentalStatus = new MentalStatus(player);
-            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-        }
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         if (mentalStatus.mentalIllness.mentalHealthLevel == 3 && !(itemStack.getItem() instanceof MedicineItem)) { //如果是重度抑郁症患者吃了非药物食物
             player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
         }
@@ -114,11 +102,7 @@ public abstract class PlayerMixin {
             return;
         }
         //PTSD的范围是0-10
-        MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-        if (mentalStatus == null) {
-            mentalStatus = new MentalStatus((ServerPlayer) player);
-            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-        }
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         f = Math.min(f, player.getHealth());
         double damageRate = f / player.getMaxHealth() * 20;
         double healthRate = player.getHealth() / player.getMaxHealth();
@@ -181,11 +165,7 @@ public abstract class PlayerMixin {
         Player player = (Player) (Object) this;
         if (player.level().isClientSide())
             return;
-        MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-        if (mentalStatus == null) {
-            mentalStatus = new MentalStatus((ServerPlayer) player);
-            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-        }
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         mentalStatus.readNbt(tag);
 
         StatManager statManager = Registry.statManager.get(player.getUUID()); //读取玩家的旧统计数据
