@@ -58,11 +58,7 @@ public class PlayerEventListener {
         }
         String id = advancement.id().toString();
         if (MentalStatus.healAdvancement.containsKey(id)) {
-            MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-            if (mentalStatus == null) {
-                mentalStatus = new MentalStatus(player);
-                Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-            }
+            MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
             mentalStatus.mentalHeal(MentalStatus.healAdvancement.get(id));
         }
     }

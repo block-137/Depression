@@ -22,11 +22,7 @@ public abstract class CakeBlockMixin {
         if (levelAccessor.isClientSide()) {
             return;
         }
-        MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-        if (mentalStatus == null) {
-            mentalStatus = new MentalStatus((ServerPlayer) player);
-            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-        }
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         mentalStatus.mentalHeal(6 * MentalStatus.FOOD_HEAL_RATE);
         MentalStatusPacket.sendToPlayer((ServerPlayer) player, mentalStatus);
     }
