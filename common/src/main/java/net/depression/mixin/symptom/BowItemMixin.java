@@ -21,11 +21,7 @@ public abstract class BowItemMixin {
             if (player.isCreative()) {
                 return;
             }
-            MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-            if (mentalStatus == null) {
-                mentalStatus = new MentalStatus(player);
-                Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-            }
+            MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
             mentalStatus.mentalIllness.trigMentalFatigue();
         }
     }

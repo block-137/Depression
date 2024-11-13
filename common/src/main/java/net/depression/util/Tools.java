@@ -12,12 +12,7 @@ import java.util.Date;
 public class Tools {
     public static int getPlayerMentalHealthLevel(Player player) {
         if (player instanceof ServerPlayer) {
-            MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-            if (mentalStatus == null) {
-                ServerPlayer serverPlayer = (ServerPlayer) player;
-                mentalStatus = new MentalStatus(serverPlayer);
-                Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-            }
+            MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
             return mentalStatus.mentalIllness.mentalHealthLevel;
         }
         else {

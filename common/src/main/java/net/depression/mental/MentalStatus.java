@@ -2,6 +2,7 @@ package net.depression.mental;
 
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
+import net.depression.server.Registry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -23,10 +24,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.chunk.ChunkStatus;
 import net.minecraft.world.phys.Vec3;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -482,4 +480,15 @@ public class MentalStatus {
         tag.put("ptsd_manager", ptsdManagerTag);
     }
 
+    public static MentalStatus getMentalStatusByServerPlayer(final Player player) {
+        final var uuid = player.getUUID();
+        var instance = Registry.mentalStatus.get(uuid);
+        if (instance == null && player instanceof ServerPlayer serverPlayer) {
+            instance = new MentalStatus(serverPlayer);
+            Registry.mentalStatus.put(uuid, instance);
+        } else if(!(player instanceof ServerPlayer)) {
+            throw new RuntimeException("FUCK OFF, U not a ServerPlayer");
+        }
+        return instance;
+    }
 }

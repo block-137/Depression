@@ -32,11 +32,7 @@ public abstract class JukeboxBlockEntityMixin {
         ServerLevel serverLevel = (ServerLevel) level;
         for (ServerPlayer player : serverLevel.players()) {
             if (player.position().distanceTo(jukebox.getBlockPos().getCenter()) <= 65) {
-                MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-                if (mentalStatus == null) {
-                    mentalStatus = new MentalStatus(player);
-                    Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-                }
+                MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
                 mentalStatus.mentalHeal(jukebox.getFirstItem().getItem().arch$registryName().toString(), 1);
                 MentalStatusPacket.sendToPlayer(player, mentalStatus);
             }

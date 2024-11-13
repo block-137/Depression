@@ -34,8 +34,7 @@ public class MentalIllness {
             int delay = medicineDelay.get(key);
             if (delay > 0) {
                 medicineDelay.put(key, delay - 1);
-            }
-            else {
+            } else {
                 player.addEffect(MedicineItem.effectMap.get(key));
                 medicineDelay.remove(key);
             }
