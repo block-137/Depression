@@ -31,6 +31,7 @@ public abstract class JukeboxBlockEntityMixin {
         }
         ServerLevel serverLevel = (ServerLevel) level;
         for (ServerPlayer player : serverLevel.players()) {
+<<<<<<< HEAD
             if (player.position().distanceTo(Vec3.atCenterOf(jukebox.getBlockPos())) <= 65) {
                 MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
                 if (mentalStatus == null) {
@@ -38,6 +39,11 @@ public abstract class JukeboxBlockEntityMixin {
                     Registry.mentalStatus.put(player.getUUID(), mentalStatus);
                 }
                 mentalStatus.mentalHeal(jukebox.getRecord().getItem().arch$registryName().toString(), 1);
+=======
+            if (player.position().distanceTo(jukebox.getBlockPos().getCenter()) <= 65) {
+                MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
+                mentalStatus.mentalHeal(jukebox.getFirstItem().getItem().arch$registryName().toString(), 1);
+>>>>>>> 47e7c1e (refactor: 封装获取MentalStatus)
                 MentalStatusPacket.sendToPlayer(player, mentalStatus);
             }
         }
