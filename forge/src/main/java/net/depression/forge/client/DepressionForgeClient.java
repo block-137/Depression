@@ -2,7 +2,7 @@ package net.depression.forge.client;
 
 import net.depression.Depression;
 import net.depression.client.DepressionClient;
-import net.depression.forge.config.ClientConfig;
+import net.depression.config.ClientConfig;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TagsUpdatedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
