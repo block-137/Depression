@@ -1,4 +1,4 @@
-package net.depression.fabric.config;
+package net.depression.config;
 
 import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.architectury.platform.Platform;

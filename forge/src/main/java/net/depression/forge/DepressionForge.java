@@ -2,7 +2,7 @@ package net.depression.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import net.depression.Depression;
-import net.depression.forge.config.ServerConfig;
+import net.depression.config.ServerConfig;
 import net.depression.forge.world.ForgeVillageAddition;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
