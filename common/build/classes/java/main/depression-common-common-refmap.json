@@ -1,16 +1,12 @@
 {
   "mappings": {
-    "net/depression/mixin/CakeBlockMixin": {
-      "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
-      "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
+    "net/depression/mixin/ChunkMapMixin": {
+      "move": "Lnet/minecraft/class_3898;method_18713(Lnet/minecraft/class_3222;)V"
     },
     "net/depression/mixin/EntityMixin": {
       "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V": "Lnet/minecraft/class_1937;method_43128(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FF)V",
       "playSound(Lnet/minecraft/sounds/SoundEvent;FF)V": "Lnet/minecraft/class_1297;method_5783(Lnet/minecraft/class_3414;FF)V",
       "playStepSound": "Lnet/minecraft/class_1297;method_5712(Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
-    },
-    "net/depression/mixin/JukeboxBlockEntityMixin": {
-      "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
     },
     "net/depression/mixin/MilkBucketItemMixin": {
       "finishUsingItem": "Lnet/minecraft/class_1805;method_7861(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;)Lnet/minecraft/class_1799;"
@@ -31,12 +27,21 @@
       "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
       "tick": "Lnet/minecraft/class_1657;method_5773()V"
     },
+    "net/depression/mixin/ServerLevelMixin": {
+      "addNewPlayer": "Lnet/minecraft/class_3218;method_18213(Lnet/minecraft/class_3222;)V",
+      "playSeededSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V",
+      "playSeededSound(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V"
+    },
     "net/depression/mixin/StructureTemplatePoolAccess": {
       "rawTemplates": "field_16864:Ljava/util/List;",
       "templates": "field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"
     },
     "net/depression/mixin/TagManagerMixin": {
       "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
+    },
+    "net/depression/mixin/client/AbstractSliderButtonMixin": {
+      "getHandleTextureY": "method_48204()I",
+      "getTextureY": "method_25356()I"
     },
     "net/depression/mixin/client/BookViewScreenMixin": {
       "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_4587;IIF)V"
@@ -56,6 +61,17 @@
       "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
       "openItemGui": "Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V"
     },
+    "net/depression/mixin/emotion/CakeBlockMixin": {
+      "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
+      "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
+    },
+    "net/depression/mixin/emotion/FishingHookMixin": {
+      "Lnet/minecraft/world/entity/item/ItemEntity;setDeltaMovement(DDD)V": "Lnet/minecraft/class_1542;method_18800(DDD)V",
+      "retrieve": "Lnet/minecraft/class_1536;method_6957(Lnet/minecraft/class_1799;)I"
+    },
+    "net/depression/mixin/emotion/JukeboxBlockEntityMixin": {
+      "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
+    },
     "net/depression/mixin/symptom/BowItemMixin": {
       "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
     },
@@ -68,25 +84,17 @@
     "net/depression/mixin/symptom/LivingEntityMixin": {
       "Lnet/minecraft/world/item/ItemStack;getUseDuration()I": "Lnet/minecraft/class_1799;method_7935()I",
       "startUsingItem": "Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V"
-    },
-    "net/depression/mixin/symptom/ServerLevelMixin": {
-      "playSeededSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V",
-      "playSeededSound(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V"
     }
   },
   "data": {
     "named:intermediary": {
-      "net/depression/mixin/CakeBlockMixin": {
-        "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
-        "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
+      "net/depression/mixin/ChunkMapMixin": {
+        "move": "Lnet/minecraft/class_3898;method_18713(Lnet/minecraft/class_3222;)V"
       },
       "net/depression/mixin/EntityMixin": {
         "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V": "Lnet/minecraft/class_1937;method_43128(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FF)V",
         "playSound(Lnet/minecraft/sounds/SoundEvent;FF)V": "Lnet/minecraft/class_1297;method_5783(Lnet/minecraft/class_3414;FF)V",
         "playStepSound": "Lnet/minecraft/class_1297;method_5712(Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
-      },
-      "net/depression/mixin/JukeboxBlockEntityMixin": {
-        "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
       },
       "net/depression/mixin/MilkBucketItemMixin": {
         "finishUsingItem": "Lnet/minecraft/class_1805;method_7861(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;)Lnet/minecraft/class_1799;"
@@ -107,12 +115,21 @@
         "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
         "tick": "Lnet/minecraft/class_1657;method_5773()V"
       },
+      "net/depression/mixin/ServerLevelMixin": {
+        "addNewPlayer": "Lnet/minecraft/class_3218;method_18213(Lnet/minecraft/class_3222;)V",
+        "playSeededSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V",
+        "playSeededSound(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V"
+      },
       "net/depression/mixin/StructureTemplatePoolAccess": {
         "rawTemplates": "field_16864:Ljava/util/List;",
         "templates": "field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"
       },
       "net/depression/mixin/TagManagerMixin": {
         "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
+      },
+      "net/depression/mixin/client/AbstractSliderButtonMixin": {
+        "getHandleTextureY": "method_48204()I",
+        "getTextureY": "method_25356()I"
       },
       "net/depression/mixin/client/BookViewScreenMixin": {
         "render": "Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_4587;IIF)V"
@@ -132,6 +149,17 @@
         "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
         "openItemGui": "Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V"
       },
+      "net/depression/mixin/emotion/CakeBlockMixin": {
+        "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
+        "eat": "Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269;"
+      },
+      "net/depression/mixin/emotion/FishingHookMixin": {
+        "Lnet/minecraft/world/entity/item/ItemEntity;setDeltaMovement(DDD)V": "Lnet/minecraft/class_1542;method_18800(DDD)V",
+        "retrieve": "Lnet/minecraft/class_1536;method_6957(Lnet/minecraft/class_1799;)I"
+      },
+      "net/depression/mixin/emotion/JukeboxBlockEntityMixin": {
+        "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
+      },
       "net/depression/mixin/symptom/BowItemMixin": {
         "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
       },
@@ -144,10 +172,6 @@
       "net/depression/mixin/symptom/LivingEntityMixin": {
         "Lnet/minecraft/world/item/ItemStack;getUseDuration()I": "Lnet/minecraft/class_1799;method_7935()I",
         "startUsingItem": "Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V"
-      },
-      "net/depression/mixin/symptom/ServerLevelMixin": {
-        "playSeededSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V",
-        "playSeededSound(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V"
       }
     }
   }

@@ -1,10 +1,12 @@
 package net.depression.config;
 
 import com.electronwill.nightconfig.core.CommentedConfig;
+import com.electronwill.nightconfig.core.Config;
 import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.architectury.platform.Platform;
 import net.depression.Depression;
 import net.depression.mental.MentalStatus;
+import net.depression.mental.MentalTrait;
 import net.depression.mental.PTSDManager;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,6 +30,7 @@ public class ServerConfig {
     }
 
     public static void load() {
+        Config.setInsertionOrderPreserved(true);
         File folder = new File(Platform.getConfigFolder() + "/depression");
         if (!folder.exists()) {
             folder.mkdirs();
@@ -76,6 +79,7 @@ public class ServerConfig {
         MentalStatus.PTSD_DISPERSE_RATE = readDouble(config, "ptsd_disperse_rate");
         MentalStatus.BOREDOM_DECREASE_TICK = config.get("boredom_decrease_tick");
         MentalStatus.FOOD_HEAL_RATE = readDouble(config, "food_heal_rate");
+        MentalStatus.IS_RANDOM_CHOOSE_TRAIT = config.get("random_choose_mental_trait");
 
         config.save();
         config.close();
@@ -276,6 +280,171 @@ public class ServerConfig {
                 PTSDManager.addEntry(damageSource, soundEvent);
             }
         }
+
+        //读取fish-heal-value.toml
+        File fishFile = new File(Platform.getConfigFolder() + "/depression/fish-heal-value.toml");
+        if (!fishFile.exists()) {
+            try {
+                fishFile.createNewFile();
+                FileWriter writer = writeFishFile(fishFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeFishFile(fishFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileConfig fishConfig = FileConfig.of(fishFile);
+        fishConfig.load();
+
+        for (String id : fishConfig.valueMap().keySet()) {
+            MentalStatus.fishHealValue.put(id, readDouble(fishConfig, id));
+        }
+
+        //读取mental-traits.toml
+        File traitFile = new File(Platform.getConfigFolder() + "/depression/mental-traits.toml");
+        if (!traitFile.exists()) {
+            try {
+                traitFile.createNewFile();
+                FileWriter writer = writeTraitFile(traitFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeTraitFile(traitFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileConfig traitConfig = FileConfig.of(traitFile);
+        traitConfig.load();
+
+        for (String trait : traitConfig.valueMap().keySet()) {
+            MentalTrait mentalTrait = new MentalTrait(trait);
+            if (traitConfig.contains(trait + ".kill_mob_multiplier")) {
+                mentalTrait.killMobMultiplier = readDouble(traitConfig, trait + ".kill_mob_multiplier");
+            }
+            if (traitConfig.contains(trait + ".mining_multiplier")) {
+                mentalTrait.miningMultiplier = readDouble(traitConfig, trait + ".mining_multiplier");
+            }
+            if (traitConfig.contains(trait + ".farming_multiplier")) {
+                mentalTrait.farmingMultiplier = readDouble(traitConfig, trait + ".farming_multiplier");
+            }
+            if (traitConfig.contains(trait + ".kill_animal_heal_value")) {
+                mentalTrait.killAnimalHealValue = readDouble(traitConfig, trait + ".kill_animal_heal_value");
+            }
+            if (traitConfig.contains(trait + ".mental_hurt_multiplier")) {
+                mentalTrait.mentalHurtMultiplier = readDouble(traitConfig, trait + ".mental_hurt_multiplier");
+            }
+            if (traitConfig.contains(trait + ".medicine_effect_multiplier")) {
+                mentalTrait.medicineEffectMultiplier = readDouble(traitConfig, trait + ".medicine_effect_multiplier");
+            }
+            if (traitConfig.contains(trait + ".bipolar_chance_multiplier")) {
+                mentalTrait.bipolarChanceMultiplier = readDouble(traitConfig, trait + ".bipolar_chance_multiplier");
+            }
+            if (traitConfig.contains(trait + ".fatigue_chance_multiplier")) {
+                mentalTrait.fatigueChanceMultiplier = readDouble(traitConfig, trait + ".fatigue_chance_multiplier");
+            }
+            if (traitConfig.contains(trait + ".initial_mental_health_value")) {
+                mentalTrait.initialMentalHealthValue = traitConfig.get(trait + ".initial_mental_health_value");
+            }
+            if (traitConfig.contains(trait + ".initial_mental_health_id")) {
+                mentalTrait.initialMentalHealthId = traitConfig.get(trait + ".initial_mental_health_id");
+            }
+            if (traitConfig.contains(trait + ".darkness_affect_emotion")) {
+                mentalTrait.isDarknessAffectEmotion = traitConfig.get(trait + ".darkness_affect_emotion");
+            }
+            if (traitConfig.contains(trait + ".bad_emotion_lower_combat")) {
+                mentalTrait.isBadEmotionLowerCombat = traitConfig.get(trait + ".bad_emotion_lower_combat");
+            }
+            if (traitConfig.contains(trait + ".good_emotion_higher_combat")) {
+                mentalTrait.isGoodEmotionHigherCombat = traitConfig.get(trait + ".good_emotion_higher_combat");
+            }
+        }
+    }
+
+    @NotNull
+    private static FileWriter writeTraitFile(File traitFile) throws IOException {
+        FileWriter writer = new FileWriter(traitFile);
+        writer.write("""
+                # ================================================================
+                # 精神特质部分
+                # ================================================================
+                # 以下是精神特质的配置文件，你可以在这里配置精神特质的各种参数。
+                # ================================================================
+                
+                [normal]
+                                
+                [warrior]
+                kill_mob_multiplier = 2
+                bad_emotion_lower_combat = false
+                bipolar_chance_multiplier = 3
+                                
+                [miner]
+                mining_multiplier = 2
+                darkness_affect_emotion = false
+                fatigue_chance_multiplier = 3
+                                
+                [farmer]
+                farming_multiplier = 2
+                kill_animal_heal_value = 0.5
+                good_emotion_higher_combat = false
+                                
+                [sickly]
+                mental_hurt_multiplier = 2
+                medicine_effect_multiplier = 3
+                                
+                [mdd_patient]
+                initial_mental_health_value = 0
+                initial_mental_health_id = 3
+                                
+                [bd_patient]
+                initial_mental_health_value = 0
+                initial_mental_health_id = 4
+                """);
+        return writer;
+    }
+
+    @NotNull
+    private static FileWriter writeFishFile(File file) throws IOException {
+        FileWriter writer = new FileWriter(file);
+        writer.write("""
+                "minecraft:cod" = 0.3
+                "minecraft:salmon" = 0.4
+                "minecraft:tropical_fish" = 0.5
+                "minecraft:pufferfish" = 0.4
+                "minecraft:bow" = 0.4
+                "minecraft:enchanted_book" = 0.4
+                "minecraft:fishing_rod" = 0.4
+                "minecraft:name_tag" = 1.5
+                "minecraft:nautilus_shell" = 1.5
+                "minecraft:saddle" = 3.0
+                "minecraft:lily_pad" = 0.3
+                # "minecraft:bowl" = 0.0
+                "minecraft:leather" = 0.3
+                "minecraft:leather_boots" = 0.3
+                # "minecraft:rotten_flesh" = 0.0
+                # "minecraft:stick" = 0.0
+                "minecraft:string" = 0.1
+                # "minecraft:potion" = 0.0
+                "minecraft:bone" = 0.1
+                "minecraft:ink_sac" = 0.1
+                "minecraft:tripwire_hook" = 0.1
+                # "minecraft:bamboo" = 0.0
+                """);
+        return writer;
     }
 
     @NotNull
@@ -284,13 +453,14 @@ public class ServerConfig {
         writer.write("""
                 # Mod will overwrite all the configurations if the version isn't match with the current mod version.
                 # If you want to keep your changes while updating, please change the version to the updated mod version.
-                version = "0.1.3"
+                version = "0.1.4"
                 emotion_stabilize_rate = 0.1
                 mental_health_change_rate = 0.01
                 ptsd_damage_rate = 0.25
                 ptsd_disperse_rate = 0.001
                 boredom_decrease_tick = 200
                 food_heal_rate = 0.25
+                random_choose_mental_trait = false
                 """);
         return writer;
     }

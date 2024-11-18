@@ -4,7 +4,6 @@ import dev.architectury.event.EventResult;
 import net.depression.client.ClientMentalIllness;
 import net.depression.client.ClientMentalStatus;
 import net.depression.client.DepressionClient;
-import net.depression.mental.MentalStatus;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundEvents;
 
@@ -15,7 +14,7 @@ public class ClientRawInputEventListener {
         }
         ClientMentalStatus mentalStatus = DepressionClient.clientMentalStatus;
         ClientMentalIllness illness = mentalStatus.mentalIllness;
-        if (mentalStatus.mentalHealthLevel == 3 && illness.isCloseEye && illness.elapsedTime >= -60 && illness.elapsedTime <= 60) {
+        if (mentalStatus.mentalHealthId == 3 && illness.isCloseEye && illness.elapsedTime >= -60 && illness.elapsedTime <= 60) {
             minecraft.player.playSound(SoundEvents.WOOD_BREAK);
             return EventResult.interruptFalse();
         }

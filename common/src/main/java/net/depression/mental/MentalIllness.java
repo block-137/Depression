@@ -8,13 +8,16 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.level.Level;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
 public class MentalIllness {
+    public int mentalHealthId; //精神健康ID
     public int mentalHealthLevel; //精神健康等级
+    public boolean isMania;
+    public Long startIllnessTime; //（仅双相）开始时间
     public Boolean isInsomnia;
     public int sleepAttemptCount = 0;
     private Long nextCloseEyeTime;
@@ -22,6 +25,22 @@ public class MentalIllness {
     public final Random random = new Random();
     private final MentalStatus mentalStatus;
     private ServerPlayer player;
+
+    public ArrayList<MentalIllnessPool> mentalIllnessPools = new ArrayList<>() {{
+        MentalIllnessPool pool0 = new MentalIllnessPool();
+        MentalIllnessPool pool1 = new MentalIllnessPool();
+        MentalIllnessPool pool2 = new MentalIllnessPool();
+        MentalIllnessPool pool3 = new MentalIllnessPool();
+        pool0.addIllness(0, 1d);
+        pool1.addIllness(1, 1d);
+        pool2.addIllness(2, 1d);
+        pool3.addIllness(3, 4d);
+        pool3.addIllness(4, 1d);
+        add(pool0);
+        add(pool1);
+        add(pool2);
+        add(pool3);
+    }};
 
     public MentalIllness(ServerPlayer player, MentalStatus mentalStatus) {
         this.player = player;
@@ -39,9 +58,48 @@ public class MentalIllness {
                 medicineDelay.remove(key);
             }
         }
+        if (mentalHealthId == 4 && startIllnessTime == null) {
+            mentalHealthLevel = 3;
+            startIllnessTime = player.getLevel().getGameTime();
+        }
+        if (mentalHealthId != 4 && startIllnessTime != null) {
+            mentalStatus.emotionValue = 0;
+            startIllnessTime = null;
+        }
+        int newMentalHealthLevel = getMentalHealthLevel(mentalStatus.mentalHealthValue);
+        if (newMentalHealthLevel != mentalHealthLevel) {
+            if (mentalHealthId == 4) { //如果双相痊愈，则将情绪归零。
+                mentalStatus.emotionValue = 0;
+            }
+            mentalHealthLevel = newMentalHealthLevel;
+            MentalIllnessPool mentalIllnessPool = mentalIllnessPools.get(mentalHealthLevel);
+            double multiplier = mentalStatus.mentalTrait.bipolarChanceMultiplier;
+            if (multiplier == 1 || mentalHealthLevel != 3) {
+                mentalHealthId = mentalIllnessPool.getIllness();
+            } else {
+                mentalHealthId = mentalIllnessPool.getIllness(4, multiplier);
+            }
+            if (mentalHealthId == 4) {
+                startIllnessTime = player.getLevel().getGameTime();
+            } else {
+                startIllnessTime = null;
+            }
+        }
+        if (startIllnessTime != null) {
+            long currentTime = player.getLevel().getGameTime();
+            if ((currentTime - startIllnessTime) % 30000 == 0) {
+                isMania = true;
+                mentalStatus.emotionValue = 20d;
+                ActionbarHintPacket.sendBipolarPacket(player, true);
+            }
+            if ((currentTime - startIllnessTime) % 30000 == 6000) {
+                isMania = false;
+                mentalStatus.emotionValue = -20d;
+                ActionbarHintPacket.sendBipolarPacket(player, false);
+            }
+        }
 
-        mentalHealthLevel = getMentalHealthLevel(mentalStatus.mentalHealthValue);
-        if (isInsomnia != null && isInsomnia && mentalHealthLevel == 0) {
+        if (isInsomnia != null && isInsomnia && mentalHealthId == 0) {
             isInsomnia = false;
         }
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
@@ -54,7 +112,7 @@ public class MentalIllness {
                 ActionbarHintPacket.sendInsomniaPacket(player);
             }
         }
-        if (mentalHealthLevel >= 3 || isSleepy) {
+        if ((mentalHealthId >= 3 && !isMania) || isSleepy) {
             if (nextCloseEyeTime == null) {
                 setNextCloseEyeTime();
             }
@@ -65,9 +123,29 @@ public class MentalIllness {
         }
     }
 
+    public double getMentalFatigueChance() {
+        switch (mentalHealthId) {
+            case 1:
+                return 0.02;
+            case 2:
+                return 0.04;
+            case 3:
+                return 0.06;
+            case 4:
+                if (isMania) {
+                    return 0;
+                }
+                else {
+                    return 0.06;
+                }
+            default:
+                return 0;
+        }
+    }
+
     public void trigMentalFatigue() {
-        if (mentalHealthLevel > 0) {
-            double chance = mentalHealthLevel * 0.02;
+        if (mentalHealthId > 0) {
+            double chance = getMentalFatigueChance() * mentalStatus.mentalTrait.fatigueChanceMultiplier;
             MobEffectInstance antiDepression = player.getEffect(ModEffects.ANTI_DEPRESSION.get());
             if (antiDepression != null) {
                 chance += (antiDepression.getAmplifier() + 1) * 0.02;
@@ -75,7 +153,7 @@ public class MentalIllness {
             if (random.nextDouble() < chance) {
                 int duration;
                 int amplifier;
-                switch (mentalHealthLevel) {
+                switch (mentalHealthId) {
                     case 1 -> {
                         duration = 60;
                         amplifier = 0;
@@ -106,10 +184,11 @@ public class MentalIllness {
 
     public void setIsInsomnia() { //计算是否失眠
         sleepAttemptCount = 0;
-        switch (mentalHealthLevel) {
+        switch (mentalHealthId) {
             case 1 -> isInsomnia = random.nextDouble() < 0.5d; //若轻度抑郁，则50%概率失眠
             case 2 -> isInsomnia = random.nextDouble() < 0.75d; //若中度抑郁，则75%概率失眠
             case 3 -> isInsomnia = true;
+            case 4 -> isInsomnia = true;
             default -> isInsomnia = false;
         }
     }
@@ -119,14 +198,14 @@ public class MentalIllness {
     }
 
     public double getInsomniaChance() {
-        switch (mentalHealthLevel) {
+        switch (mentalHealthId) {
             case 1 -> {
                 return 1d - sleepAttemptCount * 0.16d;
             }
             case 2 -> {
                 return 1d - sleepAttemptCount * 0.12d;
             }
-            case 3 -> {
+            case 3, 4 -> {
                 return 1d - sleepAttemptCount * 0.08d;
             }
             default -> {
@@ -141,7 +220,7 @@ public class MentalIllness {
         }
         return ret;
     }
-    public static int getMentalHealthLevel(double mentalHealthValue) {
+    private int getMentalHealthLevel(double mentalHealthValue) {
         if (mentalHealthValue >= 70d && mentalHealthValue <= 100d) {
             return 0; // 健康：绿色
         } else if (mentalHealthValue >= 40d && mentalHealthValue < 70d) {
@@ -150,14 +229,23 @@ public class MentalIllness {
             return 2; // 中度抑郁：红色
         } else if (mentalHealthValue >= 0d && mentalHealthValue < 20d) {
             return 3; // 重度抑郁：灰色
-        } else {
-            return 4; // TODO:4代表双相，目前还没做
         }
+        return 0;
     }
     public void readNbt(CompoundTag tag) {
+        //读取精神健康ID
+        mentalHealthId = tag.getInt("mental_health_id");
+        //读取精神健康等级
+        mentalHealthLevel = tag.getInt("mental_health_level");
         //读取当天是否失眠
         if (tag.contains("is_insomnia")) {
             isInsomnia = tag.getBoolean("is_insomnia");
+        }
+        //读取是否躁狂
+        isMania = tag.getBoolean("is_mania");
+        //读取病症开始时间
+        if (tag.contains("start_illness_time")) {
+            startIllnessTime = tag.getLong("start_illness_time");
         }
         //读取睡眠尝试次数
         sleepAttemptCount = tag.getInt("sleep_attempt_count");
@@ -175,9 +263,19 @@ public class MentalIllness {
     }
 
     public void writeNbt(CompoundTag tag) {
+        //写入精神健康ID
+        tag.putInt("mental_health_id", mentalHealthId);
+        //写入精神健康等级
+        tag.putInt("mental_health_level", mentalHealthLevel);
         //写入当天是否失眠
         if (isInsomnia != null) {
             tag.putBoolean("is_insomnia", isInsomnia);
+        }
+        //写入是否躁狂
+        tag.putBoolean("is_mania", isMania);
+        //写入病症开始时间
+        if (startIllnessTime != null) {
+            tag.putLong("start_illness_time", startIllnessTime);
         }
         //写入睡眠尝试次数
         tag.putInt("sleep_attempt_count", sleepAttemptCount);
