@@ -37,8 +37,6 @@ public class ClientDiaryUpdater {
     public static InteractionHand interactionHand;
     public static ItemStack curDiaryItem;
     public static Random random = new Random();
-<<<<<<< HEAD
-=======
     public static final ResourceLocation writeSound = new ResourceLocation( "assets/diary_sound/write_diary");
 
     public static void clear() {
@@ -48,7 +46,6 @@ public class ClientDiaryUpdater {
         interactionHand = null;
     }
 
->>>>>>> 03979b7 (0.1.3 Update)
     public static void setInfo(DiaryItem diaryItem, Level level, Player player, InteractionHand interactionHand) {
         ClientDiaryUpdater.diaryItem = diaryItem;
         ClientDiaryUpdater.level = level;
