@@ -7,30 +7,29 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import dev.architectury.networking.NetworkManager;
 import net.depression.Depression;
 import net.depression.client.screen.DiaryAccess;
+import net.depression.network.MentalTraitPacket;
+import net.depression.screen.MentalTraitSelectionScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiComponent;
 import net.minecraft.client.gui.screens.inventory.BookViewScreen;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.Vec3;
-
-import java.util.Date;
-
-import static net.depression.mental.MentalIllness.getMentalHealthLevel;
+import net.minecraft.world.item.FishingRodItem;
 
 public class ClientMentalStatus {
     public static int EMOTION_DISPLAY_OFFSET_X = -8;
     public static int EMOTION_DISPLAY_OFFSET_Y = -51;
+    public static String traitId = null;
+    public static boolean isMentalTraitSelected = true;
     public double emotionValue;
     public double mentalHealthValue;
     public int emotionLevel;
+    public boolean isJoinGame;
     public boolean isInCombat;
-    public int mentalHealthLevel;
+    public int mentalHealthId;
     public ClientMentalIllness mentalIllness = new ClientMentalIllness();
     public ClientPTSDManager ptsdManager = new ClientPTSDManager();
     public String mentalIllnessString;
@@ -42,8 +41,13 @@ public class ClientMentalStatus {
         mentalHealthValue = 100d;
         emotionLevel = 4;
         isInCombat = false;
-        mentalHealthLevel = 0;
+        isJoinGame = true;
+        mentalHealthId = 0;
         mentalIllnessString = "healthy";
+    }
+
+    public static void receiveMentalTraitPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        isMentalTraitSelected = false;
     }
 
     public void receiveEmotionPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
@@ -54,15 +58,22 @@ public class ClientMentalStatus {
     }
     public void receiveMentalHealthPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
         mentalHealthValue = buf.readDouble();
-        int prevMentalHealthLevel = mentalHealthLevel;
-        mentalHealthLevel = getMentalHealthLevel(mentalHealthValue);
-        mentalIllnessString = getMentalIllness(mentalHealthLevel);
-        if (prevMentalHealthLevel != mentalHealthLevel) {
-            if (prevMentalHealthLevel < mentalHealthLevel) { //病情加重
-                Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.develop_illness_" + mentalHealthLevel), false);
+        int prevMentalHealthId = mentalHealthId;
+        mentalHealthId = buf.readInt();
+        if (isJoinGame) {
+            isJoinGame = false;
+            return;
+        }
+        if (mentalHealthId > 3) {
+            return;
+        }
+        mentalIllnessString = getMentalIllness(mentalHealthId);
+        if (prevMentalHealthId != mentalHealthId) {
+            if (prevMentalHealthId < mentalHealthId) { //病情加重
+                Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.develop_illness_" + mentalHealthId), false);
             }
             else { //病情减轻
-                Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.illness_cure_" + prevMentalHealthLevel), false);
+                Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.illness_cure_" + prevMentalHealthId), false);
             }
         }
     }
@@ -88,18 +99,23 @@ public class ClientMentalStatus {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         //绘制情绪值
         RenderSystem.setShaderTexture(0, EMOTION);
+<<<<<<< HEAD
         GuiComponent.blit(poseStack, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*getEmotionLevel(), isInCombat ? 16 : 0, 16, 16, 128, 32); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
         mentalIllness.render(poseStack, window.getGuiScaledWidth(), y);
+=======
+        guiGraphics.blit(EMOTION, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*emotionLevel, isInCombat ? 16 : 0, 16, 16, 128, 32);
+        //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
+>>>>>>> 79040de (0.1.4 Update)
         //绘制精神健康值
         /*
-        int mentalHealthLevel = getMentalHealthLevel(mentalHealthValue);
+        int mentalHealthId = getMentalHealthLevel(mentalHealthValue);
         RenderSystem.setShaderTexture(0, MENTAL_HEALTH_BASE);
-        guiGraphics.blit(MENTAL_HEALTH_BASE, x + 97, y - 22, 90, (mentalHealthLevel < 3 ? 0 : 22), 0, 22, 22, 44, 22);
+        guiGraphics.blit(MENTAL_HEALTH_BASE, x + 97, y - 22, 90, (mentalHealthId < 3 ? 0 : 22), 0, 22, 22, 44, 22);
         RenderSystem.setShaderTexture(0, MENTAL_HEALTH_HOVER);
         int pixels = (int) (mentalHealthValue / mentalHealthMaxValue * 20);
-        guiGraphics.blit(MENTAL_HEALTH_HOVER, x + 97, y - (1 + pixels), 90, mentalHealthLevel * 22, (float) (21 - pixels), 22, (1 + pixels), 110, 22);
+        guiGraphics.blit(MENTAL_HEALTH_HOVER, x + 97, y - (1 + pixels), 90, mentalHealthId * 22, (float) (21 - pixels), 22, (1 + pixels), 110, 22);
         RenderSystem.setShaderTexture(0, MENTAL_HEALTH_HEART);
-        guiGraphics.blit(MENTAL_HEALTH_HEART, x + 97, y - 22, 90, (mentalHealthLevel < 3 ? 0 : 22), 0, 22, 22, 66, 22);
+        guiGraphics.blit(MENTAL_HEALTH_HEART, x + 97, y - 22, 90, (mentalHealthId < 3 ? 0 : 22), 0, 22, 22, 66, 22);
          */
         ptsdManager.render(poseStack, window.getGuiScaledWidth(), y);
     }
@@ -130,6 +146,7 @@ public class ClientMentalStatus {
             case 1 -> "mild_depression";
             case 2 -> "moderate_depression";
             case 3 -> "major_depressive_disorder";
+            case 4 -> "bipolar_disorder";
             default -> "";
         };
     }

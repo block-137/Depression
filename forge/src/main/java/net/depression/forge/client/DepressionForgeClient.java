@@ -15,7 +15,6 @@ public class DepressionForgeClient
     @SubscribeEvent
     public static void onInitializeClient(FMLClientSetupEvent event) {
         DepressionClient.onInitializeClient();
-        ClientConfig.load();
     }
 
 }

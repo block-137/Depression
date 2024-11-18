@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 
 public class EntityEventListener {
@@ -45,14 +46,22 @@ public class EntityEventListener {
         }
         else {
             String encodeId = livingEntity.getEncodeId();
-            if (entity != null && entity instanceof Player && MentalStatus.killHealEntity.containsKey(encodeId)) {
+            if (entity != null && entity instanceof Player) {
                 ServerPlayer player = (ServerPlayer) entity;
                 MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-                double healValue = mentalStatus.mentalHeal(encodeId, MentalStatus.killHealEntity.get(encodeId));
+                double healValue = 0d;
+                if (MentalStatus.killHealEntity.containsKey(encodeId)) {
+                    healValue = mentalStatus.mentalHeal(encodeId, MentalStatus.killHealEntity.get(encodeId) * mentalStatus.mentalTrait.killMobMultiplier);
+                }
+                else if (livingEntity instanceof Animal) {
+                    healValue = mentalStatus.mentalHeal(encodeId, mentalStatus.mentalTrait.killAnimalHealValue);
+                }
                 if (healValue > 0.25) {
                     ActionbarHintPacket.sendKillEntityHealPacket(player, livingEntity.getName());
                 }
-                MentalStatusPacket.sendToPlayer(player, mentalStatus);
+                if (healValue != 0) {
+                    MentalStatusPacket.sendToPlayer(player, mentalStatus);
+                }
             }
         }
         return EventResult.pass();

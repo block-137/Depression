@@ -27,6 +27,8 @@ public class ModItems {
     public static final RegistrySupplier<Item> MDD_CAPSULE = ITEMS.register("mdd_capsule",
             () -> new AntiDepressantItem(2));
 
+    public static final RegistrySupplier<Item> MANIA_TABLET = ITEMS.register("mania_tablet",
+            () -> new MedicineItem(ModEffects.ANTI_MANIA.get(), 24000, 0, "item.depression.mania_tablet.desc"));
     public static final RegistrySupplier<Item> INSOMNIA_TABLET = ITEMS.register("insomnia_tablet",
             () -> new MedicineItem("depression:insomnia_tablet", ModEffects.SLEEPINESS.get(), 6000, 0, 300, 600, "item.depression.insomnia_tablet.desc"));
 

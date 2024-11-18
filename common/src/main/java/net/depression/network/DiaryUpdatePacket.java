@@ -80,12 +80,22 @@ public class DiaryUpdatePacket {
                     + ConditionComponents.MODERATE_DEPRESSION_2_HURT;
         }
         else if (10 <= mentalHealthValue && mentalHealthValue < 20) { //重度抑郁1
-            content = "    'diary.depression.major_depressive_disorder_1.1'";
+            if (mentalStatus.isMania()) {
+                content = "    'diary.depression.mania_1.1'";
+            }
+            else {
+                content = "    'diary.depression.major_depressive_disorder_1.1'";
+            }
         }
         else if (0 <= mentalHealthValue && mentalHealthValue < 10) { //重度抑郁2
-            content = "    'diary.depression.major_depressive_disorder_2.1'"
-                    + ConditionComponents.MAJOR_DEPRESSIVE_DISORDER_2_EAT.get(player)
-                    + "\n    'diary.depression.major_depressive_disorder_2.2'";
+            if (mentalStatus.isMania()) {
+                content = "    'diary.depression.mania_2.1'";
+            }
+            else {
+                content = "    'diary.depression.major_depressive_disorder_2.1'"
+                        + ConditionComponents.MAJOR_DEPRESSIVE_DISORDER_2_EAT.get(player)
+                        + "\n    'diary.depression.major_depressive_disorder_2.2'";
+            }
         }
         buf.writeCharSequence(content, charset);
         NetworkManager.sendToPlayer(player, DIARY_UPDATE_PACKET, buf);

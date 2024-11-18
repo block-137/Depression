@@ -1,4 +1,4 @@
-package net.depression.mixin;
+package net.depression.mixin.emotion;
 
 import net.depression.mental.MentalStatus;
 import net.depression.network.MentalStatusPacket;

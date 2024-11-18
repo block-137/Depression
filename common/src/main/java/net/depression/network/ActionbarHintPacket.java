@@ -20,9 +20,15 @@ public class ActionbarHintPacket {
     public static final ResourceLocation NEARBY_BLOCK_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "nearby_block_heal_packet");
     public static final ResourceLocation KILL_ENTITY_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "kill_entity_heal_packet");
     public static final ResourceLocation BREAK_BLOCK_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "break_block_heal_packet");
+    public static final ResourceLocation BIPOLAR_PACKET = new ResourceLocation(Depression.MOD_ID, "bipolar_packet");
 
     public static final Charset CHARSET = StandardCharsets.UTF_8;
 
+    public static void sendBipolarPacket(ServerPlayer player, boolean isMania) {
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+        buf.writeBoolean(isMania);
+        NetworkManager.sendToPlayer(player, new ResourceLocation(Depression.MOD_ID, "bipolar_packet"), buf);
+    }
     public static void sendNearbyBlockHealPacket(ServerPlayer player, Component id) {
         FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
         buf.writeComponent(id);

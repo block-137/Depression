@@ -76,6 +76,7 @@ public class MedicineItem extends Item {
                 player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
                 player.addEffect(new MobEffectInstance(MobEffects.HUNGER, 200, 19));
                 player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 200, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 3));
                 if (level.isClientSide()) {
                     ClientActionbarHint.displayTranslatable("message.depression.medicine_overdose");
                 }
