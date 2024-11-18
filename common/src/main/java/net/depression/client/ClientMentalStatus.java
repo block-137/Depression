@@ -60,6 +60,7 @@ public class ClientMentalStatus {
         mentalHealthValue = buf.readDouble();
         int prevMentalHealthId = mentalHealthId;
         mentalHealthId = buf.readInt();
+        mentalIllnessString = getMentalIllness(mentalHealthId);
         if (isJoinGame) {
             isJoinGame = false;
             return;
@@ -67,7 +68,6 @@ public class ClientMentalStatus {
         if (mentalHealthId > 3) {
             return;
         }
-        mentalIllnessString = getMentalIllness(mentalHealthId);
         if (prevMentalHealthId != mentalHealthId) {
             if (prevMentalHealthId < mentalHealthId) { //病情加重
                 Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.develop_illness_" + mentalHealthId), false);
@@ -135,8 +135,8 @@ public class ClientMentalStatus {
         }
     }
 
-    public static String getMentalIllness(int mentalHealthLevel) {
-        return switch (mentalHealthLevel) {
+    public static String getMentalIllness(int mentalHealthId) {
+        return switch (mentalHealthId) {
             case 0 -> "healthy";
             case 1 -> "mild_depression";
             case 2 -> "moderate_depression";
