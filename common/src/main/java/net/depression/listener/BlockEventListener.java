@@ -3,15 +3,16 @@ package net.depression.listener;
 import dev.architectury.event.EventResult;
 import dev.architectury.utils.value.IntValue;
 import net.depression.Depression;
-import net.depression.client.ClientActionbarHint;
 import net.depression.mental.MentalStatus;
+import net.depression.mental.MentalTrait;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
-import net.depression.sound.ModSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.ai.village.poi.PoiManager;
 import net.minecraft.world.entity.ai.village.poi.PoiTypes;
@@ -25,10 +26,27 @@ import net.minecraft.world.level.block.state.BlockState;
 public class BlockEventListener {
     public static EventResult onBlockBreak(Level level, BlockPos pos, BlockState state, ServerPlayer player, IntValue intValue) {
 
+        /*debug
+        ItemStack itemStack = player.getMainHandItem();
+        if (itemStack.isEnchanted()) {
+            for (Tag tag : itemStack.getEnchantmentTags()) {
+                if (tag instanceof CompoundTag) {
+                    CompoundTag compoundTag = (CompoundTag) tag;
+                    for (String key : compoundTag.getAllKeys()) {
+                        Depression.LOGGER.info(key + ": " + compoundTag.get(key));
+                    }
+                }
+            }
+        }
+
+         */
+
+
         if (player.isCreative() || !player.hasCorrectToolForDrops(state)) { //如果是创造模式或者没有用合适的工具挖，就不计入
             return EventResult.pass();
         }
         Block block = state.getBlock();
+
         String blockID = block.arch$registryName().toString();
         MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
         mentalStatus.mentalIllness.trigMentalFatigue();
@@ -49,7 +67,9 @@ public class BlockEventListener {
                     }
                 }
             }
-            double healValue = mentalStatus.mentalHeal(blockID, MentalStatus.breakHealBlock.get(blockID));
+            MentalTrait mentalTrait = mentalStatus.mentalTrait;
+            double healValue = mentalStatus.mentalHeal(blockID, MentalStatus.breakHealBlock.get(blockID)
+                    * (state.is(BlockTags.MINEABLE_WITH_PICKAXE) ? mentalTrait.miningMultiplier : mentalTrait.farmingMultiplier));
             if (healValue > 0.25) {
                 ActionbarHintPacket.sendBreakBlockHealPacket(player, block.getName());
             }

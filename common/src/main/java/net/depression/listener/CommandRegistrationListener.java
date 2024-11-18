@@ -2,16 +2,17 @@ package net.depression.listener;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
-import com.mojang.brigadier.arguments.FloatArgumentType;
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import net.depression.mental.MentalStatus;
+import net.depression.mental.MentalTrait;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.commands.arguments.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
@@ -153,6 +154,32 @@ public class CommandRegistrationListener {
                                                     return 0;
                                                 }
                                                 source.sendSuccess(() -> player.getName().copy().append(Component.translatable("commands.depression.mentalhealth.query")).append("" + mentalStatus.mentalHealthValue), false);
+                                            }
+                                            return 0;
+                                        })
+                                )
+                        )
+        );
+
+        LiteralCommandNode<CommandSourceStack> switchTrait = dispatcher.register(
+                LiteralArgumentBuilder.<CommandSourceStack>literal("switchtrait")
+                        .requires((req) -> req.hasPermission(2))
+                        .then(Commands.argument("players", EntityArgument.players())
+                                .then(Commands.argument("trait", StringArgumentType.string())
+                                        .executes((arg) -> {
+                                            CommandSourceStack source = arg.getSource();
+                                            MentalTrait mentalTrait = MentalTrait.byId(StringArgumentType.getString(arg.copyFor(source), "trait"));
+                                            if (mentalTrait == null) {
+                                                source.sendFailure(Component.translatable("argument.id.unknown"));
+                                                return 0;
+                                            }
+                                            for (ServerPlayer player : EntityArgument.getPlayers(arg.copyFor(source), "players")) {
+                                                MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
+                                                if (mentalStatus == null) {
+                                                    source.sendFailure(Component.translatable("argument.player.unknown"));
+                                                    return 0;
+                                                }
+                                                mentalStatus.loadMentalTrait(mentalTrait);
                                             }
                                             return 0;
                                         })

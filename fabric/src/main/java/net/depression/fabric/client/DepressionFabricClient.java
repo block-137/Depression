@@ -8,6 +8,5 @@ public final class DepressionFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         DepressionClient.onInitializeClient();
-        ClientConfig.load();
     }
 }

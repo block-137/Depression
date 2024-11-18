@@ -2,7 +2,7 @@ package net.depression.neoforge.client;
 
 import net.depression.Depression;
 import net.depression.client.DepressionClient;
-import net.depression.neoforge.config.ClientConfig;
+import net.depression.config.ClientConfig;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;

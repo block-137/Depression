@@ -1,7 +1,10 @@
-package net.depression.mixin.symptom;
+package net.depression.mixin;
 
 import net.depression.Depression;
+import net.depression.mental.MentalStatus;
 import net.depression.mental.PTSDManager;
+import net.depression.network.MentalTraitPacket;
+import net.depression.server.Registry;
 import net.depression.util.TempValues;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.Holder;
@@ -19,6 +22,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ServerLevel.class)
 public abstract class ServerLevelMixin {
+    @Inject(method = "addNewPlayer", at = @At("HEAD"), cancellable = true)
+    public void addNewPlayer(ServerPlayer player, CallbackInfo ci) {
+        if (Registry.isPending(player)) {
+            return;
+        }
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
+        if (mentalStatus.mentalTrait == null) {
+            MentalTraitPacket.sendToPlayer(player);
+            Registry.addPendingPlayer((ServerLevel) (Object) this, player);
+            ci.cancel();
+        }
+    }
+
     @Inject(method = "playSeededSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V", at = @At("HEAD"))
     private void playSeededSound(Player player, double d, double e, double f, Holder<SoundEvent> holder, SoundSource soundSource, float g, float h, long l, CallbackInfo ci) {
         onPlaySound(player, holder);

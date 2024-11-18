@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
+    "client.AbstractSliderButtonMixin",
     "client.BookViewScreenMixin",
     "client.ClientLevelMixin",
     "client.FontAccess",
@@ -11,20 +12,22 @@
     "client.LocalPlayerMixin"
   ],
   "mixins": [
-    "CakeBlockMixin",
+    "ChunkMapMixin",
     "EntityMixin",
-    "JukeboxBlockEntityMixin",
     "MilkBucketItemMixin",
     "MobAccess",
     "PlayerListMixin",
     "PlayerMixin",
+    "ServerLevelMixin",
     "StructureTemplatePoolAccess",
     "TagManagerMixin",
+    "emotion.CakeBlockMixin",
+    "emotion.FishingHookMixin",
+    "emotion.JukeboxBlockEntityMixin",
     "symptom.BowItemMixin",
     "symptom.CrossbowItemMixin",
     "symptom.ItemStackMixin",
-    "symptom.LivingEntityMixin",
-    "symptom.ServerLevelMixin"
+    "symptom.LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

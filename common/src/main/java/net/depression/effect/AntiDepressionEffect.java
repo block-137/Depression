@@ -22,9 +22,9 @@ public class AntiDepressionEffect extends MobEffect {
             if (mentalStatus == null) {
                 return;
             }
-            int mentalHealthLevel = mentalStatus.mentalIllness.mentalHealthLevel;
+            int mentalHealthLevel = mentalStatus.mentalIllness.mentalHealthId;
             if (1 <= mentalHealthLevel && mentalHealthLevel <= 3) {
-                mentalStatus.mentalHealthValue += (amplifier + 1) * 0.05;
+                mentalStatus.mentalHealthValue += (amplifier + 1) * 0.05 * mentalStatus.mentalTrait.medicineEffectMultiplier;
             }
         }
     }

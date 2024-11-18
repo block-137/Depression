@@ -13,10 +13,10 @@ public class Tools {
     public static int getPlayerMentalHealthLevel(Player player) {
         if (player instanceof ServerPlayer) {
             MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
-            return mentalStatus.mentalIllness.mentalHealthLevel;
+            return mentalStatus.mentalIllness.mentalHealthId;
         }
         else {
-            return DepressionClient.clientMentalStatus.mentalHealthLevel;
+            return DepressionClient.clientMentalStatus.mentalHealthId;
         }
     }
 

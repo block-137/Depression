@@ -1,7 +1,7 @@
 package net.depression.neoforge;
 
 import net.depression.Depression;
-import net.depression.neoforge.config.ServerConfig;
+import net.depression.config.ServerConfig;
 import net.depression.neoforge.world.NeoForgeVillageAddition;
 import net.neoforged.fml.common.Mod;
 

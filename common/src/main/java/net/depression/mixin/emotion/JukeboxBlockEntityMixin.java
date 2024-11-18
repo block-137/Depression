@@ -1,4 +1,4 @@
-package net.depression.mixin;
+package net.depression.mixin.emotion;
 
 import net.depression.mental.MentalStatus;
 import net.depression.network.MentalStatusPacket;
@@ -32,17 +32,8 @@ public abstract class JukeboxBlockEntityMixin {
         ServerLevel serverLevel = (ServerLevel) level;
         for (ServerPlayer player : serverLevel.players()) {
             if (player.position().distanceTo(jukebox.getBlockPos().getCenter()) <= 65) {
-<<<<<<< HEAD
-                MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
-                if (mentalStatus == null) {
-                    mentalStatus = new MentalStatus(player);
-                    Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-                }
-                mentalStatus.mentalHeal(jukebox.getTheItem().getItem().arch$registryName().toString(), 1);
-=======
                 MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
-                mentalStatus.mentalHeal(jukebox.getFirstItem().getItem().arch$registryName().toString(), 1);
->>>>>>> 47e7c1e (refactor: 封装获取MentalStatus)
+                mentalStatus.mentalHeal(jukebox.getTheItem().getItem().arch$registryName().toString(), 1);
                 MentalStatusPacket.sendToPlayer(player, mentalStatus);
             }
         }

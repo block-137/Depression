@@ -50,6 +50,10 @@ public class NeoForgeVillageAddition {
                     new ItemStack(Items.EMERALD ,40),
                     new ItemStack(ModItems.MDD_CAPSULE.get(), 6),
                     64,40,0f));
+            level3Trades.add((entity, randomSource) -> new MerchantOffer(
+                    new ItemStack(Items.EMERALD ,40),
+                    new ItemStack(ModItems.MANIA_TABLET.get(), 6),
+                    64,40,0f));
         }
 
     }

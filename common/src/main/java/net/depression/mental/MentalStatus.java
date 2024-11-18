@@ -15,7 +15,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.monster.Blaze;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
@@ -36,9 +35,11 @@ public class MentalStatus {
     public static double PTSD_DISPERSE_RATE;
     public static double FOOD_HEAL_RATE;
     public static int BOREDOM_DECREASE_TICK;
+    public static boolean IS_RANDOM_CHOOSE_TRAIT;
     public static HashMap<String, String> nearbyHealBlockType = new HashMap<>(); //精神治疗光环方块-类型
     public static HashMap<String, Double> nearbyHealBlockValue = new HashMap<>(); //精神治疗光环方块-治疗值
     public static HashMap<String, Integer> nearbyHealBlockRadius = new HashMap<>(); //精神治疗光环方块-作用半径
+    public static HashMap<String, Double> fishHealValue = new HashMap<>(); //钓鱼治疗值
     public static int radiusMaxValue; //精神治疗光环方块-最大的半径
     public static HashMap<String, Double> breakHealBlock = new HashMap<>(); //挖了会开心的方块
     public static HashMap<String, Double> killHealEntity = new HashMap<>(); //杀了会开心的实体
@@ -52,18 +53,32 @@ public class MentalStatus {
     public final HashSet<String> playerPTSDSet = new HashSet<>(); //玩家PTSD集合
     public double emotionValue; //情绪值（-20~20），实际上是精神健康值的导数。
     public double mentalHealthValue = 100; //精神健康值（0~100）
+    public MentalTrait mentalTrait;
     public int combatCountdown = 0;
 
     public MentalIllness mentalIllness;
     private ServerPlayer player;
     public long tickCount = -1;
     private final ExecutorService executor = Executors.newCachedThreadPool();
+    private AttributeModifier speedModifier;
 
     private AttributeModifier attributeModifier;
-
+    
     public MentalStatus(ServerPlayer player) {
         this.player = player;
         this.mentalIllness = new MentalIllness(player, this);
+    }
+
+    public MentalStatus(ServerPlayer player, MentalTrait mentalTrait) {
+        loadMentalTrait(mentalTrait);
+        this.player = player;
+        this.mentalIllness = new MentalIllness(player, this);
+    }
+
+    public void loadMentalTrait(MentalTrait mentalTrait) {
+        this.mentalTrait = mentalTrait;
+        this.mentalHealthValue = mentalTrait.initialMentalHealthValue;
+        this.mentalIllness.mentalHealthId = mentalTrait.initialMentalHealthId;
     }
 
     public synchronized void triggerHurt(String id) {
@@ -71,6 +86,9 @@ public class MentalStatus {
     }
 
     public synchronized void tick(ServerPlayer player) {
+        if (mentalTrait == null) {
+            return;
+        }
         this.player = player;
         ++tickCount;
         //处理无聊值
@@ -171,42 +189,60 @@ public class MentalStatus {
                 }
             }
             //处理精神健康值
-            mentalHealthValue += emotionValue * MENTAL_HEALTH_CHANGE_RATE;
+            if (!mentalIllness.isMania) { //躁狂期间精神健康值不随情绪改变
+                if (emotionValue < 0) {
+                    mentalHealthValue += emotionValue * MENTAL_HEALTH_CHANGE_RATE * mentalTrait.mentalHurtMultiplier;
+                }
+                else {
+                    mentalHealthValue += emotionValue * MENTAL_HEALTH_CHANGE_RATE;
+                }
+            }
             mentalHealthValue = Math.max(0d, mentalHealthValue); //保证精神健康值不超过下限
             mentalHealthValue = Math.min(100d, mentalHealthValue); //保证精神健康值不超过上限
 
             //情绪值自然归零（速度 0.1/s)
-            if (emotionValue < 0) {
-                double amplifier = 1d;
-                BlockPos respawnPos = player.getRespawnPosition();
-                if (respawnPos != null && Math.sqrt(respawnPos.distToCenterSqr(player.position())) <= 20) {
-                    amplifier *= 1.5d;
+            if (mentalIllness.mentalHealthId < 4) {
+                if (emotionValue < 0) {
+                    double amplifier = 1d;
+                    BlockPos respawnPos = player.getRespawnPosition();
+                    if (respawnPos != null && Math.sqrt(respawnPos.distToCenterSqr(player.position())) <= 20) {
+                        amplifier *= 1.5d;
+                    }
+                    if (player.level().getBrightness(LightLayer.SKY, player.blockPosition()) >= 13) {
+                        amplifier *= 1.5d;
+                    }
+                    emotionValue += EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d * amplifier;
+                    emotionValue = Math.min(0d, emotionValue); //保证情绪值归0
+                } else {
+                    emotionValue -= EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d;
+                    emotionValue = Math.max(0d, emotionValue); //保证情绪值归0
                 }
-                if (player.level().getBrightness(LightLayer.SKY, player.blockPosition()) >= 13) {
-                    amplifier *= 1.5d;
-                }
-                emotionValue += EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d * amplifier;
-                emotionValue = Math.min(0d, emotionValue); //保证情绪值归0
             }
-            else {
-                emotionValue -= EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d;
-                emotionValue = Math.max(0d, emotionValue); //保证情绪值归0
-            }
+
             //更新属性
             AttributeInstance movementSpeed = player.getAttribute(Attributes.MOVEMENT_SPEED);
             AttributeInstance attackDamage = player.getAttribute(Attributes.ATTACK_DAMAGE);
             AttributeInstance attackSpeed = player.getAttribute(Attributes.ATTACK_SPEED);
             if (attributeModifier != null) {
-                movementSpeed.removeModifier(attributeModifier.getId());
+                movementSpeed.removeModifier(speedModifier.getId());
                 attackDamage.removeModifier(attributeModifier.getId());
                 attackSpeed.removeModifier(attributeModifier.getId());
             }
             double emotionModifier = emotionValue * 1.5d / 100d;
-            if (combatCountdown > 0 && emotionModifier < 0) { //如果处于战斗状态且情绪比较负面，则清除情绪的负面加成
+            if (combatCountdown > 0 && emotionModifier < 0) { //如果处于战斗状态且情绪比较负面，则清除速度的负面加成
+                speedModifier = new AttributeModifier("depression:speed_modifier", 0, AttributeModifier.Operation.MULTIPLY_TOTAL);
+            }
+            else {
+                speedModifier = new AttributeModifier("depression:speed_modifier", emotionModifier - getMentalHealthModifier(), AttributeModifier.Operation.MULTIPLY_TOTAL);
+            }
+            if (emotionModifier < 0 && !mentalTrait.isBadEmotionLowerCombat) {
                 emotionModifier = 0;
             }
-            attributeModifier = new AttributeModifier("depression:emotion_modifier", emotionModifier - mentalIllness.mentalHealthLevel / 10d, AttributeModifier.Operation.MULTIPLY_TOTAL);
-            movementSpeed.addTransientModifier(attributeModifier);
+            if (emotionModifier > 0 && !mentalTrait.isGoodEmotionHigherCombat) {
+                emotionModifier = 0;
+            }
+            attributeModifier = new AttributeModifier("depression:emotion_modifier", emotionModifier - getMentalHealthModifier(), AttributeModifier.Operation.MULTIPLY_TOTAL);
+            movementSpeed.addTransientModifier(speedModifier);
             attackDamage.addTransientModifier(attributeModifier);
             attackSpeed.addTransientModifier(attributeModifier);
             MentalStatusPacket.sendToPlayer(player, this);
@@ -218,6 +254,20 @@ public class MentalStatus {
             ptsdManager.tick(player);
         }
         mentalIllness.tick(player);
+    }
+
+    private double getMentalHealthModifier() {
+        if (mentalIllness.mentalHealthId < 4) {
+            return mentalIllness.mentalHealthId / 10d;
+        }
+        else {
+            if (isMania()) {
+                return 0;
+            }
+            else {
+                return 0.3d;
+            }
+        }
     }
 
     public synchronized boolean viewDetect(Entity entity) {
@@ -245,6 +295,9 @@ public class MentalStatus {
     }
 
     public synchronized double mentalHeal(double value) {
+        if (getMentalHealthId() == 4) {
+            return 0;
+        }
         double toReturn = value * mentalHealthValue / 100d;
         emotionValue += toReturn; //情绪值 += 治疗值 * 精神健康值 / 100
         emotionValue = Math.min(20d, emotionValue); //保证情绪值不超过上限
@@ -263,6 +316,9 @@ public class MentalStatus {
     }
 
     public synchronized void mentalHurt(double value) {
+        if (getMentalHealthId() == 4) {
+            return;
+        }
         emotionValue -= value; //情绪值 -= 伤害值
         emotionValue = Math.max(-20d, emotionValue); //保证情绪值不超过下限
     }
@@ -278,7 +334,7 @@ public class MentalStatus {
         Level level = player.level();
         BlockPos pos = player.blockPosition();
         int brightness = Math.max(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));
-        if (brightness <= 7) {
+        if (brightness <= 7 && mentalTrait.isDarknessAffectEmotion) {
             damage *= 1.3d + (7d - brightness) / 7d * 0.2d;
         }
         if (PTSDTimeBuffer.containsKey(string)) { //如果缓冲区中已经存在PTSD，则更新PTSD缓冲值
@@ -292,7 +348,7 @@ public class MentalStatus {
         else {
             Double PTSDValue = PTSD.get(string);
             if (PTSDValue != null) { //如果此前有过PTSD且缓冲区没有，则计算为犯了PTSD，PTSD影响情绪
-                emotionValue -= PTSDValue * PTSD_DAMAGE_RATE; //情绪值 -= PTSD值原量 * 0.5
+                emotionValue -= PTSDValue * PTSD_DAMAGE_RATE; //情绪值 -= PTSD值原量 * 0.25
                 emotionValue = Math.max(-20d, emotionValue); //保证情绪值不超过下限
             }
             PTSDTimeBuffer.put(string, tickCount); //加入PTSD时刻缓冲区
@@ -383,7 +439,20 @@ public class MentalStatus {
         }
     }
 
+    public boolean isMania() {
+        return mentalIllness.isMania;
+    }
+
+    public int getMentalHealthId() {
+        return mentalIllness.mentalHealthId;
+    }
+
+
     public void readNbt(CompoundTag tag) {
+        //读取精神特质
+        if (tag.contains("mental_trait")) {
+            mentalTrait = MentalTrait.mentalTraits.getOrDefault(tag.getString("mental_trait"), new MentalTrait("normal"));
+        }
         //读取无聊值
         CompoundTag boredomTag = tag.getCompound("boredom");
         for (String key : boredomTag.getAllKeys()) {
@@ -432,6 +501,10 @@ public class MentalStatus {
     }
 
     public void writeNbt(CompoundTag tag) {
+        //写入精神特质
+        if (mentalTrait != null) {
+            tag.putString("mental_trait", mentalTrait.id);
+        }
         //写入无聊值
         CompoundTag boredomTag = new CompoundTag();
         for (Map.Entry<String, Integer> entry : boredom.entrySet()) {
@@ -487,7 +560,7 @@ public class MentalStatus {
             instance = new MentalStatus(serverPlayer);
             Registry.mentalStatus.put(uuid, instance);
         } else if(!(player instanceof ServerPlayer)) {
-            throw new RuntimeException("FUCK OFF, U not a ServerPlayer");
+            throw new RuntimeException("You are not a ServerPlayer");
         }
         return instance;
     }

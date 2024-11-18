@@ -2,6 +2,7 @@ package net.depression.mixin;
 
 import net.depression.effect.ModEffects;
 import net.depression.item.MedicineItem;
+import net.depression.mental.MentalIllness;
 import net.depression.mental.MentalStatus;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
@@ -60,7 +61,7 @@ public abstract class PlayerMixin {
         MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         Boolean isInsomnia = mentalStatus.mentalIllness.isInsomnia;
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
-        if (!isSleepy && isInsomnia != null && isInsomnia) { //如果失眠且没有困倦buff，则直接返回，不进行睡眠治疗
+        if ((!isSleepy && isInsomnia != null && isInsomnia) || mentalStatus.isMania()) { //如果失眠且没有困倦buff（或处于躁狂状态），则直接返回，不进行睡眠治疗
             return;
         }
         if (isSleepy) {
@@ -85,7 +86,8 @@ public abstract class PlayerMixin {
         StatManager stat = Registry.statManager.get(player.getUUID());
         stat.hasAte = true;
         MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
-        if (mentalStatus.mentalIllness.mentalHealthLevel == 3 && !(itemStack.getItem() instanceof MedicineItem)) { //如果是重度抑郁症患者吃了非药物食物
+        MentalIllness mentalIllness = mentalStatus.mentalIllness;
+        if (mentalIllness.mentalHealthId >= 3 && !mentalIllness.isMania && !(itemStack.getItem() instanceof MedicineItem)) { //如果是重度抑郁症患者吃了非药物食物
             player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
         }
         FoodProperties foodProperties = itemStack.getItem().getFoodProperties();
@@ -187,7 +189,8 @@ public abstract class PlayerMixin {
         UUID uuid = player.getUUID();
         MentalStatus mentalStatus = Registry.mentalStatus.get(uuid);
         if (mentalStatus == null) {
-            return;
+            mentalStatus = new MentalStatus((ServerPlayer) player);
+            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
         }
 
         mentalStatus.writeNbt(tag);

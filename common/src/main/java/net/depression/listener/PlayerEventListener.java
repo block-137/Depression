@@ -1,6 +1,7 @@
 package net.depression.listener;
 
 import dev.architectury.event.EventResult;
+import net.depression.Depression;
 import net.depression.mental.MentalStatus;
 import net.depression.server.Registry;
 import net.minecraft.advancements.Advancement;
@@ -14,7 +15,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 
 public class PlayerEventListener {
-
     public static void onPlayerQuit(ServerPlayer player) { //如果玩家退出 那么将玩家加入退出玩家列表
         Registry.quitPlayers.add(player.getUUID());
     }

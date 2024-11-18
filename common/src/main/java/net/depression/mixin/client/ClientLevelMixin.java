@@ -2,21 +2,30 @@ package net.depression.mixin.client;
 
 import com.mojang.datafixers.util.Pair;
 import net.depression.Depression;
+import net.depression.client.ClientMentalStatus;
 import net.depression.client.ClientPTSDManager;
 import net.depression.client.DepressionClient;
 import net.depression.mental.PTSDManager;
+import net.depression.network.MentalTraitPacket;
 import net.depression.network.PlaySoundPacket;
+import net.depression.screen.MentalTraitInfoScreen;
+import net.depression.screen.MentalTraitSelectionScreen;
 import net.depression.sound.ModSounds;
 import net.depression.util.TempValues;
+import net.minecraft.client.ClientRecipeBook;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.StatsCounter;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.scores.Scoreboard;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -30,8 +39,20 @@ import java.util.Date;
 
 @Mixin(ClientLevel.class)
 public abstract class ClientLevelMixin {
+    @Unique
+    private MentalTraitSelectionScreen selectionScreen;
     @Inject(method = "tick", at = @At("HEAD"))
     private void tick(CallbackInfo info) {
+        if (!ClientMentalStatus.isMentalTraitSelected) {
+            Minecraft minecraft = Minecraft.getInstance();
+            if (selectionScreen == null) {
+                selectionScreen = new MentalTraitSelectionScreen();
+            }
+            if (minecraft.screen != selectionScreen && !(minecraft.screen instanceof MentalTraitInfoScreen)) {
+                minecraft.setScreen(selectionScreen);
+            }
+        }
+
         ClientPTSDManager ptsdManager = DepressionClient.clientMentalStatus.ptsdManager;
         Player player = Minecraft.getInstance().player;
         long curTick = ((ClientLevel) (Object) this).getGameTime();
