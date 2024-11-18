@@ -56,7 +56,7 @@ public class Registry {
         String id = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset).toString();
         UUID uuid = packetContext.getPlayer().getUUID();
         MentalStatus mentalStatus = Registry.mentalStatus.get(uuid);
-        mentalStatus.mentalTrait = MentalTrait.byId(id);
+        mentalStatus.loadMentalTrait(MentalTrait.byId(id));
         if (pendingChunkMaps.containsKey(uuid)) {
             pendingChunkMaps.get(uuid).move(pendingPlayers.get(uuid));
             pendingChunkMaps.remove(uuid);
