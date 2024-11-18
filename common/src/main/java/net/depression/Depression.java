@@ -8,6 +8,7 @@ import dev.architectury.event.events.common.PlayerEvent;
 import dev.architectury.networking.NetworkManager;
 import net.depression.block.ModBlocks;
 import net.depression.block.entity.ModBannerPatterns;
+import net.depression.config.ServerConfig;
 import net.depression.effect.ModEffects;
 import net.depression.item.ModCreativeTabs;
 import net.depression.item.ModItems;
@@ -17,6 +18,7 @@ import net.depression.listener.EntityEventListener;
 import net.depression.listener.PlayerEventListener;
 import net.depression.mental.PTSDManager;
 import net.depression.network.DiaryUpdatePacket;
+import net.depression.network.MentalTraitPacket;
 import net.depression.network.PlaySoundPacket;
 import net.depression.server.Registry;
 import net.depression.sound.ModSounds;
@@ -25,7 +27,7 @@ import org.slf4j.Logger;
 
 public final class Depression {
     public static final String MOD_ID = "depression";
-    public static final String MOD_VERSION = "0.1.3";
+    public static final String MOD_VERSION = "0.1.4";
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
@@ -39,6 +41,8 @@ public final class Depression {
         VillageAdditions.register();
 
         NetworkManager.registerReceiver(NetworkManager.Side.C2S,
+                MentalTraitPacket.MENTAL_TRAIT_PACKET, Registry::receiveMentalTraitPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.C2S,
                 DiaryUpdatePacket.DIARY_UPDATE_PACKET, Registry::receiveDiaryUpdatePacket);
         NetworkManager.registerReceiver(NetworkManager.Side.C2S,
                 PlaySoundPacket.PLAY_SOUND_PACKET, PTSDManager::receivePlaySoundPacket);
@@ -51,5 +55,6 @@ public final class Depression {
         BlockEvent.PLACE.register(BlockEventListener::onBlockPlace);
         BlockEvent.BREAK.register(BlockEventListener::onBlockBreak);
         EntityEvent.LIVING_DEATH.register(EntityEventListener::onEntityDeath);
+        ServerConfig.load();
     }
 }

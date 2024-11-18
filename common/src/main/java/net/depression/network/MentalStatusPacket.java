@@ -15,9 +15,11 @@ public class MentalStatusPacket {
         FriendlyByteBuf emotionBuf = new FriendlyByteBuf(Unpooled.buffer());
         emotionBuf.writeDouble(mentalStatus.emotionValue);
         emotionBuf.writeBoolean(mentalStatus.combatCountdown > 0); //是否处于战斗状态
-        FriendlyByteBuf depressionBuf = new FriendlyByteBuf(Unpooled.buffer());
-        depressionBuf.writeDouble(mentalStatus.mentalHealthValue);
+        FriendlyByteBuf healthBuf = new FriendlyByteBuf(Unpooled.buffer());
+        healthBuf.writeDouble(mentalStatus.mentalHealthValue);
+        healthBuf.writeInt(mentalStatus.getMentalHealthId());
         NetworkManager.sendToPlayer(player, EMOTION_PACKET, emotionBuf);
-        NetworkManager.sendToPlayer(player, MENTAL_HEALTH_PACKET, depressionBuf);
+        NetworkManager.sendToPlayer(player, MENTAL_HEALTH_PACKET, healthBuf);
     }
+
 }

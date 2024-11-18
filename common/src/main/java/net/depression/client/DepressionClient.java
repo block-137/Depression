@@ -4,6 +4,7 @@ import dev.architectury.event.events.client.ClientGuiEvent;
 import dev.architectury.event.events.client.ClientLifecycleEvent;
 import dev.architectury.event.events.client.ClientRawInputEvent;
 import dev.architectury.networking.NetworkManager;
+import net.depression.config.ClientConfig;
 import net.depression.listener.client.ClientLifecycleEventListener;
 import net.depression.listener.client.ClientRawInputEventListener;
 import net.depression.network.*;
@@ -16,6 +17,8 @@ public class DepressionClient {
                 MentalStatusPacket.EMOTION_PACKET, clientMentalStatus::receiveEmotionPacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 MentalStatusPacket.MENTAL_HEALTH_PACKET, clientMentalStatus::receiveMentalHealthPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                ActionbarHintPacket.BIPOLAR_PACKET, clientActionbarHint::receiveBipolarPacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 ActionbarHintPacket.NEARBY_BLOCK_HEAL_PACKET, clientActionbarHint::receiveNearbyBlockHealPacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
@@ -40,10 +43,14 @@ public class DepressionClient {
                 DiaryUpdatePacket.DIARY_UPDATE_PACKET, ClientDiaryUpdater::receiveDiaryUpdatePacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 PTSDOnsetPacket.PHONISM_PACKET, ClientPTSDManager::receivePhotismPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                MentalTraitPacket.MENTAL_TRAIT_PACKET, ClientMentalStatus::receiveMentalTraitPacket);
 
         ClientGuiEvent.RENDER_HUD.register(clientMentalStatus::renderHud);
         ClientLifecycleEvent.CLIENT_LEVEL_LOAD.register(ClientLifecycleEventListener::onClientLevelLoad);
         ClientRawInputEvent.MOUSE_SCROLLED.register(ClientRawInputEventListener::onMouseScrolled);
         ClientRawInputEvent.MOUSE_CLICKED_PRE.register(ClientRawInputEventListener::onMouseClicked);
+
+        ClientConfig.load();
     }
 }

@@ -50,6 +50,17 @@ public class ClientActionbarHint {
         gui.setOverlayMessage(Component.translatable(string), false);
     }
 
+    public void receiveBipolarPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        boolean isMania = buf.readBoolean();
+        Gui gui = Minecraft.getInstance().gui;
+        if (isMania) {
+            gui.setOverlayMessage(Component.translatable("message.depression.bipolar_mania_hint"), false);
+        }
+        else {
+            gui.setOverlayMessage(Component.translatable("message.depression.bipolar_depression_hint"), false);
+        }
+    }
+
     public void receiveNearbyBlockHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
         if (Minecraft.getInstance().level == null) {
             return;
