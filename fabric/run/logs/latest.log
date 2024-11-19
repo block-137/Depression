@@ -1,5 +1,5 @@
-[18:39:20] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.4 with Fabric Loader 0.15.11
-[18:39:20] [main/INFO] (FabricLoader) Loading 59 mods:
+[19:49:51] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.4 with Fabric Loader 0.15.11
+[19:49:52] [main/INFO] (FabricLoader) Loading 59 mods:
 	- architectury 8.2.91
 	- depression 0.1.4
 	- fabric-api 0.87.2+1.19.4
@@ -55,19 +55,19 @@
 	- fabric-transfer-api-v1 3.3.1+602c17c7f4
 	- fabric-transitive-access-wideners-v1 3.3.0+1b5f819af4
 	- fabricloader 0.15.11
-	- generated_acc9244 1.0.0
+	- generated_74f26d9 1.0.0
 	- java 17
 	- minecraft 1.19.4
 	- mixinextras 0.3.5
-[18:39:20] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[18:39:20] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[18:39:20] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[18:39:20] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[18:39:21] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
-[18:39:21] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
-[18:39:24] [Datafixer Bootstrap/INFO] (Minecraft) 180 Datafixer optimizations took 75 milliseconds
-[18:39:26] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[18:39:26] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[19:49:52] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/13475/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[19:49:53] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[19:49:53] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[19:49:53] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[19:49:54] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[19:49:57] [main/WARN] (PerfmonDisabled) Invalid registry value type detected for PerfOS counters. Should be REG_DWORD. Ignoring: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PerfOS\Performance\Disable Performance Counters.
+[19:50:00] [Datafixer Bootstrap/INFO] (Minecraft) 180 Datafixer optimizations took 96 milliseconds
+[19:50:02] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[19:50:02] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-3.18.38.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-3.18.38.jar:?]
@@ -86,112 +86,82 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-3.18.38.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-3.18.38.jar:?]
 	... 10 more
-[18:39:26] [Render thread/INFO] (Minecraft) Setting user: Player321
-[18:39:26] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:mental_trait_packet
-[18:39:26] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:diary_update_packet
-[18:39:26] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:play_sound_packet
-[18:39:26] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:emotion_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_health_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:bipolar_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:nearby_block_heal_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:break_block_heal_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:kill_entity_heal_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_form_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_disperse_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_remission_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:insomnia_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_fatigue_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:close_eye_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_onset_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:diary_update_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:phonism_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_trait_packet
-[18:39:27] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id architectury:spawn_entity_packet
-[18:39:27] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
-[18:39:28] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-loot-tables-v1, fabric-client-tags-api-v1, fabric-content-registries-v0, fabric-mining-level-api-v1, fabric-loot-api-v2, fabric-renderer-indigo, fabric-recipe-api-v1, fabric-dimensions-v1, fabric-crash-report-info-v1, fabric-models-v0, fabric-game-rule-api-v1, fabricloader, fabric-model-loading-api-v1, fabric-transfer-api-v1, fabric-convention-tags-v1, fabric-key-binding-api-v1, fabric-lifecycle-events-v1, fabric-screen-api-v1, fabric-events-interaction-v0, fabric-resource-conditions-api-v1, generated_acc9244, fabric-block-api-v1, fabric-containers-v0, fabric-rendering-data-attachment-v1, fabric-resource-loader-v0, fabric-api, fabric-registry-sync-v0, fabric-biome-api-v1, fabric-renderer-registries-v1, fabric-api-lookup-api-v1, fabric-events-lifecycle-v0, fabric-networking-v0, fabric-object-builder-api-v1, fabric-transitive-access-wideners-v1, fabric-keybindings-v0, fabric-item-api-v1, fabric-item-group-api-v1, fabric-networking-api-v1, depression, fabric-data-generation-api-v1, fabric-entity-events-v1, fabric-renderer-api-v1, fabric-message-api-v1, fabric-gametest-api-v1, fabric-sound-api-v1, fabric-screen-handler-api-v1, fabric-command-api-v2, fabric-commands-v0, fabric-rendering-v1, fabric-blockrenderlayer-v1, fabric-particles-v1, fabric-command-api-v1, fabric-rendering-fluids-v1, fabric-rendering-v0, fabric-api-base)
-[18:39:28] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brushing
-[18:39:28] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brush_sand_completed
-[18:39:28] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[18:39:28] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[18:39:28] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:music.overworld.cherry_grove
-[18:39:29] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on ÑïÉùÆ÷ (Realtek(R) Audio)
-[18:39:29] [Render thread/INFO] (Minecraft) Sound engine started
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 64x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18:39:29] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[18:39:29] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[18:39:32] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[18:39:37] [Render thread/WARN] (Minecraft) Adding depression:sleepiness to saved/remote registry.
-[18:39:37] [Render thread/WARN] (Minecraft) Adding depression:anti_mania to saved/remote registry.
-[18:39:37] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
-[18:39:37] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[18:39:37] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
-[18:39:37] [Render thread/WARN] (Minecraft) Failed to load profile cache D:\MinecraftModProject\Depression1.19.4\fabric\run\usercache.json
-com.google.gson.JsonSyntaxException: Expected a com.google.gson.JsonArray but was com.google.gson.JsonPrimitive; at path $
-	at com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1010) ~[gson-2.10.jar:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1214) ~[gson-2.10.jar:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1124) ~[gson-2.10.jar:?]
-	at com.google.gson.Gson.fromJson(Gson.java:1062) ~[gson-2.10.jar:?]
-	at net.minecraft.server.players.GameProfileCache.load(GameProfileCache.java:202) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.server.players.GameProfileCache.<init>(GameProfileCache.java:68) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.server.Services.create(Services.java:17) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.Minecraft.doWorldLoad(Minecraft.java:2090) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.method_43326(WorldOpenFlows.java:229) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
-	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
-	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:102) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at java.util.concurrent.CompletableFuture.uniAcceptNow(CompletableFuture.java:754) ~[?:?]
-	at java.util.concurrent.CompletableFuture.uniAcceptStage(CompletableFuture.java:735) ~[?:?]
-	at java.util.concurrent.CompletableFuture.thenAcceptAsync(CompletableFuture.java:2191) ~[?:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.doLoadLevel(WorldOpenFlows.java:227) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldOpenFlows.loadLevel(WorldOpenFlows.java:62) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.loadWorld(WorldSelectionList.java:513) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.joinWorld(WorldSelectionList.java:420) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.screens.worldselection.WorldSelectionList$WorldListEntry.mouseClicked(WorldSelectionList.java:356) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.components.AbstractSelectionList.mouseClicked(AbstractSelectionList.java:328) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.components.events.ContainerEventHandler.mouseClicked(ContainerEventHandler.java:38) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.MouseHandler.method_1611(MouseHandler.java:98) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.gui.screens.Screen.wrapScreenError(Screen.java:540) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.MouseHandler.onPress(MouseHandler.java:98) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.MouseHandler.method_22686(MouseHandler.java:169) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.util.thread.BlockableEventLoop.execute(BlockableEventLoop.java:102) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.MouseHandler.method_22684(MouseHandler.java:169) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43) ~[lwjgl-glfw-3.3.1.jar:build 7]
-	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.1.jar:build 7]
-	at org.lwjgl.glfw.GLFW.glfwWaitEventsTimeout(GLFW.java:3474) ~[lwjgl-glfw-3.3.1.jar:build 7]
-	at com.mojang.blaze3d.systems.RenderSystem.limitDisplayFPS(RenderSystem.java:234) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1241) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.Minecraft.run(Minecraft.java:801) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:237) ~[minecraft-merged-774d94d0f0-1.19.4-loom.mappings.1_19_4.layered+hash.40359-v2.jar:?]
-	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:470) ~[fabric-loader-0.15.11.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.15.11.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.15.11.jar:?]
-	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-	at dev.architectury.transformer.TransformerRuntime.main(TransformerRuntime.java:220) ~[architectury-transformer-5.2.87-runtime.jar:?]
-[18:39:37] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 945.7 ¦Ìs
-[18:39:37] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.4
-[18:39:37] [Server thread/INFO] (Minecraft) Generating keypair
-[18:39:38] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[18:39:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:39:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:39:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:39:40] [Render thread/INFO] (Minecraft) Preparing spawn area: 2%
-[18:39:40] [Render thread/INFO] (Minecraft) Time elapsed: 1814 ms
-[18:39:40] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[18:39:40] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[18:39:41] [Server thread/INFO] (Minecraft) Player321[local:E:192a9e3c] logged in with entity id 244 at (78.5, 75.0, -25.5)
-[18:39:41] [Server thread/INFO] (Minecraft) Player321 joined the game
-[18:39:41] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[18:39:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:39:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:39:41] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19:50:02] [Render thread/INFO] (Minecraft) Setting user: Player814
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:mental_trait_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:diary_update_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering C2S receiver with id depression:play_sound_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:emotion_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_health_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:bipolar_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:nearby_block_heal_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:break_block_heal_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:kill_entity_heal_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_form_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_disperse_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_remission_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:insomnia_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_fatigue_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:close_eye_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:ptsd_onset_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:diary_update_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:phonism_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id depression:mental_trait_packet
+[19:50:03] [Render thread/INFO] (NetworkManagerImpl) Registering S2C receiver with id architectury:spawn_entity_packet
+[19:50:03] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[19:50:03] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[19:50:04] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-containers-v0, fabric-mining-level-api-v1, fabricloader, fabric-rendering-v1, fabric-convention-tags-v1, fabric-block-api-v1, fabric-rendering-data-attachment-v1, fabric-item-group-api-v1, fabric-screen-api-v1, fabric-biome-api-v1, fabric-rendering-fluids-v1, fabric-particles-v1, fabric-sound-api-v1, fabric-entity-events-v1, fabric-transfer-api-v1, fabric-loot-api-v2, depression, fabric-api-base, fabric-events-interaction-v0, fabric-data-generation-api-v1, fabric-screen-handler-api-v1, fabric-api-lookup-api-v1, fabric-events-lifecycle-v0, fabric-object-builder-api-v1, fabric-resource-conditions-api-v1, fabric-resource-loader-v0, fabric-client-tags-api-v1, fabric-transitive-access-wideners-v1, fabric-game-rule-api-v1, fabric-registry-sync-v0, fabric-blockrenderlayer-v1, fabric-networking-v0, fabric-key-binding-api-v1, fabric-api, fabric-rendering-v0, fabric-keybindings-v0, generated_74f26d9, fabric-models-v0, fabric-item-api-v1, fabric-command-api-v2, fabric-model-loading-api-v1, fabric-recipe-api-v1, fabric-loot-tables-v1, fabric-dimensions-v1, fabric-renderer-indigo, fabric-renderer-registries-v1, fabric-crash-report-info-v1, fabric-command-api-v1, fabric-renderer-api-v1, fabric-content-registries-v0, fabric-gametest-api-v1, fabric-networking-api-v1, fabric-commands-v0, fabric-lifecycle-events-v1, fabric-message-api-v1)
+[19:50:04] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[19:50:05] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brushing
+[19:50:05] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.brush.brush_sand_completed
+[19:50:05] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[19:50:05] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[19:50:05] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:music.overworld.cherry_grove
+[19:50:05] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on ÑïÉùÆ÷ (Realtek(R) Audio)
+[19:50:05] [Render thread/INFO] (Minecraft) Sound engine started
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 64x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[19:50:05] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[19:50:05] [Render thread/INFO] (Minecraft) Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[19:50:24] [Render thread/INFO] (FabricRegistrySync) [fabric-registry-sync] Loaded registry data [file 1/4]
+[19:50:24] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[19:50:24] [Render thread/INFO] (Minecraft) Loaded 1179 advancements
+[19:50:24] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 63 new biomes in 1.009 ms
+[19:50:24] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.19.4
+[19:50:24] [Server thread/INFO] (Minecraft) Generating keypair
+[19:50:25] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[19:50:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[19:50:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[19:50:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[19:50:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[19:50:27] [Render thread/INFO] (Minecraft) Time elapsed: 1915 ms
+[19:50:27] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[19:50:27] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[19:50:28] [Server thread/INFO] (Minecraft) Player814[local:E:0fe3a74e] logged in with entity id 244 at (78.5, 75.0, -25.5)
+[19:50:28] [Server thread/INFO] (Minecraft) Player814 joined the game
+[19:50:28] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[19:50:28] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19:50:28] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19:50:28] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19:50:30] [Render thread/INFO] (Minecraft) Stopping!
+[19:50:30] [Server thread/INFO] (Minecraft) Player814 lost connection: Disconnected
+[19:50:30] [Server thread/INFO] (Minecraft) Player814 left the game
+[19:50:30] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[19:50:30] [Server thread/INFO] (Minecraft) Stopping server
+[19:50:30] [Server thread/INFO] (Minecraft) Saving players
+[19:50:30] [Server thread/INFO] (Minecraft) Saving worlds
+[19:50:30] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[19:50:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[19:50:31] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[19:50:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World (1)): All chunks are saved
+[19:50:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:50:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:50:31] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved

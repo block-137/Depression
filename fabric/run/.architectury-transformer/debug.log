@@ -113,15 +113,15 @@
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-resource-loader-v0\0.11.7+8400c67ef4\fabric-resource-loader-v0-0.11.7+8400c67ef4.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-sound-api-v1\1.0.11+10ce000ff4\fabric-sound-api-v1-1.0.11+10ce000ff4.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1\3.3.0+1b5f819af4\fabric-transitive-access-wideners-v1-3.3.0+1b5f819af4.jar
-[Architectury Transformer] Read classpath in 815.4 ms
+[Architectury Transformer] Read classpath in 1.555 s
 [Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar
-[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to C:\Users\13475\AppData\Local\Temp\9385313572672683067.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@6193932a
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@647fd8ce
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@159f197
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@78aab498
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@5dd6264
-[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to C:\Users\13475\AppData\Local\Temp\9385313572672683067.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to C:\Users\13475\AppData\Local\Temp\10556032956488061394.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RuntimeMixinRefmapDetector@2bbf180e
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.GenerateFakeFabricMod@163e4e87
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@56de5251
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@419c5f1a
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@12b0404f
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to C:\Users\13475\AppData\Local\Temp\10556032956488061394.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock with maxs=true frames=true
@@ -205,236 +205,232 @@
 [Architectury Transformer DEBUG] Writing net/depression/world/VillageAdditions with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /depression-common-common-refmap.json is a mixin config.
 [Architectury Transformer DEBUG] Checking whether /depression.mixins.json is a mixin config.
-[Architectury Transformer DEBUG] Closed File Systems for C:\Users\13475\AppData\Local\Temp\9385313572672683067.jar
-[Architectury Transformer] Listening at D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar
-[Architectury Transformer DEBUG] Temporary jar [C:\Users\13475\AppData\Local\Temp\9385313572672683067.jar] contains packages: net.depression.network, net.depression.item, net.depression.client, net.depression.item.diary, net.depression, net.depression.util, net.depression.mixin.symptom, net.depression.server, net.depression.client.screen, net.depression.mixin.emotion, net.depression.block, net.depression.listener, net.depression.screen, net.depression.sound, net.depression.mental, net.depression.mixin.client, net.depression.listener.client, net.depression.config, net.depression.mixin, net.depression.world, net.depression.tag, net.depression.block.entity, net.depression.effect
+[Architectury Transformer DEBUG] Closed File Systems for C:\Users\13475\AppData\Local\Temp\10556032956488061394.jar
+[Architectury Transformer DEBUG] Temporary jar [C:\Users\13475\AppData\Local\Temp\10556032956488061394.jar] contains packages: net.depression.network, net.depression.item, net.depression.client, net.depression.item.diary, net.depression, net.depression.util, net.depression.mixin.symptom, net.depression.server, net.depression.client.screen, net.depression.mixin.emotion, net.depression.block, net.depression.listener, net.depression.screen, net.depression.sound, net.depression.mental, net.depression.mixin.client, net.depression.listener.client, net.depression.config, net.depression.mixin, net.depression.world, net.depression.tag, net.depression.block.entity, net.depression.effect
 [Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar
+[Architectury Transformer] Listening at D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar
 [Architectury Transformer DEBUG] Classpath entry [D:\MinecraftModProject\Depression1.19.4\fabric\build\resources\main] contains packages: 
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/MobAccess.class to net/depression/mixin/MobAccess.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/MobAccess in 594.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/MobAccess in 643.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/StructureTemplatePoolAccess.class to net/depression/mixin/StructureTemplatePoolAccess.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/StructureTemplatePoolAccess in 382.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/StructureTemplatePoolAccess in 351.9 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/Depression.class to net/depression/Depression.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/Depression with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/Depression in 746.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/Depression in 544.2 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/entity/ModBannerPatterns.class to net/depression/block/entity/ModBannerPatterns.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/entity/ModBannerPatterns with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/entity/ModBannerPatterns in 228.4 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/block/entity/ModBannerPatterns in 188.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/ModEffects.class to net/depression/effect/ModEffects.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/effect/ModEffects in 357.4 ¦Ìs
-[Architectury Transformer DEBUG] Transforming from net/depression/effect/AntiManiaEffect.class to net/depression/effect/AntiManiaEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/effect/AntiManiaEffect with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiManiaEffect in 330.1 ¦Ìs
-[Architectury Transformer DEBUG] Transforming from net/depression/effect/AntiDepressionEffect.class to net/depression/effect/AntiDepressionEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiDepressionEffect in 183.8 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/effect/ModEffects in 275.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/effect/SleepinessEffect.class to net/depression/effect/SleepinessEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/effect/SleepinessEffect in 154.0 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/effect/SleepinessEffect in 112.8 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/effect/AntiManiaEffect.class to net/depression/effect/AntiManiaEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/effect/AntiManiaEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiManiaEffect in 251.7 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/effect/AntiDepressionEffect.class to net/depression/effect/AntiDepressionEffect.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/effect/AntiDepressionEffect in 130.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ModBlocks.class to net/depression/block/ModBlocks.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/ModBlocks in 317.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/block/ModBlocks in 250.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ComputerBlock.class to net/depression/block/ComputerBlock.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock in 407.4 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock in 420.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/item/ModItems.class to net/depression/item/ModItems.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/ModItems in 367.3 ¦Ìs
-[Architectury Transformer DEBUG] Transforming from net/depression/item/MentalHealthScaleItem.class to net/depression/item/MentalHealthScaleItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/MentalHealthScaleItem in 213.4 ¦Ìs
-[Architectury Transformer DEBUG] Transforming from net/depression/item/DiaryItem.class to net/depression/item/DiaryItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/DiaryItem in 229.5 ¦Ìs
-[Architectury Transformer DEBUG] Transforming from net/depression/item/MedicineItem.class to net/depression/item/MedicineItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/MedicineItem in 369.7 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/item/ModItems in 312.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/item/AntiDepressantItem.class to net/depression/item/AntiDepressantItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/AntiDepressantItem in 116.0 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/item/AntiDepressantItem in 144.3 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/item/MedicineItem.class to net/depression/item/MedicineItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/item/MedicineItem in 559.3 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/item/MentalHealthScaleItem.class to net/depression/item/MentalHealthScaleItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/item/MentalHealthScaleItem in 250.1 ¦Ìs
+[Architectury Transformer DEBUG] Transforming from net/depression/item/DiaryItem.class to net/depression/item/DiaryItem.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
+[Architectury Transformer DEBUG] Found class transformer
+[Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Transformed net/depression/item/DiaryItem in 252.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/tag/ModBannerPatternTags.class to net/depression/tag/ModBannerPatternTags.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/tag/ModBannerPatternTags with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/tag/ModBannerPatternTags in 163.5 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/tag/ModBannerPatternTags in 144.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/item/ModCreativeTabs.class to net/depression/item/ModCreativeTabs.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/item/ModCreativeTabs in 188.0 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/item/ModCreativeTabs in 201.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/sound/ModSounds.class to net/depression/sound/ModSounds.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/sound/ModSounds with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/sound/ModSounds in 401.2 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/sound/ModSounds in 363.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/world/VillageAdditions.class to net/depression/world/VillageAdditions.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/world/VillageAdditions with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/world/VillageAdditions in 403.8 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/world/VillageAdditions in 529.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/MentalTraitPacket.class to net/depression/network/MentalTraitPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalTraitPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/MentalTraitPacket in 136.5 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/network/MentalTraitPacket in 158.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/server/Registry.class to net/depression/server/Registry.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/server/Registry with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/server/Registry in 420.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/server/Registry in 399.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/DiaryUpdatePacket.class to net/depression/network/DiaryUpdatePacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/DiaryUpdatePacket in 482.4 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/network/DiaryUpdatePacket in 558.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/PlaySoundPacket.class to net/depression/network/PlaySoundPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/PlaySoundPacket in 176.5 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/network/PlaySoundPacket in 172.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/PTSDManager.class to net/depression/mental/PTSDManager.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/PTSDManager in 1.001 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mental/PTSDManager in 990.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/CommandRegistrationListener.class to net/depression/listener/CommandRegistrationListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/CommandRegistrationListener in 873.7 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/listener/CommandRegistrationListener in 1.294 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/PlayerEventListener.class to net/depression/listener/PlayerEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/PlayerEventListener in 354.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/listener/PlayerEventListener in 350.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/BlockEventListener.class to net/depression/listener/BlockEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/BlockEventListener in 582.8 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/listener/BlockEventListener in 319.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/EntityEventListener.class to net/depression/listener/EntityEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/EntityEventListener in 342.4 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/listener/EntityEventListener in 383.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/config/ServerConfig.class to net/depression/config/ServerConfig.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/config/ServerConfig with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/config/ServerConfig in 2.440 ms
+[Architectury Transformer DEBUG] Transformed net/depression/config/ServerConfig in 2.618 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalStatus.class to net/depression/mental/MentalStatus.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalStatus in 1.793 ms
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalStatus in 1.651 ms
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalTrait.class to net/depression/mental/MentalTrait.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalTrait with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalTrait in 313.0 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalTrait in 427.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/DepressionClient.class to net/depression/client/DepressionClient.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/DepressionClient in 882.2 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/client/DepressionClient in 517.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientMentalStatus.class to net/depression/client/ClientMentalStatus.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalStatus in 548.8 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalStatus in 565.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientMentalIllness.class to net/depression/client/ClientMentalIllness.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalIllness in 429.4 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientMentalIllness in 392.5 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientPTSDManager.class to net/depression/client/ClientPTSDManager.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientPTSDManager in 614.5 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientPTSDManager in 498.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientActionbarHint.class to net/depression/client/ClientActionbarHint.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientActionbarHint in 404.6 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientActionbarHint in 456.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/MentalStatusPacket.class to net/depression/network/MentalStatusPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/MentalStatusPacket in 134.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/network/MentalStatusPacket in 138.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/ActionbarHintPacket.class to net/depression/network/ActionbarHintPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/ActionbarHintPacket in 220.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/network/ActionbarHintPacket in 226.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/CloseEyePacket.class to net/depression/network/CloseEyePacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/CloseEyePacket in 109.9 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/network/CloseEyePacket in 111.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/network/PTSDOnsetPacket.class to net/depression/network/PTSDOnsetPacket.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/network/PTSDOnsetPacket in 116.2 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/network/PTSDOnsetPacket in 151.2 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/client/ClientDiaryUpdater.class to net/depression/client/ClientDiaryUpdater.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/client/ClientDiaryUpdater in 353.4 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/client/ClientDiaryUpdater in 434.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/client/ClientLifecycleEventListener.class to net/depression/listener/client/ClientLifecycleEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientLifecycleEventListener in 241.2 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientLifecycleEventListener in 264.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/listener/client/ClientRawInputEventListener.class to net/depression/listener/client/ClientRawInputEventListener.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientRawInputEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientRawInputEventListener in 283.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/listener/client/ClientRawInputEventListener in 206.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/config/ClientConfig.class to net/depression/config/ClientConfig.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/config/ClientConfig with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/config/ClientConfig in 277.3 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/config/ClientConfig in 227.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/client/AbstractSliderButtonMixin.class to net/depression/mixin/client/AbstractSliderButtonMixin.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/AbstractSliderButtonMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/AbstractSliderButtonMixin in 316.3 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/AbstractSliderButtonMixin in 342.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mixin/client/FontAccess.class to net/depression/mixin/client/FontAccess.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/FontAccess in 242.2 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mixin/client/FontAccess in 261.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/block/ComputerBlock$1.class to net/depression/block/ComputerBlock$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock$1 in 454.0 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/block/ComputerBlock$1 in 451.8 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/util/TempValues.class to net/depression/util/TempValues.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/util/TempValues with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/util/TempValues in 302.9 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/util/TempValues in 281.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalIllness.class to net/depression/mental/MentalIllness.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness in 934.5 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness in 799.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalIllness$1.class to net/depression/mental/MentalIllness$1.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness$1 with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness$1 in 169.2 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllness$1 in 119.4 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/mental/MentalIllnessPool.class to net/depression/mental/MentalIllnessPool.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllnessPool with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllnessPool in 210.4 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/mental/MentalIllnessPool in 158.3 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/server/StatManager.class to net/depression/server/StatManager.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/server/StatManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/server/StatManager in 291.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/server/StatManager in 183.7 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/screen/MentalTraitSelectionScreen.class to net/depression/screen/MentalTraitSelectionScreen.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/screen/MentalTraitSelectionScreen in 610.5 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/screen/MentalTraitSelectionScreen in 492.0 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/screen/MentalTraitButton.class to net/depression/screen/MentalTraitButton.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/screen/MentalTraitButton in 577.3 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/screen/MentalTraitButton in 509.6 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/screen/MentalTraitInfoScreen.class to net/depression/screen/MentalTraitInfoScreen.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitInfoScreen with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/screen/MentalTraitInfoScreen in 446.6 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/screen/MentalTraitInfoScreen in 311.1 ¦Ìs
 [Architectury Transformer DEBUG] Transforming from net/depression/screen/VerticalSliderButton.class to net/depression/screen/VerticalSliderButton.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/screen/VerticalSliderButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/screen/VerticalSliderButton in 312.4 ¦Ìs
-[Architectury Transformer DEBUG] Transforming from net/depression/screen/TextButton.class to net/depression/screen/TextButton.class with 5 transformer(s) on dev.architectury.transformer.handler.TinyRemapperPreparedTransformerHandler
-[Architectury Transformer DEBUG] Found class transformer
-[Architectury Transformer DEBUG] Writing net/depression/screen/TextButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Transformed net/depression/screen/TextButton in 232.1 ¦Ìs
+[Architectury Transformer DEBUG] Transformed net/depression/screen/VerticalSliderButton in 201.5 ¦Ìs
