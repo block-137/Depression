@@ -58,7 +58,21 @@ public class MedicineItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
-        list.add(Component.translatable(loreTranslationKey).withStyle(ChatFormatting.GRAY));
+        String string = Component.translatable(loreTranslationKey).getString();
+        StringBuilder currentString = new StringBuilder();
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            if (c == '\n') {
+                list.add(Component.literal(currentString.toString()).withStyle(ChatFormatting.GRAY));
+                currentString = new StringBuilder();
+            }
+            else {
+                currentString.append(c);
+            }
+        }
+        if (!currentString.isEmpty()) {
+            list.add(Component.literal(currentString.toString()).withStyle(ChatFormatting.GRAY));
+        }
     }
 
     @Override
