@@ -1,5 +1,6 @@
 package net.depression.mental;
 
+import net.depression.effect.ModEffects;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
@@ -10,6 +11,7 @@ import net.minecraft.nbt.StringTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
@@ -191,7 +193,16 @@ public class MentalStatus {
             //处理精神健康值
             if (!mentalIllness.isMania) { //躁狂期间精神健康值不随情绪改变
                 if (emotionValue < 0) {
-                    mentalHealthValue += emotionValue * MENTAL_HEALTH_CHANGE_RATE * mentalTrait.mentalHurtMultiplier;
+                    if (mentalIllness.mentalHealthId == 4) {
+                        MobEffect antiDepression = ModEffects.ANTI_DEPRESSION.get();
+                        MobEffect antiMania = ModEffects.ANTI_MANIA.get();
+                        if (player.hasEffect(antiDepression) && player.hasEffect(antiMania) && player.getEffect(antiMania).getAmplifier() >= 2) {
+                            mentalHealthValue += emotionValue * MENTAL_HEALTH_CHANGE_RATE * mentalTrait.mentalHurtMultiplier / 4;
+                        }
+                    }
+                    else {
+                        mentalHealthValue += emotionValue * MENTAL_HEALTH_CHANGE_RATE * mentalTrait.mentalHurtMultiplier;
+                    }
                 }
                 else {
                     mentalHealthValue += emotionValue * MENTAL_HEALTH_CHANGE_RATE;

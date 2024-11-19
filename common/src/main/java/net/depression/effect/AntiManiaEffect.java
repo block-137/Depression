@@ -27,7 +27,7 @@ public class AntiManiaEffect extends MobEffect {
             int mentalHealthId = mentalStatus.mentalIllness.mentalHealthId;
             if (mentalHealthId == 4 && player.hasEffect(ModEffects.ANTI_DEPRESSION.get())) {
                 if (player.getEffect(ModEffects.ANTI_DEPRESSION.get()).getAmplifier() >= 2) {
-                    mentalStatus.mentalHealthValue += (amplifier + 1) * 0.01 * mentalStatus.mentalTrait.medicineEffectMultiplier;
+                    mentalStatus.mentalHealthValue += (amplifier + 1) * 0.05 * mentalStatus.mentalTrait.medicineEffectMultiplier;
                 }
             }
         }
