@@ -62,15 +62,16 @@ public class ServerConfig {
             overwrite = true;
         }
 
-
-        if (config.contains("version") || config.get("version") instanceof String) {
-            String fileVersion = config.get("version");
-            if (!Depression.MOD_VERSION.equals(fileVersion)) {
-                overwrite = true;
+        if (overwrite) {
+            try {
+                FileWriter writer = writeServerFile(file);
+                writer.close();
+                config = FileConfig.of(file);
+                config.load();
             }
-        }
-        else {
-            overwrite = true;
+            catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         MentalStatus.EMOTION_STABILIZE_RATE = readDouble(config, "emotion_stabilize_rate");
@@ -81,7 +82,6 @@ public class ServerConfig {
         MentalStatus.FOOD_HEAL_RATE = readDouble(config, "food_heal_rate");
         MentalStatus.IS_RANDOM_CHOOSE_TRAIT = config.get("random_choose_mental_trait");
 
-        config.save();
         config.close();
 
         //读取break-block-heal-value.toml
