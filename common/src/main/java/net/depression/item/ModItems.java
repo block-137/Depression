@@ -22,7 +22,7 @@ public class ModItems {
             () -> new AntiDepressantItem(1));
 
     public static final RegistrySupplier<Item> MDD_CAPSULE = ITEMS.register("mdd_capsule",
-            () -> new AntiDepressantItem(2));
+            () -> new AntiDepressantItem(2, "item.depression.mdd_capsule.desc"));
 
     public static final RegistrySupplier<Item> MANIA_TABLET = ITEMS.register("mania_tablet",
             () -> new MedicineItem(ModEffects.ANTI_MANIA.get(), 24000, 0, "item.depression.mania_tablet.desc"));
