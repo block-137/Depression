@@ -1,19 +1,17 @@
 package net.depression.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.depression.Depression;
-import net.depression.mixin.client.AbstractSliderButtonMixin;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.AbstractSliderButton;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
-
-import java.awt.*;
 
 public class VerticalSliderButton extends AbstractSliderButton {
-    private static final ResourceLocation SLIDER_LOCATION = new ResourceLocation("textures/gui/slider.png");
+    public static final ResourceLocation SCROLL_BAR_BASE = new ResourceLocation(Depression.MOD_ID, "textures/mental_trait/scroll_bar_base.png");
+    public static final ResourceLocation SCROLL_BAR = new ResourceLocation(Depression.MOD_ID, "textures/mental_trait/scroll_bar.png");
+    public static final ResourceLocation SCROLL_BAR_HOVER = new ResourceLocation(Depression.MOD_ID, "textures/mental_trait/scroll_bar_hover.png");
     private int pixelValue; //滑块滑动的像素值
     private int screenValue; //滑块滑动的屏幕值
     private final int maxScreenValue;
@@ -36,18 +34,13 @@ public class VerticalSliderButton extends AbstractSliderButton {
         return screenValue;
     }
     @Override
-    public void renderWidget(GuiGraphics guiGraphics, int i, int j, float f) {
-        Minecraft minecraft = Minecraft.getInstance();
-        guiGraphics.setColor(1.0F, 1.0F, 1.0F, this.alpha);
-        RenderSystem.enableBlend();
-        RenderSystem.defaultBlendFunc();
-        RenderSystem.enableDepthTest();
-        AbstractSliderButtonMixin sliderButtonMixin = (AbstractSliderButtonMixin) this;
-        guiGraphics.blitNineSliced(SLIDER_LOCATION, this.getX(), this.getY(), this.getWidth(), this.getHeight(), 20, 4, 200, 20, 0, sliderButtonMixin.invokeGetTextureY());
-        guiGraphics.blitNineSliced(SLIDER_LOCATION, this.getX() , this.getY() + pixelValue, 8, sliderHeight, 20, 4, 200, 20, 0, sliderButtonMixin.invokeGetHandleTextureY());
-        guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
-        int k = this.active ? 16777215 : 10526880;
-        this.renderScrollingString(guiGraphics, minecraft.font, 2, k | Mth.ceil(this.alpha * 255.0F) << 24);
+    public void renderBg(PoseStack poseStack, Minecraft minecraft, int i, int j) {
+        RenderSystem.setShaderTexture(0, SCROLL_BAR_BASE);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        blit(poseStack, this.x , this.y, 0,0, 0, this.width, this.height, 8, 256);
+        //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
+        RenderSystem.setShaderTexture(0, isHoveredOrFocused() ? SCROLL_BAR_HOVER : SCROLL_BAR);
+        blit(poseStack, this.x , this.y + pixelValue, 1,0, 0, this.width, sliderHeight, 8, 256);
     }
     @Override
     public void onClick(double mouseX, double mouseY) {
@@ -67,8 +60,8 @@ public class VerticalSliderButton extends AbstractSliderButton {
     }
 
     private void setValueFromMouse(double mouseY) {
-        double sliderMin = this.getY() + this.halfSliderHeight;
-        double sliderMax = this.getY() + this.height - this.halfSliderHeight;
+        double sliderMin = this.y + this.halfSliderHeight;
+        double sliderMax = this.y + this.height - this.halfSliderHeight;
         value = (mouseY - sliderMin) / (sliderMax - sliderMin);
         value = Math.max(0, Math.min(value, 1));
         this.applyValue();

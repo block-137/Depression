@@ -1,11 +1,11 @@
 package net.depression.screen;
 
 import com.mojang.blaze3d.platform.Window;
+import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.depression.Depression;
 import net.depression.mental.MentalTrait;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.components.OptionsList;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.FormattedText;
@@ -50,18 +50,19 @@ public class MentalTraitSelectionScreen extends Screen {
         return true;
     }
     @Override
-    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+    public void render(PoseStack poseStack, int mouseX, int mouseY, float partialTicks) {
         setSlider();
-        renderDirtBackground(guiGraphics);
-        super.render(guiGraphics, mouseX, mouseY, partialTicks);
+        renderDirtBackground(0);
+        super.render(poseStack, mouseX, mouseY, partialTicks);
         Minecraft minecraft = Minecraft.getInstance();
         Window window = minecraft.getWindow();
         int x = window.getGuiScaledWidth() / 2;
         int y = window.getGuiScaledHeight() / 2;
-        guiGraphics.blit(FRAME, x - halfFrameLength, y - halfFrameLength, 1, 0, 0, frameLength, frameLength, frameLength,frameLength);
+        RenderSystem.setShaderTexture(0, FRAME);
+        blit(poseStack,x - halfFrameLength, y - halfFrameLength, 1, 0, 0, frameLength, frameLength, frameLength,frameLength);
         //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
-        guiGraphics.drawCenteredString(minecraft.font, Component.translatable("screen.depression.mental_trait.title"), x, y - halfFrameLength - 24, 0xFFFFFF);
-        guiGraphics.drawCenteredString(minecraft.font, Component.translatable("screen.depression.mental_trait.subtitle"), x, y - halfFrameLength - 12, 0xFFFFFF);
+        drawCenteredString(poseStack, minecraft.font, Component.translatable("screen.depression.mental_trait.title"), x, y - halfFrameLength - 24, 0xFFFFFF);
+        drawCenteredString(poseStack, minecraft.font, Component.translatable("screen.depression.mental_trait.subtitle"), x, y - halfFrameLength - 12, 0xFFFFFF);
     }
     private void setSlider() {
         Window window = Minecraft.getInstance().getWindow();
@@ -69,7 +70,7 @@ public class MentalTraitSelectionScreen extends Screen {
         int y = window.getGuiScaledHeight() / 2;
         baseX = x - screenHeight / 2;
         baseY = y - screenHeight / 2;
-        sliderButton.setX(x + 56);
-        sliderButton.setY(y - 64);
+        sliderButton.x = (x + 56);
+        sliderButton.y = (y - 64);
     }
 }

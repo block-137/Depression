@@ -2,19 +2,11 @@ package net.depression.mixin.emotion;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.depression.mental.MentalStatus;
-import net.depression.server.Registry;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
-import net.minecraft.server.commands.EnchantCommand;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
-import net.minecraft.world.level.storage.loot.LootParams;
-import net.minecraft.world.level.storage.loot.LootTable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -27,7 +19,7 @@ import java.util.Map;
 public abstract class FishingHookMixin {
     @Inject(method = "retrieve", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/item/ItemEntity;setDeltaMovement(DDD)V"))
     private void onRetrieve(ItemStack itemStack, CallbackInfoReturnable<Integer> cir, @Local Player player, @Local(ordinal = 1) ItemStack itemStack2) {
-        if (player.level().isClientSide()) {
+        if (player.getLevel().isClientSide()) {
             return;
         }
         String id = itemStack2.getItem().arch$registryName().toString();

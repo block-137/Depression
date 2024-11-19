@@ -99,13 +99,8 @@ public class ClientMentalStatus {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         //绘制情绪值
         RenderSystem.setShaderTexture(0, EMOTION);
-<<<<<<< HEAD
-        GuiComponent.blit(poseStack, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*getEmotionLevel(), isInCombat ? 16 : 0, 16, 16, 128, 32); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
+        GuiComponent.blit(poseStack, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*emotionLevel, isInCombat ? 16 : 0, 16, 16, 128, 32); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
         mentalIllness.render(poseStack, window.getGuiScaledWidth(), y);
-=======
-        guiGraphics.blit(EMOTION, x + EMOTION_DISPLAY_OFFSET_X, y + EMOTION_DISPLAY_OFFSET_Y ,90,16*emotionLevel, isInCombat ? 16 : 0, 16, 16, 128, 32);
-        //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
->>>>>>> 79040de (0.1.4 Update)
         //绘制精神健康值
         /*
         int mentalHealthId = getMentalHealthLevel(mentalHealthValue);

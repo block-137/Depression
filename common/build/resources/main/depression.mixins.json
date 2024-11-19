@@ -11,19 +11,21 @@
     "client.LocalPlayerMixin"
   ],
   "mixins": [
-    "CakeBlockMixin",
+    "ChunkMapMixin",
     "EntityMixin",
-    "JukeboxBlockEntityMixin",
     "MilkBucketItemMixin",
     "MobAccess",
     "PlayerListMixin",
     "PlayerMixin",
     "SingleJigsawAccess",
+    "ServerLevelMixin",
+    "emotion.CakeBlockMixin",
+    "emotion.FishingHookMixin",
+    "emotion.JukeboxBlockEntityMixin",
     "symptom.BowItemMixin",
     "symptom.CrossbowItemMixin",
     "symptom.ItemStackMixin",
-    "symptom.LivingEntityMixin",
-    "symptom.ServerLevelMixin"
+    "symptom.LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -60,7 +60,7 @@ public class MentalIllness {
         }
         if (mentalHealthId == 4 && startIllnessTime == null) {
             mentalHealthLevel = 3;
-            startIllnessTime = player.level().getGameTime();
+            startIllnessTime = player.getLevel().getGameTime();
         }
         if (mentalHealthId != 4 && startIllnessTime != null) {
             mentalStatus.emotionValue = 0;
@@ -80,13 +80,13 @@ public class MentalIllness {
                 mentalHealthId = mentalIllnessPool.getIllness(4, multiplier);
             }
             if (mentalHealthId == 4) {
-                startIllnessTime = player.level().getGameTime();
+                startIllnessTime = player.getLevel().getGameTime();
             } else {
                 startIllnessTime = null;
             }
         }
         if (startIllnessTime != null) {
-            long currentTime = player.level().getGameTime();
+            long currentTime = player.getLevel().getGameTime();
             if ((currentTime - startIllnessTime) % 30000 == 0) {
                 isMania = true;
                 mentalStatus.emotionValue = 20d;

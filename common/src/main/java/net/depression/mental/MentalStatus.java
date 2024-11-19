@@ -208,27 +208,16 @@ public class MentalStatus {
                     if (respawnPos != null && Math.sqrt(respawnPos.distToCenterSqr(player.position())) <= 20) {
                         amplifier *= 1.5d;
                     }
-                    if (player.level().getBrightness(LightLayer.SKY, player.blockPosition()) >= 13) {
+                    if (player.getLevel().getBrightness(LightLayer.SKY, player.blockPosition()) >= 13) {
                         amplifier *= 1.5d;
                     }
                     emotionValue += EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d * amplifier;
                     emotionValue = Math.min(0d, emotionValue); //保证情绪值归0
-                } else {
+                }
+                else {
                     emotionValue -= EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d;
                     emotionValue = Math.max(0d, emotionValue); //保证情绪值归0
                 }
-<<<<<<< HEAD
-                if (player.getLevel().getBrightness(LightLayer.SKY, player.blockPosition()) >= 13) {
-                    amplifier *= 1.5d;
-                }
-                emotionValue += EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d * amplifier;
-                emotionValue = Math.min(0d, emotionValue); //保证情绪值归0
-            }
-            else {
-                emotionValue -= EMOTION_STABILIZE_RATE * Math.abs(emotionValue) / 20d;
-                emotionValue = Math.max(0d, emotionValue); //保证情绪值归0
-=======
->>>>>>> 79040de (0.1.4 Update)
             }
 
             //更新属性

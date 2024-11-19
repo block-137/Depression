@@ -23,15 +23,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.StatsCounter;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.scores.Scoreboard;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-<<<<<<< HEAD
-=======
-import org.spongepowered.asm.mixin.Shadow;
->>>>>>> 79040de (0.1.4 Update)
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -39,8 +31,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Date;
 
 @Mixin(ClientLevel.class)
 public abstract class ClientLevelMixin {
