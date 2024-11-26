@@ -22,7 +22,7 @@ import org.slf4j.Logger;
 
 public final class Depression {
     public static final String MOD_ID = "depression";
-    public static final String MOD_VERSION = "0.1.5+1.20.1";
+    public static final String MOD_VERSION = "0.1.5+1.19.2";
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
