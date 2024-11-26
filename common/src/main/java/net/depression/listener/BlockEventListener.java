@@ -6,6 +6,7 @@ import net.depression.Depression;
 import net.depression.mental.MentalStatus;
 import net.depression.mental.MentalTrait;
 import net.depression.network.ActionbarHintPacket;
+import net.depression.network.CloseEyePacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
 import net.minecraft.core.BlockPos;
@@ -14,8 +15,6 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.ai.village.poi.PoiManager;
-import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -25,23 +24,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BlockEventListener {
     public static EventResult onBlockBreak(Level level, BlockPos pos, BlockState state, ServerPlayer player, IntValue intValue) {
-
-        /*debug
-        ItemStack itemStack = player.getMainHandItem();
-        if (itemStack.isEnchanted()) {
-            for (Tag tag : itemStack.getEnchantmentTags()) {
-                if (tag instanceof CompoundTag) {
-                    CompoundTag compoundTag = (CompoundTag) tag;
-                    for (String key : compoundTag.getAllKeys()) {
-                        Depression.LOGGER.info(key + ": " + compoundTag.get(key));
-                    }
-                }
-            }
-        }
-
-         */
-
-
         if (player.isCreative() || !player.hasCorrectToolForDrops(state)) { //如果是创造模式或者没有用合适的工具挖，就不计入
             return EventResult.pass();
         }

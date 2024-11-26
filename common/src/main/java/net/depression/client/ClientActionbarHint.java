@@ -3,12 +3,8 @@ package net.depression.client;
 import dev.architectury.networking.NetworkManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
-
-import java.util.Date;
 
 public class ClientActionbarHint {
     private final String formHint1 = "message.depression.ptsd_form_hint_1";
@@ -32,6 +28,10 @@ public class ClientActionbarHint {
     private long nearbyBlockHealLastTime = -1201;
     private long breakBlockHealLastTime = -1201;
     private long killEntityHealLastTime = -1201;
+    private long fishHealLastTime = -1201;
+    private long feedAnimalHealLastTime = -1201;
+    private long petHealLastTime = -1201;
+    private long lootHealLastTime = -1201;
 
     public void clear() {
         formLastId = null;
@@ -50,15 +50,83 @@ public class ClientActionbarHint {
         gui.setOverlayMessage(Component.translatable(string), false);
     }
 
-    public void receiveBipolarPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
-        boolean isMania = buf.readBoolean();
+    public void receiveOverdosePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        int level = buf.readInt();
         Gui gui = Minecraft.getInstance().gui;
-        if (isMania) {
+        gui.setOverlayMessage(Component.translatable("message.depression.medicine_overdose_" + level), false);
+    }
+
+    public void receiveBipolarPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        ClientMentalStatus clientMentalStatus = DepressionClient.clientMentalStatus;
+        clientMentalStatus.isMania = buf.readBoolean();
+        Gui gui = Minecraft.getInstance().gui;
+        if (clientMentalStatus.isMania) {
             gui.setOverlayMessage(Component.translatable("message.depression.bipolar_mania_hint"), false);
         }
         else {
             gui.setOverlayMessage(Component.translatable("message.depression.bipolar_depression_hint"), false);
         }
+    }
+
+    public void receiveFishHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
+        long curTime = Minecraft.getInstance().level.getGameTime();
+        if (curTime - fishHealLastTime < 1200) {
+            return;
+        }
+        fishHealLastTime = curTime;
+        Component id = buf.readComponent();
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable("message.depression.fish_heal_hint_1")
+                .append(id)
+                .append(Component.translatable("message.depression.fish_heal_hint_2")), false);
+    }
+
+    public void receiveFeedAnimalHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
+        long curTime = Minecraft.getInstance().level.getGameTime();
+        if (curTime - feedAnimalHealLastTime < 1200) {
+            return;
+        }
+        feedAnimalHealLastTime = curTime;
+        Component id = buf.readComponent();
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable("message.depression.feed_animal_heal_hint_1")
+                .append(id)
+                .append(Component.translatable("message.depression.feed_animal_heal_hint_2")), false);
+    }
+
+    public void receivePetHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
+        long curTime = Minecraft.getInstance().level.getGameTime();
+        if (curTime - petHealLastTime < 1200) {
+            return;
+        }
+        petHealLastTime = curTime;
+        Component id = buf.readComponent();
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable("message.depression.pet_heal_hint_1")
+                .append(id)
+                .append(Component.translatable("message.depression.pet_heal_hint_2")), false);
+    }
+
+    public void receiveLootHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        if (Minecraft.getInstance().level == null) {
+            return;
+        }
+        long curTime = Minecraft.getInstance().level.getGameTime();
+        if (curTime - lootHealLastTime < 1200) {
+            return;
+        }
+        lootHealLastTime = curTime;
+        Gui gui = Minecraft.getInstance().gui;
+        gui.setOverlayMessage(Component.translatable("message.depression.loot_heal_hint"), false);
     }
 
     public void receiveNearbyBlockHealPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {

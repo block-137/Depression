@@ -7,9 +7,26 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Tools {
+    public static final ArrayList<Double> harmonicSeries = new ArrayList<>();
+    public static void init() {
+        harmonicSeries.add(0d);
+        harmonicSeries.add(1d);
+        for (int i = 2; i < 65; ++i) {
+            harmonicSeries.add(harmonicSeries.get(i-1) + 1d / (double) (i/2));
+        }
+    }
+    public static double getHarmonic(int n) {
+        if (n >= harmonicSeries.size()) {
+            for (int i = harmonicSeries.size(); i <= n; ++i) {
+                harmonicSeries.add(harmonicSeries.get(i-1) + 1d / (double) (i/2));
+            }
+        }
+        return harmonicSeries.get(n);
+    }
     public static int getPlayerMentalHealthLevel(Player player) {
         if (player instanceof ServerPlayer) {
             MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);

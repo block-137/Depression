@@ -75,9 +75,9 @@ public class DiaryUpdatePacket {
         else if (20 <= mentalHealthValue && mentalHealthValue < 30) { //中度抑郁2
             content = "    'diary.depression.moderate_depression_2.1'"
                     + "\n    'diary.depression.moderate_depression_2.2'"
-                    + ConditionComponents.MODERATE_DEPRESSION_2_EAT
+                    + ConditionComponents.MODERATE_DEPRESSION_2_EAT.get(player)
                     + "\n    'diary.depression.moderate_depression_2.3'"
-                    + ConditionComponents.MODERATE_DEPRESSION_2_HURT;
+                    + ConditionComponents.MODERATE_DEPRESSION_2_HURT.get(player);
         }
         else if (10 <= mentalHealthValue && mentalHealthValue < 20) { //重度抑郁1
             if (mentalStatus.isMania()) {

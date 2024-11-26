@@ -59,7 +59,7 @@ public class ClientDiaryUpdater {
         CharSequence rawContent = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset);
         StringBuilder content;
         boolean isMDD = false;
-        if (DepressionClient.clientMentalStatus.mentalHealthId < 3) {
+        if (DepressionClient.clientMentalStatus.mentalHealthId != 3) {
             SimpleDateFormat dateFormat = new SimpleDateFormat(Component.translatable("diary.depression.date_format").getString());
             content = new StringBuilder(dateFormat.format(Tools.getGameDate(Minecraft.getInstance().level.getDayTime())) + "\n");
         }
@@ -105,7 +105,7 @@ public class ClientDiaryUpdater {
                 ++spaceCount;
             }
         }
-        boolean isLatin = spaceCount > 24;
+        boolean isLatin = Component.translatable("diary.depression.is_latin").getString().equals("true");
 
         ItemStack itemStack = player.getItemInHand(interactionHand);
         CompoundTag compoundTag = itemStack.getOrCreateTag();

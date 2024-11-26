@@ -23,6 +23,7 @@ public class ClientMentalStatus {
     public static int EMOTION_DISPLAY_OFFSET_Y = -51;
     public static String traitId = null;
     public static boolean isMentalTraitSelected = true;
+    public boolean isMania = false;
     public double emotionValue;
     public double mentalHealthValue;
     public int emotionLevel;
