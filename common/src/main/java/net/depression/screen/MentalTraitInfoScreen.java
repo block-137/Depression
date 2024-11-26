@@ -17,7 +17,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MentalTraitInfoScreen extends Screen {
+public class MentalTraitInfoScreen extends UncloseableScreen {
     public static final ResourceLocation FRAME = new ResourceLocation(Depression.MOD_ID, "textures/mental_trait/info_frame.png");
     private final MentalTraitSelectionScreen screen;
     private TextButton returnButton;

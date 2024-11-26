@@ -20,6 +20,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class EntityMixin {
     @Shadow public abstract Level level();
 
+    @Shadow public abstract void tick();
+
     @Inject(method = "playStepSound", at = @At("HEAD"))
     private void playStepSound(CallbackInfo ci) {
         TempValues.isStepSound = true;

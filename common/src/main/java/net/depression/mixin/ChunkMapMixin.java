@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ChunkMap.class)
-public class ChunkMapMixin {
+public abstract class ChunkMapMixin {
     @Inject(method = "move", at = @At("HEAD"), cancellable = true)
     public void onMove(ServerPlayer serverPlayer, CallbackInfo ci) {
         if (Registry.isPending(serverPlayer)) {

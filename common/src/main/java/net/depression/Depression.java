@@ -1,10 +1,7 @@
 package net.depression;
 
 import com.mojang.logging.LogUtils;
-import dev.architectury.event.events.common.BlockEvent;
-import dev.architectury.event.events.common.CommandRegistrationEvent;
-import dev.architectury.event.events.common.EntityEvent;
-import dev.architectury.event.events.common.PlayerEvent;
+import dev.architectury.event.events.common.*;
 import dev.architectury.networking.NetworkManager;
 import net.depression.block.ModBlocks;
 import net.depression.block.entity.ModBannerPatterns;
@@ -12,22 +9,20 @@ import net.depression.config.ServerConfig;
 import net.depression.effect.ModEffects;
 import net.depression.item.ModCreativeTabs;
 import net.depression.item.ModItems;
-import net.depression.listener.BlockEventListener;
-import net.depression.listener.CommandRegistrationListener;
-import net.depression.listener.EntityEventListener;
-import net.depression.listener.PlayerEventListener;
+import net.depression.listener.*;
 import net.depression.mental.PTSDManager;
 import net.depression.network.DiaryUpdatePacket;
 import net.depression.network.MentalTraitPacket;
 import net.depression.network.PlaySoundPacket;
 import net.depression.server.Registry;
 import net.depression.sound.ModSounds;
+import net.depression.util.Tools;
 import net.depression.world.VillageAdditions;
 import org.slf4j.Logger;
 
 public final class Depression {
     public static final String MOD_ID = "depression";
-    public static final String MOD_VERSION = "0.1.4";
+    public static final String MOD_VERSION = "0.1.5+1.20.1";
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
@@ -55,6 +50,8 @@ public final class Depression {
         BlockEvent.PLACE.register(BlockEventListener::onBlockPlace);
         BlockEvent.BREAK.register(BlockEventListener::onBlockBreak);
         EntityEvent.LIVING_DEATH.register(EntityEventListener::onEntityDeath);
+        LifecycleEvent.SERVER_BEFORE_START.register(LifeCycleEventListener::onServerStart);
         ServerConfig.load();
+        Tools.init();
     }
 }

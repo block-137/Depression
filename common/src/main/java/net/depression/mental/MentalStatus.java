@@ -4,6 +4,7 @@ import net.depression.effect.ModEffects;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
 import net.depression.server.Registry;
+import net.depression.util.Tools;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -18,6 +19,11 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Block;
@@ -31,6 +37,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MentalStatus {
+    public static boolean isItemScanned = false;
     public static double EMOTION_STABILIZE_RATE;
     public static double MENTAL_HEALTH_CHANGE_RATE;
     public static double PTSD_DAMAGE_RATE;
@@ -38,17 +45,19 @@ public class MentalStatus {
     public static double FOOD_HEAL_RATE;
     public static int BOREDOM_DECREASE_TICK;
     public static boolean IS_RANDOM_CHOOSE_TRAIT;
+    public static String DEFAULT_MENTAL_TRAIT;
     public static HashMap<String, String> nearbyHealBlockType = new HashMap<>(); //精神治疗光环方块-类型
     public static HashMap<String, Double> nearbyHealBlockValue = new HashMap<>(); //精神治疗光环方块-治疗值
     public static HashMap<String, Integer> nearbyHealBlockRadius = new HashMap<>(); //精神治疗光环方块-作用半径
-    public static HashMap<String, Double> fishHealValue = new HashMap<>(); //钓鱼治疗值
+    public static HashMap<String, Double> lootHealItem = new HashMap<>(); //loot了会开心的物品
+    public static HashMap<String, Double> foodHealValue = new HashMap<>(); //食用食物治疗值
     public static int radiusMaxValue; //精神治疗光环方块-最大的半径
     public static HashMap<String, Double> breakHealBlock = new HashMap<>(); //挖了会开心的方块
     public static HashMap<String, Double> killHealEntity = new HashMap<>(); //杀了会开心的实体
     public static HashMap<String, Double> smeltHealItem = new HashMap<>(); //熔炼了会开心的物品
     public static HashMap<String, Double> healAdvancement = new HashMap<>(); //获得成就会开心
     private final ConcurrentHashMap<String, Integer> boredom = new ConcurrentHashMap<>(); //无聊值
-    private final ConcurrentHashMap<String, Double> PTSD = new ConcurrentHashMap<>(); //PTSD值
+    public final ConcurrentHashMap<String, Double> PTSD = new ConcurrentHashMap<>(); //PTSD值
     public final PTSDManager ptsdManager = new PTSDManager(this, PTSD);
     private final ConcurrentHashMap<String, Long> PTSDTimeBuffer = new ConcurrentHashMap<>(); //PTSD时刻缓冲区（存储造成PTSD的那一个tick）
     private final ConcurrentHashMap<String, Double> PTSDValueBuffer = new ConcurrentHashMap<>(); //PTSD值缓冲区（存储造成PTSD的值）
@@ -79,8 +88,13 @@ public class MentalStatus {
 
     public void loadMentalTrait(MentalTrait mentalTrait) {
         this.mentalTrait = mentalTrait;
-        this.mentalHealthValue = mentalTrait.initialMentalHealthValue;
-        this.mentalIllness.mentalHealthId = mentalTrait.initialMentalHealthId;
+        if (mentalTrait.initialMentalHealthValue != null) {
+            this.mentalHealthValue = mentalTrait.initialMentalHealthValue;
+            this.mentalIllness.mentalHealthLevel = MentalIllness.getMentalHealthLevel(mentalHealthValue);
+        }
+        if (mentalTrait.initialMentalHealthId != null) {
+            this.mentalIllness.mentalHealthId = mentalTrait.initialMentalHealthId;
+        }
     }
 
     public synchronized void triggerHurt(String id) {
@@ -96,7 +110,13 @@ public class MentalStatus {
         //处理无聊值
         if (tickCount % BOREDOM_DECREASE_TICK == 0) {
             for (Map.Entry<String, Integer> entry : boredom.entrySet()) {
-                entry.setValue(entry.getValue() - 1);
+                int value = entry.getValue();
+                if (value % 4 == 0) {
+                    entry.setValue(value - value / 4);
+                }
+                else {
+                    entry.setValue(value - (value / 4 + 1)); //向上取整
+                }
                 if (entry.getValue() <= 1) { //若无聊值归零，则移除其无聊计数
                     boredom.remove(entry.getKey());
                 }
@@ -134,6 +154,10 @@ public class MentalStatus {
             //方块光环检测
             executor.submit(this::detectNearbyHealBlock);
             //睡眠检测
+            ServerLevel level = player.serverLevel();
+            if (mentalIllness.isInsomnia != null && level.getDayTime() % 24000 < 12010) {
+                mentalIllness.isInsomnia = null;
+            }
             if (player.isSleeping()) {
                 if (mentalIllness.isInsomnia == null) {
                     mentalIllness.setIsInsomnia();
@@ -153,7 +177,6 @@ public class MentalStatus {
                 else { //PTSD > 12 判定玩家是否触发症状
                     value = entry.getValue() - PTSD_DISPERSE_RATE; //PTSD值 -= 自然消散速度
                     entry.setValue(value);
-                    ServerLevel level = (ServerLevel) player.level();
                     EntityType.byString(key).ifPresentOrElse(
                             entityType -> {
                                 List<? extends Entity> list = level.getEntities(entityType, this::viewDetect);
@@ -315,6 +338,14 @@ public class MentalStatus {
         return toReturn;
     }
 
+    public synchronized double mentalHeal(String string, double value, int count) {
+        Integer i = boredom.get(string);
+        if (i == null) {
+            i = 0;
+        }
+        boredom.put(string, i + count);
+        return mentalHeal((Tools.getHarmonic(i+count) - Tools.getHarmonic(i)) * value);
+    }
     public synchronized double mentalHeal(String string, double value) {
         if (boredom.containsKey(string)) {
             boredom.put(string, boredom.get(string) + 1);
@@ -335,6 +366,9 @@ public class MentalStatus {
     }
 
     public synchronized void mentalHurt(Component component, double damage) {
+        if (component == player.getDisplayName()) {
+            return;
+        }
         playerPTSDSet.add(component.getString());
         mentalHurt(component.getString(), damage);
     }
@@ -574,5 +608,33 @@ public class MentalStatus {
             throw new RuntimeException("You are not a ServerPlayer");
         }
         return instance;
+    }
+
+    public static double onLoot(Player player, ItemStack itemStack) {
+        Item item = itemStack.getItem();
+        String id = item.arch$registryName().toString();
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
+        double idHealValue = 0;
+        double enchantmentHealValue = 0;
+        if (lootHealItem.containsKey(id)) {
+            idHealValue = mentalStatus.mentalHeal(id, lootHealItem.get(id), itemStack.getCount());
+        }
+        if (itemStack.isEnchanted()) { //如果钓到的东西有附魔
+
+            for (Map.Entry<Enchantment, Integer> entry : EnchantmentHelper.getEnchantments(itemStack).entrySet()) {
+                Enchantment enchantment = entry.getKey();
+                int level = entry.getValue();
+                if (enchantment.isCurse()) {
+                    enchantmentHealValue -= (double) entry.getValue() / (double) enchantment.getRarity().getWeight() * level;
+                }
+                else {
+                    enchantmentHealValue += (double) entry.getValue() / (double) enchantment.getRarity().getWeight() * level;
+                }
+            }
+            if (enchantmentHealValue > 0) {
+                mentalStatus.mentalHeal(enchantmentHealValue);
+            }
+        }
+        return idHealValue + enchantmentHealValue;
     }
 }

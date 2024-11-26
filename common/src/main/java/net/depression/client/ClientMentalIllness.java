@@ -15,19 +15,18 @@ public class ClientMentalIllness {
     public boolean isCloseEye = false;
     public double elapsedTime; //经过的时间(-60 tick ~ 60 tick) 0~10:闭合; 10~50:全闭眼; 50~60:睁眼
     public static final int priority = 300;
-    public static Vec3 curPosition;
     public static final ResourceLocation DROWSY_UP = new ResourceLocation(Depression.MOD_ID, "textures/symptom/drowsy_up.png");
     public static final ResourceLocation DROWSY_DOWN = new ResourceLocation(Depression.MOD_ID, "textures/symptom/drowsy_down.png");
     public static final ResourceLocation DROWSY_FULL = new ResourceLocation(Depression.MOD_ID, "textures/symptom/drowsy_full.png");
 
     public void receiveCloseEyePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
-        if (Minecraft.getInstance().level == null || Minecraft.getInstance().player == null) {
+        Minecraft minecraft = Minecraft.getInstance();
+        if (minecraft.level == null || minecraft.player == null) {
             return;
         }
         startCloseEyeTime = Minecraft.getInstance().level.getGameTime() + 60;
         isCloseEye = true;
-        curPosition = Minecraft.getInstance().player.position();
-        Minecraft.getInstance().gui.setOverlayMessage(Component.translatable("message.depression.close_eye"), false);
+        minecraft.gui.setOverlayMessage(Component.translatable("message.depression.close_eye"), false);
     }
 
     public void render(GuiGraphics guiGraphics, int x, int y) {

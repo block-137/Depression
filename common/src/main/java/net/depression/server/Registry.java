@@ -11,6 +11,7 @@ import net.minecraft.nbt.StringTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ChunkMap;
+import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.ServerLoginPacketListenerImpl;
@@ -32,6 +33,33 @@ public class Registry {
     private static final LinkedHashMap<UUID, ServerLevel> pendingLevels = new LinkedHashMap<>();
     private static final LinkedHashMap<UUID, ServerPlayer> pendingPlayers = new LinkedHashMap<>();
     private static final LinkedHashMap<UUID, ChunkMap> pendingChunkMaps = new LinkedHashMap<>();
+    public static final HashMap<UUID, HashSet<UUID>> playerEventMap = new HashMap<>();
+    public static void init() {
+        mentalStatus.clear();
+        quitPlayers.clear();
+        statManager.clear();
+        diaryUpdateMap.clear();
+        pendingLevels.clear();
+        pendingPlayers.clear();
+        pendingChunkMaps.clear();
+        playerEventMap.clear();
+    }
+    public static void eventAddPlayer(ServerBossEvent event, ServerPlayer player) {
+        if (!playerEventMap.containsKey(player.getUUID())) {
+            playerEventMap.put(player.getUUID(), new HashSet<>());
+        }
+        playerEventMap.get(player.getUUID()).add(event.getId());
+    }
+
+    public static void eventRemovePlayer(ServerBossEvent event, ServerPlayer player) {
+        HashSet<UUID> events = playerEventMap.get(player.getUUID());
+        if (events != null) {
+            events.remove(event.getId());
+        }
+        if (events.isEmpty()) {
+            playerEventMap.remove(player.getUUID());
+        }
+    }
 
     public static void addPendingPlayer(ServerLevel serverLevel, ServerPlayer player) {
         pendingLevels.put(player.getUUID(), serverLevel);
@@ -49,21 +77,24 @@ public class Registry {
             pendingChunkMaps.remove(pendingChunkMaps.keySet().iterator().next());
         }
     }
-    public static boolean isPending(ServerPlayer player) {
+    public static boolean isPending(Player player) {
         return pendingPlayers.containsKey(player.getUUID());
     }
     public static void receiveMentalTraitPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
         String id = buf.readCharSequence(buf.readableBytes(), DiaryUpdatePacket.charset).toString();
-        UUID uuid = packetContext.getPlayer().getUUID();
+        Player player = packetContext.getPlayer();
+        UUID uuid = player.getUUID();
         MentalStatus mentalStatus = Registry.mentalStatus.get(uuid);
         mentalStatus.loadMentalTrait(MentalTrait.byId(id));
         if (pendingChunkMaps.containsKey(uuid)) {
             pendingChunkMaps.get(uuid).move(pendingPlayers.get(uuid));
             pendingChunkMaps.remove(uuid);
         }
-        pendingLevels.get(uuid).addNewPlayer(pendingPlayers.get(uuid));
-        pendingPlayers.remove(uuid);
-        pendingLevels.remove(uuid);
+        if (isPending(player)) {
+            pendingLevels.get(uuid).addNewPlayer(pendingPlayers.get(uuid));
+            pendingPlayers.remove(uuid);
+            pendingLevels.remove(uuid);
+        }
     }
     public static void diaryUpdate(ServerPlayer player, ItemStack diary) {
         diaryUpdateMap.put(player.getUUID(), diary);
