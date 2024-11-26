@@ -14,7 +14,7 @@ import net.minecraft.util.FormattedCharSequence;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class MentalTraitSelectionScreen extends Screen {
+public class MentalTraitSelectionScreen extends UncloseableScreen {
     public static final ResourceLocation FRAME = new ResourceLocation(Depression.MOD_ID, "textures/mental_trait/frame_128.png");
     public static final int frameLength = 148;
     public static final int halfFrameLength = 74;

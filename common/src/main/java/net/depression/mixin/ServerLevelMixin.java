@@ -2,6 +2,7 @@ package net.depression.mixin;
 
 import net.depression.Depression;
 import net.depression.mental.MentalStatus;
+import net.depression.mental.MentalTrait;
 import net.depression.mental.PTSDManager;
 import net.depression.network.MentalTraitPacket;
 import net.depression.server.Registry;
@@ -29,9 +30,17 @@ public abstract class ServerLevelMixin {
         }
         MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         if (mentalStatus.mentalTrait == null) {
-            MentalTraitPacket.sendToPlayer(player);
-            Registry.addPendingPlayer((ServerLevel) (Object) this, player);
-            ci.cancel();
+            if (MentalStatus.DEFAULT_MENTAL_TRAIT != null) {
+                mentalStatus.loadMentalTrait(MentalTrait.byId(MentalStatus.DEFAULT_MENTAL_TRAIT));
+            }
+            else if (MentalStatus.IS_RANDOM_CHOOSE_TRAIT) {
+                mentalStatus.mentalTrait = MentalTrait.getRandomTrait();
+            }
+            else {
+                MentalTraitPacket.sendToPlayer(player);
+                Registry.addPendingPlayer((ServerLevel) (Object) this, player);
+                ci.cancel();
+            }
         }
     }
 

@@ -21,6 +21,8 @@ public class MentalIllness {
     public Boolean isInsomnia;
     public int sleepAttemptCount = 0;
     private Long nextCloseEyeTime;
+    public Long lastOdTime;
+    public int odCount;
     public final HashMap<String, Integer> medicineDelay = new HashMap<>();
     public final Random random = new Random();
     private final MentalStatus mentalStatus;
@@ -49,6 +51,11 @@ public class MentalIllness {
 
     public void tick(ServerPlayer player) {
         this.player = player;
+        long currentTime = player.getLevel().getGameTime();
+        if (lastOdTime != null && currentTime - lastOdTime > 12000) {
+            odCount = 0;
+            lastOdTime = null;
+        }
         for (String key : medicineDelay.keySet()) {
             int delay = medicineDelay.get(key);
             if (delay > 0) {
@@ -86,7 +93,6 @@ public class MentalIllness {
             }
         }
         if (startIllnessTime != null) {
-            long currentTime = player.getLevel().getGameTime();
             if ((currentTime - startIllnessTime) % 30000 == 0) {
                 isMania = true;
                 mentalStatus.emotionValue = 20d;
@@ -99,9 +105,6 @@ public class MentalIllness {
             }
         }
 
-        if (isInsomnia != null && isInsomnia && mentalHealthId == 0) {
-            isInsomnia = false;
-        }
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
         //处理是否失眠
         if (player.isSleepingLongEnough() && !isSleepy) {
@@ -162,7 +165,7 @@ public class MentalIllness {
                         duration = 100;
                         amplifier = 0;
                     }
-                    case 3 -> {
+                    case 3, 4 -> {
                         duration = 200;
                         amplifier = 1;
                     }
@@ -220,7 +223,7 @@ public class MentalIllness {
         }
         return ret;
     }
-    private int getMentalHealthLevel(double mentalHealthValue) {
+    public static int getMentalHealthLevel(double mentalHealthValue) {
         if (mentalHealthValue >= 70d && mentalHealthValue <= 100d) {
             return 0; // 健康：绿色
         } else if (mentalHealthValue >= 40d && mentalHealthValue < 70d) {

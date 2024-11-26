@@ -18,23 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LocalPlayer.class)
 public abstract class LocalPlayerMixin {
-    @Inject(method = "move", at = @At("TAIL"))
-    private void move(MoverType moverType, Vec3 vec3, CallbackInfo ci) {
-        if (moverType == MoverType.SELF) {
-            ClientMentalIllness illness = DepressionClient.clientMentalStatus.mentalIllness;
-            if (illness.isCloseEye && DepressionClient.clientMentalStatus.mentalHealthId == 3 && illness.elapsedTime >= -60 && illness.elapsedTime <= 60) {
-                LocalPlayer player = (LocalPlayer) (Object) this;
-                Vec3 pos = ClientMentalIllness.curPosition;
-                if (player.getY() < pos.y) {
-                    player.moveTo(pos.x, player.getY(), pos.z);
-                }
-                else {
-                    player.moveTo(pos);
-                }
-            }
-        }
-    }
-
     @Inject(method = "openItemGui", at = @At("TAIL"))
     private void openItemGui(ItemStack itemStack, InteractionHand interactionHand, CallbackInfo ci) {
         if (itemStack.is(ModItems.DIARY.get())) {

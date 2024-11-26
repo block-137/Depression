@@ -2,15 +2,13 @@ package net.depression.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.depression.Depression;
+
 import net.depression.mixin.client.AbstractSliderButtonMixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.AbstractSliderButton;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-
-import java.awt.*;
 
 public class VerticalSliderButton extends AbstractSliderButton {
     private static final ResourceLocation SLIDER_LOCATION = new ResourceLocation("textures/gui/slider.png");

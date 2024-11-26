@@ -23,7 +23,7 @@ public abstract class CakeBlockMixin {
             return;
         }
         MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
-        mentalStatus.mentalHeal(6 * MentalStatus.FOOD_HEAL_RATE);
+        mentalStatus.mentalHeal(MentalStatus.foodHealValue.getOrDefault("minecraft:cake", 1.96));
         MentalStatusPacket.sendToPlayer((ServerPlayer) player, mentalStatus);
     }
 }

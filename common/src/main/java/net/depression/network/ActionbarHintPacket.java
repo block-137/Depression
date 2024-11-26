@@ -20,14 +20,43 @@ public class ActionbarHintPacket {
     public static final ResourceLocation NEARBY_BLOCK_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "nearby_block_heal_packet");
     public static final ResourceLocation KILL_ENTITY_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "kill_entity_heal_packet");
     public static final ResourceLocation BREAK_BLOCK_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "break_block_heal_packet");
+    public static final ResourceLocation FISH_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "fish_heal_packet");
+    public static final ResourceLocation FEED_ANIMAL_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "feed_animal_heal_packet");
+    public static final ResourceLocation PET_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "pet_heal_packet");
+    public static final ResourceLocation LOOT_HEAL_PACKET = new ResourceLocation(Depression.MOD_ID, "loot_heal_packet");
     public static final ResourceLocation BIPOLAR_PACKET = new ResourceLocation(Depression.MOD_ID, "bipolar_packet");
+    public static final ResourceLocation OVERDOSE_PACKET = new ResourceLocation(Depression.MOD_ID, "overdose_packet");
 
     public static final Charset CHARSET = StandardCharsets.UTF_8;
 
+    public static void sendOverdosePacket(ServerPlayer player, int count) {
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+        buf.writeInt(count);
+        NetworkManager.sendToPlayer(player, OVERDOSE_PACKET, buf);
+    }
     public static void sendBipolarPacket(ServerPlayer player, boolean isMania) {
         FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
         buf.writeBoolean(isMania);
-        NetworkManager.sendToPlayer(player, new ResourceLocation(Depression.MOD_ID, "bipolar_packet"), buf);
+        NetworkManager.sendToPlayer(player, BIPOLAR_PACKET, buf);
+    }
+    public static void sendFishHealPacket(ServerPlayer player, Component id) {
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+        buf.writeComponent(id);
+        NetworkManager.sendToPlayer(player, FISH_HEAL_PACKET, buf);
+    }
+    public static void sendFeedAnimalHealPacket(ServerPlayer player, Component id) {
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+        buf.writeComponent(id);
+        NetworkManager.sendToPlayer(player, FEED_ANIMAL_HEAL_PACKET, buf);
+    }
+    public static void sendPetHealPacket(ServerPlayer player, Component id) {
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+        buf.writeComponent(id);
+        NetworkManager.sendToPlayer(player, PET_HEAL_PACKET, buf);
+    }
+    public static void sendLootHealPacket(ServerPlayer player) {
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+        NetworkManager.sendToPlayer(player, LOOT_HEAL_PACKET, buf);
     }
     public static void sendNearbyBlockHealPacket(ServerPlayer player, Component id) {
         FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());

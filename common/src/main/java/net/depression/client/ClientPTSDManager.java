@@ -31,6 +31,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class ClientPTSDManager {
     public long pausedTime;
@@ -41,7 +43,7 @@ public class ClientPTSDManager {
     public double heartBeatVolume;
     public TinnitusSoundInstance tinnitusSound;
     private final Random random = new Random();
-    public static HashMap<String, ArrayDeque<Pair<Entity, Long>>> falseEntities = new HashMap<>();
+    public static ConcurrentHashMap<String, ConcurrentLinkedDeque<Pair<Entity, Long>>> falseEntities = new ConcurrentHashMap<>();
 
     public static final ResourceLocation PTSD_ONSET_LEFT = new ResourceLocation(Depression.MOD_ID, "textures/symptom/ptsd_onset_left.png");
     public static final ResourceLocation PTSD_ONSET_RIGHT = new ResourceLocation(Depression.MOD_ID, "textures/symptom/ptsd_onset_right.png");
@@ -169,7 +171,7 @@ public class ClientPTSDManager {
                 mob.getLookControl().setLookAt(player, 0f, 0f);
                 mob.getMoveControl().setWantedPosition(player.getX(), player.getY(), player.getZ(), 0d);
             }
-            falseEntities.computeIfAbsent(level.dimensionTypeId().location().toString(), key -> new ArrayDeque<>())
+            falseEntities.computeIfAbsent(level.dimensionTypeId().location().toString(), key -> new ConcurrentLinkedDeque<>())
                     .add(new Pair<>(entity, level.getGameTime()));
         });
     }

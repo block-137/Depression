@@ -80,6 +80,11 @@ public class ServerConfig {
         MentalStatus.PTSD_DISPERSE_RATE = readDouble(config, "ptsd_disperse_rate");
         MentalStatus.BOREDOM_DECREASE_TICK = config.get("boredom_decrease_tick");
         MentalStatus.FOOD_HEAL_RATE = readDouble(config, "food_heal_rate");
+        PTSDManager.KILL_PTSD_DECREASE = readDouble(config, "kill_ptsd_decrease");
+        PTSDManager.ONSET_EMOTION_DECREASE = readDouble(config, "onset_emotion_decrease");
+        if (config.contains("default_mental_trait")) {
+            MentalStatus.DEFAULT_MENTAL_TRAIT = config.get("default_mental_trait");
+        }
         MentalStatus.IS_RANDOM_CHOOSE_TRAIT = config.get("random_choose_mental_trait");
 
         config.save();
@@ -282,12 +287,12 @@ public class ServerConfig {
             }
         }
 
-        //读取fish-heal-value.toml
-        File fishFile = new File(Platform.getConfigFolder() + "/depression/fish-heal-value.toml");
-        if (!fishFile.exists()) {
+        //读取loot-item-heal-value.toml
+        File lootFile = new File(Platform.getConfigFolder() + "/depression/loot-item-heal-value.toml");
+        if (!lootFile.exists()) {
             try {
-                fishFile.createNewFile();
-                FileWriter writer = writeFishFile(fishFile);
+                lootFile.createNewFile();
+                FileWriter writer = writeLootFile(lootFile);
                 writer.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -295,18 +300,45 @@ public class ServerConfig {
         }
         else if (overwrite) {
             try {
-                FileWriter writer = writeFishFile(fishFile);
+                FileWriter writer = writeLootFile(lootFile);
                 writer.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        FileConfig fishConfig = FileConfig.of(fishFile);
-        fishConfig.load();
+        FileConfig lootConfig = FileConfig.of(lootFile);
+        lootConfig.load();
 
-        for (String id : fishConfig.valueMap().keySet()) {
-            MentalStatus.fishHealValue.put(id, readDouble(fishConfig, id));
+        for (String id : lootConfig.valueMap().keySet()) {
+            MentalStatus.lootHealItem.put(id, readDouble(lootConfig, id));
+        }
+
+        //读取food-heal-value.toml
+        File foodFile = new File(Platform.getConfigFolder() + "/depression/eat-food-heal-value.toml");
+        if (!foodFile.exists()) {
+            try {
+                foodFile.createNewFile();
+                FileWriter writer = writeFoodFile(foodFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeFoodFile(foodFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileConfig foodConfig = FileConfig.of(foodFile);
+        foodConfig.load();
+
+        for (String id : foodConfig.valueMap().keySet()) {
+            MentalStatus.foodHealValue.put(id, readDouble(foodConfig, id));
         }
 
         //读取mental-traits.toml
@@ -380,12 +412,6 @@ public class ServerConfig {
     private static FileWriter writeTraitFile(File traitFile) throws IOException {
         FileWriter writer = new FileWriter(traitFile);
         writer.write("""
-                # ================================================================
-                # 精神特质部分
-                # ================================================================
-                # 以下是精神特质的配置文件，你可以在这里配置精神特质的各种参数。
-                # ================================================================
-                
                 [normal]
                                 
                 [warrior]
@@ -419,49 +445,264 @@ public class ServerConfig {
     }
 
     @NotNull
-    private static FileWriter writeFishFile(File file) throws IOException {
-        FileWriter writer = new FileWriter(file);
-        writer.write("""
-                "minecraft:cod" = 0.3
-                "minecraft:salmon" = 0.4
-                "minecraft:tropical_fish" = 0.5
-                "minecraft:pufferfish" = 0.4
-                "minecraft:bow" = 0.4
-                "minecraft:enchanted_book" = 0.4
-                "minecraft:fishing_rod" = 0.4
-                "minecraft:name_tag" = 1.5
-                "minecraft:nautilus_shell" = 1.5
-                "minecraft:saddle" = 3.0
-                "minecraft:lily_pad" = 0.3
-                # "minecraft:bowl" = 0.0
-                "minecraft:leather" = 0.3
-                "minecraft:leather_boots" = 0.3
-                # "minecraft:rotten_flesh" = 0.0
-                # "minecraft:stick" = 0.0
-                "minecraft:string" = 0.1
-                # "minecraft:potion" = 0.0
-                "minecraft:bone" = 0.1
-                "minecraft:ink_sac" = 0.1
-                "minecraft:tripwire_hook" = 0.1
-                # "minecraft:bamboo" = 0.0
-                """);
-        return writer;
-    }
-
-    @NotNull
     private static FileWriter writeServerFile(File file) throws IOException {
         FileWriter writer = new FileWriter(file);
         writer.write("""
                 # Mod will overwrite all the configurations if the version isn't match with the current mod version.
                 # If you want to keep your changes while updating, please change the version to the updated mod version.
-                version = "0.1.4"
+                version = "0.1.5+1.19.4"
                 emotion_stabilize_rate = 0.1
                 mental_health_change_rate = 0.01
                 ptsd_damage_rate = 0.25
                 ptsd_disperse_rate = 0.001
-                boredom_decrease_tick = 200
+                boredom_decrease_tick = 100
                 food_heal_rate = 0.25
+                kill_ptsd_decrease = 1
+                onset_emotion_decrease = 0.05
                 random_choose_mental_trait = false
+                # default_mental_trait = "normal"
+                """);
+        return writer;
+    }
+    @NotNull
+    private static FileWriter writeFoodFile(File file) throws IOException {
+        FileWriter writer = new FileWriter(file);
+        writer.write("""
+                "minecraft:golden_carrot" = 3.06
+                "minecraft:enchanted_golden_apple" = 20
+                "minecraft:golden_apple" = 6.12
+                "minecraft:cooked_beef" = 3.33
+                "minecraft:cooked_porkchop" = 3.33
+                "minecraft:cooked_mutton" = 2.5
+                "minecraft:cooked_salmon" = 2.5
+                "minecraft:spider_eye" = -2.08
+                "minecraft:rabbit_stew" = 4.95
+                "minecraft:beetroot_soup" = 2.97
+                "minecraft:mushroom_stew" = 2.97
+                "minecraft:suspicious_stew" = 2.97
+                "minecraft:cooked_chicken" = 1.59
+                "minecraft:baked_potato" = 1.32
+                "minecraft:bread" = 1.32
+                "minecraft:cooked_rabbit" = 1.32
+                "minecraft:cooked_cod" = 1.32
+                "minecraft:carrot" = 0.79
+                "minecraft:beetroot" = 0.265
+                "minecraft:pumpkin_pie" = 2.88
+                "minecraft:apple" = 0.96
+                "minecraft:chorus_fruit" = 0.96
+                "minecraft:beef" = 0.18
+                "minecraft:porkchop" = 0.0
+                "minecraft:rabbit" = 0.0
+                "minecraft:melon_slice" = 0.48
+                "minecraft:mutton" = 0.0
+                "minecraft:chicken" = 0.0
+                "minecraft:poisonous_potato" = -1.92
+                "minecraft:dried_kelp" = 0.18
+                "minecraft:potato" = 0.0
+                "minecraft:honey_bottle" = 0.72
+                "minecraft:rotten_flesh" = -1.92
+                "minecraft:cake" = 0.96
+                "minecraft:cookie" = 0.96
+                "minecraft:cod" = 0.06
+                "minecraft:salmon" = 0.06
+                "minecraft:sweet_berries" = 0.48
+                "minecraft:glow_berries" = 0.48
+                "minecraft:tropical_fish" = 0.03
+                "minecraft:pufferfish" = -3.0
+                """);
+        return writer;
+    }
+    @NotNull
+    private static FileWriter writeLootFile(File file) throws IOException {
+        FileWriter writer = new FileWriter(file);
+        writer.write("""
+                # Fishes
+                "minecraft:cod" = 0.3
+                "minecraft:salmon" = 0.4
+                "minecraft:tropical_fish" = 0.5
+                "minecraft:pufferfish" = 0.4
+                "minecraft:cooked_cod" = 0.3
+                "minecraft:cooked_salmon" = 0.4
+                                
+                # Buckets
+                "minecraft:bucket" = 2.0
+                "minecraft:water_bucket" = 2.0
+                "minecraft:lava_bucket" = 2.2
+                "minecraft:powder_snow_bucket" = 2.0
+                "minecraft:milk_bucket" = 2.0
+                "minecraft:cod_bucket" = 2.3
+                "minecraft:salmon_bucket" = 2.4
+                "minecraft:pufferfish_bucket" = 2.4
+                "minecraft:tropical_fish_bucket" = 2.5
+                "minecraft:axolotl_bucket" = 4.5
+                "minecraft:tadpole_bucket" = 3.5
+                                
+                # Misc
+                "minecraft:tripwire_hook" = 0.1
+                "minecraft:lead" = 0.2
+                "minecraft:lily_pad" = 0.3
+                "minecraft:echo_shard" = 0.3
+                "minecraft:sculk_sensor" = 0.5
+                "minecraft:sculk_catalyst" = 0.8
+                "minecraft:experience_bottle" = 0.5
+                "minecraft:name_tag" = 1.5
+                "minecraft:nautilus_shell" = 1.5
+                "minecraft:lodestone" = 2.5
+                "minecraft:heart_of_the_sea" = 3.0
+                "minecraft:saddle" = 3.0
+                "minecraft:sniffer_egg" = 3.0
+                "minecraft:ice" = 0.2
+                "minecraft:packed_ice" = 0.4
+                "minecraft:blue_ice" = 0.8
+                "minecraft:obsidian" = 0.3
+                "minecraft:crying_obsidian" = 0.6
+                                
+                # Mob Drops
+                "minecraft:gunpowder" = 0.1
+                "minecraft:slime_ball" = 0.2
+                "minecraft:leather" = 1.0
+                "minecraft:book" = 1.0
+                "minecraft:blaze_powder" = 0.3
+                "minecraft:blaze_rod" = 0.5
+                "minecraft:magma_cream" = 0.5
+                "minecraft:phantom_membrane" = 0.5
+                "minecraft:ender_pearl" = 0.4
+                "minecraft:ender_eye" = 0.6
+                "minecraft:prismarine_shard" = 0.05
+                "minecraft:prismarine_crystals" = 0.1
+                "minecraft:sea_lantern" = 0.5
+                "minecraft:fire_charge" = 0.3
+                "minecraft:tnt" = 0.5
+                                
+                # Pottery Sherds
+                "minecraft:angler_pottery_sherd" = 0.2
+                "minecraft:archer_pottery_sherd" = 0.2
+                "minecraft:arms_up_pottery_sherd" = 0.2
+                "minecraft:blade_pottery_sherd" = 0.2
+                "minecraft:brewer_pottery_sherd" = 0.2
+                "minecraft:burn_pottery_sherd" = 0.2
+                "minecraft:danger_pottery_sherd" = 0.2
+                "minecraft:explorer_pottery_sherd" = 0.2
+                "minecraft:friend_pottery_sherd" = 0.2
+                "minecraft:heart_pottery_sherd" = 0.2
+                "minecraft:heartbreak_pottery_sherd" = 0.2
+                "minecraft:howl_pottery_sherd" = 0.2
+                "minecraft:miner_pottery_sherd" = 0.2
+                "minecraft:mourner_pottery_sherd" = 0.2
+                "minecraft:plenty_pottery_sherd" = 0.2
+                "minecraft:prize_pottery_sherd" = 0.2
+                "minecraft:sheaf_pottery_sherd" = 0.2
+                "minecraft:shelter_pottery_sherd" = 0.2
+                "minecraft:skull_pottery_sherd" = 0.2
+                "minecraft:snort_pottery_sherd" = 0.2
+                "minecraft:flow_pottery_sherd" = 0.2
+                "minecraft:guster_pottery_sherd" = 0.2
+                "minecraft:scrape_pottery_sherd" = 0.2
+                                
+                # Smithing Templates
+                "minecraft:netherite_upgrade_smithing_template" = 4.0
+                "minecraft:coast_armor_trim_smithing_template" = 2.0
+                "minecraft:dune_armor_trim_smithing_template" = 2.0
+                "minecraft:eye_armor_trim_smithing_template" = 2.0
+                "minecraft:host_armor_trim_smithing_template" = 2.0
+                "minecraft:raiser_armor_trim_smithing_template" = 2.0
+                "minecraft:rib_armor_trim_smithing_template" = 2.0
+                "minecraft:sentry_armor_trim_smithing_template" = 2.0
+                "minecraft:shaper_armor_trim_smithing_template" = 2.0
+                "minecraft:silence_armor_trim_smithing_template" = 2.0
+                "minecraft:snout_armor_trim_smithing_template" = 2.0
+                "minecraft:spire_armor_trim_smithing_template" = 2.0
+                "minecraft:tide_armor_trim_smithing_template" = 2.0
+                "minecraft:vex_armor_trim_smithing_template" = 2.0
+                "minecraft:ward_armor_trim_smithing_template" = 2.0
+                "minecraft:wayfinder_armor_trim_smithing_template" = 2.0
+                "minecraft:wild_armor_trim_smithing_template" = 2.0
+                "minecraft:bolt_armor_trim_smithing_template" = 2.0
+                "minecraft:flow_armor_trim_smithing_template" = 2.0
+                                
+                # Music Discs
+                "minecraft:disc_fragment_5" = 0.518
+                "minecraft:music_disc_13" = 2.0
+                "minecraft:music_disc_cat" = 2.0
+                "minecraft:music_disc_blocks" = 2.0
+                "minecraft:music_disc_chirp" = 2.0
+                "minecraft:music_disc_far" = 2.0
+                "minecraft:music_disc_mall" = 2.0
+                "minecraft:music_disc_mellohi" = 2.0
+                "minecraft:music_disc_stal" = 2.0
+                "minecraft:music_disc_strad" = 2.0
+                "minecraft:music_disc_ward" = 2.0
+                "minecraft:music_disc_11" = 2.0
+                "minecraft:music_disc_wait" = 2.0
+                "minecraft:music_disc_pigstep" = 2.0
+                "minecraft:music_disc_otherside" = 2.0
+                "minecraft:music_disc_5" = 2.0
+                "minecraft:music_disc_relic" = 2.0
+                "minecraft:music_disc_precipice" = 2.0
+                "minecraft:music_disc_creator" = 2.0
+                "minecraft:music_disc_creator_music_box" = 2.0
+                                
+                # Ores and its Related\s
+                # (excluding iron, gold, netherite ingots and diamonds)
+                "minecraft:coal" = 0.1
+                "minecraft:redstone" = 0.1
+                "minecraft:lapis_lazuli" = 0.2
+                "minecraft:iron_nugget" = 0.2
+                "minecraft:gold_nugget" = 0.3
+                "minecraft:gold_ingot" = 1.2
+                "minecraft:gilded_blackstone" = 1.2
+                "minecraft:coal_block" = 0.386
+                "minecraft:iron_block" = 3.086
+                "minecraft:lapis_block" = 0.772
+                "minecraft:gold_block" = 4.63
+                "minecraft:emerald_block" = 5.787
+                "minecraft:diamond_block" = 10.417
+                "minecraft:amethyst_shard" = 1.0
+                "minecraft:emerald" = 1.5
+                "minecraft:ancient_debris" = 1.6
+                "minecraft:netherite_scrap" = 1.6
+                "minecraft:flint_and_steel" = 0.8
+                "minecraft:flint" = 0.1
+                "minecraft:quartz" = 0.1
+                "minecraft:compass" = 2.0
+                "minecraft:clock" = 2.0
+                "minecraft:recovery_compass" = 4.0
+                "minecraft:leather_horse_armor" = 1.0
+                "minecraft:iron_horse_armor" = 1.5
+                "minecraft:golden_horse_armor" = 2.5
+                "minecraft:diamond_horse_armor" = 3.5
+                                
+                # Per Cobblestone = 0.1
+                # Per Iron Ingot = 0.8
+                # Per Gold Ingot = 1.2 (I defined it)
+                # Per Diamond = 2.7
+                # Per Netherite Ingot = 6.4
+                                
+                # Per 4 = corr * 2.5667
+                # Per 7 = corr * 3.435
+                # Per 9 = corr * 3.858
+                # Per 1/9 = corr / 3.858 = corr * 0.26
+                                
+                # Food, Agris and its Related (excluding fishes)
+                "minecraft:bamboo" = 0.05
+                "minecraft:cocoa_beans" = 0.05
+                "minecraft:apple" = 0.1
+                "minecraft:bread" = 0.2
+                "minecraft:potato" = 0.2
+                "minecraft:baked_potato" = 0.2
+                "minecraft:carrot" = 0.2
+                "minecraft:wheat_seeds" = 0.1
+                "minecraft:beetroot_seeds" = 0.1
+                "minecraft:pumpkin_seeds" = 0.1
+                "minecraft:melon_seeds" = 0.1
+                "minecraft:melon_slice" = 0.1
+                "minecraft:glow_berries" = 0.1
+                "minecraft:pumpkin" = 0.2
+                "minecraft:golden_carrot" = 1.2
+                "minecraft:golden_apple" = 4.4
+                "minecraft:enchanted_golden_apple" = 20.0
+                "minecraft:mushroom_stew" = 0.4
+                "minecraft:suspicious_stew" = 0.4
                 """);
         return writer;
     }
@@ -469,18 +710,7 @@ public class ServerConfig {
     @NotNull
     private static FileWriter writeDamageFile(File soundFile) throws IOException {
         FileWriter writer = new FileWriter(soundFile);
-        writer.write("""
-                # ================================================================
-                # 死因部分
-                # ================================================================
-                # 以下死因由于某些原因，故不在下表中列举对应声音：
-                #
-                # 没有特定与之对应的声音的：starve, cactus, hotFloor, inWall, cramming
-                # 一般认为正常游戏流程中不会遇到的：dryout, generic, genericKill, outsideBorder, outOfWorld, even_more_magic
-                # 只能由某种特定的实体造成的：player, sting, lightningBolt, thrown, witherSkull, sonic_boom, dragonBreath
-                # 只存在于愚人节版本中的：nightmare, onMoon, turned_into_gold
-                # ================================================================
-                                
+        writer.write("""  
                 "anvil" = [
                     "minecraft:block.anvil.hit",
                     "minecraft:block.anvil.break",
@@ -663,33 +893,7 @@ public class ServerConfig {
                     "minecraft:entity.wither.shoot",
                     "minecraft:entity.wither.spawn"
                 ]
-                                
-                # ================================================================
-                # 生物部分
-                # ================================================================
-                # 在非愚人节版本中，截止 1.21.X 版本，原版《Minecraft》可能会对玩家造成伤害的生物包括：
-                #
-                # A: 美西螈
-                # B: 蜜蜂、烈焰人（近战 & 弹射物-小火球）、沼骸（近战 & 弹射物-箭）
-                # C: 洞穴蜘蛛、嘎枝、苦力怕
-                # D: 海豚、溺尸（近战 & 弹射物-三叉戟）
-                # E: 远古守卫者（魔法-激光 & 魔法-尖刺）、末影龙（范围杀伤-扑翼 & 范围杀伤-冲撞 & 区域效果云-龙息 & 区域效果云-末影龙火球）、末影人、末影螨、唤魔者（魔法-唤魔者尖牙）
-                # F: 青蛙
-                # G: 恶魂（弹射物-火球 & 爆炸-火球）、巨人、山羊、守卫者
-                # H: 疣猪兽、尸壳
-                # I: 幻术师（弹射物-箭）、铁傀儡
-                # K: 杀手兔
-                # L: 羊驼（弹射物-羊驼唾沫）
-                # M: 岩浆怪
-                # P: 熊猫、幻翼、猪灵（近战 & 弹射物-箭）、猪灵蛮兵、掠夺者（弹射物-箭）、北极熊、河豚（范围杀伤）
-                # R: 劫掠兽（近战 & 范围杀伤-咆哮）
-                # S: 潜影贝（弹射物-潜影弹）、蠹虫、骷髅（近战 & 弹射物-箭）、史莱姆、雪傀儡、流浪者（近战 & 弹射物-箭）、蜘蛛
-                # V: 村民（范围杀伤-烟花火箭）、恼鬼、卫道士
-                # W: 监守者（近战 & 魔法-音波）、女巫（弹射物-喷溅型药水）、凋灵骷髅、凋灵（爆炸-生成时 & 弹射物-凋灵之首 & 爆炸-凋灵之首）、狼
-                # Z: 僵尸疣猪兽、僵尸、僵尸猪灵
-                #
-                # ================================================================
-                                
+                                           
                 "axolotl" = ["minecraft:entity.axolotl.idle_water", "minecraft:entity.axolotl.idle_air", "minecraft:entity.axolotl.attack"]
                 "bogged" = ["minecraft:entity.bogged.ambient", "minecraft:entity.bogged.step"]
                 "bee" = ["minecraft:entity.bee.loop", "minecraft:entity.bee.loop_aggressive", "minecraft:entity.bee.sting"]

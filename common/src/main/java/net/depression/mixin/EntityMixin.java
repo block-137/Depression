@@ -21,6 +21,8 @@ public abstract class EntityMixin { ;
 
     @Shadow public abstract Level getLevel();
 
+    @Shadow public abstract void tick();
+
     @Inject(method = "playStepSound", at = @At("HEAD"))
     private void playStepSound(CallbackInfo ci) {
         TempValues.isStepSound = true;
