@@ -1,6 +1,7 @@
 package net.depression.mental;
 
 import dev.architectury.networking.NetworkManager;
+import net.depression.client.ClientMentalStatus;
 import net.depression.mixin.MobAccess;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.PTSDOnsetPacket;
@@ -28,6 +29,8 @@ public class PTSDManager {
     public static final double PTSD_3_VALUE = 32d;
     public static final double PTSD_2_VALUE = 26d;
     public static final double PTSD_1_VALUE = 20d;
+    public static double KILL_PTSD_DECREASE;
+    public static double ONSET_EMOTION_DECREASE;
     public static HashMap<String, List<String>> soundEventMap = new HashMap<>(); // SoundEvent ID -> DamageSource ID
     public static HashMap<String, List<SoundEvent>> damageSourceMap = new HashMap<>(); // DamageSource ID -> SoundEvent
     private final MentalStatus mentalStatus;
@@ -129,6 +132,7 @@ public class PTSDManager {
             }
         }
         if (currentMaxPTSDValue > PTSD_4_VALUE) {
+            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 4;
             if (photismCountdown == null) {
                 photismCountdown = 30 + (int) mentalStatus.emotionValue;
             }
@@ -149,6 +153,7 @@ public class PTSDManager {
             PTSDOnsetPacket.sendToPlayer(player, 4, distance);
         }
         else if (currentMaxPTSDValue > PTSD_3_VALUE) {
+            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 3;
             if (phonismCountdown == null) {
                 phonismCountdown = 60 + (int) mentalStatus.emotionValue * 2;
             }
@@ -160,10 +165,12 @@ public class PTSDManager {
             PTSDOnsetPacket.sendToPlayer(player, 3, distance);
         }
         else if (currentMaxPTSDValue > PTSD_2_VALUE) {
+            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 2;
             player.playSound(ModSounds.PANT.get());
             PTSDOnsetPacket.sendToPlayer(player, 2, distance);
         }
         else if (currentMaxPTSDValue > PTSD_1_VALUE) {
+            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 1;
             player.playSound(ModSounds.PANT.get(), 0.5f, 1f);
             PTSDOnsetPacket.sendToPlayer(player, 1, distance);
         }

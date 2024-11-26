@@ -15,6 +15,8 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Mixin;
@@ -59,6 +61,7 @@ public abstract class PlayerMixin {
             return;
         }
         MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
+        mentalStatus.mentalIllness.medicineDelay.remove("depression:insomnia_tablet");
         Boolean isInsomnia = mentalStatus.mentalIllness.isInsomnia;
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
         if ((!isSleepy && isInsomnia != null && isInsomnia) || mentalStatus.isMania()) { //如果失眠且没有困倦buff（或处于躁狂状态），则直接返回，不进行睡眠治疗
@@ -90,17 +93,24 @@ public abstract class PlayerMixin {
         if (mentalIllness.mentalHealthId >= 3 && !mentalIllness.isMania && !(itemStack.getItem() instanceof MedicineItem)) { //如果是重度抑郁症患者吃了非药物食物
             player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 200, 0));
         }
-        FoodProperties foodProperties = itemStack.getItem().getFoodProperties();
-        mentalStatus.mentalHeal(itemStack.getItem().arch$registryName().toString(), foodProperties.getNutrition() / 2f
-                * (1+foodProperties.getSaturationModifier() * 2f) //获得饱食度+饱和度
-                * foodProperties.getSaturationModifier() //乘以营养等级
-                * MentalStatus.FOOD_HEAL_RATE); //乘以食物治疗倍率
+        Item item = itemStack.getItem();
+        String id = item.arch$registryName().toString();
+        if (MentalStatus.foodHealValue.containsKey(id)) {
+            mentalStatus.mentalHeal(id, MentalStatus.foodHealValue.get(id));
+        }
+        else {
+            FoodProperties foodProperties = item.getFoodProperties();
+            mentalStatus.mentalHeal(id, foodProperties.getNutrition()
+                    * (1 + foodProperties.getSaturationModifier() * 2f) //获得饱食度+饱和度
+                    * foodProperties.getSaturationModifier() //乘以营养等级
+                    * MentalStatus.FOOD_HEAL_RATE); //乘以食物治疗倍率
+        }
     }
 
     @Inject(method = "actuallyHurt", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;causeFoodExhaustion(F)V"))
     private void actuallyHurt(DamageSource damageSource, float f, CallbackInfo ci) {
         Player player = (Player) (Object) this;
-        if (player.isCreative() || player.isSpectator()) {
+        if (player.isCreative() || player.isSpectator() || Registry.playerEventMap.containsKey(player.getUUID())) {
             return;
         }
         //PTSD的范围是0-10

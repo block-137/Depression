@@ -10,6 +10,7 @@ import net.depression.network.MentalTraitPacket;
 import net.depression.network.PlaySoundPacket;
 import net.depression.screen.MentalTraitInfoScreen;
 import net.depression.screen.MentalTraitSelectionScreen;
+import net.depression.screen.UncloseableScreen;
 import net.depression.sound.ModSounds;
 import net.depression.util.TempValues;
 import net.minecraft.client.ClientRecipeBook;
@@ -28,9 +29,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.ArrayDeque;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 @Mixin(ClientLevel.class)
 public abstract class ClientLevelMixin {
@@ -43,7 +43,7 @@ public abstract class ClientLevelMixin {
             if (selectionScreen == null) {
                 selectionScreen = new MentalTraitSelectionScreen();
             }
-            if (minecraft.screen != selectionScreen && !(minecraft.screen instanceof MentalTraitInfoScreen)) {
+            if (!(minecraft.screen instanceof UncloseableScreen)) {
                 minecraft.setScreen(selectionScreen);
             }
         }
@@ -52,7 +52,7 @@ public abstract class ClientLevelMixin {
         Player player = Minecraft.getInstance().player;
         long curTick = ((ClientLevel) (Object) this).getGameTime();
         String dimensionID = Minecraft.getInstance().level.dimensionTypeId().location().toString();
-        ArrayDeque<Pair<Entity, Long>> falseEntities = ClientPTSDManager.falseEntities.get(dimensionID);
+        ConcurrentLinkedDeque<Pair<Entity, Long>> falseEntities = ClientPTSDManager.falseEntities.get(dimensionID);
         if (falseEntities != null) {
             falseEntities.removeIf(pair -> curTick - pair.getSecond() > 400);
         }

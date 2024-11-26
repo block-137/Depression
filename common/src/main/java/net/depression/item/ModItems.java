@@ -5,6 +5,8 @@ import dev.architectury.registry.registries.Registries;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.depression.Depression;
 import net.depression.effect.ModEffects;
+import net.depression.mental.MentalTrait;
+import net.depression.screen.MentalTraitSelectionScreen;
 import net.depression.tag.ModBannerPatternTags;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -12,8 +14,10 @@ import net.minecraft.world.item.BannerPatternItem;
 import net.minecraft.world.item.Item;
 
 public class ModItems {
-
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Depression.MOD_ID, Registry.ITEM_REGISTRY);
+
+    public static final RegistrySupplier<Item> SWITCH_TRAIT = ITEMS.register("switch_trait",
+            () -> new ScreenItem("item.depression.switch_trait.desc", MentalTraitSelectionScreen::new));
     public static final RegistrySupplier<Item> DIARY = ITEMS.register("diary",
             () -> new DiaryItem(new Item.Properties().stacksTo(1).tab(ModCreativeTabs.ITEMS_TAB)));
     public static final RegistrySupplier<Item> MENTAL_HEALTH_SCALE = ITEMS.register("mental_health_scale",
@@ -30,7 +34,7 @@ public class ModItems {
     public static final RegistrySupplier<Item> MANIA_TABLET = ITEMS.register("mania_tablet",
             () -> new MedicineItem(ModEffects.ANTI_MANIA.get(), 24000, 0, "item.depression.mania_tablet.desc"));
     public static final RegistrySupplier<Item> INSOMNIA_TABLET = ITEMS.register("insomnia_tablet",
-            () -> new MedicineItem("depression:insomnia_tablet", ModEffects.SLEEPINESS.get(), 6000, 0, 300, 600, "item.depression.insomnia_tablet.desc"));
+            () -> new MedicineItem("depression:insomnia_tablet", ModEffects.SLEEPINESS.get(), 6000, 0, 300, 500, "item.depression.insomnia_tablet.desc"));
 
     public static final RegistrySupplier<Item> RIBBON_BANNER_PATTERN = ITEMS.register("ribbon_banner_pattern",
             () -> new BannerPatternItem(ModBannerPatternTags.PATTERN_RIBBON, new Item.Properties().stacksTo(1).tab(ModCreativeTabs.ITEMS_TAB)));
