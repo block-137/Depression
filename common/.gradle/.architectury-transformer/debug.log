@@ -4,15 +4,15 @@
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4-transformProductionFabric.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@723e8291
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@45fd5daf
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@1b174254
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@27a409ac
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@420906c6
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@5aaf3319
 [Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@4c6cc64f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@1c958a35
 [Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4-transformProductionFabric.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression1.19.2\common\build\loom-cache\mixin-map-loom.mappings.1_19_2.layered+hash.40359-v2.main.tiny
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.shadowed.impl.dev.architectury.tinyremapper.TinyUtils$$Lambda$4406/0x000001df82120000@65c5eb6e
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.shadowed.impl.dev.architectury.tinyremapper.TinyUtils$$Lambda$2978/0x000002043ddb6638@240bf1d9
 [Architectury Transformer DEBUG] Provided 59 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
@@ -73,7 +73,7 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\8d10e9e138dac52172dd83229bdc89197100c723\netty-transport-native-epoll-4.1.77.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\5f051599ced83e119ddeda891f471c0613721e5c\netty-transport-native-epoll-4.1.77.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.2\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_2_layered_hash_40359_v2\dev\architectury\architectury\6.6.92\architectury-6.6.92.jar
-[Architectury Transformer] Read classpath in 935.1 ms
+[Architectury Transformer] Read classpath in 847.8 ms
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/Depression with maxs=true frames=true
@@ -85,10 +85,10 @@
 [Architectury Transformer DEBUG] Writing net/depression/server/StatManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/server/Registry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/VerticalSliderButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/TextButton with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitInfoScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/TextButton with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
@@ -96,16 +96,16 @@
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalTraitPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/SingleJigsawAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/ChunkMapMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/ServerLevelMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/ChunkMapMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/SingleJigsawAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ItemStackMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/LivingEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/CakeBlockMixin with maxs=true frames=true
@@ -117,38 +117,38 @@
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/ClientLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllnessPool with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalTrait with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientRawInputEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponent with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiManiaEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/config/ServerConfig with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/config/ClientConfig with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/screen/DiaryAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
@@ -159,25 +159,25 @@
 [Architectury Transformer DEBUG] Found mixin config(s): /depression.mixins.json
 [Architectury Transformer DEBUG] Injecting depression-common-common-refmap.json to /depression.mixins.json
 [Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4-transformProductionFabric.jar
-[Architectury Transformer] Transformed jar with 5 transformer(s) in 1.127 s
+[Architectury Transformer] Transformed jar with 5 transformer(s) in 1.379 s
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4-transformProductionForge.jar
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] Transforming 7 transformer(s) from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4-transformProductionForge.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@3fdbda4c
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@2e7bd288
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@6615e24a
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@59546092
 [Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@5d93caa7
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@564c1d0f
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@56c0bb8c
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@2e74cedb
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@85b12e6
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@1e6a0721
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@272d9f8b
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@75b276a9
 [Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.2\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4-transformProductionForge.jar with 7 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression1.19.2\common\build\loom-cache\mixin-map-loom.mappings.1_19_2.layered+hash.40359-v2.main.tiny
 [Architectury Transformer DEBUG] Remapping with 2 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$4721/0x000001df82237a58@6d71ff40
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$4722/0x000001df82237c78@674878ca
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$3124/0x000002043ddfde08@5df22bf
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$3123/0x000002043ddfdbe8@24fdc18b
 [Architectury Transformer DEBUG] Provided 59 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
@@ -238,7 +238,7 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\8d10e9e138dac52172dd83229bdc89197100c723\netty-transport-native-epoll-4.1.77.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.77.Final\5f051599ced83e119ddeda891f471c0613721e5c\netty-transport-native-epoll-4.1.77.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.2\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_2_layered_hash_40359_v2\dev\architectury\architectury\6.6.92\architectury-6.6.92.jar
-[Architectury Transformer] Read classpath in 1.413 s
+[Architectury Transformer] Read classpath in 690.0 ms
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/client/BookViewScreenMixin#getNumPages()I -> m_98300_
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/client/BookViewScreenMixin#getClickedComponentStyleAt(DD)Lnet/minecraft/network/chat/Style; -> m_98268_
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/EntityMixin#getLevel()Lnet/minecraft/world/level/Level; -> m_9236_
@@ -262,42 +262,42 @@
 [Architectury Transformer DEBUG] Writing net/depression/sound/ModSounds with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/server/StatManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/server/Registry with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/VerticalSliderButton with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitInfoScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/VerticalSliderButton with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitButton with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/TextButton with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalTraitPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/SingleJigsawAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/ChunkMapMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/ServerLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ItemStackMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/LivingEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/CakeBlockMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/JukeboxBlockEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/FishingHookMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/client/BookViewScreenMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LevelRendererMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LocalPlayerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/client/BookViewScreenMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/ClientLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllnessPool with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalTrait with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
@@ -308,12 +308,12 @@
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientRawInputEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponent with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiManiaEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
@@ -321,12 +321,12 @@
 [Architectury Transformer DEBUG] Writing net/depression/config/ServerConfig with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/config/ClientConfig with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/screen/DiaryAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
@@ -418,5 +418,5 @@
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1799;method_7935()I -> Lnet/minecraft/world/item/ItemStack;m_41779_()I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V -> Lnet/minecraft/world/entity/LivingEntity;m_6672_(Lnet/minecraft/world/InteractionHand;)V
 [Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4-transformProductionForge.jar
-[Architectury Transformer] Transformed jar with 7 transformer(s) in 1.988 s
+[Architectury Transformer] Transformed jar with 7 transformer(s) in 1.079 s
 [Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.2\common\build\libs\depression-common-0.1.4.jar

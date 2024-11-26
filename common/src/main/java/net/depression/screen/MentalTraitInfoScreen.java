@@ -43,12 +43,8 @@ public class MentalTraitInfoScreen extends Screen {
                     MentalTraitPacket.sendToServer(id);
                     ClientMentalStatus.isMentalTraitSelected = true;
                     minecraft.setScreen(null);
-<<<<<<< HEAD
                 }));
 
-=======
-                }), TextButton.getDefaultNarration());
->>>>>>> 7c816e9 (Fix some bug)
         String string = Component.translatable("depression.mental_trait." + id + ".desc").getString();
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < string.length(); ++i) {
