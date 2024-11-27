@@ -5,7 +5,6 @@ import dev.architectury.registry.registries.Registries;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.depression.Depression;
 import net.depression.effect.ModEffects;
-import net.depression.mental.MentalTrait;
 import net.depression.screen.MentalTraitSelectionScreen;
 import net.depression.tag.ModBannerPatternTags;
 import net.minecraft.core.Registry;
@@ -17,7 +16,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Depression.MOD_ID, Registry.ITEM_REGISTRY);
 
     public static final RegistrySupplier<Item> SWITCH_TRAIT = ITEMS.register("switch_trait",
-            () -> new ScreenItem("item.depression.switch_trait.desc", MentalTraitSelectionScreen::new));
+            () -> new SwitchTraitItem("item.depression.switch_trait.desc"));
     public static final RegistrySupplier<Item> DIARY = ITEMS.register("diary",
             () -> new DiaryItem(new Item.Properties().stacksTo(1).tab(ModCreativeTabs.ITEMS_TAB)));
     public static final RegistrySupplier<Item> MENTAL_HEALTH_SCALE = ITEMS.register("mental_health_scale",
