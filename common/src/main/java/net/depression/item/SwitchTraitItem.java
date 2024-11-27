@@ -1,8 +1,7 @@
 package net.depression.item;
 
+import net.depression.client.ClientMentalStatus;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -14,16 +13,12 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.function.Supplier;
 
-public class ScreenItem extends Item {
+public class SwitchTraitItem extends Item {
     String lore;
-    Supplier<Screen> screenSupplier;
-
-    public ScreenItem(String lore, Supplier<Screen> screenSupplier) {
+    public SwitchTraitItem(String lore) {
         super(new Properties().arch$tab(ModCreativeTabs.ITEMS_TAB));
         this.lore = lore;
-        this.screenSupplier = screenSupplier;
     }
     @Override
     public void appendHoverText(ItemStack stack, Level level, List<Component> list, TooltipFlag flag) {
@@ -33,7 +28,7 @@ public class ScreenItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         if (level.isClientSide()) {
-            Minecraft.getInstance().setScreen(screenSupplier.get());
+            ClientMentalStatus.isMentalTraitSelected = false;
         }
         itemStack.shrink(1);
         return super.use(level, player, hand);
