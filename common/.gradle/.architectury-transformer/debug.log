@@ -1,18 +1,18 @@
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] ============================
-[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionFabric.jar
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.5+1.19.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionFabric.jar
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
-[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionFabric.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@1921eb31
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@4b4a3240
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@3443d5f6
+[Architectury Transformer DEBUG] Transforming 5 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.5+1.19.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionFabric.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapMixinVariables@28340d51
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@512c8be9
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@3833cc35
 [Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@30fa349d
-[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionFabric.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@1c26881f
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.5+1.19.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionFabric.jar with 5 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression1.19.4\common\build\loom-cache\mixin-map-loom.mappings.1_19_4.layered+hash.40359-v2.main.tiny
 [Architectury Transformer DEBUG] Remapping with 1 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.shadowed.impl.dev.architectury.tinyremapper.TinyUtils$$Lambda$2978/0x000002043ddb6638@3a14d947
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.shadowed.impl.dev.architectury.tinyremapper.TinyUtils$$Lambda$3526/0x00000184b917d540@711d5c6e
 [Architectury Transformer DEBUG] Provided 59 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
@@ -73,7 +73,7 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\dev\architectury\architectury\8.2.91\architectury-8.2.91.jar
-[Architectury Transformer] Read classpath in 1.010 s
+[Architectury Transformer] Read classpath in 937.7 ms
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] Found class transformer
 [Architectury Transformer DEBUG] Writing net/depression/Depression with maxs=true frames=true
@@ -85,45 +85,53 @@
 [Architectury Transformer DEBUG] Writing net/depression/server/StatManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/server/Registry with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/UncloseableScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitInfoScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitButton with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/VerticalSliderButton with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/TextButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitInfoScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalTraitPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/TagManagerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/ServerBossEventMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/ServerLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/ChunkMapMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/ServerLevelMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ItemStackMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/LivingEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/CakeBlockMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/AnimalMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/MobMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/RandomizableContainerBlockEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/RaidMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/JukeboxBlockEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/FishingHookMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/LootTableMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LevelRendererMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/client/ClientLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LocalPlayerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/client/KeyboardHandlerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/BookViewScreenMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/AbstractSliderButtonMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/client/ClientLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllnessPool with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalTrait with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllnessPool with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/listener/LifeCycleEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
@@ -133,23 +141,24 @@
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/ScreenItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponent with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/AntiManiaEffect with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/effect/AntiDepressionEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/ModEffects with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/config/ServerConfig with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/config/ClientConfig with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/screen/DiaryAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
@@ -160,26 +169,26 @@
 [Architectury Transformer DEBUG] Checking whether /depression-common-common-refmap.json is a mixin config.
 [Architectury Transformer DEBUG] Found mixin config(s): /depression.mixins.json
 [Architectury Transformer DEBUG] Injecting depression-common-common-refmap.json to /depression.mixins.json
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionFabric.jar
-[Architectury Transformer] Transformed jar with 5 transformer(s) in 1.409 s
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionFabric.jar
+[Architectury Transformer] Transformed jar with 5 transformer(s) in 1.218 s
 [Architectury Transformer DEBUG] 
 [Architectury Transformer DEBUG] ============================
-[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionForge.jar
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.5+1.19.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionForge.jar
 [Architectury Transformer DEBUG] ============================
 [Architectury Transformer DEBUG] 
-[Architectury Transformer DEBUG] Transforming 7 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionForge.jar: 
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@21c7ce4e
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@411fd6a5
+[Architectury Transformer DEBUG] Transforming 7 transformer(s) from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.5+1.19.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionForge.jar: 
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformExpectPlatform@4be8af68
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.RemapInjectables@527d274
 [Architectury Transformer DEBUG]  - AddRefmapName(enabled=() -> kotlin.Boolean)
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@4cb6da21
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@709d9b7c
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@5977e1ea
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@3c08d0d9
-[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionForge.jar with 7 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformPlatformOnly@21b78965
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeAnnotations@7f6c062
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment@64d0ba90
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.FixForgeMixin@4ae5d9b1
+[Architectury Transformer DEBUG] Transforming from D:\MinecraftModProject\Depression1.19.4\common\build\devlibs\depression-common-0.1.5+1.19.4-dev.jar to D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionForge.jar with 7 transformer(s) on dev.architectury.transformer.handler.SimpleTransformerHandler
 [Architectury Transformer DEBUG] Reading mixin mappings file: D:\MinecraftModProject\Depression1.19.4\common\build\loom-cache\mixin-map-loom.mappings.1_19_4.layered+hash.40359-v2.main.tiny
 [Architectury Transformer DEBUG] Remapping with 2 mapping provider(s):
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$3124/0x000002043ddfde08@5df22bf
-[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$3123/0x000002043ddfdbe8@469572ab
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$3727/0x00000184b908fa28@791ba71f
+[Architectury Transformer DEBUG]  - dev.architectury.transformer.transformers.TransformForgeEnvironment$$Lambda$3726/0x00000184b908f808@57049d29
 [Architectury Transformer DEBUG] Provided 59 classpath jar(s):
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\dev.architectury\architectury-injectables\1.0.10\62db2a366d662606d1b23ad02ccc3212ed37ec3\architectury-injectables-1.0.10.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\net.fabricmc\fabric-loader\0.16.9\7eaa23079ac1569963e488054db124c7eb984f05\fabric-loader-0.16.9.jar
@@ -240,18 +249,22 @@
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\c7350a71920f3ae9142945e25fed4846cce53374\netty-transport-native-epoll-4.1.82.Final-linux-x86_64.jar
 [Architectury Transformer DEBUG]  - C:\Users\13475\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-epoll\4.1.82.Final\476409d6255001ca53a55f65b01c13822f8dc93a\netty-transport-native-epoll-4.1.82.Final-linux-aarch_64.jar
 [Architectury Transformer DEBUG]  - D:\MinecraftModProject\Depression1.19.4\.gradle\loom-cache\remapped_mods\loom_mappings_1_19_4_layered_hash_40359_v2\dev\architectury\architectury\8.2.91\architectury-8.2.91.jar
-[Architectury Transformer] Read classpath in 863.8 ms
+[Architectury Transformer] Read classpath in 712.2 ms
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/client/BookViewScreenMixin#getNumPages()I -> m_98300_
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/client/BookViewScreenMixin#getClickedComponentStyleAt(DD)Lnet/minecraft/network/chat/Style; -> m_98268_
+[Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/client/KeyboardHandlerMixin#keyPress(JIIII)V -> m_90893_
 [Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/EntityMixin#getLevel()Lnet/minecraft/world/level/Level; -> m_9236_
+[Architectury Transformer DEBUG] Remap mixin method net/depression/mixin/EntityMixin#tick()V -> m_8119_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/BookViewScreenMixin#bookAccess:Lnet/minecraft/client/gui/screens/inventory/BookViewScreen$BookAccess; -> f_98253_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/BookViewScreenMixin#cachedPage:I -> f_98256_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/BookViewScreenMixin#currentPage:I -> f_98254_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/BookViewScreenMixin#cachedPageComponents:Ljava/util/List; -> f_98255_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/BookViewScreenMixin#pageMsg:Lnet/minecraft/network/chat/Component; -> f_98257_
+[Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/KeyboardHandlerMixin#minecraft:Lnet/minecraft/client/Minecraft; -> f_90867_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/LevelRendererMixin#level:Lnet/minecraft/client/multiplayer/ClientLevel; -> f_109465_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/LevelRendererMixin#entityRenderDispatcher:Lnet/minecraft/client/renderer/entity/EntityRenderDispatcher; -> f_109463_
 [Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/client/LevelRendererMixin#renderBuffers:Lnet/minecraft/client/renderer/RenderBuffers; -> f_109464_
+[Architectury Transformer DEBUG] Remap mixin field net/depression/mixin/emotion/RaidMixin#badOmenLevel:I -> f_37679_
 [Architectury Transformer DEBUG] Remapping Classes:
 [Architectury Transformer DEBUG] net/fabricmc/api/EnvType -> net/minecraftforge/api/distmarker/Dist
 [Architectury Transformer DEBUG] net/fabricmc/api/Environment -> net/minecraftforge/api/distmarker/OnlyIn
@@ -264,48 +277,56 @@
 [Architectury Transformer DEBUG] Writing net/depression/sound/ModSounds with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/server/StatManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/server/Registry with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/VerticalSliderButton with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitButton with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitSelectionScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/UncloseableScreen with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/screen/VerticalSliderButton with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/TextButton with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/screen/MentalTraitInfoScreen with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/DiaryUpdatePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/PlaySoundPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/ActionbarHintPacket with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/network/PTSDOnsetPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/CloseEyePacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalStatusPacket with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/network/MentalTraitPacket with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/TagManagerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/ServerBossEventMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/MilkBucketItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/ChunkMapMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/PlayerListMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/EntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/ServerLevelMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/ChunkMapMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/MobAccess with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/StructureTemplatePoolAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/ItemStackMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/CrossbowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/BowItemMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/symptom/LivingEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/AnimalMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/CakeBlockMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/RandomizableContainerBlockEntityMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/MobMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/RaidMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/JukeboxBlockEntityMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/FishingHookMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/emotion/LootTableMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LevelRendererMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/LocalPlayerMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/client/KeyboardHandlerMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/BookViewScreenMixin with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/ClientLevelMixin with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mixin/client/AbstractSliderButtonMixin with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mixin/client/FontAccess with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalStatus with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalTrait with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllnessPool with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/PTSDManager with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness$1 with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/mental/MentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/PlayerEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/EntityEventListener with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/listener/LifeCycleEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/BlockEventListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/CommandRegistrationListener with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/listener/client/ClientLifecycleEventListener with maxs=true frames=true
@@ -313,8 +334,9 @@
 [Architectury Transformer DEBUG] Writing net/depression/item/ModCreativeTabs with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/ModItems with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/DiaryItem with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/ScreenItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/MedicineItem with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/item/MentalHealthScaleItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/AntiDepressantItem with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponent with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/item/diary/ConditionComponents with maxs=true frames=true
@@ -324,16 +346,16 @@
 [Architectury Transformer DEBUG] Writing net/depression/effect/SleepinessEffect with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/config/ServerConfig with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/config/ClientConfig with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientDiaryUpdater with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalIllness with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientPTSDManager$TinnitusSoundInstance with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/ClientMentalStatus with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/ClientActionbarHint with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/client/DepressionClient with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/client/screen/DiaryAccess with maxs=true frames=true
-[Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ModBlocks with maxs=true frames=true
+[Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock$1 with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/ComputerBlock with maxs=true frames=true
 [Architectury Transformer DEBUG] Writing net/depression/block/entity/ModBannerPatterns with maxs=true frames=true
 [Architectury Transformer DEBUG] Checking whether /depression.mixins.json is a mixin config.
@@ -360,27 +382,37 @@
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1657;method_5749(Lnet/minecraft/class_2487;)V -> Lnet/minecraft/world/entity/player/Player;m_7378_(Lnet/minecraft/nbt/CompoundTag;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1657;method_7358(ZZ)V -> Lnet/minecraft/world/entity/player/Player;m_6145_(ZZ)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1657;method_5773()V -> Lnet/minecraft/world/entity/player/Player;m_8119_()V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3213;method_14088(Lnet/minecraft/class_3222;)V -> Lnet/minecraft/server/level/ServerBossEvent;m_6543_(Lnet/minecraft/server/level/ServerPlayer;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3213;method_14089(Lnet/minecraft/class_3222;)V -> Lnet/minecraft/server/level/ServerBossEvent;m_6539_(Lnet/minecraft/server/level/ServerPlayer;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_18213(Lnet/minecraft/class_3222;)V -> Lnet/minecraft/server/level/ServerLevel;m_8834_(Lnet/minecraft/server/level/ServerPlayer;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_262808_(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_213890_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V
 [Architectury Transformer DEBUG] Remapped refmap value field_16864:Ljava/util/List; -> f_210559_:Ljava/util/List;
 [Architectury Transformer DEBUG] Remapped refmap value field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList; -> f_210560_:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;
-[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V -> Lnet/minecraft/tags/TagManager;<init>(Lnet/minecraft/core/RegistryAccess;)V
 [Architectury Transformer DEBUG] Remapped refmap value method_48204()I -> m_264270_()I
 [Architectury Transformer DEBUG] Remapped refmap value method_25356()I -> m_264355_()I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_4587;IIF)V -> Lnet/minecraft/client/gui/screens/inventory/BookViewScreen;m_86412_(Lcom/mojang/blaze3d/vertex/PoseStack;IIF)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_638;method_8486(DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFZ)V -> Lnet/minecraft/client/multiplayer/ClientLevel;m_7785_(DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFZ)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_638;method_8441(Ljava/util/function/BooleanSupplier;)V -> Lnet/minecraft/client/multiplayer/ClientLevel;m_104726_(Ljava/util/function/BooleanSupplier;)V
 [Architectury Transformer DEBUG] Remapped refmap value field_24238:Lnet/minecraft/class_5225; -> f_92714_:Lnet/minecraft/client/StringSplitter;
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_309;method_1466(JIIII)V -> Lnet/minecraft/client/KeyboardHandler;m_90893_(JIIII)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_638;method_18112()Ljava/lang/Iterable; -> Lnet/minecraft/client/multiplayer/ClientLevel;m_104735_()Ljava/lang/Iterable;
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_761;method_22710(Lnet/minecraft/class_4587;FJZLnet/minecraft/class_4184;Lnet/minecraft/class_757;Lnet/minecraft/class_765;Lorg/joml/Matrix4f;)V -> Lnet/minecraft/client/renderer/LevelRenderer;m_109599_(Lcom/mojang/blaze3d/vertex/PoseStack;FJZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lorg/joml/Matrix4f;)V
-[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V -> Lnet/minecraft/client/player/LocalPlayer;m_6478_(Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V -> Lnet/minecraft/client/player/LocalPlayer;m_6986_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1429;method_5618()I -> Lnet/minecraft/world/entity/animal/Animal;m_146764_()I
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1429;method_5992(Lnet/minecraft/class_1657;Lnet/minecraft/class_1268;)Lnet/minecraft/class_1269; -> Lnet/minecraft/world/entity/animal/Animal;m_6071_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1702;method_7585(IF)V -> Lnet/minecraft/world/food/FoodData;m_38707_(IF)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269; -> Lnet/minecraft/world/level/block/CakeBlock;m_51185_(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/InteractionResult;
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1542;method_18800(DDD)V -> Lnet/minecraft/world/entity/item/ItemEntity;m_20334_(DDD)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1536;method_6957(Lnet/minecraft/class_1799;)I -> Lnet/minecraft/world/entity/projectile/FishingHook;m_37156_(Lnet/minecraft/world/item/ItemStack;)I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V -> Lnet/minecraft/world/level/block/entity/JukeboxBlockEntity;m_272276_(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_47;method_294()Lnet/minecraft/class_5819; -> Lnet/minecraft/world/level/storage/loot/LootContext;m_230907_()Lnet/minecraft/util/RandomSource;
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_52;method_329(Lnet/minecraft/class_1263;Lnet/minecraft/class_47;)V -> Lnet/minecraft/world/level/storage/loot/LootTable;m_79123_(Lnet/minecraft/world/Container;Lnet/minecraft/world/level/storage/loot/LootContext;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1308;method_5773()V -> Lnet/minecraft/world/entity/Mob;m_8119_()V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3222;method_7281(Lnet/minecraft/class_2960;)V -> Lnet/minecraft/server/level/ServerPlayer;m_36220_(Lnet/minecraft/resources/ResourceLocation;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3765;method_16509()V -> Lnet/minecraft/world/entity/raid/Raid;m_37775_()V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_5282;method_27993(Lnet/minecraft/class_3222;Lnet/minecraft/class_2960;)V -> Lnet/minecraft/advancements/critereon/LootTableTrigger;m_54597_(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/resources/ResourceLocation;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_2621;method_11289(Lnet/minecraft/class_1657;)V -> Lnet/minecraft/world/level/block/entity/RandomizableContainerBlockEntity;m_59640_(Lnet/minecraft/world/entity/player/Player;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V -> Lnet/minecraft/world/item/BowItem;m_5551_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;I)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V -> Lnet/minecraft/world/item/CrossbowItem;m_40905_(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1799;method_7935()I -> Lnet/minecraft/world/item/ItemStack;m_41779_()I
@@ -401,32 +433,42 @@
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1657;method_5749(Lnet/minecraft/class_2487;)V -> Lnet/minecraft/world/entity/player/Player;m_7378_(Lnet/minecraft/nbt/CompoundTag;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1657;method_7358(ZZ)V -> Lnet/minecraft/world/entity/player/Player;m_6145_(ZZ)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1657;method_5773()V -> Lnet/minecraft/world/entity/player/Player;m_8119_()V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3213;method_14088(Lnet/minecraft/class_3222;)V -> Lnet/minecraft/server/level/ServerBossEvent;m_6543_(Lnet/minecraft/server/level/ServerPlayer;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3213;method_14089(Lnet/minecraft/class_3222;)V -> Lnet/minecraft/server/level/ServerBossEvent;m_6539_(Lnet/minecraft/server/level/ServerPlayer;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_18213(Lnet/minecraft/class_3222;)V -> Lnet/minecraft/server/level/ServerLevel;m_8834_(Lnet/minecraft/server/level/ServerPlayer;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_262808_(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3218;method_8449(Lnet/minecraft/class_1657;Lnet/minecraft/class_1297;Lnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V -> Lnet/minecraft/server/level/ServerLevel;m_213890_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V
 [Architectury Transformer DEBUG] Remapped refmap value field_16864:Ljava/util/List; -> f_210559_:Ljava/util/List;
 [Architectury Transformer DEBUG] Remapped refmap value field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList; -> f_210560_:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;
-[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V -> Lnet/minecraft/tags/TagManager;<init>(Lnet/minecraft/core/RegistryAccess;)V
 [Architectury Transformer DEBUG] Remapped refmap value method_48204()I -> m_264270_()I
 [Architectury Transformer DEBUG] Remapped refmap value method_25356()I -> m_264355_()I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3872;method_25394(Lnet/minecraft/class_4587;IIF)V -> Lnet/minecraft/client/gui/screens/inventory/BookViewScreen;m_86412_(Lcom/mojang/blaze3d/vertex/PoseStack;IIF)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_638;method_8486(DDDLnet/minecraft/class_3414;Lnet/minecraft/class_3419;FFZ)V -> Lnet/minecraft/client/multiplayer/ClientLevel;m_7785_(DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFZ)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_638;method_8441(Ljava/util/function/BooleanSupplier;)V -> Lnet/minecraft/client/multiplayer/ClientLevel;m_104726_(Ljava/util/function/BooleanSupplier;)V
 [Architectury Transformer DEBUG] Remapped refmap value field_24238:Lnet/minecraft/class_5225; -> f_92714_:Lnet/minecraft/client/StringSplitter;
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_309;method_1466(JIIII)V -> Lnet/minecraft/client/KeyboardHandler;m_90893_(JIIII)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_638;method_18112()Ljava/lang/Iterable; -> Lnet/minecraft/client/multiplayer/ClientLevel;m_104735_()Ljava/lang/Iterable;
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_761;method_22710(Lnet/minecraft/class_4587;FJZLnet/minecraft/class_4184;Lnet/minecraft/class_757;Lnet/minecraft/class_765;Lorg/joml/Matrix4f;)V -> Lnet/minecraft/client/renderer/LevelRenderer;m_109599_(Lcom/mojang/blaze3d/vertex/PoseStack;FJZLnet/minecraft/client/Camera;Lnet/minecraft/client/renderer/GameRenderer;Lnet/minecraft/client/renderer/LightTexture;Lorg/joml/Matrix4f;)V
-[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V -> Lnet/minecraft/client/player/LocalPlayer;m_6478_(Lnet/minecraft/world/entity/MoverType;Lnet/minecraft/world/phys/Vec3;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V -> Lnet/minecraft/client/player/LocalPlayer;m_6986_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1429;method_5618()I -> Lnet/minecraft/world/entity/animal/Animal;m_146764_()I
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1429;method_5992(Lnet/minecraft/class_1657;Lnet/minecraft/class_1268;)Lnet/minecraft/class_1269; -> Lnet/minecraft/world/entity/animal/Animal;m_6071_(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResult;
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1702;method_7585(IF)V -> Lnet/minecraft/world/food/FoodData;m_38707_(IF)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_2272;method_9719(Lnet/minecraft/class_1936;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Lnet/minecraft/class_1657;)Lnet/minecraft/class_1269; -> Lnet/minecraft/world/level/block/CakeBlock;m_51185_(Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;)Lnet/minecraft/world/InteractionResult;
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1542;method_18800(DDD)V -> Lnet/minecraft/world/entity/item/ItemEntity;m_20334_(DDD)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1536;method_6957(Lnet/minecraft/class_1799;)I -> Lnet/minecraft/world/entity/projectile/FishingHook;m_37156_(Lnet/minecraft/world/item/ItemStack;)I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V -> Lnet/minecraft/world/level/block/entity/JukeboxBlockEntity;m_272276_(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_47;method_294()Lnet/minecraft/class_5819; -> Lnet/minecraft/world/level/storage/loot/LootContext;m_230907_()Lnet/minecraft/util/RandomSource;
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_52;method_329(Lnet/minecraft/class_1263;Lnet/minecraft/class_47;)V -> Lnet/minecraft/world/level/storage/loot/LootTable;m_79123_(Lnet/minecraft/world/Container;Lnet/minecraft/world/level/storage/loot/LootContext;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1308;method_5773()V -> Lnet/minecraft/world/entity/Mob;m_8119_()V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3222;method_7281(Lnet/minecraft/class_2960;)V -> Lnet/minecraft/server/level/ServerPlayer;m_36220_(Lnet/minecraft/resources/ResourceLocation;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_3765;method_16509()V -> Lnet/minecraft/world/entity/raid/Raid;m_37775_()V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_5282;method_27993(Lnet/minecraft/class_3222;Lnet/minecraft/class_2960;)V -> Lnet/minecraft/advancements/critereon/LootTableTrigger;m_54597_(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/resources/ResourceLocation;)V
+[Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_2621;method_11289(Lnet/minecraft/class_1657;)V -> Lnet/minecraft/world/level/block/entity/RandomizableContainerBlockEntity;m_59640_(Lnet/minecraft/world/entity/player/Player;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V -> Lnet/minecraft/world/item/BowItem;m_5551_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;I)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1764;method_7769(Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;Lnet/minecraft/class_1799;)V -> Lnet/minecraft/world/item/CrossbowItem;m_40905_(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/item/ItemStack;)V
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1799;method_7935()I -> Lnet/minecraft/world/item/ItemStack;m_41779_()I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1799;method_7935()I -> Lnet/minecraft/world/item/ItemStack;m_41779_()I
 [Architectury Transformer DEBUG] Remapped refmap value Lnet/minecraft/class_1309;method_6019(Lnet/minecraft/class_1268;)V -> Lnet/minecraft/world/entity/LivingEntity;m_6672_(Lnet/minecraft/world/InteractionHand;)V
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4-transformProductionForge.jar
-[Architectury Transformer] Transformed jar with 7 transformer(s) in 1.412 s
-[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.4.jar
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4-transformProductionForge.jar
+[Architectury Transformer] Transformed jar with 7 transformer(s) in 981.0 ms
+[Architectury Transformer DEBUG] Closed File Systems for D:\MinecraftModProject\Depression1.19.4\common\build\libs\depression-common-0.1.5+1.19.4.jar

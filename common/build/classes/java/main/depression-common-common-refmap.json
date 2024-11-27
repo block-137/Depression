@@ -27,6 +27,10 @@
       "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
       "tick": "Lnet/minecraft/class_1657;method_5773()V"
     },
+    "net/depression/mixin/ServerBossEventMixin": {
+      "addPlayer": "Lnet/minecraft/class_3213;method_14088(Lnet/minecraft/class_3222;)V",
+      "removePlayer": "Lnet/minecraft/class_3213;method_14089(Lnet/minecraft/class_3222;)V"
+    },
     "net/depression/mixin/ServerLevelMixin": {
       "addNewPlayer": "Lnet/minecraft/class_3218;method_18213(Lnet/minecraft/class_3222;)V",
       "playSeededSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V",
@@ -35,9 +39,6 @@
     "net/depression/mixin/StructureTemplatePoolAccess": {
       "rawTemplates": "field_16864:Ljava/util/List;",
       "templates": "field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"
-    },
-    "net/depression/mixin/TagManagerMixin": {
-      "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
     },
     "net/depression/mixin/client/AbstractSliderButtonMixin": {
       "getHandleTextureY": "method_48204()I",
@@ -53,13 +54,19 @@
     "net/depression/mixin/client/FontAccess": {
       "splitter": "field_24238:Lnet/minecraft/class_5225;"
     },
+    "net/depression/mixin/client/KeyboardHandlerMixin": {
+      "keyPress": "Lnet/minecraft/class_309;method_1466(JIIII)V"
+    },
     "net/depression/mixin/client/LevelRendererMixin": {
       "Lnet/minecraft/client/multiplayer/ClientLevel;entitiesForRendering()Ljava/lang/Iterable;": "Lnet/minecraft/class_638;method_18112()Ljava/lang/Iterable;",
       "renderLevel": "Lnet/minecraft/class_761;method_22710(Lnet/minecraft/class_4587;FJZLnet/minecraft/class_4184;Lnet/minecraft/class_757;Lnet/minecraft/class_765;Lorg/joml/Matrix4f;)V"
     },
     "net/depression/mixin/client/LocalPlayerMixin": {
-      "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
       "openItemGui": "Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V"
+    },
+    "net/depression/mixin/emotion/AnimalMixin": {
+      "Lnet/minecraft/world/entity/animal/Animal;getAge()I": "Lnet/minecraft/class_1429;method_5618()I",
+      "mobInteract": "Lnet/minecraft/class_1429;method_5992(Lnet/minecraft/class_1657;Lnet/minecraft/class_1268;)Lnet/minecraft/class_1269;"
     },
     "net/depression/mixin/emotion/CakeBlockMixin": {
       "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
@@ -71,6 +78,21 @@
     },
     "net/depression/mixin/emotion/JukeboxBlockEntityMixin": {
       "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
+    },
+    "net/depression/mixin/emotion/LootTableMixin": {
+      "Lnet/minecraft/world/level/storage/loot/LootContext;getRandom()Lnet/minecraft/util/RandomSource;": "Lnet/minecraft/class_47;method_294()Lnet/minecraft/class_5819;",
+      "fill": "Lnet/minecraft/class_52;method_329(Lnet/minecraft/class_1263;Lnet/minecraft/class_47;)V"
+    },
+    "net/depression/mixin/emotion/MobMixin": {
+      "tick": "Lnet/minecraft/class_1308;method_5773()V"
+    },
+    "net/depression/mixin/emotion/RaidMixin": {
+      "Lnet/minecraft/server/level/ServerPlayer;awardStat(Lnet/minecraft/resources/ResourceLocation;)V": "Lnet/minecraft/class_3222;method_7281(Lnet/minecraft/class_2960;)V",
+      "tick": "Lnet/minecraft/class_3765;method_16509()V"
+    },
+    "net/depression/mixin/emotion/RandomizableContainerBlockEntityMixin": {
+      "Lnet/minecraft/advancements/critereon/LootTableTrigger;trigger(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/resources/ResourceLocation;)V": "Lnet/minecraft/class_5282;method_27993(Lnet/minecraft/class_3222;Lnet/minecraft/class_2960;)V",
+      "unpackLootTable": "Lnet/minecraft/class_2621;method_11289(Lnet/minecraft/class_1657;)V"
     },
     "net/depression/mixin/symptom/BowItemMixin": {
       "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
@@ -115,6 +137,10 @@
         "stopSleepInBed": "Lnet/minecraft/class_1657;method_7358(ZZ)V",
         "tick": "Lnet/minecraft/class_1657;method_5773()V"
       },
+      "net/depression/mixin/ServerBossEventMixin": {
+        "addPlayer": "Lnet/minecraft/class_3213;method_14088(Lnet/minecraft/class_3222;)V",
+        "removePlayer": "Lnet/minecraft/class_3213;method_14089(Lnet/minecraft/class_3222;)V"
+      },
       "net/depression/mixin/ServerLevelMixin": {
         "addNewPlayer": "Lnet/minecraft/class_3218;method_18213(Lnet/minecraft/class_3222;)V",
         "playSeededSound(Lnet/minecraft/world/entity/player/Player;DDDLnet/minecraft/core/Holder;Lnet/minecraft/sounds/SoundSource;FFJ)V": "Lnet/minecraft/class_3218;method_8465(Lnet/minecraft/class_1657;DDDLnet/minecraft/class_6880;Lnet/minecraft/class_3419;FFJ)V",
@@ -123,9 +149,6 @@
       "net/depression/mixin/StructureTemplatePoolAccess": {
         "rawTemplates": "field_16864:Ljava/util/List;",
         "templates": "field_16680:Lit/unimi/dsi/fastutil/objects/ObjectArrayList;"
-      },
-      "net/depression/mixin/TagManagerMixin": {
-        "<init>": "Lnet/minecraft/class_3505;<init>(Lnet/minecraft/class_5455;)V"
       },
       "net/depression/mixin/client/AbstractSliderButtonMixin": {
         "getHandleTextureY": "method_48204()I",
@@ -141,13 +164,19 @@
       "net/depression/mixin/client/FontAccess": {
         "splitter": "field_24238:Lnet/minecraft/class_5225;"
       },
+      "net/depression/mixin/client/KeyboardHandlerMixin": {
+        "keyPress": "Lnet/minecraft/class_309;method_1466(JIIII)V"
+      },
       "net/depression/mixin/client/LevelRendererMixin": {
         "Lnet/minecraft/client/multiplayer/ClientLevel;entitiesForRendering()Ljava/lang/Iterable;": "Lnet/minecraft/class_638;method_18112()Ljava/lang/Iterable;",
         "renderLevel": "Lnet/minecraft/class_761;method_22710(Lnet/minecraft/class_4587;FJZLnet/minecraft/class_4184;Lnet/minecraft/class_757;Lnet/minecraft/class_765;Lorg/joml/Matrix4f;)V"
       },
       "net/depression/mixin/client/LocalPlayerMixin": {
-        "move": "Lnet/minecraft/class_746;method_5784(Lnet/minecraft/class_1313;Lnet/minecraft/class_243;)V",
         "openItemGui": "Lnet/minecraft/class_746;method_7315(Lnet/minecraft/class_1799;Lnet/minecraft/class_1268;)V"
+      },
+      "net/depression/mixin/emotion/AnimalMixin": {
+        "Lnet/minecraft/world/entity/animal/Animal;getAge()I": "Lnet/minecraft/class_1429;method_5618()I",
+        "mobInteract": "Lnet/minecraft/class_1429;method_5992(Lnet/minecraft/class_1657;Lnet/minecraft/class_1268;)Lnet/minecraft/class_1269;"
       },
       "net/depression/mixin/emotion/CakeBlockMixin": {
         "Lnet/minecraft/world/food/FoodData;eat(IF)V": "Lnet/minecraft/class_1702;method_7585(IF)V",
@@ -159,6 +188,21 @@
       },
       "net/depression/mixin/emotion/JukeboxBlockEntityMixin": {
         "tick": "Lnet/minecraft/class_2619;method_49211(Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;)V"
+      },
+      "net/depression/mixin/emotion/LootTableMixin": {
+        "Lnet/minecraft/world/level/storage/loot/LootContext;getRandom()Lnet/minecraft/util/RandomSource;": "Lnet/minecraft/class_47;method_294()Lnet/minecraft/class_5819;",
+        "fill": "Lnet/minecraft/class_52;method_329(Lnet/minecraft/class_1263;Lnet/minecraft/class_47;)V"
+      },
+      "net/depression/mixin/emotion/MobMixin": {
+        "tick": "Lnet/minecraft/class_1308;method_5773()V"
+      },
+      "net/depression/mixin/emotion/RaidMixin": {
+        "Lnet/minecraft/server/level/ServerPlayer;awardStat(Lnet/minecraft/resources/ResourceLocation;)V": "Lnet/minecraft/class_3222;method_7281(Lnet/minecraft/class_2960;)V",
+        "tick": "Lnet/minecraft/class_3765;method_16509()V"
+      },
+      "net/depression/mixin/emotion/RandomizableContainerBlockEntityMixin": {
+        "Lnet/minecraft/advancements/critereon/LootTableTrigger;trigger(Lnet/minecraft/server/level/ServerPlayer;Lnet/minecraft/resources/ResourceLocation;)V": "Lnet/minecraft/class_5282;method_27993(Lnet/minecraft/class_3222;Lnet/minecraft/class_2960;)V",
+        "unpackLootTable": "Lnet/minecraft/class_2621;method_11289(Lnet/minecraft/class_1657;)V"
       },
       "net/depression/mixin/symptom/BowItemMixin": {
         "releaseUsing": "Lnet/minecraft/class_1753;method_7840(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_1309;I)V"
