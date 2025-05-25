@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LootTable.class)
-public class LootTableMixin {
+public abstract class LootTableMixin {
     @Inject(method = "fill", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/world/level/storage/loot/LootContext;getRandom()Lnet/minecraft/util/RandomSource;"))
     private void onFill(CallbackInfo ci, @Local(ordinal = 0) ObjectArrayList<ItemStack> itemList) {

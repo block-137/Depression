@@ -13,4 +13,6 @@ dependencies {
 
     compileOnly "com.electronwill.night-config:core:3.6.0"
     compileOnly "com.electronwill.night-config:toml:3.6.0"
+
+    compileOnly "io.github.BeardedManZhao:mathematical-expression:1.5.6"
 }

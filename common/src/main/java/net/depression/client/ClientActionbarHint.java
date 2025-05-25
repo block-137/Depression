@@ -6,6 +6,8 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 
+import java.util.Random;
+
 public class ClientActionbarHint {
     private final String formHint1 = "message.depression.ptsd_form_hint_1";
     private final String formHint2 = "message.depression.ptsd_form_hint_2";
@@ -14,7 +16,7 @@ public class ClientActionbarHint {
 
     private final String remissionHint1 = "message.depression.ptsd_remission_hint_1";
     private final String remissionHint2 = "message.depression.ptsd_remission_hint_2";
-    private final String insomniaHint = "message.depression.insomnia";
+    private final String insomniaHint = "message.depression.insomnia_";
     private final String mentalFatigueHint = "message.depression.mental_fatigue";
 
     public static final String diaryUnwrittenHint = "message.depression.diary_unwritten";
@@ -32,6 +34,8 @@ public class ClientActionbarHint {
     private long feedAnimalHealLastTime = -1201;
     private long petHealLastTime = -1201;
     private long lootHealLastTime = -1201;
+
+    private final Random random = new Random();
 
     public void clear() {
         formLastId = null;
@@ -249,7 +253,15 @@ public class ClientActionbarHint {
 
     public void receiveInsomniaPacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
         Gui gui = Minecraft.getInstance().gui;
-        gui.setOverlayMessage(Component.translatable(insomniaHint), false);
+        String illness = switch (DepressionClient.clientMentalStatus.mentalHealthId) {
+            case 1 -> "1";
+            case 2 -> "2";
+            case 3 -> "3";
+            case 4 -> "mania";
+            default -> "";
+        };
+        gui.setOverlayMessage(Component.translatable(insomniaHint
+                + illness + "_" + random.nextInt(3) + 1), false);
     }
 
     public void receiveMentalFatiguePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {

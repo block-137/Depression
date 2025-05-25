@@ -1,20 +1,33 @@
 package net.depression.client;
 
-import dev.architectury.event.events.client.ClientGuiEvent;
-import dev.architectury.event.events.client.ClientLifecycleEvent;
-import dev.architectury.event.events.client.ClientRawInputEvent;
-import dev.architectury.event.events.client.ClientScreenInputEvent;
+import dev.architectury.event.events.client.*;
 import dev.architectury.networking.NetworkManager;
+import net.depression.client.rhythmcraft.ClientPlayingChart;
 import net.depression.config.ClientConfig;
+import net.depression.key.KeyMappings;
 import net.depression.listener.client.ClientLifecycleEventListener;
 import net.depression.listener.client.ClientRawInputEventListener;
+import net.depression.listener.client.ClientTickEventListener;
 import net.depression.network.*;
-import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.depression.rhythmcraft.RhythmCraftProfile;
+import net.depression.rhythmcraft.SongSortType;
+import net.depression.screen.rhythmcraft.GameGuiRenderer;
+import net.depression.screen.rhythmcraft.RCSelectionScreen;
+import net.depression.util.OggStreamPlayer;
+import net.minecraft.network.FriendlyByteBuf;
+
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class DepressionClient {
     public static final ClientMentalStatus clientMentalStatus = new ClientMentalStatus();
     public static final ClientActionbarHint clientActionbarHint = new ClientActionbarHint();
+    public static RhythmCraftProfile rcProfile = new RhythmCraftProfile();
+    public static OggStreamPlayer oggStreamPlayer = new OggStreamPlayer();
+    public static ClientPlayingChart playingChart;
     public static void onInitializeClient() {
+        KeyMappings.init();
+
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 MentalStatusPacket.EMOTION_PACKET, clientMentalStatus::receiveEmotionPacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
@@ -58,14 +71,52 @@ public class DepressionClient {
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 DiaryUpdatePacket.DIARY_UPDATE_PACKET, ClientDiaryUpdater::receiveDiaryUpdatePacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
-                PTSDOnsetPacket.PHONISM_PACKET, ClientPTSDManager::receivePhotismPacket);
+                PTSDOnsetPacket.PHOTISM_PACKET, ClientPTSDManager::receivePhotismPacket);
         NetworkManager.registerReceiver(NetworkManager.Side.S2C,
                 MentalTraitPacket.MENTAL_TRAIT_PACKET, ClientMentalStatus::receiveMentalTraitPacket);
 
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.PROFILE_PACKET, DepressionClient::receiveRCProfilePacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.PLAY_SONG_PACKET, ClientPlayingChart::receivePlaySongPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.ACCEPT_EDIT_PACKET, RCSelectionScreen::receiveAcceptEditPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.NOTE_CHANGE_PACKET, ClientPlayingChart::receiveNoteChangePacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.GAMEPLAY_CHANGE_PACKET, ClientPlayingChart::receiveGameplayChangePacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.TIME_CHANGE_PACKET, ClientPlayingChart::receiveTimeChangePacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.GAME_END_PACKET, ClientPlayingChart::receiveGameEndPacket);
+        NetworkManager.registerReceiver(NetworkManager.Side.S2C,
+                RhythmCraftPacket.SPACE_CHANGE_PACKET, ClientPlayingChart::receiveSpaceChangePacket);
+
         ClientGuiEvent.RENDER_HUD.register(clientMentalStatus::renderHud);
+        ClientGuiEvent.RENDER_HUD.register(GameGuiRenderer::renderHud);
         ClientLifecycleEvent.CLIENT_LEVEL_LOAD.register(ClientLifecycleEventListener::onClientLevelLoad);
+        ClientLifecycleEvent.CLIENT_STOPPING.register(ClientLifecycleEventListener::onClientStopping);
         ClientRawInputEvent.MOUSE_SCROLLED.register(ClientRawInputEventListener::onMouseScrolled);
         ClientRawInputEvent.MOUSE_CLICKED_PRE.register(ClientRawInputEventListener::onMouseClicked);
+        ClientTickEvent.CLIENT_LEVEL_PRE.register(ClientTickEventListener::onClientLevelTick);
+        ClientTickEvent.CLIENT_PRE.register(ClientTickEventListener::onClientTick);
         ClientConfig.load();
+    }
+
+    public static void receiveRCProfilePacket(FriendlyByteBuf buf, NetworkManager.PacketContext packetContext) {
+        int stringSize = buf.readInt();
+        rcProfile.sortType = SongSortType.valueOf(buf.readCharSequence(stringSize, StandardCharsets.UTF_8).toString());
+        rcProfile.difficulty = buf.readInt();
+        rcProfile.index = buf.readInt();
+        while (buf.isReadable()) {
+            stringSize = buf.readInt();
+            String key = buf.readCharSequence(stringSize, StandardCharsets.UTF_8).toString();
+            int size = buf.readInt();
+            ArrayList<Integer> scores = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                scores.add(buf.readInt());
+            }
+            rcProfile.chartScores.put(key, scores);
+        }
     }
 }

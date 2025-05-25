@@ -4,13 +4,13 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.depression.mental.MentalStatus;
 import net.depression.mental.PTSDManager;
 import net.depression.network.MentalTraitPacket;
+import net.depression.rhythmcraft.PlayingChart;
 import net.depression.server.Registry;
 import net.depression.util.TempValues;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.server.players.PlayerList;
@@ -26,6 +26,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerList.class)
 public abstract class PlayerListMixin {
+    @Inject(method = "save", at = @At("HEAD"), cancellable = true)
+    private void onSave(ServerPlayer serverPlayer, CallbackInfo ci) {
+        if (PlayingChart.playingCharts.containsKey(serverPlayer.getUUID())) {
+            ci.cancel();
+        }
+    }
     @Inject(method = "broadcast", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/server/network/ServerGamePacketListenerImpl;send(Lnet/minecraft/network/protocol/Packet;)V"))
     private void onPlaySound(CallbackInfo ci, @Local(ordinal = 0) ServerPlayer player) {

@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ServerBossEvent.class)
-public class ServerBossEventMixin {
+public abstract class ServerBossEventMixin {
     @Inject(method = "addPlayer", at = @At("HEAD"))
     private void onAddPlayer(ServerPlayer serverPlayer, CallbackInfo ci) {
         Registry.eventAddPlayer((ServerBossEvent) (Object) this, serverPlayer);

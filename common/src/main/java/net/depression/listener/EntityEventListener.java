@@ -5,16 +5,25 @@ import net.depression.mental.MentalStatus;
 import net.depression.mental.PTSDManager;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.MentalStatusPacket;
+import net.depression.rhythmcraft.PlayingChart;
 import net.depression.server.Registry;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.BaseSpawner;
+import net.minecraft.world.level.GameRules;
+import net.minecraft.world.level.LevelAccessor;
+
+import java.util.HashSet;
+import java.util.List;
 
 public class EntityEventListener {
+    public static HashSet<String> petIds = new HashSet<>();
     public static EventResult onEntityDeath(LivingEntity livingEntity, DamageSource damageSource) {
         if (livingEntity.level().isClientSide()) {
             return EventResult.pass();
@@ -50,7 +59,7 @@ public class EntityEventListener {
         else {
             if (livingEntity instanceof TamableAnimal tamableAnimal) {
                 LivingEntity owner = tamableAnimal.getOwner();
-                if (owner instanceof ServerPlayer player) {
+                if (owner instanceof ServerPlayer player && petIds.contains(livingEntity.getEncodeId())) {
                     MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
                     mentalStatus.mentalHurt(5d);
                 }
@@ -76,6 +85,13 @@ public class EntityEventListener {
                     MentalStatusPacket.sendToPlayer(player, mentalStatus);
                 }
             }
+        }
+        return EventResult.pass();
+    }
+
+    public static EventResult onEntityCheckSpawn(LivingEntity livingEntity, LevelAccessor levelAccessor, double v, double v1, double v2, MobSpawnType mobSpawnType, BaseSpawner baseSpawner) {
+        if (livingEntity.level() instanceof PlayingChart && mobSpawnType == MobSpawnType.NATURAL) {
+            return EventResult.interruptFalse();
         }
         return EventResult.pass();
     }

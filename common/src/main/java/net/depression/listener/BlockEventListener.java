@@ -8,7 +8,13 @@ import net.depression.mental.MentalTrait;
 import net.depression.network.ActionbarHintPacket;
 import net.depression.network.CloseEyePacket;
 import net.depression.network.MentalStatusPacket;
+import net.depression.rhythmcraft.PlayingChart;
 import net.depression.server.Registry;
+import net.depression.world.dimension.ModDimensions;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.worldselection.ConfirmExperimentalFeaturesScreen;
+import net.minecraft.client.gui.screens.worldselection.ExperimentsScreen;
+import net.minecraft.client.multiplayer.MultiPlayerGameMode;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -22,15 +28,23 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.WorldData;
+
+import java.util.UUID;
 
 
 public class BlockEventListener {
     public static EventResult onBlockBreak(Level level, BlockPos pos, BlockState state, ServerPlayer player, IntValue intValue) {
+        UUID playerUUID = player.getUUID();
+        if (PlayingChart.playingCharts.containsKey(playerUUID)) {
+            PlayingChart playingChart = PlayingChart.playingCharts.get(playerUUID);
+            return playingChart.onBlockBreak(pos);
+        }
         if (player.isCreative() || !player.hasCorrectToolForDrops(state)) { //如果是创造模式或者没有用合适的工具挖，就不计入
             return EventResult.pass();
         }
-        Block block = state.getBlock();
 
+        Block block = state.getBlock();
         String blockID = block.arch$registryName().toString();
         MentalStatus mentalStatus = Registry.mentalStatus.get(player.getUUID());
         mentalStatus.mentalIllness.trigMentalFatigue();

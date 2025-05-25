@@ -37,7 +37,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MentalStatus {
-    public static boolean isItemScanned = false;
     public static double EMOTION_STABILIZE_RATE;
     public static double MENTAL_HEALTH_CHANGE_RATE;
     public static double PTSD_DAMAGE_RATE;
@@ -131,21 +130,22 @@ public class MentalStatus {
                     PTSDTimeBuffer.remove(string);
                     continue;
                 }
-                Double originValue = PTSD.get(string);
-                if (originValue == null) {
-                    originValue = 0d;
-                    EntityType.byString(string).ifPresentOrElse(
-                            entityType -> ActionbarHintPacket.sendPTSDFormPacket(player, entityType.getDescription()),
-                            () -> {
-                                if (playerPTSDSet.contains(string)) {
-                                    ActionbarHintPacket.sendPTSDFormPacket(player, Component.literal(string));
-                                }
-                                else {
-                                    ActionbarHintPacket.sendPTSDFormPacket(player, Component.translatable("message.depression.damagesource." + string));
-                                }
-                            });
+                if (!string.equals(player.getDisplayName().getString())) { //如果伤害源不是玩家自己才计入
+                    Double originValue = PTSD.get(string);
+                    if (originValue == null) {
+                        originValue = 0d;
+                        EntityType.byString(string).ifPresentOrElse(
+                                entityType -> ActionbarHintPacket.sendPTSDFormPacket(player, entityType.getDescription()),
+                                () -> {
+                                    if (playerPTSDSet.contains(string)) {
+                                        ActionbarHintPacket.sendPTSDFormPacket(player, Component.literal(string));
+                                    } else {
+                                        ActionbarHintPacket.sendPTSDFormPacket(player, Component.translatable("message.depression.damagesource." + string));
+                                    }
+                                });
+                    }
+                    PTSD.put(string, Math.min(originValue + damage, PTSDManager.PTSD_MAX_VALUE)); //保证PTSD不超过上限（32）
                 }
-                PTSD.put(string, Math.min(originValue + damage, PTSDManager.PTSD_MAX_VALUE)); //保证PTSD不超过上限（32）
                 PTSDTimeBuffer.remove(string);
                 PTSDValueBuffer.remove(string);
             }
@@ -358,7 +358,7 @@ public class MentalStatus {
     }
 
     public synchronized void mentalHurt(double value) {
-        if (getMentalHealthId() == 4) {
+        if (player.isCreative() || player.isSpectator()) {
             return;
         }
         emotionValue -= value; //情绪值 -= 伤害值
@@ -366,41 +366,39 @@ public class MentalStatus {
     }
 
     public synchronized void mentalHurt(Component component, double damage) {
-        if (component == player.getDisplayName()) {
-            return;
-        }
         playerPTSDSet.add(component.getString());
         mentalHurt(component.getString(), damage);
     }
+
     public synchronized void mentalHurt(String string, double damage) {
         if (string == null) {
             return;
         }
-        Level level = player.level();
-        BlockPos pos = player.blockPosition();
-        int brightness = Math.max(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));
-        if (brightness <= 7 && mentalTrait.isDarknessAffectEmotion) {
-            damage *= 1.3d + (7d - brightness) / 7d * 0.2d;
-        }
-        if (PTSDTimeBuffer.containsKey(string)) { //如果缓冲区中已经存在PTSD，则更新PTSD缓冲值
-            Double originValue = PTSDValueBuffer.get(string);
-            if (originValue == null) {
-                originValue = 0d;
+        if (!string.equals(player.getDisplayName().getString())) { //如果伤害源不是玩家自己才计入PTSD
+            Level level = player.level();
+            BlockPos pos = player.blockPosition();
+            int brightness = Math.max(level.getBrightness(LightLayer.BLOCK, pos), level.getBrightness(LightLayer.SKY, pos));
+            if (brightness <= 7 && mentalTrait.isDarknessAffectEmotion) {
+                damage *= 1.3d + (7d - brightness) / 7d * 0.2d;
             }
-            PTSDTimeBuffer.put(string, tickCount); //更新PTSD时刻缓冲区
-            PTSDValueBuffer.put(string, originValue + damage); //更新PTSD值缓冲区
-        }
-        else {
-            Double PTSDValue = PTSD.get(string);
-            if (PTSDValue != null) { //如果此前有过PTSD且缓冲区没有，则计算为犯了PTSD，PTSD影响情绪
-                emotionValue -= PTSDValue * PTSD_DAMAGE_RATE; //情绪值 -= PTSD值原量 * 0.25
-                emotionValue = Math.max(-20d, emotionValue); //保证情绪值不超过下限
+            if (PTSDTimeBuffer.containsKey(string)) { //如果缓冲区中已经存在PTSD，则更新PTSD缓冲值
+                Double originValue = PTSDValueBuffer.get(string);
+                if (originValue == null) {
+                    originValue = 0d;
+                }
+                PTSDTimeBuffer.put(string, tickCount); //更新PTSD时刻缓冲区
+                PTSDValueBuffer.put(string, originValue + damage); //更新PTSD值缓冲区
             }
-            PTSDTimeBuffer.put(string, tickCount); //加入PTSD时刻缓冲区
-            PTSDValueBuffer.put(string, damage); //加入PTSD值缓冲区
+            else {
+                Double PTSDValue = PTSD.get(string);
+                if (PTSDValue != null) { //如果此前有过PTSD且缓冲区没有，则计算为犯了PTSD，PTSD影响情绪
+                    mentalHurt(PTSDValue * PTSD_DAMAGE_RATE); //情绪值 -= PTSD值原量 * 0.25
+                }
+                PTSDTimeBuffer.put(string, tickCount); //加入PTSD时刻缓冲区
+                PTSDValueBuffer.put(string, damage); //加入PTSD值缓冲区
+            }
         }
-        emotionValue -= damage;
-        emotionValue = Math.max(-20d, emotionValue); //保证情绪值不超过下限
+        mentalHurt(damage); //保证情绪值不超过下限
     }
 
 

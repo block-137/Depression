@@ -5,6 +5,8 @@ import net.depression.item.MedicineItem;
 import net.depression.mental.MentalIllness;
 import net.depression.mental.MentalStatus;
 import net.depression.network.MentalStatusPacket;
+import net.depression.rhythmcraft.PlayingChart;
+import net.depression.rhythmcraft.RhythmCraftProfile;
 import net.depression.server.Registry;
 import net.depression.server.StatManager;
 import net.minecraft.nbt.CompoundTag;
@@ -64,11 +66,11 @@ public abstract class PlayerMixin {
         mentalStatus.mentalIllness.medicineDelay.remove("depression:insomnia_tablet");
         Boolean isInsomnia = mentalStatus.mentalIllness.isInsomnia;
         boolean isSleepy = player.hasEffect(ModEffects.SLEEPINESS.get());
-        if ((!isSleepy && isInsomnia != null && isInsomnia) || mentalStatus.isMania()) { //如果失眠且没有困倦buff（或处于躁狂状态），则直接返回，不进行睡眠治疗
-            return;
-        }
         if (isSleepy) {
             player.removeEffect(ModEffects.SLEEPINESS.get());
+        }
+        if ((!isSleepy && isInsomnia != null && isInsomnia) || mentalStatus.isMania()) { //如果失眠且没有困倦buff（或处于躁狂状态），则直接返回，不进行睡眠治疗
+            return;
         }
         if (mentalStatus.emotionValue < -5 * Math.max(mentalStatus.mentalHealthValue, 10d) / 100d) {
             mentalStatus.emotionValue = 0;
@@ -172,6 +174,15 @@ public abstract class PlayerMixin {
         }
     }
 
+    @Inject(method = "wantsToStopRiding", at = @At("HEAD"), cancellable = true)
+    private void onStopRiding(CallbackInfoReturnable<Boolean> cir) {
+        if ((Player) (Object) this instanceof ServerPlayer player
+                && PlayingChart.playingCharts.containsKey(player.getUUID())
+                && !PlayingChart.playingCharts.get(player.getUUID()).isEditMode) {
+            cir.setReturnValue(false);
+        }
+    }
+
     @Inject(method = "readAdditionalSaveData", at = @At(value = "TAIL"))
     private void readAdditionalSaveData(CompoundTag tag, CallbackInfo ci) {
         Player player = (Player) (Object) this;
@@ -179,6 +190,8 @@ public abstract class PlayerMixin {
             return;
         MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         mentalStatus.readNbt(tag);
+        RhythmCraftProfile profile = RhythmCraftProfile.getProfileByServerPlayer(player);
+        profile.readNbt(tag);
 
         StatManager statManager = Registry.statManager.get(player.getUUID()); //读取玩家的旧统计数据
         if (statManager == null) {
@@ -197,13 +210,10 @@ public abstract class PlayerMixin {
         if (player.level().isClientSide())
             return;
         UUID uuid = player.getUUID();
-        MentalStatus mentalStatus = Registry.mentalStatus.get(uuid);
-        if (mentalStatus == null) {
-            mentalStatus = new MentalStatus((ServerPlayer) player);
-            Registry.mentalStatus.put(player.getUUID(), mentalStatus);
-        }
-
+        MentalStatus mentalStatus = MentalStatus.getMentalStatusByServerPlayer(player);
         mentalStatus.writeNbt(tag);
+        RhythmCraftProfile profile = RhythmCraftProfile.getProfileByServerPlayer(player);
+        profile.writeNbt(tag);
 
         StatManager stat = Registry.statManager.get(uuid);
         if (stat == null) {

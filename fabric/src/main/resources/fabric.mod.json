@@ -12,7 +12,7 @@
     "hhxkzhy",
     "SabiGold"
   ],
-  "license": "LGPL-3.0-or-later",
+  "license": "GPL-3.0",
   "icon": "assets/depression/icon.png",
   "environment": "*",
   "entrypoints": {

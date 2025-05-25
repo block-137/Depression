@@ -38,6 +38,16 @@ dependencies {
     implementation "com.electronwill.night-config:core:3.6.0"
     implementation "com.electronwill.night-config:toml:3.6.0"
 
+    include 'com.googlecode.soundlibs:jorbis:0.0.17.4'
+    include "com.googlecode.soundlibs:vorbisspi:1.0.3.3"
+    include 'com.googlecode.soundlibs:tritonus-share:0.3.7.4'
+    implementation 'com.googlecode.soundlibs:jorbis:0.0.17.4'
+    implementation 'com.googlecode.soundlibs:vorbisspi:1.0.3.3'
+    implementation 'com.googlecode.soundlibs:tritonus-share:0.3.7.4'
+
+    include "io.github.BeardedManZhao:mathematical-expression:1.5.6"
+    implementation "io.github.BeardedManZhao:mathematical-expression:1.5.6"
+
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 }

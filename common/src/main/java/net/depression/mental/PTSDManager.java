@@ -132,7 +132,7 @@ public class PTSDManager {
             }
         }
         if (currentMaxPTSDValue > PTSD_4_VALUE) {
-            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 4;
+            mentalStatus.mentalHurt(ONSET_EMOTION_DECREASE * 4);
             if (photismCountdown == null) {
                 photismCountdown = 30 + (int) mentalStatus.emotionValue;
             }
@@ -153,7 +153,7 @@ public class PTSDManager {
             PTSDOnsetPacket.sendToPlayer(player, 4, distance);
         }
         else if (currentMaxPTSDValue > PTSD_3_VALUE) {
-            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 3;
+            mentalStatus.mentalHurt(ONSET_EMOTION_DECREASE * 3);
             if (phonismCountdown == null) {
                 phonismCountdown = 60 + (int) mentalStatus.emotionValue * 2;
             }
@@ -165,12 +165,12 @@ public class PTSDManager {
             PTSDOnsetPacket.sendToPlayer(player, 3, distance);
         }
         else if (currentMaxPTSDValue > PTSD_2_VALUE) {
-            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 2;
+            mentalStatus.mentalHurt(ONSET_EMOTION_DECREASE * 2);
             player.playSound(ModSounds.PANT.get());
             PTSDOnsetPacket.sendToPlayer(player, 2, distance);
         }
         else if (currentMaxPTSDValue > PTSD_1_VALUE) {
-            mentalStatus.emotionValue -= ONSET_EMOTION_DECREASE * 1;
+            mentalStatus.mentalHurt(ONSET_EMOTION_DECREASE * 1);
             player.playSound(ModSounds.PANT.get(), 0.5f, 1f);
             PTSDOnsetPacket.sendToPlayer(player, 1, distance);
         }

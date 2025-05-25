@@ -3,6 +3,9 @@ package net.depression.config;
 import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.architectury.platform.Platform;
 import net.depression.client.ClientMentalStatus;
+import net.depression.client.rhythmcraft.ClientPlayingChart;
+import net.minecraft.client.multiplayer.ClientPacketListener;
+import net.minecraft.util.Mth;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +34,9 @@ public class ClientConfig {
         }
         if (!config.contains("emotion_display_offset.y")) {
             config.set("emotion_display_offset.y", -51);
+        }
+        if (!config.contains("rc_highlight_distance")) {
+            config.set("rc_highlight_distance", 32);
         }
 
         ClientMentalStatus.EMOTION_DISPLAY_OFFSET_X = config.get("emotion_display_offset.x");

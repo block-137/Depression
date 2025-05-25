@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerPlayer;
 
 public class PTSDOnsetPacket {
     public static final ResourceLocation PTSD_ONSET_PACKET = new ResourceLocation(Depression.MOD_ID, "ptsd_onset_packet");
-    public static final ResourceLocation PHONISM_PACKET = new ResourceLocation(Depression.MOD_ID, "phonism_packet");
+    public static final ResourceLocation PHOTISM_PACKET = new ResourceLocation(Depression.MOD_ID, "photism_packet");
     public static void sendToPlayer(ServerPlayer player, int onsetLevel, double distance) {
         FriendlyByteBuf ptsdBuf = new FriendlyByteBuf(Unpooled.buffer());
         ptsdBuf.writeInt(onsetLevel);
@@ -20,6 +20,6 @@ public class PTSDOnsetPacket {
     public static void sendPhotismPacket(ServerPlayer player, String id) {
         FriendlyByteBuf photismBuf = new FriendlyByteBuf(Unpooled.buffer());
         photismBuf.writeUtf(id);
-        NetworkManager.sendToPlayer(player, PHONISM_PACKET, photismBuf);
+        NetworkManager.sendToPlayer(player, PHOTISM_PACKET, photismBuf);
     }
 }

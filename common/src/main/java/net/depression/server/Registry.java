@@ -5,6 +5,9 @@ import dev.architectury.networking.NetworkManager;
 import net.depression.mental.MentalStatus;
 import net.depression.mental.MentalTrait;
 import net.depression.network.DiaryUpdatePacket;
+import net.depression.rhythmcraft.PlayingChart;
+import net.depression.rhythmcraft.RhythmCraftProfile;
+import net.depression.world.ParticleFormulaInstance;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
@@ -19,21 +22,24 @@ import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.UUID;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Registry {
 
     public static final HashMap<UUID, MentalStatus> mentalStatus = new HashMap<>();
     public static final HashSet<UUID> quitPlayers = new HashSet<>();
     public static final HashMap<UUID, StatManager> statManager = new HashMap<>();
+    public static final ConcurrentHashMap<UUID, RhythmCraftProfile> profileMap = new ConcurrentHashMap<>();
     private static final HashMap<UUID, ItemStack> diaryUpdateMap = new HashMap<>();
-    private static final LinkedHashMap<UUID, ServerLevel> pendingLevels = new LinkedHashMap<>();
-    private static final LinkedHashMap<UUID, ServerPlayer> pendingPlayers = new LinkedHashMap<>();
-    private static final LinkedHashMap<UUID, ChunkMap> pendingChunkMaps = new LinkedHashMap<>();
+    private static final ConcurrentHashMap<UUID, ServerLevel> pendingLevels = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<UUID, ServerPlayer> pendingPlayers = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<UUID, ChunkMap> pendingChunkMaps = new ConcurrentHashMap<>();
     public static final HashMap<UUID, HashSet<UUID>> playerEventMap = new HashMap<>();
+    public static final ConcurrentLinkedQueue<Player> addPlayerQueue = new ConcurrentLinkedQueue<>();
+
+    public static HashMap<String, LinkedList<ParticleFormulaInstance>> particles = new HashMap<>();
     public static void init() {
         mentalStatus.clear();
         quitPlayers.clear();
@@ -43,6 +49,10 @@ public class Registry {
         pendingPlayers.clear();
         pendingChunkMaps.clear();
         playerEventMap.clear();
+
+        profileMap.clear();
+        PlayingChart.playingCharts.clear();
+        PlayingChart.playerData.clear();
     }
     public static void eventAddPlayer(ServerBossEvent event, ServerPlayer player) {
         if (!playerEventMap.containsKey(player.getUUID())) {
@@ -55,9 +65,9 @@ public class Registry {
         HashSet<UUID> events = playerEventMap.get(player.getUUID());
         if (events != null) {
             events.remove(event.getId());
-        }
-        if (events.isEmpty()) {
-            playerEventMap.remove(player.getUUID());
+            if (events.isEmpty()) {
+                playerEventMap.remove(player.getUUID());
+            }
         }
     }
 
@@ -86,14 +96,20 @@ public class Registry {
         UUID uuid = player.getUUID();
         MentalStatus mentalStatus = Registry.mentalStatus.get(uuid);
         mentalStatus.loadMentalTrait(MentalTrait.byId(id));
-        if (pendingChunkMaps.containsKey(uuid)) {
-            pendingChunkMaps.get(uuid).move(pendingPlayers.get(uuid));
-            pendingChunkMaps.remove(uuid);
-        }
-        if (isPending(player)) {
-            pendingLevels.get(uuid).addNewPlayer(pendingPlayers.get(uuid));
-            pendingPlayers.remove(uuid);
-            pendingLevels.remove(uuid);
+        addPlayerQueue.add(player);
+    }
+    public static void loadPendingPlayers() {
+        for (Player player : addPlayerQueue) {
+            UUID uuid = player.getUUID();
+            if (pendingChunkMaps.containsKey(uuid)) {
+                pendingChunkMaps.get(uuid).move(pendingPlayers.get(uuid));
+                pendingChunkMaps.remove(uuid);
+            }
+            if (isPending(player)) {
+                pendingLevels.get(uuid).addNewPlayer(pendingPlayers.get(uuid));
+                pendingPlayers.remove(uuid);
+                pendingLevels.remove(uuid);
+            }
         }
     }
     public static void diaryUpdate(ServerPlayer player, ItemStack diary) {

@@ -5,9 +5,11 @@ import com.electronwill.nightconfig.core.Config;
 import com.electronwill.nightconfig.core.file.FileConfig;
 import dev.architectury.platform.Platform;
 import net.depression.Depression;
+import net.depression.listener.EntityEventListener;
 import net.depression.mental.MentalStatus;
 import net.depression.mental.MentalTrait;
 import net.depression.mental.PTSDManager;
+import net.minecraft.server.level.ChunkMap;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -17,11 +19,11 @@ import java.util.List;
 import java.util.Map;
 
 public class ServerConfig {
-    private static Double readDouble(FileConfig config, String key) {
+    public static Double readDouble(FileConfig config, String key) {
         Double value;
         Object object = config.get(key);
-        if (object instanceof Integer) {
-            value = ((Integer) object).doubleValue();
+        if (object instanceof Integer integer) {
+            value = integer.doubleValue();
         }
         else {
             value = (Double) object;
@@ -114,8 +116,8 @@ public class ServerConfig {
         FileConfig blockConfig = FileConfig.of(blockFile);
         blockConfig.load();
 
-
-        for (String block : blockConfig.valueMap().keySet()) {
+        for (Config.Entry entry : blockConfig.entrySet()) {
+            String block = entry.getKey();
             MentalStatus.breakHealBlock.put(block, readDouble(blockConfig, block));
         }
 
@@ -142,7 +144,8 @@ public class ServerConfig {
         advancementConfig.load();
 
 
-        for (String advancement : advancementConfig.valueMap().keySet()) {
+        for (Config.Entry entry : advancementConfig.entrySet()) {
+            String advancement = entry.getKey();
             MentalStatus.healAdvancement.put(advancement, readDouble(advancementConfig, advancement));
         }
 
@@ -170,7 +173,8 @@ public class ServerConfig {
         FileConfig entityConfig = FileConfig.of(entityFile);
         entityConfig.load();
 
-        for (String entity : entityConfig.valueMap().keySet()) {
+        for (Config.Entry entry : entityConfig.entrySet()) {
+            String entity = entry.getKey();
             MentalStatus.killHealEntity.put(entity, readDouble(entityConfig, entity));
         }
 
@@ -199,7 +203,8 @@ public class ServerConfig {
         FileConfig nearbyConfig = FileConfig.of(nearbyFile);
         nearbyConfig.load();
 
-        for (String key1 : nearbyConfig.valueMap().keySet()) {
+        for (Config.Entry entry : nearbyConfig.entrySet()) {
+            String key1 = entry.getKey();
             if (nearbyConfig.contains(key1 + ".value") && nearbyConfig.contains(key1 + ".radius")) {
                 int radius = nearbyConfig.get(key1 + ".radius");
                 MentalStatus.radiusMaxValue = Math.max(MentalStatus.radiusMaxValue, radius);
@@ -209,7 +214,8 @@ public class ServerConfig {
             else {
                 Object map = nearbyConfig.get(key1);
                 if (map instanceof CommentedConfig) {
-                    for (String key2 : ((CommentedConfig) map).valueMap().keySet()) {
+                    for (Config.Entry entry2 : ((CommentedConfig) map).entrySet()) {
+                        String key2 = entry2.getKey();
                         if (key2 instanceof String) {
                             int radius = nearbyConfig.get(key1 + "." + key2 + ".radius");
                             MentalStatus.radiusMaxValue = Math.max(MentalStatus.radiusMaxValue, radius);
@@ -245,7 +251,8 @@ public class ServerConfig {
         FileConfig smeltConfig = FileConfig.of(smeltFile);
         smeltConfig.load();
 
-        for (String item : smeltConfig.valueMap().keySet()) {
+        for (Config.Entry entry : smeltConfig.entrySet()) {
+            String item = entry.getKey();
             MentalStatus.smeltHealItem.put(item, readDouble(smeltConfig, item));
         }
 
@@ -272,7 +279,7 @@ public class ServerConfig {
         FileConfig damageConfig = FileConfig.of(damageFile);
         damageConfig.load();
 
-        for (Map.Entry<String, Object> entry : damageConfig.valueMap().entrySet()) {
+        for (Config.Entry entry : damageConfig.entrySet()) {
             String damageSource = entry.getKey();
             Object object = entry.getValue();
             if (object instanceof List) {
@@ -310,7 +317,8 @@ public class ServerConfig {
         FileConfig lootConfig = FileConfig.of(lootFile);
         lootConfig.load();
 
-        for (String id : lootConfig.valueMap().keySet()) {
+        for (Config.Entry entry : lootConfig.entrySet()) {
+            String id = entry.getKey();
             MentalStatus.lootHealItem.put(id, readDouble(lootConfig, id));
         }
 
@@ -337,8 +345,37 @@ public class ServerConfig {
         FileConfig foodConfig = FileConfig.of(foodFile);
         foodConfig.load();
 
-        for (String id : foodConfig.valueMap().keySet()) {
+        for (Config.Entry entry : foodConfig.entrySet()) {
+            String id = entry.getKey();
             MentalStatus.foodHealValue.put(id, readDouble(foodConfig, id));
+        }
+
+        //读取special-entity-list.toml
+        File specialEntityFile = new File(Platform.getConfigFolder() + "/depression/special-entity-list.toml");
+        if (!specialEntityFile.exists()) {
+            try {
+                specialEntityFile.createNewFile();
+                FileWriter writer = writeSpecialEntityFile(specialEntityFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else if (overwrite) {
+            try {
+                FileWriter writer = writeSpecialEntityFile(specialEntityFile);
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        FileConfig specialEntityConfig = FileConfig.of(specialEntityFile);
+        specialEntityConfig.load();
+
+        if (specialEntityConfig.contains("pets") && specialEntityConfig.get("pets") instanceof List) {
+            List<String> pets = specialEntityConfig.get("pets");
+            EntityEventListener.petIds.addAll(pets);
         }
 
         //读取mental-traits.toml
@@ -364,7 +401,8 @@ public class ServerConfig {
         FileConfig traitConfig = FileConfig.of(traitFile);
         traitConfig.load();
 
-        for (String trait : traitConfig.valueMap().keySet()) {
+        for (Config.Entry entry : traitConfig.entrySet()) {
+            String trait = entry.getKey();
             MentalTrait mentalTrait = new MentalTrait(trait);
             if (traitConfig.contains(trait + ".kill_mob_multiplier")) {
                 mentalTrait.killMobMultiplier = readDouble(traitConfig, trait + ".kill_mob_multiplier");
@@ -450,7 +488,8 @@ public class ServerConfig {
         writer.write("""
                 # Mod will overwrite all the configurations if the version isn't match with the current mod version.
                 # If you want to keep your changes while updating, please change the version to the updated mod version.
-                version = "0.1.5.1+1.20.1"
+
+                version = "0.2+1.20.1"
                 emotion_stabilize_rate = 0.1
                 mental_health_change_rate = 0.01
                 ptsd_damage_rate = 0.25
@@ -461,6 +500,19 @@ public class ServerConfig {
                 onset_emotion_decrease = 0.05
                 random_choose_mental_trait = false
                 # default_mental_trait = "normal"
+                """);
+        return writer;
+    }
+
+    @NotNull
+    private static FileWriter writeSpecialEntityFile(File file) throws IOException {
+        FileWriter writer = new FileWriter(file);
+        writer.write("""
+                pets = [
+                "minecraft:cat",
+                "minecraft:wolf",
+                "minecraft:parrot",
+                ]
                 """);
         return writer;
     }
@@ -775,7 +827,7 @@ public class ServerConfig {
                     "minecraft:entity.firework_rocket.twinkle_far"
                 ]
                                 
-                "flyIntoWall" = "minecraft:item.elytra.flying"
+                "flyIntoWall" = ["minecraft:item.elytra.flying"]
                                 
                 "freeze" = [
                     "minecraft:block.powder_snow.break",

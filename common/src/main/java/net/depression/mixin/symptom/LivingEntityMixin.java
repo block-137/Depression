@@ -1,8 +1,10 @@
 package net.depression.mixin.symptom;
 
 import net.depression.item.MedicineItem;
+import net.depression.rhythmcraft.PlayingChart;
 import net.depression.util.TempValues;
 import net.depression.util.Tools;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -35,5 +37,4 @@ public abstract class LivingEntityMixin {
         }
         TempValues.isCalledByDepressedPlayer = false;
     }
-
 }

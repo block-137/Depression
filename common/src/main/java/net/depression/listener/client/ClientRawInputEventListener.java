@@ -8,7 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundEvents;
 
 public class ClientRawInputEventListener {
-    public static EventResult onInput(Minecraft minecraft) {
+    public static EventResult onInput(Minecraft minecraft, Integer button) {
         if (minecraft.screen != null) {
             return EventResult.pass();
         }
@@ -19,17 +19,26 @@ public class ClientRawInputEventListener {
             return EventResult.interruptFalse();
         }
         else {
+            if (button != null) {
+                ClientTickEventListener.pressedButtons.add(button);
+            }
             return EventResult.pass();
         }
     }
 
     public static EventResult onMouseScrolled(Minecraft minecraft, double v) {
-        return onInput(minecraft);
+        return onInput(minecraft, null);
     }
 
     public static EventResult onMouseClicked(Minecraft minecraft, int button, int action, int mods) {
+        if (button == 1) {
+            return EventResult.pass();
+        }
         if (action != 0) {
-            return onInput(minecraft);
+            return onInput(minecraft, button);
+        }
+        else {
+            ClientTickEventListener.pressedButtons.remove(button);
         }
         return EventResult.pass();
     }

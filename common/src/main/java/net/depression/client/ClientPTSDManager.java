@@ -96,10 +96,13 @@ public class ClientPTSDManager {
                 int xOffset = curTime - startTime > 2000 ? 0 : -a + (int) (a * (curTime - startTime) / 2000);
                 int yOffset = curTime - startTime > 2000 ? 0 : -b + (int) (b * (curTime - startTime) / 2000);
                 RenderSystem.setShaderTexture(0, PTSD_ONSET_LEFT);
+                RenderSystem.enableBlend();
                 guiGraphics.blit(PTSD_ONSET_LEFT, xOffset, 0, 90, 170 - a, 0, a, y, 480, 360);
                 RenderSystem.setShaderTexture(0, PTSD_ONSET_RIGHT);
+                RenderSystem.enableBlend();
                 guiGraphics.blit(PTSD_ONSET_RIGHT, x - a - xOffset, 0, 90, 310, 0, a, y, 480, 360);
                 RenderSystem.setShaderTexture(0, PTSD_ONSET_UP);
+                RenderSystem.enableBlend();
                 guiGraphics.blit(PTSD_ONSET_UP, 0, yOffset, 90, 0, 170 - b, x, b, 480, 360);
             }
             Minecraft minecraft = Minecraft.getInstance();
@@ -162,6 +165,9 @@ public class ClientPTSDManager {
                 spawnPoint = rayTraceEnd;
             }
             Entity entity = entityType.create(level);
+            if (entity == null) {
+                return;
+            }
             entity.setPos(spawnPoint);
             entity.lookAt(EntityAnchorArgument.Anchor.EYES, player.getEyePosition());
             if (entity instanceof Mob) {

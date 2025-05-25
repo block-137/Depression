@@ -47,6 +47,7 @@ public class ClientMentalIllness {
         int yLoc;
         if (elapsedTime > 10 && elapsedTime < 50) { //全闭眼
             RenderSystem.setShaderTexture(0, DROWSY_FULL);
+            RenderSystem.enableBlend();
             guiGraphics.blit(DROWSY_FULL, 0, 0, priority, 0, 0, x, y, 480, 360);
             return;
         }
@@ -57,12 +58,16 @@ public class ClientMentalIllness {
             yLoc = (int) ((60 - elapsedTime) / 10d * (double) y / 2);
         }
         RenderSystem.setShaderTexture(0, DROWSY_UP);
+        RenderSystem.enableBlend();
         guiGraphics.blit(DROWSY_UP, 0, yLoc - 360, priority, 0, 0, x, 360, 480, 360); //k:显示优先级; f,g: （图片中的）起始偏移量; l,m: 实际显示大小; n,o: 图片大小
         RenderSystem.setShaderTexture(0, DROWSY_DOWN);
+        RenderSystem.enableBlend();
         guiGraphics.blit(DROWSY_DOWN, 0, y - yLoc, priority, 0, 0, x, 360, 480, 360);
         if (yLoc > 360) {
             RenderSystem.setShaderTexture(0, DROWSY_FULL);
+            RenderSystem.enableBlend();
             guiGraphics.blit(DROWSY_FULL, 0, 0, priority, 0, 0, x, yLoc - 360, 480, 360);
+            RenderSystem.enableBlend();
             guiGraphics.blit(DROWSY_FULL, 0, y - (yLoc - 360), priority, 0, 0, x, yLoc - 360, 480, 360);
         }
     }

@@ -90,6 +90,7 @@ public class MentalIllness {
                 startIllnessTime = player.level().getGameTime();
             } else {
                 startIllnessTime = null;
+                isMania = false;
             }
         }
         if (startIllnessTime != null) {
