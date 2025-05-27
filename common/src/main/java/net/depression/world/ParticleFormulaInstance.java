@@ -6,6 +6,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.commands.ParticleCommand;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import top.lingyuzhao.varFormatter.utils.DataObj;
 
 public class ParticleFormulaInstance {
     BracketsCalculation2 bracketsCalculation = BracketsCalculation2.getInstance("BracketsCalculation");

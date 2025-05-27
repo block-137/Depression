@@ -46,7 +46,12 @@ dependencies {
     implementation 'com.googlecode.soundlibs:vorbisspi:1.0.3.3'
     implementation 'com.googlecode.soundlibs:tritonus-share:0.3.7.4'
 
+    include "io.github.BeardedManZhao:varFormatter:1.0.4"
+    include "io.github.BeardedManZhao:algorithmStar:1.44"
     include "io.github.BeardedManZhao:mathematical-expression:1.5.6"
+
+    implementation "io.github.BeardedManZhao:varFormatter:1.0.4"
+    implementation "io.github.BeardedManZhao:algorithmStar:1.44"
     implementation "io.github.BeardedManZhao:mathematical-expression:1.5.6"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
