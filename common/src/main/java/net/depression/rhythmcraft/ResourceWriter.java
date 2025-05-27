@@ -22,16 +22,17 @@ public class ResourceWriter {
             return;
         }
         chartFolder.mkdirs();
+        String chartProtocol = chartURL.getProtocol();
         try {
-            if (chartURL.getProtocol().equals("file")) {
+            if (chartProtocol.equals("file")) {
                 // 开发环境，资源作为文件存在
                 File chartFolderFile = new File(chartURL.toURI());
                 copyDirectory(chartFolderFile, chartFolder);
             }
-            else if (chartURL.getProtocol().equals("jar")) {
+            else if (chartProtocol.equals("jar") || chartProtocol.equals("union")) {
                 // 运行环境，资源在jar包中
                 String jarPath = ResourceWriter.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
-                try (JarFile jar = new JarFile(jarPath)) {
+                try (JarFile jar = new JarFile(jarPath.substring(0, jarPath.lastIndexOf(".jar") + 4))) {
                     Enumeration<JarEntry> entries = jar.entries();
                     while (entries.hasMoreElements()) {
                         JarEntry entry = entries.nextElement();
@@ -76,10 +77,10 @@ public class ResourceWriter {
                 File songFolderFile = new File(songURL.toURI());
                 copyDirectory(songFolderFile, songFolder);
             }
-            else if (songURL.getProtocol().equals("jar")) {
+            else if (songURL.getProtocol().equals("jar") || chartProtocol.equals("union")) {
                 // 运行环境，资源在jar包中
                 String jarPath = ResourceWriter.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath();
-                try (JarFile jar = new JarFile(jarPath)) {
+                try (JarFile jar = new JarFile(jarPath.substring(0, jarPath.lastIndexOf(".jar") + 4))) {
                     Enumeration<JarEntry> entries = jar.entries();
                     while (entries.hasMoreElements()) {
                         JarEntry entry = entries.nextElement();
