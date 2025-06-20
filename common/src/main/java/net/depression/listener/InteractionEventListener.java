@@ -34,10 +34,8 @@ public class InteractionEventListener {
     public static EventResult onRightClickBlock(Player player, InteractionHand hand, BlockPos blockPos, Direction direction) {
         Level level = player.level();
         Block block = level.getBlockState(blockPos).getBlock();
-        if (level.isClientSide()) {
-            if (block instanceof ComputerBlock) {
-                ClientTickEventListener.isSetComputerScreen = true;
-            }
+        if (level.isClientSide() && DepressionClient.ENABLE_COMPUTER && block instanceof ComputerBlock) {
+            ClientTickEventListener.isSetComputerScreen = true;
         }
         if (player instanceof ServerPlayer serverPlayer
                 && serverPlayer.serverLevel() instanceof PlayingChart playingChart

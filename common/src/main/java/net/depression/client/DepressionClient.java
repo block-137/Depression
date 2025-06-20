@@ -20,6 +20,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class DepressionClient {
+    public static boolean ENABLE_COMPUTER;
     public static final ClientMentalStatus clientMentalStatus = new ClientMentalStatus();
     public static final ClientActionbarHint clientActionbarHint = new ClientActionbarHint();
     public static RhythmCraftProfile rcProfile = new RhythmCraftProfile();

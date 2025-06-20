@@ -131,28 +131,27 @@ public class Chart {
         levelPath = config.get("level_file");
         for (ArrayList<Integer> note : (ArrayList<ArrayList<Integer>>) config.get("notes")) {
             notes.add(new BlockPos(note.get(0), note.get(1), note.get(2)));
-        }
-        // 读取速度map
-        if (config.get("speed") instanceof Config map) {
-            for (Config.Entry entry : map.entrySet()) {
-                long key = Long.parseLong(entry.getKey());
-                if (entry.getValue() instanceof Double value) {
-                    speedMap.put(key, value);
-                }
-                else if (entry.getValue() instanceof Integer value) {
-                    speedMap.put(key, (double) value);
+
+            // 读取速度map
+            if (config.get("speed") instanceof Config map) {
+                for (Config.Entry entry : map.entrySet()) {
+                    long key = Long.parseLong(entry.getKey());
+                    if (entry.getValue() instanceof Double value) {
+                        speedMap.put(key, value);
+                    } else if (entry.getValue() instanceof Integer value) {
+                        speedMap.put(key, (double) value);
+                    }
                 }
             }
-        }
-        // 读取时间map
-        if (config.get("time") instanceof Config map) {
-            for (Config.Entry entry : map.entrySet()) {
-                long key = Long.parseLong(entry.getKey());
-                if (entry.getValue() instanceof Long value) {
-                    timeMap.put(key, value);
-                }
-                else if (entry.getValue() instanceof Integer value) {
-                    timeMap.put(key, (long) value);
+            // 读取时间map
+            if (config.get("time") instanceof Config map) {
+                for (Config.Entry entry : map.entrySet()) {
+                    long key = Long.parseLong(entry.getKey());
+                    if (entry.getValue() instanceof Long value) {
+                        timeMap.put(key, value);
+                    } else if (entry.getValue() instanceof Integer value) {
+                        timeMap.put(key, (long) value);
+                    }
                 }
             }
         }
